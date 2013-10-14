@@ -1,0 +1,152 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+$prepare_chef= <<SCRIPT
+sudo echo "192.168.50.4     openstack" >> /etc/hosts
+
+wget https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
+sudo dpkg -i chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
+#sudo dpkg -i /vagrant/chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
+sudo chef-server-ctl reconfigure
+sudo apt-get install git sshpass -y
+
+#Not for production: Follow OpsCode guide for setting up knife.
+sudo chmod 644 /etc/chef-server/*
+sudo chmod 755 /etc/chef-server
+
+mkdir /home/vagrant/.chef
+cat >/home/vagrant/.chef/knife.rb <<EOF
+log_level                :info
+log_location             STDOUT
+node_name                'admin'
+client_key               '/etc/chef-server/admin.pem'
+validation_client_name   'chef-validator'
+validation_key           '/etc/chef-server/chef-validator.pem'
+chef_server_url          'https://192.168.50.5'
+syntax_check_cache_path  '/home/vagrant/.chef/syntax_check_cache'
+cookbook_path            [ '/home/vagrant/chef-repo/cookbooks' ]
+role_path                [ '/home/vagrant/chef-repo/cookbooks/grizzly/roles']
+EOF
+
+mkdir ~/.chef
+cat >~/.chef/knife.rb <<EOF
+log_level                :info
+log_location             STDOUT
+node_name                'admin'
+client_key               '/etc/chef-server/admin.pem'
+validation_client_name   'chef-validator'
+validation_key           '/etc/chef-server/chef-validator.pem'
+chef_server_url          'https://192.168.50.5'
+syntax_check_cache_path  '/home/vagrant/.chef/syntax_check_cache'
+cookbook_path            [ '/home/vagrant/chef-repo/cookbooks' ]
+role_path                [ '/home/vagrant/chef-repo/cookbooks/grizzly/roles']
+EOF
+
+git clone git://github.com/opscode/chef-repo.git /home/vagrant
+git clone https://github.com/opscode-cookbooks/mysql /home/vagrant/chef-repo/cookbooks/mysql
+git clone https://github.com/opscode-cookbooks/partial_search /home/vagrant/chef-repo/cookbooks/partial_search
+git clone https://github.com/opscode-cookbooks/ntp /home/vagrant/chef-repo/cookbooks/ntp
+cd /home/vagrant/chef-repo/cookbooks/ntp
+git checkout 1.3.2
+cd ~
+git clone https://github.com/opscode-cookbooks/build-essential /home/vagrant/chef-repo/cookbooks/build-essential
+git clone https://github.com/opscode-cookbooks/openssl /home/vagrant/chef-repo/cookbooks/openssl
+cp -r /vagrant/cookbooks/grizzly /home/vagrant/chef-repo/cookbooks/
+
+/opt/chef-server/embedded/bin/knife cookbook upload --all
+/opt/chef-server/embedded/bin/knife environment create OpenStack -d "OpenStack Test Suite"
+/opt/chef-server/embedded/bin/knife role from file /home/vagrant/chef-repo/cookbooks/grizzly/roles/*
+
+cat >~/openstack.json <<EOF
+{
+  "name": "OpenStack",
+  "description": "OpenStack Test Suite",
+  "cookbook_versions": {
+  },
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+  },
+  "override_attributes": {
+   "network": {
+      "public_interface": "eth0",
+      "private_interface": "eth1"
+   },
+   "cinder": {
+      "config": {
+       "lvm_disk": "/dev/sdb" 
+     }
+      }
+   }
+}
+EOF
+
+/opt/chef-server/embedded/bin/knife environment from file ~/openstack.json
+
+#Not for production: Use SSH keys
+/opt/chef-server/embedded/bin/knife bootstrap 192.168.50.4 -x vagrant --sudo -P vagrant -E OpenStack
+
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-mysql-all]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-rabbitmq]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-keystone]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-controller]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-cinder]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-glance]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-network]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-compute]'
+
+echo 'Waiting on Chef-Server configuration'
+echo -ne '#####                     (25%)\r'
+sleep 20
+echo -ne '###########               (50%)\r'
+sleep 20
+echo -ne '###################       (75%)\r'
+sleep 20
+echo -ne '######################### (100%)\r'
+echo -ne '\n\n'
+echo 'Installing OpenStack, this can take a few minutes...'
+sleep 2
+
+#Not for production: Use SSH keys
+sshpass -p 'vagrant' ssh openstack -l vagrant -o StrictHostKeyChecking=no "sudo chef-client"
+
+echo 'Chef-Server is located at: https://127.0.0.1/  login: admin password: p@ssw0rd1'
+echo 'Openstack is located at: http://127.0.0.1:7081 login: admin password: passwordsf'
+SCRIPT
+
+$prepare_openstack = <<SCRIPT
+sudo apt-get update
+sudo echo "192.168.50.5    chef-server" >> /etc/hosts
+SCRIPT
+
+
+
+Vagrant::Config.run do |config|
+
+  config.vm.box_url = 'http://nitron-vagrant.s3-website-us-east-1.amazonaws.com/vagrant_ubuntu_12.04.3_amd64_virtualbox.box'
+  config.vm.box = "vagrant_ubuntu_12.04.3_amd64_virtualbox.box"
+
+  config.vm.define 'openstack' do |openstack_config|
+	openstack_config.vm.host_name = 'openstack'
+	openstack_config.vm.customize ["modifyvm", :id, "--memory", 4096, "--cpus", "4", "--natdnshostresolver1", "on", "--natdnsproxy1", "on"]
+	openstack_config.vm.forward_port 80, 7081
+	file_to_disk = 'openstack_large_disk.vdi'
+	openstack_config.vm.customize ['createhd', '--filename', file_to_disk, '--size', 20 * 1024]
+    openstack_config.vm.customize ['storageattach', :id, '--storagectl', 'IDE Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
+	openstack_config.vm.network :hostonly, "192.168.50.4", :adapter => 2
+	openstack_config.vm.provision :shell, inline: $prepare_openstack
+  end
+
+  config.vm.define 'chef-server' do |chef_server|
+    chef_server.vm.host_name = 'chef-server'
+	chef_server.vm.customize ["modifyvm", :id, "--memory", 1024, "--cpus", "2", "--natdnshostresolver1", "on", "--natdnsproxy1", "on"]
+	chef_server.vm.forward_port 80, 80
+	chef_server.vm.forward_port 443, 443
+	chef_server.vm.network :hostonly, "192.168.50.5", :adapter => 2
+	chef_server.vm.provision :shell, inline: $prepare_chef
+  end
+  
+  
+end

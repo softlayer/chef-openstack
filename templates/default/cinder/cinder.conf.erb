@@ -1,0 +1,30 @@
+<%= node["admin"]["banner"] %>
+
+[DEFAULT]
+
+rootwrap_config = /etc/cinder/rootwrap.conf
+sql_connection = mysql://<%= node["cinder"]["db"]["username"] %>:<%= node["cinder"]["db"]["password"] %>@<%= node[:mysqlcinder][:private_ip] %>/<%= node["cinder"]["db"]["name"] %>
+api_paste_confg = /etc/cinder/api-paste.ini
+iscsi_helper = tgtadm
+volume_name_template = volume-%s
+verbose = <%= node[:admin][:debug] %>
+auth_strategy = <%= node["cinder"]["config"]["auth_strategy"] %>
+state_path = /var/lib/cinder
+lock_path = /var/lock/cinder
+volumes_dir = /var/lib/cinder/volumes
+
+rabbit_host=<%= node[:rabbitmq][:private_ip] %>
+rabbit_password=<%= node["cinder"]["config"]["rabbit_password"] %>
+volume_group = <%= node["cinder"]["config"]["volume_group"] %>
+
+
+[keystone_authtoken]
+service_protocol = http
+service_host = <%= node[:keystone][:public_ip] %>
+service_port = <%= node["keystone"]["config"]["public_port"] %>
+auth_host = <%= node[:keystone][:private_ip] %>
+auth_port = <%= node["keystone"]["config"]["admin_port"] %>
+auth_protocol = http
+admin_tenant_name = <%= node["cinder"]["service_tenant_name"] %>
+admin_user = <%= node["cinder"]["service_user"] %>
+admin_password = <%= node[:admin][:password] %>

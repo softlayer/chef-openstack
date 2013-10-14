@@ -1,0 +1,12 @@
+{
+	"name": "openstack-mysql-keystone",
+	"chef_type": "role",
+	"json_class": "Chef::Role",
+	
+	"run_list":[
+		"recipe[grizzly::set_attributes]",
+		"recipe[grizzly::set_cloudnetwork]",
+		"recipe[ntp]",
+		"recipe[grizzly::mysql-keystone]"
+		]
+}

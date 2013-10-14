@@ -1,0 +1,30 @@
+<%= node["admin"]["banner"] %>
+
+[DEFAULT]
+# Show debugging output in log (sets DEBUG log level output)
+# debug = True
+
+# The Neutron user information for accessing the Neutron API.
+auth_url = http://<%= node[:keystone][:private_ip] %>:<%= node["keystone"]["config"]["admin_port"] %>/v2.0
+auth_region = <%= node.chef_environment %>
+admin_tenant_name = <%= node["neutron"]["service_tenant_name"] %>
+admin_user = <%= node["neutron"]["service_user"] %>
+admin_password = <%= node[:admin][:password] %>
+
+# Network service endpoint type to pull from the keystone catalog
+# endpoint_type = adminURL
+
+# IP address used by Nova metadata server
+nova_metadata_ip = <%= node[:controller][:private_ip] %>
+
+# TCP Port used by Nova metadata server
+# nova_metadata_port = 8775
+
+# When proxying metadata requests, Neutron signs the Instance-ID header with a
+# shared secret to prevent spoofing.  You may select any string for a secret,
+# but it must match here and in the configuration used by the Nova Metadata
+# Server. NOTE: Nova uses a different key: neutron_metadata_proxy_shared_secret
+# metadata_proxy_shared_secret =
+
+# Location of Metadata Proxy UNIX domain socket
+# metadata_proxy_socket = $state_path/metadata_proxy

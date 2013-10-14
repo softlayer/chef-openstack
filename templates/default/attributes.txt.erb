@@ -1,0 +1,24 @@
+<%= node["admin"]["banner"] %>
+#For debug purposes.
+
+Public:
+	
+	Interface - <%= node[:node_info][:public_iface] %>
+	Address - <%= node[:node_info][:public_ip] %>
+	Subnet - <%= node[:node_info][:public_subnet] %>
+	CIDR - <%= node[:node_info][:public_cidr] %>
+	Route Via - <%= node[:node_info][:public_via] %>
+	Route Dest - <%= node[:node_info][:public_dest] %>
+	
+Private:
+
+	Interface - <%= node[:node_info][:private_iface] %>
+	Address - <%= node[:node_info][:private_ip] %>
+	Subnet - <%= node[:node_info][:private_subnet]  %>
+	CIDR - <%= node[:node_info][:private_cidr] %>
+	Route Via - <%= node[:node_info][:private_via] %>
+	Route Dest - <%= node[:node_info][:private_dest] %>
+	
+Gateway: <%= node[:node_info][:default_gateway] %>
+Is Bonded: <%= node[:node_info][:is_bonded] %>
+

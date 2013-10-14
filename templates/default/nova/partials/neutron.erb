@@ -1,0 +1,19 @@
+# Neutron #
+network_api_class=nova.network.neutronv2.api.API
+neutron_url=http://<%= node[:controller][:private_ip] %>:<%= node["neutron"]["config"]["bind_port"] %>
+neutron_auth_strategy=keystone
+neutron_admin_tenant_name=service
+neutron_admin_username=neutron
+neutron_admin_password=<%= node[:admin][:password] %>
+neutron_admin_auth_url=http://<%= node[:keystone][:private_ip] %>:<%= node["keystone"]["config"]["admin_port"] %>/v2.0
+libvirt_vif_driver=nova.virt.libvirt.vif.LibvirtHybridOVSBridgeDriver
+linuxnet_interface_driver=nova.network.linux_net.LinuxOVSInterfaceDriver
+service_neutron_metadata_proxy=True
+
+# Security Groups
+firewall_driver=nova.virt.firewall.NoopFirewallDriver
+security_group_api=neutron
+
+dhcpbridge_flagfile=/etc/nova/nova.conf
+dhcpbridge=/usr/bin/nova-dhcpbridge
+force_dhcp_release=True

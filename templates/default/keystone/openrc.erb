@@ -1,0 +1,7 @@
+export OS_AUTH_URL=http://<%= node[:keystone][:private_ip] %>:<%= node["keystone"]["config"]["public_port"] %>/v2.0
+export OS_NO_CACHE=1
+export OS_TENANT_NAME=admin
+export OS_USERNAME=admin
+export OS_PASSWORD=<%= node[:admin][:password] %>
+export SERVICE_ENDPOINT="http://<%= node[:keystone][:private_ip] %>:<%= node["keystone"]["config"]["admin_port"] %>/v2.0"
+export SERVICE_TOKEN=<%= node[:admin][:password] %>

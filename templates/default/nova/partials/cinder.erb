@@ -1,0 +1,7 @@
+# Cinder Block Storage #
+volume_api_class=nova.volume.cinder.API
+volume_driver=nova.volume.driver.ISCSIDriver
+iscsi_helper = tgtadm
+iscsi_ip_address = <%= node[:cinder][:public_ip] %>
+volume_name_template = volume-%s
+volume_group = <%= node["nova"]["config"]["cinder_volume_group"] %>

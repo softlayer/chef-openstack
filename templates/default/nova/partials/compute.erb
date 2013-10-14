@@ -1,0 +1,56 @@
+nova_url=http://<%= node[:controller][:public_ip] %>:8774/v1.1/
+cc_host=<%= node[:controller][:public_ip] %>
+
+# Rabbitmq #
+rabbit_host=<%= node[:rabbitmq][:private_ip] %>
+rabbit_password=guest
+
+# Scheduling #
+scheduler_driver=nova.scheduler.filter_scheduler.FilterScheduler
+
+# wsgi #
+api_paste_config=/etc/nova/api-paste.ini
+
+# authentication #
+auth_strategy=keystone
+
+# Nova API #
+enabled_apis=metadata,ec2,osapi_compute
+allow_admin_api=true
+osapi_compute_workers=<%= node["nova"]["config"]["osapi_compute_workers"] %>
+
+# metadata #
+metadata_workers=<%= node["nova"]["config"]["metadata_workers"] %>
+metadata_host=<%= node[:controller][:public_ip] %>
+metadata_listen=0.0.0.0
+#metadata_proxy_shared_secret=<%= node["neutron"]["metadata_agent"]["metadata_proxy_shared_secret"] %>
+
+# vpn #
+dmz_cidr=169.254.169.254/32
+
+# ec2 #
+keystone_ec2_url=http://<%= node[:keystone][:private_ip] %>:<%= node["keystone"]["config"]["public_port"] %>/v2.0/ec2tokens
+ec2_host=<%= node[:controller][:public_ip] %>
+ec2_url=http://<%= node[:controller][:public_ip] %>:8773/services/Cloud
+ec2_private_dns_show_ip=True
+ec2_dmz_host=<%= node[:controller][:public_ip] %>
+ec2_workers=<%= node["nova"]["config"]["ec2_workers"] %>
+
+# s3 #
+s3_host=<%= node[:controller][:public_ip] %>
+
+# hyperv #
+libvirt_use_virtio_for_bridges=True
+libvirt_inject_password=True
+libvirt_inject_partition=1
+connection_type=libvirt
+
+# Nova Compute #
+running_deleted_instance_action=<%= node["nova"]["config"]["running_deleted_instance_action"] %>
+force_config_drive=<%= node["nova"]["config"]["force_config_drive"] %>
+cpu_allocation_ratio=<%= node["nova"]["config"]["cpu_allocation_ratio"] %>
+ram_allocation_ratio=<%= node["nova"]["config"]["ram_allocation_ratio"] %>
+disk_allocation_ratio=<%= node["nova"]["config"]["disk_allocation_ratio"] %>
+
+# Nova Conductor #
+workers=<%= node["nova"]["config"]["conductor_workers"] %>
