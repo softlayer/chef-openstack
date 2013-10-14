@@ -4,9 +4,9 @@
 	"json_class": "Chef::Role",
 	
 	"run_list":[
-		"recipe[grizzly::set_attributes]",
-		"recipe[grizzly::set_cloudnetwork]",
+		"recipe[chef-openstack::set_attributes]",
+		"recipe[chef-openstack::set_cloudnetwork]",
 		"recipe[ntp]",
-		"recipe[grizzly::mysql-glance]"
+		"recipe[chef-openstack::mysql-glance]"
 		]
 }

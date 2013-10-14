@@ -4,13 +4,13 @@
 	"json_class": "Chef::Role",
 
 	"run_list":[
-		"recipe[grizzly::set_attributes]",
-		"recipe[grizzly::set_cloudnetwork]",
-		"recipe[grizzly::ip_forwarding]",
+		"recipe[chef-openstack::set_attributes]",
+		"recipe[chef-openstack::set_cloudnetwork]",
+		"recipe[chef-openstack::ip_forwarding]",
 		"recipe[ntp]",
-		"recipe[grizzly::repositories]",
-		"recipe[grizzly::libvirt]",
-		"recipe[grizzly::nova-compute]",
-		"recipe[grizzly::neutron-compute]"
+		"recipe[chef-openstack::repositories]",
+		"recipe[chef-openstack::libvirt]",
+		"recipe[chef-openstack::nova-compute]",
+		"recipe[chef-openstack::neutron-compute]"
 		]
 }

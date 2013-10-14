@@ -1,4 +1,4 @@
-include_recipe "grizzly::neutron-common"
+include_recipe "chef-openstack::neutron-common"
 
 bash "grant privilegies" do
 	not_if "grep neutron /etc/sudoers"

@@ -4,13 +4,13 @@
 	"json_class": "Chef::Role",
 
 	"run_list":[
-		"recipe[grizzly::set_attributes]",
-		"recipe[grizzly::set_cloudnetwork]",
+		"recipe[chef-openstack::set_attributes]",
+		"recipe[chef-openstack::set_cloudnetwork]",
 		"recipe[ntp]",
-		"recipe[grizzly::mysql-cinder]",
-		"recipe[grizzly::mysql-glance]",
-		"recipe[grizzly::mysql-keystone]",
-		"recipe[grizzly::mysql-nova]",
-		"recipe[grizzly::mysql-neutron]"
+		"recipe[chef-openstack::mysql-cinder]",
+		"recipe[chef-openstack::mysql-glance]",
+		"recipe[chef-openstack::mysql-keystone]",
+		"recipe[chef-openstack::mysql-nova]",
+		"recipe[chef-openstack::mysql-neutron]"
 		]
 }
