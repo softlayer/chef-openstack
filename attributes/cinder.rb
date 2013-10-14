@@ -9,8 +9,7 @@ default["cinder"]["config"]["rabbit_password"] = "guest"
 default["cinder"]["config"]["auth_strategy"] = "keystone"
 default["cinder"]["config"]["volume_group"] = "cinder-volumes"
 
-if node["virtualization"]["role"] == "guest"
-	#Softlayer virtual server instances use this naming convention.
+if File.exist?('/sys/hypervisor/type')
 	default["cinder"]["config"]["lvm_disk"] = "/dev/xvdc"
 else
 	default["cinder"]["config"]["lvm_disk"] = "/dev/sdb"

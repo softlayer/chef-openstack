@@ -34,31 +34,19 @@ default["glance"]["config"]["bind_port"]["registry"] = "9191"
 default["glance"]["config"]["log_file"]["registry"] = "/var/log/glance/registry.log"
 
 
+default["glance"]["glance_repo_base_url"] = "http://dal05.objectstorage.softlayer.net/v1/AUTH_8b7ca792-fc78-4edf-af60-1825794544bf/openstack/images"
+
 default["glance"]["images"] = {
-	"CirrOS 0.3.0 i386" => "https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-i386-disk.img",
-	"CirrOS 0.3.0 x86_64" => "https://launchpad.net/cirros/trunk/0.3.0/+download/cirros-0.3.0-x86_64-disk.img",
-	"Fedora 19 (Cloud) i386" => "http://download.fedoraproject.org/pub/fedora/linux/releases/19/Images/x86_64/Fedora-x86_64-19-20130627-sda.qcow2",
-	"Fedora 19 (Cloud) x86_64" => "http://download.fedoraproject.org/pub/fedora/linux/releases/19/Images/i386/Fedora-i386-19-20130627-sda.qcow2",
-	"Ubuntu 12.04 Server (Cloud) amd64" => "http://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-amd64-disk1.img",
-	"Ubuntu 12.04 Server (Cloud) i386" => "http://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-i386-disk1.img",
-	"Ubuntu 12.10 Server (Cloud) amd64" => "http://cloud-images.ubuntu.com/quantal/current/quantal-server-cloudimg-amd64-disk1.img",
-	"Ubuntu 12.10 Server (Cloud) i386" => "http://cloud-images.ubuntu.com/quantal/current/quantal-server-cloudimg-i386-disk1.img",
-	"Ubuntu 13.04 Server (Cloud) amd64" => "http://cloud-images.ubuntu.com/raring/current/raring-server-cloudimg-amd64-disk1.img",
-	"Ubuntu 13.04 Server (Cloud) i386" => "http://cloud-images.ubuntu.com/raring/current/raring-server-cloudimg-i386-disk1.img"
+	"CirrOS 0.3.0 i386" => "cirros-0.3.0-i386-disk.img",
+	"CirrOS 0.3.0 x86_64" => "cirros-0.3.0-x86_64-disk.img",
+	"Fedora 18 (Cloud) i386" => "Fedora18-Cloud-i386-latest.qcow2",
+	"Fedora 18 (Cloud) x86_64" => "Fedora18-Cloud-x86_64-latest.qcow2",
+	"Fedora 19 (Cloud) i386" => "Fedora-i386-19-20130627-sda.qcow2",
+	"Fedora 19 (Cloud) x86_64" => "Fedora-x86_64-19-20130627-sda.qcow2",
+	"Ubuntu 12.04 Server (Cloud) amd64" => "ubuntu-12.04-server-cloudimg-amd64-disk1.img",
+	"Ubuntu 12.04 Server (Cloud) i386" => "ubuntu-12.04-server-cloudimg-i386-disk1.img",
+	"Ubuntu 12.10 Server (Cloud) amd64" => "ubuntu-12.10-server-cloudimg-amd64-disk1.img",
+	"Ubuntu 12.10 Server (Cloud) i386" => "ubuntu-12.10-server-cloudimg-i386-disk1.img",
+	"Ubuntu 13.04 Server (Cloud) amd64" => "ubuntu-13.04-server-cloudimg-amd64-disk1.img",
+	"Ubuntu 13.04 Server (Cloud) i386" => "ubuntu-13.04-server-cloudimg-i386-disk1.img"
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

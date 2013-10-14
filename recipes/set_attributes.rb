@@ -52,7 +52,7 @@ if network['br-priv_ip'].nil?
 	node.default[:node_info][:private_dest] = network["#{node["network"]["private_interface"]}_dest"]
 else
 	node.default[:node_info][:private_ip] = network['br-priv_ip']
-	node.default[:node_info][:private_iface] = node["network"]["private_interface"]  #neutron information is dependant on pre-bridge info
+	node.default[:node_info][:private_iface] = node["network"]["private_interface"]  #quantum information is dependant on pre-bridge info
 	node.default[:node_info][:private_subnet] = network['br-priv_subnet']
 	node.default[:node_info][:private_cidr] = network['br-priv_cidr']
 	node.default[:node_info][:private_via] = network['br-priv_via']
@@ -68,7 +68,7 @@ if network['br-ex_ip'].nil?
 	node.default[:node_info][:public_dest] = network["#{node["network"]["public_interface"]}_dest"]
 else
 	node.default[:node_info][:public_ip] = network['br-ex_ip']
-	node.default[:node_info][:public_iface] = node["network"]["public_interface"]  #neutron information is dependant on pre-bridge info
+	node.default[:node_info][:public_iface] = node["network"]["public_interface"]  #quantum information is dependant on pre-bridge info
 	node.default[:node_info][:public_subnet] = network['br-ex_subnet']
 	node.default[:node_info][:public_cidr] = network['br-ex_cidr']
 	node.default[:node_info][:public_via] = network['br-ex_via']

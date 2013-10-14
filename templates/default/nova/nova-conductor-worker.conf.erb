@@ -1,0 +1,6 @@
+instance $N
+
+script
+    INSTANCE_NAME="nova-cond-$N"
+    start-stop-daemon --start --chuid nova --name "$INSTANCE_NAME" --exec /usr/bin/nova-conductor -- --config-file=/etc/nova/nova.conf
+end script

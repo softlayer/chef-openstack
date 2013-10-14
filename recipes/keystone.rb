@@ -4,11 +4,6 @@
 	end
 end
 
-service "keystone" do
-	provider Chef::Provider::Service::Upstart
-	action :nothing
-end
-
 execute "keystone-manage db_sync" do
   user "keystone"
   group "keystone"
@@ -23,27 +18,11 @@ directory "/etc/keystone" do
 	action :create
 end
 
-template "/etc/memcached.conf" do
-	source "memcached/memcached.conf.erb"
-	owner "root"
-	group "root"
-	mode 00644
-end
-
-template "/etc/keystone/keystone-paste.ini" do
-	source "keystone/keystone-paste.ini.erb"
-	owner "root"
-	group "root"
-	mode "0644"
-	notifies :restart, resources(:service => "keystone")
-end
-
 template "/etc/keystone/keystone.conf" do
 	source "keystone/keystone.conf.erb"
 	owner "root"
 	group "root"
 	mode "0644"
-	notifies :restart, resources(:service => "keystone"), :immediately
 	notifies :run, resources(:execute => "keystone-manage db_sync"), :immediately
 end
 
@@ -53,6 +32,15 @@ template "/root/.openrc" do
 	group "root"
 	mode "0600"
 end
+
+template "/etc/memcached.conf" do
+	source "memcached/memcached.conf.erb"
+	owner "root"
+	group "root"
+	mode 00644
+end
+
+
 
 #=================================================
 #BEGIN Keystone HTTP setup 
@@ -95,18 +83,6 @@ template "/usr/share/keystone/wsgi/admin" do
 	mode 00644
 end
 
-directory "/var/log/keystone" do
-	group "www-data"
-	mode "0777"
-	action :create
-end
-
-file "/var/log/keystone/keystone.log" do
-	group "www-data"
-	mode "0666"
-	action :create
-end
-
 #ubuntu
 directory "/etc/apache2/conf.d/" do
 	owner "root"
@@ -129,3 +105,5 @@ end
 
 
 include_recipe "grizzly::keystone-setup"
+
+puts node["keystone"]["region_servers"]

@@ -1,0 +1,17 @@
+{
+
+	"name": "grizzly-allinone",
+	"chef_type": "role",
+	"json_class": "Chef::Role",
+
+	"run_list":[
+		"role[grizzly-mysql-all]",
+		"role[grizzly-rabbitmq]",
+		"role[grizzly-keystone]",
+		"role[grizzly-controller]",
+		"role[grizzly-glance]",
+		"role[grizzly-cinder]",
+		"role[grizzly-network]",
+		"role[grizzly-compute]"
+		]
+}

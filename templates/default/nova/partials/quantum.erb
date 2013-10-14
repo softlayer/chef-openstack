@@ -1,0 +1,15 @@
+# Quantum Networking #
+network_api_class=nova.network.quantumv2.api.API
+quantum_url=http://<%= node[:controller][:private_ip] %>:<%= node["quantum"]["config"]["bind_port"] %>
+quantum_auth_strategy=keystone
+quantum_admin_tenant_name=service
+quantum_admin_username=quantum
+quantum_admin_password=<%= node[:admin][:password] %>
+quantum_admin_auth_url=http://<%= node[:keystone][:private_ip] %>:<%= node["keystone"]["config"]["admin_port"] %>/v2.0
+libvirt_vif_driver=nova.virt.libvirt.vif.LibvirtHybridOVSBridgeDriver
+linuxnet_interface_driver=nova.network.linux_net.LinuxOVSInterfaceDriver
+firewall_driver=nova.virt.firewall.NoopFirewallDriver
+security_group_api=quantum
+dhcpbridge_flagfile=/etc/nova/nova.conf
+dhcpbridge=/usr/bin/nova-dhcpbridge
+force_dhcp_release=True

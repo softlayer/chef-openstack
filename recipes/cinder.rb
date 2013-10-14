@@ -57,11 +57,9 @@ template "/etc/cinder/cinder.conf" do
 end
 
 unless File.exists?( node["cinder"]["config"]["lvm_disk"] )
-	raise "Can't find disk for cinder volume: #{node["cinder"]["config"]["lvm_disk"]}"
+	raise "Can't find disk for cinder volume"
 end
 	
-
-#This code will wipe your cinder volume.   Don't change your volume name once you have provisioned cinder.   You have been warned!
 bash "Create #{node["cinder"]["config"]["volume_group"]} lvm partition" do
 	user "root"
 	not_if "vgdisplay | grep #{node["cinder"]["config"]["volume_group"]}"

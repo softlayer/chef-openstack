@@ -97,12 +97,12 @@ grizzly_keystone "Create endpoint for ec2" do
 	service_type "ec2"
 end
 
-grizzly_keystone "Create endpoint for neutron" do
+grizzly_keystone "Create endpoint for quantum" do
 	action :create_endpoint
 	region node.chef_environment
 	keystone_service_pass node[:admin][:password]
 	internal_url "http://#{node[:controller][:private_ip]}:9696/"
 	public_url "http://#{node[:controller][:private_ip]}:9696/"
 	admin_url "http://#{node[:controller][:private_ip]}:9696/"		
-	service_type "neutron"
+	service_type "quantum"
 end

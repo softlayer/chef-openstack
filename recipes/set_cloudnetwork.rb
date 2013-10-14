@@ -8,13 +8,13 @@ if node.chef_environment.index("default")
 	raise "Not in a working environment"
 end
 
-#If the mysql-all recipe is used, we need to set the mysql hash values to "openstack-mysql-all"
-use_mysql_all = search(:node, "role:openstack-mysql-all AND chef_environment:#{node.chef_environment}")
+#If the mysql-all recipe is used, we need to set the mysql hash values to "grizzly-mysql-all"
+use_mysql_all = search(:node, "role:grizzly-mysql-all AND chef_environment:#{node.chef_environment}")
 
 unless use_mysql_all.empty?
 	node["admin"]["cloud_network"]["roles"].each_pair do |var, role|
 		if /mysql/.match(var)
-			node.default["admin"]["cloud_network"]["roles"][var] = "openstack-mysql-all"
+			node.default["admin"]["cloud_network"]["roles"][var] = "grizzly-mysql-all"
 		end
 	end
 end

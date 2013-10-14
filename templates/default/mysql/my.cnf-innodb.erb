@@ -1,0 +1,64 @@
+# Basic tuning for MySQL 5.5 Community Edition
+ 
+[client]
+port   = 3306
+socket = /var/run/mysqld/mysqld.sock
+ 
+[mysqld]
+bind-address = 0.0.0.0
+port         = 3306
+user         = mysql
+pid-file     = /var/run/mysqld/mysqld.pid
+socket       = /var/run/mysqld/mysqld.sock
+basedir      = /usr
+tmpdir       = /tmp
+datadir      = /mnt/data/
+
+# MariaDB provides a better thread implementation. Thread pooling
+# is only available in Enterprise MySQL editions. This is terrible,
+# leaving the process to be overrun by poorly written app code.
+max_connections = 200
+thread_handling = one-thread-per-connection
+ 
+# Host has 8GB of memory. Allocating 6 buffer pools of 1GB each
+# greatly reduces lock contention. Semi-soft, as additional memory
+# will be allocated for internal buffers.
+
+#80% of system memory divided into 1G chucks
+innodb_buffer_pool_instances = 10
+innodb_buffer_pool_size      = 10G
+
+
+ 
+# Thread concurrency is a soft value. It is generally best to set
+# it to the total the total number of processor cores and disks
+# combined.
+
+#optimized value from sysbench
+innodb_thread_concurrency    = 128
+
+#At high thread count, we need additional innodb logs
+innodb_log_files_in_group    = 10
+innodb_log_file_size         = 10M
+
+# Determine how many io threads your drives can handle by using
+# sysbench. In the case of 3 RAID-0 15k SAS drives, ~24 io threads
+# is where we start losing out to latency.
+
+#how to split the threads
+innodb_read_io_threads       = 96
+innodb_write_io_threads      = 32
+ 
+# Think of io capacity as "background burst capacity". You should
+# only periodically see this level. This value also determined by
+# sysbench.
+
+#sysbench capacity of the drive configuration
+innodb_io_capacity           = 1800
+ 
+# Dedicated purge thread
+innodb_purge_threads         = 1
+innodb_purge_batch_size      = 100
+ 
+ 
+log_error = /var/log/mysql/error.log

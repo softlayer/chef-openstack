@@ -1,5 +1,3 @@
-<%= node["admin"]["banner"] %>
-
 # Defaults for libvirt-bin initscript (/etc/init.d/libvirt-bin)
 # This is a POSIX shell fragment
 

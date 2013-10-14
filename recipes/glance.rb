@@ -27,6 +27,7 @@ template "/etc/glance/glance-registry.conf" do
 	owner "glance"
 	group "glance"
 	mode "0644"
+	notifies :run, resources(:bash => "synchronize glance database"), :immediately
 	notifies :restart, resources(:service => "glance-registry"), :immediately
 end
 
@@ -37,20 +38,6 @@ template "/etc/glance/glance-api.conf" do
 	mode "0644"
 	notifies :run, resources(:bash => "synchronize glance database"), :immediately
 	notifies :restart, resources(:service => "glance-api"), :immediately
-end
-
-template "/etc/glance/glance-cache.conf" do
-	source "glance/glance-cache.conf.erb"
-	owner "glance"
-	group "glance"
-	mode "0644"
-end
-
-template "/etc/glance/glance-scrubber.conf" do
-	source "glance/glance-scrubber.conf.erb"
-	owner "glance"
-	group "glance"
-	mode "0644"
 end
 
 template "/root/.openrc" do
@@ -65,7 +52,7 @@ end
 node["glance"]["images"].each do | name, image |
 
 	execute "Queue \"#{name}\" to glance." do
-		command "glance image-create --is-public true --disk-format qcow2 --container-format bare --name \"#{name}\" --copy-from #{image}"
+		command "glance image-create --is-public true --disk-format qcow2 --container-format bare --name \"#{name}\" --copy-from #{node["glance"]["glance_repo_base_url"]}/#{image}"
 		environment "OS_USERNAME" => "admin",
 					"OS_PASSWORD" => node[:admin][:password],
 					"OS_TENANT_NAME" => "admin",

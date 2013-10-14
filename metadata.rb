@@ -1,11 +1,11 @@
-name             'chef-openstack'
+name             'openstack-grizzly'
 maintainer       'Softlayer'
 maintainer_email 'psroufe@softlayer.com'
 license          'All rights reserved'
 description      'Installs/Configures openstack-grizzly'
 supports 		 'ubuntu', '= 12.04'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.3.2'
+version          '0.2.0'
 depends			 'partial_search'
 depends 		 'mysql'
 depends			 'ntp'

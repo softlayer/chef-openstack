@@ -1,5 +1,3 @@
-<%= node["admin"]["banner"] %>
-
 [DEFAULT]
 # Show more verbose log output (sets INFO log level output)
 verbose = <%= node["glance"]["config"]["verbose"] %>
@@ -11,7 +9,7 @@ debug = <%= node["glance"]["config"]["debug"] %>
 # in a request to add a new image to Glance? Known schemes are determined
 # by the known_stores option below.
 # Default: 'file'
-default_store = file
+#default_store = swift
 
 # List of which store classes and store class locations are
 # currently known to glance at startup.
@@ -20,8 +18,6 @@ default_store = file
 #               glance.store.rbd.Store,
 #               glance.store.s3.Store,
 #               glance.store.swift.Store,
-#               glance.store.sheepdog.Store,
-#               glance.store.cinder.Store,
 
 
 # Maximum image size (in bytes) that may be uploaded through the
@@ -47,14 +43,11 @@ backlog = 4096
 # Not supported on OS X.
 #tcp_keepidle = 600
 
-# API to use for accessing data. Default value points to sqlalchemy
-# package, it is also possible to use: glance.db.registry.api
-# data_api = glance.db.sqlalchemy.api
-
 # SQLAlchemy connection string for the reference implementation
 # registry server. Any valid SQLAlchemy connection string is fine.
 # See: http://www.sqlalchemy.org/docs/05/reference/sqlalchemy/connections.html#sqlalchemy.create_engine
-sql_connection = mysql://<%= node["glance"]["db"]["username"] %>:<%= node["glance"]["db"]["password"] %>@<%= node[:mysqlglance][:private_ip] %>/<%= node["glance"]["db"]["name"] %>
+#sql_connection = sqlite:////var/lib/glance/glance.sqlite
+connection = mysql://<%= node["glance"]["db"]["username"] %>:<%= node["glance"]["db"]["password"] %>@<%= node[:mysqlglance][:private_ip] %>/<%= node["glance"]["db"]["name"] %>
 
 # Period in seconds after which SQLAlchemy should reestablish its connection
 # to the database.
@@ -169,36 +162,35 @@ registry_client_protocol = http
 # message queue), or noop (no notifications sent, the default)
 notifier_strategy = <%= node["glance"]["config"]["notifier_strategy"] %>
 
-# Configuration options if sending notifications via rabbitmq (these are
-# the defaults)
+# Configuration options if sending notifications via rabbitmq (these are the defaults)
 rabbit_host = <%= node[:rabbitmq][:private_ip] %>
 rabbit_port = <%= node["glance"]["config"]["rabbit_port"] %>
 rabbit_use_ssl = <%= node["glance"]["config"]["rabbit_use_ssl"] %>
 rabbit_userid = <%= node["glance"]["config"]["rabbit_userid"] %>
 rabbit_password = <%= node["glance"]["config"]["rabbit_password"] %>
-rabbit_virtual_host = /
+#rabbit_virtual_host = 
 rabbit_notification_exchange = <%= node["glance"]["config"]["rabbit_notification_exchange"] %>
 rabbit_notification_topic = <%= node["glance"]["config"]["rabbit_notification_topic"] %>
 rabbit_durable_queues = <%= node["glance"]["config"]["rabbit_durable_queues"] %>
 
 # Configuration options if sending notifications via Qpid (these are
 # the defaults)
-# qpid_notification_exchange = glance
-# qpid_notification_topic = notifications
-# qpid_host = localhost
-# qpid_port = 5672
-# qpid_username =
-# qpid_password =
-# qpid_sasl_mechanisms =
-# qpid_reconnect_timeout = 0
-# qpid_reconnect_limit = 0
-# qpid_reconnect_interval_min = 0
-# qpid_reconnect_interval_max = 0
-# qpid_reconnect_interval = 0
-# qpid_heartbeat = 5
+#qpid_notification_exchange = glance
+#qpid_notification_topic = notifications
+#qpid_host = localhost
+#qpid_port = 5672
+#qpid_username =
+#qpid_password =
+#qpid_sasl_mechanisms =
+#qpid_reconnect_timeout = 0
+#qpid_reconnect_limit = 0
+#qpid_reconnect_interval_min = 0
+#qpid_reconnect_interval_max = 0
+#qpid_reconnect_interval = 0
+#qpid_heartbeat = 5
 # Set to 'ssl' to enable SSL
-# qpid_protocol = tcp
-# qpid_tcp_nodelay = True
+#qpid_protocol = tcp
+#qpid_tcp_nodelay = True
 
 # ============ Filesystem Store Options ========================
 
@@ -210,30 +202,30 @@ filesystem_store_datadir = <%= node["glance"]["config"]["filesystem_store_datadi
 
 # Version of the authentication service to use
 # Valid versions are '2' for keystone and '1' for swauth and rackspace
-swift_store_auth_version = 2
+#swift_store_auth_version = 2
 
 # Address where the Swift authentication service lives
 # Valid schemes are 'http://' and 'https://'
 # If no scheme specified,  default to 'https://'
 # For swauth, use something like '127.0.0.1:8080/v1.0/'
-#swift_store_auth_address = 127.0.0.1:5000/v2.0/
+#swift_store_auth_address = http://127.0.0.1:5000/v2.0/
 
 # User to authenticate against the Swift authentication service
 # If you use Swift authentication service, set it to 'account':'user'
 # where 'account' is a Swift storage account and 'user'
 # is a user in that account
-#swift_store_user = jdoe:jdoe
+#swift_store_user = admin:admin
 
 # Auth key for the user authenticating against the
 # Swift authentication service
-#swift_store_key = a86850deb2742ec3cb41518e26aa2d89
+#swift_store_key = <%= node[:admin][:password] %>
 
 # Container within the account that the account should use
 # for storing images in Swift
 #swift_store_container = glance
 
 # Do we create the container if it does not exist?
-#swift_store_create_container_on_put = False
+#swift_store_create_container_on_put = True
 
 # What size, in MB, should Glance start chunking image files
 # and do a large object manifest in Swift? By default, this is
@@ -319,7 +311,7 @@ swift_store_auth_version = 2
 #rbd_store_ceph_conf = /etc/ceph/ceph.conf
 
 # RADOS user to authenticate as (only applicable if using cephx)
-#rbd_store_user = glance
+#rbd_store_user = images
 
 # RADOS pool in which images are stored
 #rbd_store_pool = images
@@ -327,40 +319,6 @@ swift_store_auth_version = 2
 # Images will be chunked into objects of this size (in megabytes).
 # For best performance, this should be a power of two
 #rbd_store_chunk_size = 8
-
-# ============ Sheepdog Store Options =============================
-
-#sheepdog_store_address = localhost
-
-#sheepdog_store_port = 7000
-
-# Images will be chunked into objects of this size (in megabytes).
-# For best performance, this should be a power of two
-#sheepdog_store_chunk_size = 64
-
-# ============ Cinder Store Options ===============================
-
-# Info to match when looking for cinder in the service catalog
-# Format is : separated values of the form:
-# <service_type>:<service_name>:<endpoint_type> (string value)
-#cinder_catalog_info = volume:cinder:publicURL
-
-# Override service catalog lookup with template for cinder endpoint
-# e.g. http://localhost:8776/v1/%(project_id)s (string value)
-#cinder_endpoint_template = <None>
-
-# Region name of this node (string value)
-#os_region_name = <None>
-
-# Location of ca certicates file to use for cinder client requests
-# (string value)
-#cinder_ca_certificates_file = <None>
-
-# Number of cinderclient retries on failed http calls (integer value)
-#cinder_http_retries = 3
-
-# Allow to perform insecure SSL requests to cinder (boolean value)
-#cinder_api_insecure = False
 
 # ============ Delayed Delete Options =============================
 
@@ -395,5 +353,4 @@ admin_password = <%= node[:admin][:password] %>
 # service name removed. For example, if your paste section name is
 # [pipeline:glance-api-keystone], you would configure the flavor below
 # as 'keystone'.
-#flavor=
 flavor=<%= node["glance"]["config"]["flavor"] %>

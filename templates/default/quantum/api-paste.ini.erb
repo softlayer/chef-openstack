@@ -1,0 +1,31 @@
+[composite:quantum]
+use = egg:Paste#urlmap
+/: quantumversions
+/v2.0: quantumapi_v2_0
+
+[composite:quantumapi_v2_0]
+use = call:quantum.auth:pipeline_factory
+noauth = extensions quantumapiapp_v2_0
+keystone = authtoken keystonecontext extensions quantumapiapp_v2_0
+
+[filter:keystonecontext]
+paste.filter_factory = quantum.auth:QuantumKeystoneContext.factory
+
+[filter:authtoken]
+paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory
+auth_host = <%= node[:keystone][:private_ip] %>
+auth_port = <%= node["keystone"]["config"]["admin_port"] %>
+auth_protocol = http
+admin_tenant_name = <%= node["quantum"]["service_tenant_name"] %>
+admin_user = <%= node["quantum"]["service_user"] %>
+admin_password = <%= node[:admin][:password] %>
+
+
+[filter:extensions]
+paste.filter_factory = quantum.api.extensions:plugin_aware_extension_middleware_factory
+
+[app:quantumversions]
+paste.app_factory = quantum.api.versions:Versions.factory
+
+[app:quantumapiapp_v2_0]
+paste.app_factory = quantum.api.v2.router:APIRouter.factory

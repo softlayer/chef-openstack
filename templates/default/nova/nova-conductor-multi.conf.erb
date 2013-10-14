@@ -1,0 +1,31 @@
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+chdir /var/run
+
+env CONDUCTOR_WORKERS=<%= node["nova"]["config"]["conductor_workers"] %>
+
+
+pre-start script
+    mkdir -p /var/run/nova
+    chown nova:root /var/run/nova/
+
+    mkdir -p /var/lock/nova
+    chown nova:root /var/lock/nova/
+
+
+    for id in $(seq 1 $CONDUCTOR_WORKERS)
+    do
+        start nova-conductor-worker N=$id
+    done
+
+end script
+
+
+post-stop script
+    worker_ids=$(initctl list | grep '^nova-conductor-worker ' | awk '{print $2}' | tr -d ')' | tr -d '(')
+    for id in $worker_ids
+    do
+        stop nova-conductor-worker N=$id
+    done
+end script

@@ -1,0 +1,8 @@
+[DEFAULT]
+debug = <%= node["quantum"]["config"]["debug"] %>
+ovs_use_veth = <%= node["quantum"]["dhcp_agent"]["ovs_use_veth"] %>
+enable_isolated_metadata = <%= node["quantum"]["dhcp_agent"]["enable_isolated_metadata"] %>
+use_namespaces = <%= node["quantum"]["dhcp_agent"]["use_namespaces"] %>
+enable_metadata_network = <%= node["quantum"]["dhcp_agent"]["enable_metadata_network"] %>
+interface_driver = quantum.agent.linux.interface.OVSInterfaceDriver
+root_helper = <%= node["quantum"]["config"]["root_helper"] %>

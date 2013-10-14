@@ -55,3 +55,27 @@ template "/etc/nova/nova.conf" do
 	notifies :restart, resources(:service => "nova-novncproxy"), :immediately
 	notifies :restart, resources(:service => "nova-consoleauth"), :immediately
 end
+
+
+#Multiworker conductor configuration
+template "Nova conductor upstart" do
+	path "/etc/init/nova-conductor-multi.conf"
+	source "nova/nova-conductor-multi.conf.erb"
+	owner "root"
+	group "root"
+	mode 00644
+end
+
+template "Nova conductor upstart worker" do
+	path "/etc/init/nova-conductor-worker.conf"
+	source "nova/nova-conductor-worker.conf.erb"
+	owner "root"
+	group "root"
+	mode 00644
+end
+
+service "nova-conductor-multi" do
+	supports :status => true, :restart => true, :reload => true
+	action [ :enable, :start ]
+	provider Chef::Provider::Service::Upstart
+end

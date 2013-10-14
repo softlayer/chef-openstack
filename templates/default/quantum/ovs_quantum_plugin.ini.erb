@@ -1,0 +1,20 @@
+[DATABASE]
+sql_connection = mysql://<%= node["quantum"]["db"]["name"] %>:<%= node["quantum"]["db"]["password"] %>@<%= node[:mysqlquantum][:private_ip] %>:3306/<%= node["quantum"]["db"]["username"]  %>
+reconnect_interval = 2
+
+[AGENT]
+polling_interval = 2
+root_helper = <%= node["quantum"]["config"]["root_helper"] %>
+
+[SECURITYGROUP]
+firewall_driver = quantum.agent.linux.iptables_firewall.OVSHybridIptablesFirewallDriver
+
+[OVS]
+enable_tunneling = <%= node["quantum"]["ovs_plugin"]["enable_tunneling"] %>
+tenant_network_type = <%= node["quantum"]["ovs_plugin"]["tenant_network_type"] %>
+network_vlan_ranges = slpublic1,slprivate1
+bridge_mappings = slpublic1:br-ex,slprivate1:br-priv
+tunnel_id_ranges = <%= node["quantum"]["ovs_plugin"]["tunnel_id_ranges"] %>
+integration_bridge = br-int
+tunnel_bridge = br-tun
+local_ip = <%= node[:node_info][:private_ip] %>

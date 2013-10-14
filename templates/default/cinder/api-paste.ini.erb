@@ -1,5 +1,3 @@
-<%= node["admin"]["banner"] %>
-
 #############
 # OpenStack #
 #############
@@ -52,4 +50,13 @@ paste.filter_factory = cinder.api.middleware.auth:CinderKeystoneContext.factory
 
 [filter:authtoken]
 paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory
-#signing_dir = /var/lib/cinder
+service_protocol = http
+service_host = <%= node[:keystone][:public_ip] %>
+service_port = <%= node["keystone"]["config"]["public_port"] %>
+auth_host = <%= node[:keystone][:private_ip] %>
+auth_port = <%= node["keystone"]["config"]["admin_port"] %>
+auth_protocol = http
+admin_tenant_name = <%= node["cinder"]["service_tenant_name"] %>
+admin_user = <%= node["cinder"]["service_user"] %>
+admin_password = <%= node[:admin][:password] %>
+signing_dir = /var/lib/cinder
