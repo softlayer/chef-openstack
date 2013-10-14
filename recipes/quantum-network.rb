@@ -4,7 +4,7 @@
 	end
 end
 
-include_recipe "grizzly::quantum-common"
+include_recipe "chef-openstack::quantum-common"
 
 bash "grant privilegies" do
 	not_if "grep quantum /etc/sudoers"

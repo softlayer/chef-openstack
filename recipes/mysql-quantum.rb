@@ -1,4 +1,4 @@
-include_recipe "grizzly::apparmor"
+include_recipe "chef-openstack::apparmor"
 include_recipe "mysql::server"
 
 bash "create database for quantum" do

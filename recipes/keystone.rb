@@ -104,6 +104,6 @@ end
 #=================================================
 
 
-include_recipe "grizzly::keystone-setup"
+include_recipe "chef-openstack::keystone-setup"
 
 puts node["keystone"]["region_servers"]

@@ -5,13 +5,13 @@
 	"json_class": "Chef::Role",
 
 	"run_list":[
-		"recipe[grizzly::set_attributes]",
-		"recipe[grizzly::set_cloudnetwork]",
-		"recipe[grizzly::ip_forwarding]",
+		"recipe[chef-openstack::set_attributes]",
+		"recipe[chef-openstack::set_cloudnetwork]",
+		"recipe[chef-openstack::ip_forwarding]",
 		"recipe[ntp]",
-		"recipe[grizzly::repositories]",
-		"recipe[grizzly::quantum-controller]",
-		"recipe[grizzly::nova]",
-		"recipe[grizzly::dashboard]"
+		"recipe[chef-openstack::repositories]",
+		"recipe[chef-openstack::quantum-controller]",
+		"recipe[chef-openstack::nova]",
+		"recipe[chef-openstack::dashboard]"
 		]
 }
