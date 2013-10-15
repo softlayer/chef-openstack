@@ -145,6 +145,6 @@ end
 
 
 #Use the quantum LWRP when you need multiple L3 routers configured.  A router for each softlayer public and private networks
-# grizzly_quantum "Setup softlayer L3 router config for openstack" do
+# chef-openstack_quantum "Setup softlayer L3 router config for openstack" do
 # 	action :softlayer_l3_config
 # end
