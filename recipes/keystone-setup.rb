@@ -1,7 +1,7 @@
 
 #load keystone attributes users hash
 node["keystone"]["default_accounts"]["users"].each do |user_name, info|
-	chef-openstack_keystone "Create keystone user: #{user_name}" do 
+	chef_openstack_keystone "Create keystone user: #{user_name}" do 
 		action :create_user
 		password info["password"]
 		email info["email"]
@@ -11,7 +11,7 @@ node["keystone"]["default_accounts"]["users"].each do |user_name, info|
 end
 #load keystone attributes tenants array
 node["keystone"]["default_accounts"]["tenants"].each do |tenant_name|
-	chef-openstack_keystone "Create keystone tenants: #{tenant_name}" do 
+	chef_openstack_keystone "Create keystone tenants: #{tenant_name}" do 
 		action :create_tenant
 		tenant tenant_name
 		keystone_service_pass node[:admin][:password]
@@ -19,7 +19,7 @@ node["keystone"]["default_accounts"]["tenants"].each do |tenant_name|
 end
 #load keystone attributes roles array
 node["keystone"]["default_accounts"]["roles"].each do |role_name|
-	chef-openstack_keystone "Create keystone role: #{role_name}" do 
+	chef_openstack_keystone "Create keystone role: #{role_name}" do 
 		action :create_role
 		role role_name
 		keystone_service_pass node[:admin][:password]
@@ -27,7 +27,7 @@ node["keystone"]["default_accounts"]["roles"].each do |role_name|
 end
 
 node["keystone"]["default_accounts"]["services"].each do |service, info|
-	chef-openstack_keystone "Create keystone service: #{service}" do
+	chef_openstack_keystone "Create keystone service: #{service}" do
 		action :create_service
 		name service
 		service_type info["type"]
@@ -37,7 +37,7 @@ node["keystone"]["default_accounts"]["services"].each do |service, info|
 end
 
 node["keystone"]["default_accounts"]["user-roles"].each do |user_role|
-	chef-openstack_keystone "Create keystone role: #{user_role}" do
+	chef_openstack_keystone "Create keystone role: #{user_role}" do
 		action :user_role_add
 		user user_role["user"]
 		tenant user_role["tenant"]
@@ -46,7 +46,7 @@ node["keystone"]["default_accounts"]["user-roles"].each do |user_role|
 	end
 end
 
-chef-openstack_keystone "Create endpoint for nova" do
+chef_openstack_keystone "Create endpoint for nova" do
 	action :create_endpoint
 	region node.chef_environment
 	keystone_service_pass node[:admin][:password]
@@ -56,7 +56,7 @@ chef-openstack_keystone "Create endpoint for nova" do
 	service_type "nova"
 end
 
-chef-openstack_keystone "Create endpoint for cinder" do
+chef_openstack_keystone "Create endpoint for cinder" do
 	action :create_endpoint
 	region node.chef_environment
 	keystone_service_pass node[:admin][:password]
@@ -66,7 +66,7 @@ chef-openstack_keystone "Create endpoint for cinder" do
 	service_type "cinder"
 end
 
-chef-openstack_keystone "Create endpoint for glance" do
+chef_openstack_keystone "Create endpoint for glance" do
 	action :create_endpoint
 	region node.chef_environment
 	keystone_service_pass node[:admin][:password]
@@ -77,7 +77,7 @@ chef-openstack_keystone "Create endpoint for glance" do
 end
 
 
-chef-openstack_keystone "Create endpoint for keystone" do
+chef_openstack_keystone "Create endpoint for keystone" do
 	action :create_endpoint
 	region node.chef_environment
 	keystone_service_pass node[:admin][:password]
@@ -87,7 +87,7 @@ chef-openstack_keystone "Create endpoint for keystone" do
 	service_type "keystone"
 end
 
-chef-openstack_keystone "Create endpoint for ec2" do
+chef_openstack_keystone "Create endpoint for ec2" do
 	action :create_endpoint
 	region node.chef_environment
 	keystone_service_pass node[:admin][:password]
@@ -97,7 +97,7 @@ chef-openstack_keystone "Create endpoint for ec2" do
 	service_type "ec2"
 end
 
-chef-openstack_keystone "Create endpoint for quantum" do
+chef_openstack_keystone "Create endpoint for quantum" do
 	action :create_endpoint
 	region node.chef_environment
 	keystone_service_pass node[:admin][:password]
