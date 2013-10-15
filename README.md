@@ -28,8 +28,8 @@ These variables must be overridden through a [role](http://docs.opscode.com/esse
 * `["network"]["public_interface"]`  The interface that is for public web access.  (Softlayer: eth1 or bond1)
 * `["network"]["private_interface"]`  The interface that is for a local (backend) network access.  (Softlayer: eth0 or bond0)
 * `["neutron"]["db"]["password"]` The neutron database password. Different from the MySQL root password.
-* Quantum `softlayer_private_portable` Must be included by the customer during ordering. The private portable block must also match the VLAN of the compute and neutron nodes.
-* Quantum `softlayer_public_portable` Must be purchased by the customer during ordering. The public portable block must also match the VLAN of the compute and neutron nodes. The block must be at least /30 to be compatible with the current OpenStack configuration. In addition, this block is attached to the OpenStack L3 router to provide NAT to the OpenStack networks.
+* Neutron `softlayer_private_portable` Must be included by the customer during ordering. The private portable block must also match the VLAN of the compute and neutron nodes.
+* Neutron `softlayer_public_portable` Must be purchased by the customer during ordering. The public portable block must also match the VLAN of the compute and neutron nodes. The block must be at least /30 to be compatible with the current OpenStack configuration. In addition, this block is attached to the OpenStack L3 router to provide NAT to the OpenStack networks.
 * `["nova"]["db"]["password"]` The nova database password. Different from the MySQL root password.
 * `["glance"]["db"]["password"]` The glance database password. Different from the MySQL root password.
 * `["keystone"]["db"]["password"]` The keystone database password. Different from the MySQL root password.
@@ -38,7 +38,7 @@ These variables must be overridden through a [role](http://docs.opscode.com/esse
 
 Attributes
 ----------
-Configuration settings of core OpenStack services are in the `attributes/` directory. Default values can be found for Nova, Quantum, Keystone, Cinder, and Glance in their respective attribute files. In conjunction with the set\_attributes and set\_cloundnetwork recipes, all the configuration file settings are filled in based on SoftLayer hardware.
+Configuration settings of core OpenStack services are in the `attributes/` directory. Default values can be found for Nova, Neutron, Keystone, Cinder, and Glance in their respective attribute files. In conjunction with the set\_attributes and set\_cloundnetwork recipes, all the configuration file settings are filled in based on SoftLayer hardware.
 
 OpenStack neutron network defaults are also found in `attributes/neutron.rb` near the bottom. The portable blocks ordered must match the VLAN of the neutron and compute nodes.
 
@@ -64,7 +64,7 @@ The chef recipes need to know where the services are being deployed. This is don
 * `node["nova"]["config"]["force_config_drive"]` - Set to use config_drive for instance metadata. (Default: true)
 * `node["nova"]["config"]["novnc_enable"]` - Set to enable access to the noVNC console for instances.
 
-### Quantum ###
+### Neutron ###
 * `node["neutron"]["config"]["debug"]` - Set debug mode for neutron services
 * `node["neutron"]["config"]["verbose"]` - Set verbose logging mode for neutron services
 
@@ -88,7 +88,7 @@ The chef recipes need to know where the services are being deployed. This is don
 
 * `node["neutron"]["metadata_agent"]["metadata_proxy_shared_secret"]` - Password for metadata access between OpenStack services.
 
-#### Quantum Network Setup ####
+#### Neutron Network Setup ####
 It is not recommended to change the physical network configuration unless you have some experience with OpenStack. These networks are specifically configured for SoftLayer hardware and CCIs. You may change other network names without causing any problems.
 
 ###### OpenStack GRE Network ######
@@ -388,7 +388,7 @@ Similarly, if you intend to deploy RabbitMQ on a separate server, you may follow
 Otherwise, please skip to the next step if MySQL and RabbitMQ will run from your controller node.
 
 ### Chef the controller node ###
-The controller node contains, at a minimum, the roles for the base Quantum and Nova services. If you are unfamiliar with OpenStack, it is recommended to do a standard installation as illustrated in the bootstrap example. Be sure that Chef shows that the node contains the MySQL backends, RabbitMQ, Keystone, Cinder, and Glance roles. You can verify this with a simple knife command:
+The controller node contains, at a minimum, the roles for the base Neutron and Nova services. If you are unfamiliar with OpenStack, it is recommended to do a standard installation as illustrated in the bootstrap example. Be sure that Chef shows that the node contains the MySQL backends, RabbitMQ, Keystone, Cinder, and Glance roles. You can verify this with a simple knife command:
 	
 	knife node show FQDN
 
