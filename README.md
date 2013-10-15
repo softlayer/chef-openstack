@@ -27,9 +27,9 @@ These variables must be overridden through a [role](http://docs.opscode.com/esse
 * `[:admin][:password]` The password that is used throughout OpenStack to connect all the services together. This password is also set to the demo and reseller test accounts.
 * `["network"]["public_interface"]`  The interface that is for public web access.  (Softlayer: eth1 or bond1)
 * `["network"]["private_interface"]`  The interface that is for a local (backend) network access.  (Softlayer: eth0 or bond0)
-* `["quantum"]["db"]["password"]` The quantum database password. Different from the MySQL root password.
-* Quantum `softlayer_private_portable` Must be included by the customer during ordering. The private portable block must also match the VLAN of the compute and quantum nodes.
-* Quantum `softlayer_public_portable` Must be purchased by the customer during ordering. The public portable block must also match the VLAN of the compute and quantum nodes. The block must be at least /30 to be compatible with the current OpenStack configuration. In addition, this block is attached to the OpenStack L3 router to provide NAT to the OpenStack networks.
+* `["neutron"]["db"]["password"]` The neutron database password. Different from the MySQL root password.
+* Quantum `softlayer_private_portable` Must be included by the customer during ordering. The private portable block must also match the VLAN of the compute and neutron nodes.
+* Quantum `softlayer_public_portable` Must be purchased by the customer during ordering. The public portable block must also match the VLAN of the compute and neutron nodes. The block must be at least /30 to be compatible with the current OpenStack configuration. In addition, this block is attached to the OpenStack L3 router to provide NAT to the OpenStack networks.
 * `["nova"]["db"]["password"]` The nova database password. Different from the MySQL root password.
 * `["glance"]["db"]["password"]` The glance database password. Different from the MySQL root password.
 * `["keystone"]["db"]["password"]` The keystone database password. Different from the MySQL root password.
@@ -40,9 +40,9 @@ Attributes
 ----------
 Configuration settings of core OpenStack services are in the `attributes/` directory. Default values can be found for Nova, Quantum, Keystone, Cinder, and Glance in their respective attribute files. In conjunction with the set\_attributes and set\_cloundnetwork recipes, all the configuration file settings are filled in based on SoftLayer hardware.
 
-OpenStack quantum network defaults are also found in `attributes/quantum.rb` near the bottom. The portable blocks ordered must match the VLAN of the quantum and compute nodes.
+OpenStack neutron network defaults are also found in `attributes/neutron.rb` near the bottom. The portable blocks ordered must match the VLAN of the neutron and compute nodes.
 
-For testing purposes, default values are provided for all attributes except `node["quantum"]["network"]["softlayer_private_portable"]` and `node["quantum"]["network"]["softlayer_public_portable"]`.
+For testing purposes, default values are provided for all attributes except `node["neutron"]["network"]["softlayer_private_portable"]` and `node["neutron"]["network"]["softlayer_public_portable"]`.
 
 ##### Setting up your OpenStack cloud #####
 The chef recipes need to know where the services are being deployed. This is done through the set\_cloudnetwork.rb recipe and partial_search cookbook. The recipe uses a key-pair hash to associate roles with variables throughout the rest of the chef deployment. You can change the name of the roles in `attributes/default.rb`.
@@ -65,56 +65,56 @@ The chef recipes need to know where the services are being deployed. This is don
 * `node["nova"]["config"]["novnc_enable"]` - Set to enable access to the noVNC console for instances.
 
 ### Quantum ###
-* `node["quantum"]["config"]["debug"]` - Set debug mode for quantum services
-* `node["quantum"]["config"]["verbose"]` - Set verbose logging mode for quantum services
+* `node["neutron"]["config"]["debug"]` - Set debug mode for neutron services
+* `node["neutron"]["config"]["verbose"]` - Set verbose logging mode for neutron services
 
-* `node["quantum"]["db"]["name"]` - Name of database for quantum
-* `node["quantum"]["db"]["username"]` - Database username for quantum db access
-* `node["quantum"]["db"]["password"]` - Database password for quantum db user
+* `node["neutron"]["db"]["name"]` - Name of database for neutron
+* `node["neutron"]["db"]["username"]` - Database username for neutron db access
+* `node["neutron"]["db"]["password"]` - Database password for neutron db user
 
-* `node["quantum"]["service_tenant_name"]` - Keystone tenant name for quantum
-* `node["quantum"]["service_user"]` - Keystone user name for quantum
+* `node["neutron"]["service_tenant_name"]` - Keystone tenant name for neutron
+* `node["neutron"]["service_user"]` - Keystone user name for neutron
 
-* `node["quantum"]["config"]["bind_host"]` - IP to listen on (default 0.0.0.0)
-* `node["quantum"]["config"]["bind_port"]` - Port to listen on (default 9696)
+* `node["neutron"]["config"]["bind_host"]` - IP to listen on (default 0.0.0.0)
+* `node["neutron"]["config"]["bind_port"]` - Port to listen on (default 9696)
 
-* `node["quantum"]["config"]["quota_network"]` - Per tenant allotment of creatable OpenStack networks
-* `node["quantum"]["config"]["quota_subnet"]` - Per tenant allotment of creatable subnets
-* `node["quantum"]["config"]["quota_port"]` - Per tenant allotment of ports. Ports are devices which are connected to a network (e.g., router, dhcp, instances).
-* `node["quantum"]["config"]["quota_security_group"]` - Per tenant allotment of creatable security groups.
-* `node["quantum"]["config"]["quota_security_group_rule"]` - Per tenant allotment of creatable security rules per group.
+* `node["neutron"]["config"]["quota_network"]` - Per tenant allotment of creatable OpenStack networks
+* `node["neutron"]["config"]["quota_subnet"]` - Per tenant allotment of creatable subnets
+* `node["neutron"]["config"]["quota_port"]` - Per tenant allotment of ports. Ports are devices which are connected to a network (e.g., router, dhcp, instances).
+* `node["neutron"]["config"]["quota_security_group"]` - Per tenant allotment of creatable security groups.
+* `node["neutron"]["config"]["quota_security_group_rule"]` - Per tenant allotment of creatable security rules per group.
 
-* `node["quantum"]["dhcp_agent"]["enable_isolated_metadata"]` - Allow metadata to be connected to isolated networks (e.g., No L3 router attached).
+* `node["neutron"]["dhcp_agent"]["enable_isolated_metadata"]` - Allow metadata to be connected to isolated networks (e.g., No L3 router attached).
 
-* `node["quantum"]["metadata_agent"]["metadata_proxy_shared_secret"]` - Password for metadata access between OpenStack services.
+* `node["neutron"]["metadata_agent"]["metadata_proxy_shared_secret"]` - Password for metadata access between OpenStack services.
 
 #### Quantum Network Setup ####
 It is not recommended to change the physical network configuration unless you have some experience with OpenStack. These networks are specifically configured for SoftLayer hardware and CCIs. You may change other network names without causing any problems.
 
 ###### OpenStack GRE Network ######
-* `node["quantum"]["network"]["openstack_network_name"]` - Name for the OpenStack network that is connected to the primary public router
-* `node["quantum"]["network"]["openstack_subnet_name"]` - Name for the associated subnet
-* `node["quantum"]["network"]["openstack_network_cidr"]` - CIDR network notation of the network.
+* `node["neutron"]["network"]["openstack_network_name"]` - Name for the OpenStack network that is connected to the primary public router
+* `node["neutron"]["network"]["openstack_subnet_name"]` - Name for the associated subnet
+* `node["neutron"]["network"]["openstack_network_cidr"]` - CIDR network notation of the network.
 
 ###### SoftLayer Public Network ######
-* `node["quantum"]["network"]["public_l3_router_name"]` - Name for the router which will be attached to the external public network.
-* `node["quantum"]["network"]["public_network_name"]` - Name for the external network. This network is bridged with the public interface.
-* `node["quantum"]["network"]["public_subnet_name"]` - Name for the associated subnet
-* `node["quantum"]["network"]["public_physical_network_name"]` - Name of the defined interface associated with a physical network. Be careful changing this.
+* `node["neutron"]["network"]["public_l3_router_name"]` - Name for the router which will be attached to the external public network.
+* `node["neutron"]["network"]["public_network_name"]` - Name for the external network. This network is bridged with the public interface.
+* `node["neutron"]["network"]["public_subnet_name"]` - Name for the associated subnet
+* `node["neutron"]["network"]["public_physical_network_name"]` - Name of the defined interface associated with a physical network. Be careful changing this.
 
 ###### SoftLayer Private Network ######
-* `node["quantum"]["network"]["private_network_name"]` - Name of the private SoftLayer network. This network is connected to the private interface bridge.
-* `node["quantum"]["network"]["private_subnet_name"]` - Name of the associated subnet
-* `node["quantum"]["network"]["private_physical_network_name"]` - Name of the defined interface associated with a physical network. Be careful changing this.
+* `node["neutron"]["network"]["private_network_name"]` - Name of the private SoftLayer network. This network is connected to the private interface bridge.
+* `node["neutron"]["network"]["private_subnet_name"]` - Name of the associated subnet
+* `node["neutron"]["network"]["private_physical_network_name"]` - Name of the defined interface associated with a physical network. Be careful changing this.
 
 ###### IP Configuration ######
-* `node["quantum"]["network"]["softlayer_private_network_cidr"]` - SoftLayer's private network routing network
-* `node["quantum"]["network"]["public_nameserver_1"]` - Publicly accessible name server 1
-* `node["quantum"]["network"]["public_nameserver_2"]` - Publicly accessible name server 2
-* `node["quantum"]["network"]["private_nameserver_1"]` - Privately accessible name server 1
-* `node["quantum"]["network"]["private_nameserver_2"]` - Privately accessible name server 2
-* `node["quantum"]["network"]["softlayer_private_portable"]` - Purchased block from SoftLayer of private IPs
-* `node["quantum"]["network"]["softlayer_public_portable"]` - Purchased block from SoftLayer of public IPs
+* `node["neutron"]["network"]["softlayer_private_network_cidr"]` - SoftLayer's private network routing network
+* `node["neutron"]["network"]["public_nameserver_1"]` - Publicly accessible name server 1
+* `node["neutron"]["network"]["public_nameserver_2"]` - Publicly accessible name server 2
+* `node["neutron"]["network"]["private_nameserver_1"]` - Privately accessible name server 1
+* `node["neutron"]["network"]["private_nameserver_2"]` - Privately accessible name server 2
+* `node["neutron"]["network"]["softlayer_private_portable"]` - Purchased block from SoftLayer of private IPs
+* `node["neutron"]["network"]["softlayer_public_portable"]` - Purchased block from SoftLayer of public IPs
 
 
 ### Cinder ###
@@ -178,7 +178,7 @@ It is not recommended to change the physical network configuration unless you ha
 
 
 ###### Default Accounts ######
-The default accounts are configured based on the OpenStack truck documentation. Feel free to change them to your needs. The admin, nova, quantum, cinder, and glance user and service objects should be created for a proper installation, though.
+The default accounts are configured based on the OpenStack truck documentation. Feel free to change them to your needs. The admin, nova, neutron, cinder, and glance user and service objects should be created for a proper installation, though.
 
 * `node["keystone"]["default_accounts"]["users"]` - A hash of hashes that contains the username with its corrisponding email and password info.
 
@@ -206,20 +206,20 @@ Bootstrapping
 
 All the roles must be assigned to a server. Compute and network roles can be assigned to multiple servers based on your requirements.
 
-	grizzly-controller
-	grizzly-network
-	grizzly-rabbitmq
-	grizzly-keystone
-	grizzly-glance
-	grizzly-cinder
-	grizzly-compute
-	grizzly-mysql-all
+	openstack-controller
+	openstack-network
+	openstack-rabbitmq
+	openstack-keystone
+	openstack-glance
+	openstack-cinder
+	openstack-compute
+	openstack-mysql-all
 	[or]
-	grizzly-mysql-glance
-	grizzly-mysql-cinder
-	grizzly-mysql-keystone
-	grizzly-mysql-nova
-	grizzly-mysql-quantum
+	openstack-mysql-glance
+	openstack-mysql-cinder
+	openstack-mysql-keystone
+	openstack-mysql-nova
+	openstack-mysql-neutron
 
 The bootstrap directory contains an example script for calling chef to clear, boostrap, and assign roles to chef nodes. Verify that the environments roles were set correctly.
 
@@ -227,7 +227,7 @@ MySQL: When running `chef-client` on each node, it is important to put the mysql
 
 ### Roles ###
 
-Roles must be uploaded using `knife upload from file roles/{grizzly-controller.json}`. They are not included in the cookbook upload and must be uploaded manually per chef server instructions.
+Roles must be uploaded using `knife upload from file roles/{openstack-controller.json}`. They are not included in the cookbook upload and must be uploaded manually per chef server instructions.
 
 At a minimum the MySQL backend(s), controller, network, glance, keystone, and cinder node roles must be assigned for `set_cloudnetwork.rb` to correctly find all values needed. Additional compute and network nodes can be added by deploying the compute and network roles to additional hardware.
 
@@ -236,35 +236,35 @@ At a minimum the MySQL backend(s), controller, network, glance, keystone, and ci
 The OpenStack services are now separated into frontend (e.g., glance) and backend (e.g., Glance's MySQL server). The roles are setup so that all backends can be run from one node, all independently, or any combination thereof.
 
 ###### MySQL ######
-MySQL can be deployed as a separate install per OpenStack service or all databases on one node. You can optionally use the grizzly-mysql-all role for deploying all databases to the same node.
+MySQL can be deployed as a separate install per OpenStack service or all databases on one node. You can optionally use the openstack-mysql-all role for deploying all databases to the same node.
 
 For example:
 
 Node 1:
 
-	grizzly-controller
-	grizzly-keystone
-	grizzly-mysql-keystone
-	grizzly-mysql-nova
-	grizzly-mysql-quantum
+	openstack-controller
+	openstack-keystone
+	openstack-mysql-keystone
+	openstack-mysql-nova
+	openstack-mysql-neutron
 
 Node 2:
 
-	grizzly-glance
-	grizzly-mysql-glance
+	openstack-glance
+	openstack-mysql-glance
 
 Node 3:
 
-	grizzly-cinder
-	grizzly-mysql-cinder
+	openstack-cinder
+	openstack-mysql-cinder
 
 Node 4:
 
-	grizzly-compute
+	openstack-compute
 
 Node 5:
 
-	grizzly-network
+	openstack-network
 
 On a large scale deployment, this would ease the load on any given mysql server instance by separating the services that use them.
 
@@ -292,9 +292,9 @@ The following is an example of some attributes that can be overridden in the env
 	      "public_interface": "eth1",
 	      "private_interface": "eth0"
 	    },
-	    "quantum": {
+	    "neutron": {
 	      "db": {
-	        "password": "my_new_quantum_pass"
+	        "password": "my_new_neutron_pass"
 	      },
 	      "softlayer_public_portable": "XX.XX.XX.XX/YY",
 	      "softlayer_private_portable": "AA.AA.AA.AA/BB"
@@ -333,7 +333,7 @@ The instructions below provide a general overview of steps you will perform to i
 
 2.  Edit the role information for each server and role. In this case, since Chef Server will know the FQDN of each node, you can simply use the FQDN rather than providing an IP as you may have done in step 1.
 
-		knife node run_list add FQDN 'role[grizzly-controller]'
+		knife node run_list add FQDN 'role[openstack-controller]'
 
 3.  Run the bootstrap script you've just created to prepare each server with the `chef-client` utility.
 
@@ -363,22 +363,22 @@ Edit the script with each hardware node you would like to include in the OpenSta
 	
 	## Now, add specific roles to each node's run list that will run once `chef-client` is run
 	## Controller node:
-	knife node run_list add FQDN_1 'role[grizzly-mysql-cinder]'
-	knife node run_list add FQDN_1 'role[grizzly-mysql-glance]'
-	knife node run_list add FQDN_1 'role[grizzly-mysql-keystone]'
-	knife node run_list add FQDN_1 'role[grizzly-mysql-nova]'
-	knife node run_list add FQDN_1 'role[grizzly-mysql-quantum]'
-	knife node run_list add FQDN_1 'role[grizzly-rabbitmq]'
-	knife node run_list add FQDN_1 'role[grizzly-cinder]'
-	knife node run_list add FQDN_1 'role[grizzly-keystone]'
-	knife node run_list add FQDN_1 'role[grizzly-glance]'
-	knife node run_list add FQDN_1 'role[grizzly-controller]'
+	knife node run_list add FQDN_1 'role[openstack-mysql-cinder]'
+	knife node run_list add FQDN_1 'role[openstack-mysql-glance]'
+	knife node run_list add FQDN_1 'role[openstack-mysql-keystone]'
+	knife node run_list add FQDN_1 'role[openstack-mysql-nova]'
+	knife node run_list add FQDN_1 'role[openstack-mysql-neutron]'
+	knife node run_list add FQDN_1 'role[openstack-rabbitmq]'
+	knife node run_list add FQDN_1 'role[openstack-cinder]'
+	knife node run_list add FQDN_1 'role[openstack-keystone]'
+	knife node run_list add FQDN_1 'role[openstack-glance]'
+	knife node run_list add FQDN_1 'role[openstack-controller]'
 	
 	## Compute node:
-	knife node run_list add FQDN_2 'role[grizzly-compute]'
+	knife node run_list add FQDN_2 'role[openstack-compute]'
 	
 	## Network node:
-	knife node run_list add FQDN_3 'role[grizzly-network]'
+	knife node run_list add FQDN_3 'role[openstack-network]'
 
 ### Chef the mysql-backend node(s) and rabbit node ###
 If you have chosen to make the MySQL node(s) separate from the controller, you must first complete a deployment of the MySQL roles prior to chefing the controller node with any OpenStack services. You may easily deploy MySQL roles for each OpenStack component by adding your additional nodes to the sample script above and specifying which MySQL role(s) to apply to each.
@@ -397,7 +397,7 @@ To chef the controller node you can either connect directly to the remote server
 	knife ssh SEARCH 'sudo chef-client'
 For example:
 
-	knife ssh 'role:grizzly-controller' 'sudo chef-client'
+	knife ssh 'role:openstack-controller' 'sudo chef-client'
 or
 
 	knife ssh 'name:FQDN' 'sudo chef-client'
@@ -428,7 +428,7 @@ You may wish to add `source .openrc` to your `.bash_profile` file so that the CL
 	nova-consoleauth FQDN_1      		                  internal         enabled    :-)   2013-09-17 15:21:30
 	nova-compute     FQDN_2                			      nova             enabled    :-)   2013-09-17 15:21:23
 
-	root@FQDN1:~# quantum agent-list
+	root@FQDN1:~# neutron agent-list
 	+--------------------------------------+--------------------+---------------------------+-------+----------------+
 	| id                                   | agent_type         | host                      | alive | admin_state_up |
 	+--------------------------------------+--------------------+---------------------------+-------+----------------+
