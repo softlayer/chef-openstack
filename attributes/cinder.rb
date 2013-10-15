@@ -9,7 +9,7 @@ default["cinder"]["config"]["rabbit_password"] = "guest"
 default["cinder"]["config"]["auth_strategy"] = "keystone"
 default["cinder"]["config"]["volume_group"] = "cinder-volumes"
 
-if File.exist?('/sys/hypervisor/type')
+if node["virtualization"]["role"] == "guest"
 	default["cinder"]["config"]["lvm_disk"] = "/dev/xvdc"
 else
 	default["cinder"]["config"]["lvm_disk"] = "/dev/sdb"

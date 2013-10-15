@@ -1,6 +1,6 @@
 #The networking retrieval for public and private side data is based on softlayer's
 #implementation of local and public interfaces as well as bonded interfaces
-#This will need to be tweaked to work with outside network implementations.
+
 
 require 'ohai'
 
