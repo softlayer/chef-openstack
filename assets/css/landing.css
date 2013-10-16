@@ -1,0 +1,29 @@
+h1,.h1 {
+border-bottom:none;
+}
+
+a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .navbar-nav > li > a:focus {
+color:#fff;
+}
+
+.bs-masthead-links {
+margin-top:-10px;
+text-align:left;
+}
+
+.btn-outline-inverse {
+background-color:#3498db;
+border:none;
+color:#fff;
+width:150px;
+}
+
+.btn-outline-inverse:hover,.btn-outline-inverse:focus,.btn-outline-inverse:active {
+background-color:#2980b9;
+border:none;
+color:#fff;
+}
+
+.callout {
+visibility:hidden;
+}

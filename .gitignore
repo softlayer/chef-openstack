@@ -1,0 +1,17 @@
+# ALWAYS IGNORE
+# -------------
+_site
+*.diff
+*.err
+*.orig
+*.log
+*.vi
+*~
+
+# OS & EDITOR GARBAGE
+# -------------------
+.DS_Store
+Thumbs.db
+.cache
+*.sublime-project
+*.sublime-workspace
