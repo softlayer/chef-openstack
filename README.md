@@ -24,7 +24,7 @@ Required Attributes
 -------------------
 These variables must be overridden through a [role](http://docs.opscode.com/essentials_roles.html "Chef Role Overrides") or [environment](http://docs.opscode.com/essentials_environments.html "Chef Environments") for each deployment.
 
-* `[:admin][:password]` The password that is used throughout OpenStack to connect all the services together. This password is also set to the demo and reseller test accounts.
+* `["admin"]["password"]` The password that is used throughout OpenStack to connect all the services together. This password is also set to the demo and reseller test accounts.
 * `["network"]["public_interface"]`  The interface that is for public web access.  (Softlayer: eth1 or bond1)
 * `["network"]["private_interface"]`  The interface that is for a local (backend) network access.  (Softlayer: eth0 or bond0)
 * `["neutron"]["db"]["password"]` The neutron database password. Different from the MySQL root password.
