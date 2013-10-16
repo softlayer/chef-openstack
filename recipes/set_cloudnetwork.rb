@@ -1,7 +1,9 @@
 include_recipe "partial_search"
 
 
-
+#This code iterates through node["admin"]["cloud_network"]["roles"] to find network information about 
+#each role.   Then, populates the public and private IP info for further use throughout the cookbook.
+#Chef environments are used to isolate different installations from each other.
 #=========================================================================
 puts "Current environment is: \"#{node.chef_environment}\""
 if node.chef_environment.index("default")
