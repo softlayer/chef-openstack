@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      
       {% include header-page.html %}
+  
   </head>
   <body>
-    <a class="sr-only" href="#content">Skip navigation</a>
+      
       {% include nav-main.html %}
+    
     <div class="bs-header" id="content">
       <div class="container">
         <h1>{{ page.title }}</h1>
@@ -21,6 +24,7 @@
         <div class="col-md-3">
           <div class="bs-sidebar hidden-print" role="complementary">
             <ul class="nav bs-sidenav">
+              
               {% if page.slug == "getting-started" %}
                 {% include nav-getting-started.html %}
               {% elsif page.slug == "techical-documents" %}
@@ -30,22 +34,25 @@
               {% elsif page.slug == "project-page" %}
                 {% include nav-project-page.html %}
               {% elsif page.slug == "contributing" %}
-                {% include nav-contributing.html %}
-              {% elsif page.slug == "install-jekyll-windows" %}
-                {% include nav-install-jekyll-windows.html %}
+                {% include nav-contributing.html %}}
               {% endif %}
+
             </ul>
           </div>
         </div>
         <div class="col-md-9" role="main">
+        
         {{ content }}
+        
         </div>
       </div>
     </div>
     <footer class="bs-footer" role="contentinfo">
       <div class="container">
+        
         <!-- social icons only used on landing pages -->
         {% include footer.html %}
+      
       </div>
     </footer>
   </body>

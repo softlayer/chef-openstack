@@ -5,19 +5,22 @@ project: Chef-OpenStack
 lead: "Grow your possibilities. Get the flexibility, control, efficiency, and scalability that every private cloud solution needs."
 
 # GitHub Links
-repo: http://github.com/softlayer/chef-openstack
-star: http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&amp;type=watch&amp;count=true
-fork: http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&amp;type=fork&amp;count=true
+repo: "http://github.com/softlayer/chef-openstack"
+star: "http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&amp;type=watch&amp;count=true"
+fork: "http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&amp;type=fork&amp;count=true"
 
 # -- STOP EDITING -- #
 
 # Dependencies
-domain: softlayer.github.com
+pygments: true
+markdown: maruku
+textile_ext: textile
 
 # Server
-analytics: UA-40037365-1
+domain: softlayer.github.com
 
-# Permalinks
+# Settings
+analytics: UA-40037365-1
 permalink: pretty
 
 # SL Websites

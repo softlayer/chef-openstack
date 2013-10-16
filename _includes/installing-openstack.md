@@ -1,13 +1,11 @@
-# Installing OpenStack
+# **Installing OpenStack**
 
 The instructions below will guide you through the process of installing Chef,
 followed by the steps for bootstrapping and configuring your nodes to achieve
 a functional private cloud installation.
 
 
-> We strongly recommend that you review [OpenStack Requirements](openstack-requirements.md) before starting. This
-is to ensure that your environment is ready for install before getting in too
-deep.
+> We strongly recommend that you review [OpenStack Requirements](openstack-requirements.md) before starting. This is to ensure that your environment is ready for install before getting in too deep.
 
 ## Install Chef
 
@@ -30,17 +28,15 @@ To install Chef Server, perform the following:
 3. Select the operating system, version, and architecture that match the server from which you will run Chef Server.
 4. Select the version of Chef Server to download, and then click the link that appears to download the package.
 5. Install the downloaded package using the correct method for the operating system on which Chef Server will be installed. For instance, on Ubuntu and Debian, using `sudo dpkg -i package.deb` will perform the installation.
-6. Configure Chef Server by running the following command:
+6. Configure Chef Server by running the command below. This command will set up all required components, including Erchef, RabbitMQ, PostgreSQL, and the cookbooks that are needed by `chef-solo` to maintain Chef Server.
 
         $ sudo chef-server-ctl reconfigure
 
-This command will set up all required components, including Erchef, RabbitMQ,
-PostgreSQL, and the cookbooks that are needed by `chef-solo` to maintain Chef Server.
-
 > Add gliffy image here
 
-7. Verify the hostname for the server by running the `hostname` command. The hostname for the server must be a fully qualified domain name (FQDN). We recommend as well that the proper `A` records for each of your nodes' FQDNs exist in DNS for easier accessibility.
-8. Verify the installation of Chef Server by running the following command:
+Verify the hostname for the server by running the `hostname` command. The hostname for the server must be a fully qualified domain name (FQDN). We recommend as well that the proper `A` records for each of your nodes' FQDNs exist in DNS for easier accessibility.
+
+When you're finished, verify the installation of Chef Server by running the following command:
 
         $ sudo chef-server-ctl test
 
@@ -281,7 +277,7 @@ For example:
 
 	knife ssh 'role:grizzly-controller' 'sudo chef-client'
 
-or
+...or
 
 	knife ssh 'name:FQDN' 'sudo chef-client'
 

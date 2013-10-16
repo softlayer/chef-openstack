@@ -9,6 +9,8 @@ baseurl: "../"
 {% include about-chef-openstack.md %}
 {% include openstack-requirements.md %}
 {% include installing-openstack.md %}
+{% include openstack-use-scenarios.md %}
+
 
 
 

@@ -1,4 +1,4 @@
-# OpenStack Requirements
+# **OpenStack Requirements**
 
 Review the requirements below in their entirety before beginning installation.
 
@@ -26,8 +26,7 @@ affect system or overall cluster performance.
 |Disk Space|144 GB or greater|144 GB or greater|144 GB or greater|
 |Network|1Gbps Private and Public|1Gbps Private and Public|1Gbps Private and Public
 
-> (1) 10K SAS/SCSI RPM drives, or alternatively SSDs, may provide much better
-performance for Cinder when allocating and destroying volumes.
+> (1) 10K SAS/SCSI RPM drives, or alternatively SSDs, may provide much better performance for Cinder when allocating and destroying volumes.
 
 ## Software Requirements
 
