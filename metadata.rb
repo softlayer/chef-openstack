@@ -5,7 +5,7 @@ license          'All rights reserved'
 description      'Installs/Configures openstack-grizzly'
 supports 		 'ubuntu', '= 12.04'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.2.0'
+version          '0.2.1'
 depends			 'partial_search'
 depends 		 'mysql'
 depends			 'ntp'

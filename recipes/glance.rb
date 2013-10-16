@@ -52,7 +52,7 @@ end
 node["glance"]["images"].each do | name, image |
 
 	execute "Queue \"#{name}\" to glance." do
-		command "glance image-create --is-public true --disk-format qcow2 --container-format bare --name \"#{name}\" --copy-from #{node["glance"]["glance_repo_base_url"]}/#{image}"
+		command "glance image-create --is-public true --disk-format qcow2 --container-format bare --name \"#{name}\" --copy-from #{image}"
 		environment "OS_USERNAME" => "admin",
 					"OS_PASSWORD" => node[:admin][:password],
 					"OS_TENANT_NAME" => "admin",
