@@ -1,6 +1,6 @@
-# Betty
+# Chef-OpenStack GitHub Page
 
-"Betty" is a branded theme made using [Bootstrap CSS](http://getboostrap.com) and served up with Jekyll. It is a minimal way to create static landing pages for each repo and publish them on GitHub Pages.
+Our GitHub Page for Chef-OpenStack is a branded theme made using [Bootstrap CSS](http://getboostrap.com) and served up with Jekyll. It is a minimal way to create static landing pages for each repo and publish them on our GitHub Pages.
 
 ## Before Starting
 
@@ -12,8 +12,8 @@ Of course, should you prefer to have all the power, keep reading.
 
 Two download options are available.
 
-- [Download the latest release](https://github.com/softlayer/softlayer-api-python-client/archive/master.zip).
-- Clone the repo: `git clone https://github.com/softlayer/softlayer-api-python-client.git`.
+- [Download the latest release](https://github.com/softlayer/chef-openstack/archive/master.zip).
+- Clone the repo: `git clone https://github.com/softlayer/chef-openstack.git`.
 
 Search our [Getting Started](../getting-started) page for information on installing, configuring, and much more.
 
@@ -46,7 +46,7 @@ Rather than generating a new url, you can easily modify the GitHub user, path, a
 
 Keep track of development and community news.
 
-- Follow [@SoftLayerLabs on Twitter](http://twitter.com/softlayerlabs).
+- Follow [@SoftLayerDev on Twitter](http://twitter.com/softlayerdev).
 - Fork any of our public [GitHub repo’s](http://github.com/softlayer).
 - Get the latest new and join conversations on our [Customer Forum](http://forums.softlayer.com/).
 
