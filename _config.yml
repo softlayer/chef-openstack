@@ -13,7 +13,7 @@ fork: "http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&
 
 # Dependencies
 pygments: true
-markdown: maruku
+markdown: RedCloth
 textile_ext: textile
 
 # Server
