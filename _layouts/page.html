@@ -5,7 +5,7 @@
       {% include header-page.html %}
   
   </head>
-  <body>
+  <body data-spy="scroll" data-target="welcome">
       
       {% include nav-main.html %}
     
@@ -33,7 +33,7 @@
               {% elsif page.slug == "planning" %}
                 {% include nav-planning.html %}
               {% elsif page.slug == "contributing" %}
-                {% include nav-contributing.html %}}
+                {% include nav-contributing.html %}
               {% endif %}
 
             </ul>

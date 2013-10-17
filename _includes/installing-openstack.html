@@ -22,22 +22,18 @@ the `chef-client` command to ask the server for configuration details, such as r
     <li>Select the version of Chef Server to download, and then click the link that appears to download the package.</li>
     <li>Install the downloaded package using the correct method for the operating system on which Chef Server will be installed. For instance, on Ubuntu and Debian, using <code>sudo dpkg -i package.deb</code> will perform the installation.</li>
     <li>Configure Chef Server by running the command below. This command will set up all required components, including Erchef, RabbitMQ, PostgreSQL, and the cookbooks that are needed by <code>chef-solo</code> to maintain Chef Server.</li>
-  </ol>
 
-<pre><code>$ sudo chef-server-ctl reconfigure
-</code></pre>
+<pre><code>$ sudo chef-server-ctl reconfigure</code></pre>
 
   <blockquote>
     <p>Add gliffy image here</p>
   </blockquote>
 
-  <ol>
     <li>Verify the hostname for the server by running the <code>hostname</code> command. The hostname for the server must be a fully qualified domain name (<span class="caps">FQDN</span>). We recommend as well that the proper <code>A</code> records for each of your nodes&#8217; <span class="caps">FQDN</span>s exist in <span class="caps">DNS</span> for easier accessibility.</li>
     <li>When you&#8217;re finished, verify the installation of Chef Server by running the following command:</li>
-  </ol>
 
-<pre><code>$ sudo chef-server-ctl test
-</code></pre>
+<pre><code>$ sudo chef-server-ctl test</code></pre>
+</ol>
 
   <p>This will run the <code>chef-pedant</code> test suite against the installed Chef Server and will report that everything is installed correctly and running smoothly.</p>
 
@@ -49,31 +45,26 @@ the `chef-client` command to ask the server for configuration details, such as r
     <li>Configure a bootstrap script with the hardware servers and/or cloud compute instances (<span class="caps">CCI</span>s) that you wish to bootstrap with Chef; this can be done in a simple shell script. Ensure you substitute the proper<br />
 <span class="caps">FQDN</span>, the remote user name that has password-less <code>sudo</code> access, the local path to that user&#8217;s private <span class="caps">SSH</span> key, and name of the Chef environment in which the node resides. In this example, we represent these<br />
 with <span class="caps">FQDN</span>, <span class="caps">USER</span>, and <span class="caps">ENVIRONMENT</span>, respectively.</li>
-  </ol>
 
 <pre><code>knife bootstrap FQDN -x USER --sudo -i ~/.ssh/id_rsa -E ENVIRONMENT
 </code></pre>
 
-  <ol>
     <li>Edit the role information for each server and role.</li>
-  </ol>
 
 <pre><code>knife node run_list add FQDN &#39;role[grizzly-controller]&#39;
 </code></pre>
 
-  <ol>
     <li>Run the bootstrap script you&#8217;ve just created to prepare each server before running `chef-client`.</li>
     <li>Modify the required attributes through Chef environment overrides.</li>
     <li>Run the `chef-client` program on each server to start installation and configuration. Be sure to run the installs in this order:</li>
+      <ul>
+        <li>MySQL roles</li>
+        <li>RabbitMQ roles</li>
+        <li>Keystone role</li>
+        <li>Controller role</li>
+        <li>All remaining roles</li>
+      </ul>
   </ol>
-
-  <ul>
-    <li>MySQL roles</li>
-    <li>RabbitMQ roles</li>
-    <li>Keystone role</li>
-    <li>Controller role</li>
-    <li>All remaining roles</li>
-  </ul>
 
   <h2 id="prepare-chef">Prepare Chef for OpenStack Deployment</h2>
 
@@ -144,6 +135,7 @@ knife node run_list add compute2.example.com &#39;role[grizzly-compute]&#39;
 knife node run_list add network3.example.com &#39;role[grizzly-network]&#39;
 </code></pre>
 
+
   <h2 id="configure-chef">Configure Chef Overrides for OpenStack</h2>
 
   <p>You will need to override some attributes for your OpenStack Chef deployment. These can be overridden at the environment level or at the node level, but the environment level is <b>strongly</b> recommended.</p>
@@ -162,43 +154,43 @@ knife node run_list add network3.example.com &#39;role[grizzly-network]&#39;
 
   <p>The following is an example of the recommended minimum attributes that can be overridden in the environment, illustrating the required attributes to deploy:</p>
 
-  <p>  bc.. &#8220;override_attributes&#8221;: {
-   &#8220;admin&#8221;: {
-   &#8220;password&#8221;: &#8220;admin_pass&#8221;
-   },
-   &#8220;network&#8221;: {
-   &#8220;public_interface&#8221;: &#8220;eth1&#8221;,
-   &#8220;private_interface&#8221;: &#8220;eth0&#8221;
-   },
-   &#8220;quantum&#8221;: {
-   &#8220;db&#8221;: {
-   &#8220;password&#8221;: &#8220;my_new_quantum_pass&#8221;
-   },
-   &#8220;softlayer_public_portable&#8221;: &#8220;XX.XX.XX.XX/YY&#8221;,
-   &#8220;softlayer_private_portable&#8221;: &#8220;AA.AA.AA.AA/BB&#8221;
-   },
-   &#8220;nova&#8221;: {
-   &#8220;db&#8221;: {
-   &#8220;password&#8221;: &#8220;my_new_nova_pass&#8221;
-   }
-   },
-   &#8220;glance&#8221;: {
-   &#8220;db&#8221;: {
-   &#8220;password&#8221;: &#8220;my_new_glance_pass&#8221;
-   }
-   },
-   &#8220;keystone&#8221;: {
-   &#8220;db&#8221;: {
-   &#8220;password&#8221;: &#8220;my_new_keystone_pass&#8221;
-   }
-   },
-   &#8220;cinder&#8221;: {
-   &#8220;db&#8221;: {
-   &#8220;password&#8221;: &#8220;my_new_cinder_pass&#8221;
-   }
-   }
-   }
-  }</p>
+  <pre><code>"override_attributes": {
+    "admin": {
+      "password": "admin_pass"
+    },
+    "network": {
+      "public_interface": "eth1",
+      "private_interface": "eth0"
+    },
+    "quantum": {
+      "db": {
+        "password": "my_new_quantum_pass"
+      },
+      "softlayer_public_portable": "XX.XX.XX.XX/YY",
+      "softlayer_private_portable": "AA.AA.AA.AA/BB"
+    },
+    "nova": {
+      "db": {
+        "password": "my_new_nova_pass"
+      }
+    },
+    "glance": {
+      "db": {
+        "password": "my_new_glance_pass"
+      }
+    },
+    "keystone": {
+      "db": {
+        "password": "my_new_keystone_pass"
+      }
+    },
+    "cinder": {
+      "db": {
+        "password": "my_new_cinder_pass"
+      }
+    }
+  }
+}</code></pre>
 
   <h2 id="chef-nodes">Chef Your Nodes</h2>
 
@@ -214,8 +206,7 @@ knife node run_list add network3.example.com &#39;role[grizzly-network]&#39;
 
   <h3>Controller Node</h3>
 
-  <p>The controller node contains, at a minimum, the roles for the base Quantum and Nova services. If you are unfamiliar with OpenStack, it is recommended to do a standard installation as illustrated in the bootstrap example. Be sure that Chef shows that the node contains the MySQL backend, RabbitMQ, Keystone,<br />
-Cinder, and Glance roles. You can verify this with a simple <code>knife</code> command:</p>
+  <p>The controller node contains, at a minimum, the roles for the base Quantum and Nova services. If you are unfamiliar with OpenStack, it is recommended to do a standard installation as illustrated in the bootstrap example. Be sure that Chef shows that the node contains the MySQL backend, RabbitMQ, Keystone, Cinder, and Glance roles. You can verify this with a simple <code>knife</code> command:</p>
 
 <pre><code>knife node show FQDN
 </code></pre>

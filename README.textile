@@ -1,14 +1,14 @@
-h2. GitHub Page: Chef-OpenStack
+h1. GitHub Page: Chef-OpenStack
 
 Our GitHub Page for Chef-OpenStack is a branded theme made using "Bootstrap CSS":http://getboostrap.com and served up with Jekyll. It is a minimal way to create static landing pages for each repo and publish them on our GitHub Pages.
 
-h3. Before Starting
+h2. Before Starting
 
 To harness all the power for this theme, you need to install Ruby and Jekyll (a Ruby gem). However, you do not have to install either to make your own page. By making just a few changes to the @_config.yml@ file, you can "create a page on-the-fly in minutes":#configuration.
 
 Of course, should you prefer to have all the power, keep reading.
 
-h3. Downloading
+h2. Downloading
 
 Two download options are available.
 
@@ -24,7 +24,7 @@ Below is a list of some other documentation related to this project.
 * "Install Jekyll on Windows":../install-jekyll-windows
 * To learn more about Jekyll, check out their "documentation":http://jekyllrb.com/docs/home.
 
-h3(#configuration). Configuration
+h2(#configuration). Configuration
 
 The @_config.yml@ file contains everything necessary to make a page on-the-fly in minutes. Open it using any editor and edit the specified fields before pushing it up to the @gh-pages@ branch.
 
@@ -34,7 +34,7 @@ The @_config.yml@ file contains everything necessary to make a page on-the-fly i
 * @star@: url that lets users to "star" us on GitHub without leaving the page (see the GutHub URL section)
 * @fork@: url that lets users to "fork" us on GitHub without leaving the page (see the GutHub URL section)
 
-h4. GitHub URL
+h3. GitHub URL
 
 Rather than generating a new url, you can easily modify the GitHub user, path, and type by modifying three references:
 
@@ -42,7 +42,7 @@ Rather than generating a new url, you can easily modify the GitHub user, path, a
 * @repo=@: GitHub repo name
 * @type=@: defines which procedure to support, i.e. "fork" or "watch"
 
-h2. Community
+h3. Community
 
 Keep track of development and community news.
 
@@ -50,11 +50,11 @@ Keep track of development and community news.
 * Fork any of our public "GitHub repo’s":http://github.com/softlayer.
 * Get the latest new and join conversations on our "Customer Forum":http://forums.softlayer.com.
 
-h2. Finding Support
+h1. Finding Support
 
 - For more information on Jekyll, visit "Jekyll's Wiki":https://github.com/mojombo/jekyll/wiki.
 - For more information on GitHub Pages, visit "GitHub Pages":http://pages.github.com.
 
-h2. Copyright and License
+h1. Copyright and License
 
 Copyright (c) 2013 SoftLayer Technologies, Inc., an IBM Company. We license our code under the "MIT license":LICENSE. By contributing your code, you agree to license your contribution under the terms of this license.
