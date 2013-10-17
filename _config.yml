@@ -12,9 +12,6 @@ fork: "http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&
 # -- STOP EDITING -- #
 
 # Dependencies
-pygments: true
-markdown: RedCloth
-textile_ext: textile
 
 # Server
 domain: softlayer.github.com
