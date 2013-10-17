@@ -52,8 +52,8 @@ Keep track of development and community news.
 
 h1. Finding Support
 
-- For more information on Jekyll, visit "Jekyll's Wiki":https://github.com/mojombo/jekyll/wiki.
-- For more information on GitHub Pages, visit "GitHub Pages":http://pages.github.com.
+* For more information on Jekyll, visit "Jekyll's Wiki":https://github.com/mojombo/jekyll/wiki.
+* For more information on GitHub Pages, visit "GitHub Pages":http://pages.github.com.
 
 h1. Copyright and License
 
