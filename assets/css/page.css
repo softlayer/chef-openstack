@@ -171,7 +171,9 @@ border-radius: 4px 4px 4px 4px;
 text-shadow:none;
 }
 
-
+.emb-card-iframe {
+margin: 0;
+}
 
 /*-- Colors --*/
 /*
