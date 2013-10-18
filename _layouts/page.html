@@ -24,12 +24,14 @@
           <div class="bs-sidebar hidden-print" role="complementary">
             <ul class="nav bs-sidenav">
               
-              {% if page.slug == "getting-started" %}
+              {% if page.slug == "getting-started-menu" %}
+                {% include nav-getting-started-menu.html %}
+              {% elsif page.slug == "getting-started" %}
                 {% include nav-getting-started.html %}
-              {% elsif page.slug == "techical-documents" %}
-                {% include nav-technical-documents.html %}
-              {% elsif page.slug == "release-notes" %}
-                {% include nav-release-notes.html %}
+              {% elsif page.slug == "documents" %}
+                {% include nav-documents.html %}
+              {% elsif page.slug == "notes" %}
+                {% include nav-notes.html %}
               {% elsif page.slug == "planning" %}
                 {% include nav-planning.html %}
               {% elsif page.slug == "contributing" %}

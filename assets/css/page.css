@@ -8,7 +8,7 @@ color:#e9eef2;
 
 .bs-docs-nav {
 border:none;
-box-shadow:0 1px 0 rgba(255,255,255,0.09);
+box-shadow:0 1px 0 rgba(255,255,255,0.05);
 }
 
 .bs-docs-nav .navbar-nav > li > a {
@@ -180,6 +180,28 @@ font-size:20px;
 font-size:22px;
 border-bottom:none;
 font-weight:bold;
+color:#333;
+}
+
+.row .col-lg-6 h2 a {
+color:#333;
+}
+
+.row .col-lg-6 h2 a:hover,
+.row .col-lg-6 h2 a:focus {
+color:#2a6496;
+}
+
+.row .col-lg-6 p a {
+font-size:16px;
+}
+
+.table thead {
+background-color:#ddd;
+}
+
+.table thead > tr > th {
+text-align:center;
 }
 
 /*-- Colors --*/
