@@ -20,66 +20,66 @@
   <table class="table table-bordered table-hover">
   <thead>
     <tr>
-      <th>Hardware </th>
-      <th>Cloud Controller Node </th>
-      <th>Network Node </th>
-      <th>Compute Node </th>
+      <th>Hardware</th>
+      <th>Cloud Controller Node</th>
+      <th>Network Node</th>
+      <th>Compute Node</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td> System </td>
-      <td> Dual Processor </td>
-      <td> Single Processor </td>
-      <td> Dual Processor </td>
+      <td>System</td>
+      <td>Dual Processor</td>
+      <td>Single Processor</td>
+      <td>Dual Processor</td>
     </tr>
     <tr>
       <td> <span class="caps"><span class="caps">RAM</span></span> </td>
-      <td> 16 GB or greater </td>
-      <td> 8 GB or greater </td>
-      <td> 16 GB or greater </td>
+      <td>16 GB or greater</td>
+      <td>8 GB or greater</td>
+      <td>16 GB or greater</td>
     </tr>
     <tr>
-      <td> Processor </td>
-      <td> Quad-Core Xeon or greater </td>
-      <td> Quad-Core Xeon or greater </td>
-      <td> Quad-Core Xeon or greater </td>
+      <td>Processor</td>
+      <td>Quad-Core Xeon or greater</td>
+      <td>Quad-Core Xeon or greater</td>
+      <td>Quad-Core Xeon or greater</td>
     </tr>
     <tr>
-      <td> Disk (OS Drive) </td>
-      <td> Two physical disks in RAID1 </td>
-      <td> Two physical disks in RAID1 </td>
-      <td> Two physical disks in RAID1 </td>
+      <td>Disk (OS Drive)</td>
+      <td>Two physical disks in RAID1</td>
+      <td>Two physical disks in RAID1</td>
+      <td>Two physical disks in RAID1</td>
     </tr>
     <tr>
-      <td> Disk (MySQL Database) </td>
-      <td> Two physical disks in RAID0 or RAID1, or 4+ physical disks in RAID10 </td>
-      <td> N/A </td>
-      <td> N/A </td>
+      <td>Disk (MySQL Database)</td>
+      <td>Two physical disks in RAID0 or RAID1, or 4+ physical disks in RAID10</td>
+      <td>N/A</td>
+      <td>N/A</td>
     </tr>
     <tr>
-      <td> Disk (Cinder Volumes) </td>
-      <td> Two physical disks1 in RAID1, or 4+ physical disks1 in RAID10 </td>
-      <td> N/A </td>
-      <td> N/A </td>
+      <td>Disk (Cinder Volumes)</td>
+      <td>Two physical disks1 in RAID1, or 4+ physical disks1 in RAID10</td>
+      <td>N/A</td>
+      <td>N/A</td>
     </tr>
     <tr>
-      <td> Disk (Instance Storage) </td>
-      <td> N/A </td>
-      <td> N/A </td>
-      <td> Two physical disks in RAID1, or 4+ physical disks in RAID10 </td>
+      <td>Disk (Instance Storage)</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Two physical disks in RAID1, or 4+ physical disks in RAID10</td>
     </tr>
     <tr>
-      <td> Disk Space </td>
-      <td> 144 GB or greater </td>
-      <td> 144 GB or greater </td>
-      <td> 144 GB or greater </td>
+      <td>Disk Space</td>
+      <td>144 GB or greater</td>
+      <td>144 GB or greater</td>
+      <td>144 GB or greater</td>
     </tr>
     <tr>
-      <td> Network </td>
-      <td> 1Gbps Private and Public </td>
-      <td> 1Gbps Private and Public </td>
-      <td> 1Gbps Private and Public </td>
+      <td>Network</td>
+      <td>1Gbps Private and Public</td>
+      <td>1Gbps Private and Public</td>
+      <td>1Gbps Private and Public</td>
     </tr>
   </tbody>
   </table>
@@ -166,8 +166,7 @@ can download them at <a href="https://github.com/opscode-cookbooks/mysql">Opscod
 
   <p>Remember that the <span class="caps">DHCP</span> server used in Quantum will need an IP address on each subnet where <span class="caps">DHCP</span> is enabled. Keep this in mind when planning how large of a SoftLayer Portable IP block to order.</p>
 
-  <p>OpenStack utilizes <span class="caps">NAT</span> (Network Address Translation) across externally connected Quantum/Neutron virtual routers. Any network that is attached to the router then has external network access through <span class="caps">NAT</span>. The use of floating IP&#8217;s can reduce the size of the portable block you will have to purchase by<br />
-allowing all compute instances to have outbound network access when not running inbound public services.</p>
+  <p>OpenStack utilizes <span class="caps">NAT</span> (Network Address Translation) across externally connected Quantum/Neutron virtual routers. Any network that is attached to the router then has external network access through <span class="caps">NAT</span>. The use of floating IP&#8217;s can reduce the size of the portable block you will have to purchase by allowing all compute instances to have outbound network access when not running inbound public services.</p>
 
   <h3>IP Constraints on Data Networks</h3>
 

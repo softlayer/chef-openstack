@@ -2,7 +2,6 @@
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -11,14 +10,25 @@
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <li><a href="{{ page.baseurl }}getting-started-menu">Getting Started</a></li>
-        <li><a href="{{ page.baseurl }}technical-documents">Technical Documents</a></li>
-        <li><a href="{{ page.baseurl }}release-notes">Release Notes</a></li>
+        
+        <li{% if page.slug == "getting-started" %} class="active"{% endif %}>
+          <a href="{{ page.baseurl }}getting-started">Getting Started</a></li>
+        
+        <li{% if page.slug == "documents" %} class="active"{% endif %}>
+        <li><a href="{{ page.baseurl }}documents">Documents</a></li>
+        
+        <li{% if page.slug == "notes" %} class="active"{% endif %}>
+        <li><a href="{{ page.baseurl }}notes">Release Notes</a></li>
+
+        <li{% if page.slug == "planning" %} class="active"{% endif %}>
         <li><a href="{{ page.baseurl }}planning">Planning</a></li>
+
+        <li{% if page.slug == "contributing" %} class="active"{% endif %}>
         <li><a href="{{ page.baseurl }}contributing">Contributing</a></li>
       </ul>
     </nav>
   </div>
+
   <!-- Fork Me Ribbon -->
   <a href="{{ site.repo }}"><img style="position: absolute; top: 0; right: 0; border: 0;" src="{{ page.baseurl }}assets/ico/forkme.png" target="_blank"></a>
 </header>

@@ -10,8 +10,7 @@
 
   <p><b>You must install Chef Server first, and the Chef Server should be accessible by what will become your OpenStack nodes on ports 443 and 80.</b></p>
 
-  <p>The Chef server acts as a hub for configuration data. It stores cookbooks, policies applied to each node, and metadata that describes each registered Chef node being managed by the chef-client command. Nodes use<br />
-the `chef-client` command to ask the server for configuration details, such as recipes, templates, and file distributions. The `chef-client` command then performs much of the configuration work on the nodes themselves without much interaction with the server. This scalable approach provides consistent configuration management and quick deployments.</p>
+  <p>The Chef server acts as a hub for configuration data. It stores cookbooks, policies applied to each node, and metadata that describes each registered Chef node being managed by the chef-client command. Nodes use the <code>chef-client</code> command to ask the server for configuration details, such as recipes, templates, and file distributions. The <code>chef-client</code> command then performs much of the configuration work on the nodes themselves without much interaction with the server. This scalable approach provides consistent configuration management and quick deployments.</p>
 
   <p>To install Chef Server, perform the following:</p>
 
@@ -42,9 +41,7 @@ the `chef-client` command to ask the server for configuration details, such as r
   <p>The instructions below provide a general overview of steps you will perform to install an OpenStack environment with private cloud. It demonstrates a typical OpenStack installation, and includes additional information about customizing or modifying your installation. Generally, your installation will follow these steps, with more details outlined in the other sections below.</p>
 
   <ol>
-    <li>Configure a bootstrap script with the hardware servers and/or cloud compute instances (<span class="caps">CCI</span>s) that you wish to bootstrap with Chef; this can be done in a simple shell script. Ensure you substitute the proper<br />
-<span class="caps">FQDN</span>, the remote user name that has password-less <code>sudo</code> access, the local path to that user&#8217;s private <span class="caps">SSH</span> key, and name of the Chef environment in which the node resides. In this example, we represent these<br />
-with <span class="caps">FQDN</span>, <span class="caps">USER</span>, and <span class="caps">ENVIRONMENT</span>, respectively.</li>
+    <li>Configure a bootstrap script with the hardware servers and/or cloud compute instances (<span class="caps">CCI</span>s) that you wish to bootstrap with Chef; this can be done in a simple shell script. Ensure you substitute the proper <span class="caps">FQDN</span>, the remote user name that has password-less <code>sudo</code> access, the local path to that user&#8217;s private <span class="caps">SSH</span> key, and name of the Chef environment in which the node resides. In this example, we represent these with <span class="caps">FQDN</span>, <span class="caps">USER</span>, and <span class="caps">ENVIRONMENT</span>, respectively.</li>
 
 <pre><code>knife bootstrap FQDN -x USER --sudo -i ~/.ssh/id_rsa -E ENVIRONMENT
 </code></pre>
@@ -54,7 +51,7 @@ with <span class="caps">FQDN</span>, <span class="caps">USER</span>, and <span c
 <pre><code>knife node run_list add FQDN &#39;role[grizzly-controller]&#39;
 </code></pre>
 
-    <li>Run the bootstrap script you&#8217;ve just created to prepare each server before running `chef-client`.</li>
+    <li>Run the bootstrap script you&#8217;ve just created to prepare each server before running <code>chef-client</code>.</li>
     <li>Modify the required attributes through Chef environment overrides.</li>
     <li>Run the `chef-client` program on each server to start installation and configuration. Be sure to run the installs in this order:</li>
       <ul>
@@ -103,14 +100,11 @@ $ knife role from file ~/chef-repo/roles/*
 
   <h2 id="bootstrap-nodes">Bootstrap Your Nodes</h2>
 
-  <p>Bootstrapping is a Chef term for remotely deploying the chef client to a server. It creates the node and client objects in the Chef Server and also adds client keys to both the server and client, allowing to<br />
-chef-client communicate with the Chef Server.</p>
+  <p>Bootstrapping is a Chef term for remotely deploying the chef client to a server. It creates the node and client objects in the Chef Server and also adds client keys to both the server and client, allowing to chef-client communicate with the Chef Server.</p>
 
-  <p>Two choices are available for bootstrapping nodes. SoftLayer has provided example scripts, which can be edited for your needs, or you can bootstrap them on your own by following a <code>chef-client</code> install guide or<br />
-installing <code>chef-client</code> on your own. It is recommended to use the bootstrap scripts.</p>
+  <p>Two choices are available for bootstrapping nodes. SoftLayer has provided example scripts, which can be edited for your needs, or you can bootstrap them on your own by following a <code>chef-client</code> install guide or installing <code>chef-client</code> on your own. It is recommended to use the bootstrap scripts.</p>
 
-  <p>Edit the script for each hardware node you would like to include in the OpenStack installation. It is highly recommended that at least three nodes be used—-one for a controller node, one for a network node, and one for a compute node. After the bootstrap process completes, the script will assign an<br />
-OpenStack role to the hardware nodes. A node can have more than one role. A three-node bootstrap example script is shown below.</p>
+  <p>Edit the script for each hardware node you would like to include in the OpenStack installation. It is highly recommended that at least three nodes be used—-one for a controller node, one for a network node, and one for a compute node. After the bootstrap process completes, the script will assign an OpenStack role to the hardware nodes. A node can have more than one role. A three-node bootstrap example script is shown below.</p>
 
 <pre><code>#!/bin/bash
 </code>
@@ -241,8 +235,7 @@ Tags:
 
   <h3>Other Network and Compute Nodes</h3>
 
-  <p>After the MySQL, RabbitMQ, and controller roles have been chefed, any of the remaining roles can then be run in any order for the other nodes, and can even be run in parallel to speed up your total deployment time. Compute and Network nodes can also be added any time after the initial deployment. Following the<br />
-example above, the two commands would chef your network and compute nodes:</p>
+  <p>After the MySQL, RabbitMQ, and controller roles have been chefed, any of the remaining roles can then be run in any order for the other nodes, and can even be run in parallel to speed up your total deployment time. Compute and Network nodes can also be added any time after the initial deployment. Following the example above, the two commands would chef your network and compute nodes:</p>
 
 <pre><code>## Compute node:
 knife ssh &#39;name:FQDN_2&#39; &#39;sudo chef-client&#39;
