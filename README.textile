@@ -13,16 +13,15 @@ h2. Downloading
 Two download options are available.
 
 * "Download the latest release":https://github.com/softlayer/chef-openstack/archive/master.zip.
-* Clone the repo: @git clone -b gh-pages https://github.com/softlayer/chef-openstack.git@.
+* Clone the repo: @git clone https://github.com/softlayer/chef-openstack.git gh-pages@.
 
 Search our "Getting Started":../getting-started page for information on installing, configuring, and much more.
 
 Below is a list of some other documentation related to this project.
 
 * "Getting Started":../getting-started
-* "Technical Documents":../technical-documents
-* "Install Jekyll on Windows":../install-jekyll-windows
-* To learn more about Jekyll, check out their "documentation":http://jekyllrb.com/docs/home.
+* "Technical Documents":../documents
+* To learn more about Jekyll, check out the "documentation":http://jekyllrb.com/docs/home on their website..
 
 h2(#configuration). Configuration
 
@@ -57,4 +56,4 @@ h1. Finding Support
 
 h1. Copyright and License
 
-Copyright (c) 2013 SoftLayer Technologies, Inc., an IBM Company. We license our code under the "MIT license":LICENSE. By contributing your code, you agree to license your contribution under the terms of this license.
+Copyright (c) 2013 SoftLayer Technologies, Inc., an IBM Company. We license our code under the "MIT license":https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE. By contributing your code, you agree to license your contribution under the terms of this license.
