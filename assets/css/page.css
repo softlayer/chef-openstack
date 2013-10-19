@@ -1,5 +1,5 @@
 article,aside,details,figcaption,figure,header,hgroup,main,nav,section,summary,.bs-docs-home,.bs-docs-nav,.bs-masthead {
-  background: url(http://i40.tinypic.com/31470n7.png) #252525;
+  background: url(http://i40.tinypic.com/31470n7.png) #474747;
 }
 
 .bs-docs-home {
@@ -44,7 +44,7 @@ article,aside,details,figcaption,figure,header,hgroup,main,nav,section,summary,.
 }
 
 .bs-header {
-  background: url(http://i40.tinypic.com/31470n7.png) #252525;
+  background: url(http://i40.tinypic.com/31470n7.png) #474747;
   color: #fff;
   padding: 30px 14px;
   text-shadow: none;
@@ -58,7 +58,7 @@ article,aside,details,figcaption,figure,header,hgroup,main,nav,section,summary,.
 
 .bs-footer {
   background: transparent;
-  border-top: 1px solid #f1f1f1;
+  border-top: 1px solid #e8e8e8;
   padding-top: 0;
 }
 
@@ -76,7 +76,7 @@ article,aside,details,figcaption,figure,header,hgroup,main,nav,section,summary,.
 }
 
 .bs-masthead .lead {
-  color: #ecf0f1;
+  color: #e8e8e8;
 }
 
 h1[id] {
@@ -92,7 +92,7 @@ h1,.h1 {
 }
 
 h2,.h2 {
-  border-bottom: 1px dotted #d3d7d7;
+  border-bottom: 1px solid #c8c8c8;
   font-size: 26px;
   margin-bottom: 14px;
   padding-top: 14px;
@@ -118,29 +118,30 @@ a:hover,a:focus {
   text-decoration: none;
 }
 
+/* --- Don't change code colors --- */
 code {
   background: #f9f0dc;
   color: #c0392b;
 }
 
 .bs-sidenav {
-  background: #ecf0f1;
+  background: #e8e8e8;
 }
 
 .bs-sidebar .nav > li > a {
-  color: #444;
+  color: #474747;
   display: block;
   padding: 4px 20px;
 }
 
 .bs-sidebar .nav > li > a:hover,.bs-sidebar .nav > li > a:focus {
-  background: #d3d7d7;
+  background: #c8c8c8;
   border-right: 1px solid #aeb1b1;
   text-decoration: none;
 }
 
 blockquote p {
-  color: #999;
+  color: #747474;
   font-size: 13.5px;
 }
 
@@ -149,9 +150,9 @@ li,ul,ol {
 }
 
 .callout {
-  background-color: #fcfcfc;
+  background-color: #f4f4f4;
   border-top: #ecf0f1;
-  color: #333;
+  color: #474747;
 }
 
 .callout a {
@@ -161,10 +162,11 @@ li,ul,ol {
 pre {
   font-size: 13.5px;
   line-height: 1.42857;
-  color: #fff;
-  background-color: #252525;
-  border: 1px solid #d3d7d7;
+  color: #474747;
+  background-color: #f4f4f4;
+  border: 1px solid #e8e8e8;
   border-radius: 4px 4px 4px 4px;
+  margin: 0 0 20px;
 }
 
 .bs-sidenav {
@@ -172,22 +174,22 @@ pre {
 }
 
 .lead {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .row .col-lg-6 h2 {
-  font-size: 22px;
+  font-size: 26px;
   border-bottom: none;
-  font-weight: 700;
-  color: #333;
+  font-weight: 500;
+  color: #474747;
 }
 
 .row .col-lg-6 h2 a {
-  color: #7f8c8d;
+  color: #474747;
 }
 
 .row .col-lg-6 h2 a:hover,.row .col-lg-6 h2 a:focus {
-  color: #2a6496;
+  color: #197ba8;
 }
 
 .row .col-lg-6 p a {
@@ -195,9 +197,33 @@ pre {
 }
 
 .table thead {
-  background-color: #d3d7d7;
+  background-color: #474747;
 }
 
 .table thead > tr > th {
   text-align: center;
+  color: #fff;
+  border-color: #474747;
 }
+
+.navbar-nav > .active > a {
+  background-color: transparent;
+  border-radius: 6px;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+  background-image: none;
+}
+
+/*
+*
+* Blue      #1b84b5   #197ba8
+* White     #ffffff   #e8e8e8
+* Grey      #d8d8d8   #474747   #c6c6c6   #747474   #f4f4f4
+* Aqua      #1bb5ad   #13c29b
+* Green     #31b29e   #268c7c
+*/
