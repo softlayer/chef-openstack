@@ -1,9 +1,9 @@
 article,aside,details,figcaption,figure,header,hgroup,main,nav,section,summary,.bs-docs-home,.bs-docs-nav,.bs-masthead {
-  background: url(http://i40.tinypic.com/31470n7.png) #171717;
+  background: url('http://s24.postimg.org/omi83bdmt/image.png') #282830;
 }
 
 .bs-docs-home {
-  color: #e9eef2;
+  color: #e7e7e7;
 }
 
 .bs-docs-nav {
@@ -44,7 +44,7 @@ article,aside,details,figcaption,figure,header,hgroup,main,nav,section,summary,.
 }
 
 .bs-header {
-  background: url(http://i40.tinypic.com/31470n7.png) #474747;
+  background: url('http://s24.postimg.org/omi83bdmt/image.png') #474747;
   color: #fff;
   padding: 30px 14px;
   text-shadow: none;
@@ -58,12 +58,12 @@ article,aside,details,figcaption,figure,header,hgroup,main,nav,section,summary,.
 
 .bs-footer {
   background: transparent;
-  border-top: 1px solid #e8e8e8;
+  border-top: 1px solid #e7e7e7;
   padding-top: 0;
 }
 
 .bs-footer a {
-  color: #95a5a6;
+  color: #c6c6c6;
   text-decoration: none;
 }
 
@@ -76,7 +76,7 @@ article,aside,details,figcaption,figure,header,hgroup,main,nav,section,summary,.
 }
 
 .bs-masthead .lead {
-  color: #e8e8e8;
+  color: #e7e7e7;
 }
 
 h1[id] {
@@ -118,14 +118,13 @@ a:hover,a:focus {
   text-decoration: none;
 }
 
-/* --- Don't change code colors --- */
 code {
   background: #f9f0dc;
   color: #c0392b;
 }
 
 .bs-sidenav {
-  background: #e8e8e8;
+  background: #e7e7e7;
 }
 
 .bs-sidebar .nav > li > a {
@@ -136,7 +135,7 @@ code {
 
 .bs-sidebar .nav > li > a:hover,.bs-sidebar .nav > li > a:focus {
   background: #c8c8c8;
-  border-right: 1px solid #aeb1b1;
+  border-right: 1px solid #34495e;
   text-decoration: none;
 }
 
@@ -145,13 +144,13 @@ blockquote p {
   font-size: 13.5px;
 }
 
-li,ul,ol {
-  margin-bottom: 4px;
+ul,ol {
+  margin-bottom: 14px;
 }
 
 .callout {
   background-color: #f4f4f4;
-  border-top: #ecf0f1;
+  border-top: #e7e7e7;
   color: #474747;
 }
 
@@ -161,17 +160,17 @@ li,ul,ol {
 
 pre {
   font-size: 13.5px;
-  line-height: 1.42857;
+  line-height: 1.45;
   color: #fff;
-  background-color: #181818;
-  border: 1px solid #181818;
+  background-color: #282830;
+  border: 1px solid #282830;
   border-radius: 4px;
   margin: 0 0 20px;
 }
 
 output pre {
   font-size: 13.5px;
-  line-height: 1.42857;
+  line-height: 1.45;
   color: #7f8c8d;
   background-color: #f9f9f9;
   border: 1px solid #ecf0f1;
@@ -199,7 +198,7 @@ output pre {
 }
 
 .row .col-lg-6 h2 a:hover,.row .col-lg-6 h2 a:focus {
-  color: #197ba8;
+  color: #2980b9;
 }
 
 .row .col-lg-6 p a {
@@ -237,21 +236,25 @@ output pre {
 }
 
 a {
-  color: #357aa9;
+  color: #2980b9;
 }
 
 a:hover, a:focus {
-  color: #3D6498;
+  color: #34495e;
+}
+
+p {
+  line-height: 1.45;
+  margin-bottom: 20px
 }
 
 /*
-*
-* Blue          #1b84b5   #197ba8
-* Purple        #950ea7   #xxxxxx
-* White         #ffffff   #e8e8e8
-* Light Gray    #d8d8d8   #c6c6c6
+* Flat UI Scheme
+* -------------- 
+* Blue          #2980b9   #34495e
+* Green         #2ecc71   #27ae60
+* White         #ffffff   #e7e7e7
+* Light Gray    #c6c6c6
 * Gray          #747474   #474747   
-* Dark Gray     #292929
-
-New Blue: #357aa9 and #3D6498
+* Dark Gray     #282830
 */

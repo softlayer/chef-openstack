@@ -12,14 +12,15 @@ a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .na
 }
 
 .btn-outline-inverse {
-  background-color: #0074C2;
-  border: none;
+  background-color: #2980b9;
+  border: 1px solid #2980b9;
   color: #fff;
   width: 150px;
 }
 
 .btn-outline-inverse:hover,.btn-outline-inverse:focus,.btn-outline-inverse:active {
-  background-color: #197ba8;
+  background-color: #2980b9;
+  border: 1px solid #3498db;
   color: #fff;
 }
 
