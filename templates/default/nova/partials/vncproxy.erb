@@ -1,5 +1,5 @@
 # NoVNC Remote Console #
-novnc_enable=<%= node["nova"]["config"]["novnc_enable"] %>
+novnc_enable=<%= node['nova']['config']['novnc_enable'] %>
 novncproxy_base_url=http://<%= node[:controller][:public_ip] %>:6080/vnc_auto.html
 vncserver_proxyclient_address=<%= node[:node_info][:private_ip] %> 
 vncserver_listen=0.0.0.0

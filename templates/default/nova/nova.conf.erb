@@ -1,16 +1,16 @@
-<%= node["admin"]["banner"] %>
+<%= node['admin']['banner'] %>
 
 [DEFAULT]
 # General #
-verbose=<%= node["nova"]["verbose"] %>
-root_helper= <%= node["nova"]["config"]["root_helper"] %>
+verbose=<%= node['nova']['verbose'] %>
+root_helper= <%= node['nova']['config']['root_helper'] %>
 rootwrap_config=/etc/nova/rootwrap.conf
-logdir=<%= node["nova"]["config"]["logdir"] %>
+logdir=<%= node['nova']['config']['logdir'] %>
 state_path=/var/lib/nova
 lock_path=/var/lock/nova
 
 # MySQL Connection #
-connection=mysql://<%= node["nova"]["db"]["username"] %>:<%= node["nova"]["db"]["password"] %>@<%= node[:mysqlnova][:private_ip] %>/<%= node["nova"]["db"]["name"] %>
+connection=mysql://<%= node['nova']['db']['username'] %>:<%= node['nova']['db']['password'] %>@<%= node[:mysqlnova][:private_ip] %>/<%= node['nova']['db']['name'] %>
 
 ##### RABBITMQ #####
 <%= render "nova/partials/rabbit.erb" %>

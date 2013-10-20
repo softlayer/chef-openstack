@@ -1,11 +1,11 @@
-<%= node["admin"]["banner"] %>
+<%= node['admin']['banner'] %>
 
 [DEFAULT]
 # Show more verbose log output (sets INFO log level output)
-verbose = <%= node["glance"]["config"]["verbose"] %>
+verbose = <%= node['glance']['config']['verbose'] %>
 
 # Show debugging output in logs (sets DEBUG log level output)
-debug = <%= node["glance"]["config"]["debug"] %>
+debug = <%= node['glance']['config']['debug'] %>
 
 log_file = /var/log/glance/image-cache.log
 
@@ -13,7 +13,7 @@ log_file = /var/log/glance/image-cache.log
 #use_syslog = False
 
 # Directory that the Image Cache writes data to
-image_cache_dir = <%= node["glance"]["config"]["image_cache_dir"] %>
+image_cache_dir = <%= node['glance']['config']['image_cache_dir'] %>
 
 # Number of seconds after which we should consider an incomplete image to be
 # stalled and eligible for reaping
@@ -33,10 +33,10 @@ image_cache_invalid_entry_grace_period = 3600
 image_cache_max_size = 10737418240
 
 # Address to find the registry server
-registry_host = <%= node["glance"]["config"]["bind_host"]["registry"] %>
+registry_host = <%= node['glance']['config']['bind_host']['registry'] %>
 
 # Port the registry server is listening on
-registry_port = <%= node["glance"]["config"]["bind_port"]["registry"] %>
+registry_port = <%= node['glance']['config']['bind_port']['registry'] %>
 
 # Auth settings if using Keystone
 # auth_url = http://127.0.0.1:5000/v2.0/
@@ -58,7 +58,7 @@ registry_port = <%= node["glance"]["config"]["bind_port"]["registry"] %>
 
 # Directory that the Filesystem backend store
 # writes image data to
-filesystem_store_datadir = <%= node["glance"]["config"]["filesystem_store_datadir"] %>
+filesystem_store_datadir = <%= node['glance']['config']['filesystem_store_datadir'] %>
 
 # ============ Swift Store Options =============================
 

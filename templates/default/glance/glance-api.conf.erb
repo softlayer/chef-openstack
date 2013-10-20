@@ -1,11 +1,11 @@
-<%= node["admin"]["banner"] %>
+<%= node['admin']['banner'] %>
 
 [DEFAULT]
 # Show more verbose log output (sets INFO log level output)
-verbose = <%= node["glance"]["config"]["verbose"] %>
+verbose = <%= node['glance']['config']['verbose'] %>
 
 # Show debugging output in logs (sets DEBUG log level output)
-debug = <%= node["glance"]["config"]["debug"] %>
+debug = <%= node['glance']['config']['debug'] %>
 
 # Which backend scheme should Glance use by default is not specified
 # in a request to add a new image to Glance? Known schemes are determined
@@ -31,14 +31,14 @@ default_store = file
 #image_size_cap = 1099511627776
 
 # Address to bind the API server
-bind_host = <%= node["glance"]["config"]["bind_host"]["api"] %>
+bind_host = <%= node['glance']['config']['bind_host']['api'] %>
 
 # Port the bind the API server to
-bind_port = <%= node["glance"]["config"]["bind_port"]["api"] %>
+bind_port = <%= node['glance']['config']['bind_port']['api'] %>
 
 # Log to this file. Make sure you do not set the same log
 # file for both the API and registry servers!
-log_file = <%= node["glance"]["config"]["log_file"]["api"] %>
+log_file = <%= node['glance']['config']['log_file']['api'] %>
 
 # Backlog requests when creating socket
 backlog = 4096
@@ -54,7 +54,7 @@ backlog = 4096
 # SQLAlchemy connection string for the reference implementation
 # registry server. Any valid SQLAlchemy connection string is fine.
 # See: http://www.sqlalchemy.org/docs/05/reference/sqlalchemy/connections.html#sqlalchemy.create_engine
-sql_connection = mysql://<%= node["glance"]["db"]["username"] %>:<%= node["glance"]["db"]["password"] %>@<%= node[:mysqlglance][:private_ip] %>/<%= node["glance"]["db"]["name"] %>
+sql_connection = mysql://<%= node['glance']['db']['username'] %>:<%= node['glance']['db']['password'] %>@<%= node[:mysqlglance][:private_ip] %>/<%= node['glance']['db']['name'] %>
 
 # Period in seconds after which SQLAlchemy should reestablish its connection
 # to the database.
@@ -70,14 +70,14 @@ sql_idle_timeout = 3600
 # may improve performance (especially if using SSL with
 # compression turned on). It is typically recommended to set
 # this value to the number of CPUs present on your machine.
-workers = <%= node["glance"]["config"]["workers"] %>
+workers = <%= node['glance']['config']['workers'] %>
 
 # Role used to identify an authenticated user as administrator
 #admin_role = admin
 
 # Allow unauthenticated users to access the API with read-only
 # privileges. This only applies when using ContextMiddleware.
-allow_anonymous_access = <%= node["glance"]["config"]["allow_anonymous_access"] %>
+allow_anonymous_access = <%= node['glance']['config']['allow_anonymous_access'] %>
 
 # Allow access to version 1 of glance api
 #enable_v1_api = True
@@ -90,7 +90,7 @@ allow_anonymous_access = <%= node["glance"]["config"]["allow_anonymous_access"] 
 # file system store a URL of 'file:///path/to/image' will
 # be returned to the user in the 'direct_url' meta-data field.
 # The default value is false.
-show_image_direct_url = <%= node["glance"]["config"]["show_image_direct_url"] %>
+show_image_direct_url = <%= node['glance']['config']['show_image_direct_url'] %>
 
 # ================= Syslog Options ============================
 
@@ -122,10 +122,10 @@ show_image_direct_url = <%= node["glance"]["config"]["show_image_direct_url"] %>
 # ============ Registry Options ===============================
 
 # Address to find the registry server
-registry_host = <%= node["glance"]["config"]["bind_host"]["registry"] %>
+registry_host = <%= node['glance']['config']['bind_host']['registry'] %>
 
 # Port the registry server is listening on
-registry_port = <%= node["glance"]["config"]["bind_port"]["registry"] %>
+registry_port = <%= node['glance']['config']['bind_port']['registry'] %>
 
 # What protocol to use when connecting to the registry server?
 # Set to https for secure HTTP communication
@@ -167,19 +167,19 @@ registry_client_protocol = http
 # There are three methods of sending notifications, logging (via the
 # log_file directive), rabbit (via a rabbitmq queue), qpid (via a Qpid
 # message queue), or noop (no notifications sent, the default)
-notifier_strategy = <%= node["glance"]["config"]["notifier_strategy"] %>
+notifier_strategy = <%= node['glance']['config']['notifier_strategy'] %>
 
 # Configuration options if sending notifications via rabbitmq (these are
 # the defaults)
 rabbit_host = <%= node[:rabbitmq][:private_ip] %>
-rabbit_port = <%= node["glance"]["config"]["rabbit_port"] %>
-rabbit_use_ssl = <%= node["glance"]["config"]["rabbit_use_ssl"] %>
-rabbit_userid = <%= node["glance"]["config"]["rabbit_userid"] %>
-rabbit_password = <%= node["glance"]["config"]["rabbit_password"] %>
+rabbit_port = <%= node['glance']['config']['rabbit_port'] %>
+rabbit_use_ssl = <%= node['glance']['config']['rabbit_use_ssl'] %>
+rabbit_userid = <%= node['glance']['config']['rabbit_userid'] %>
+rabbit_password = <%= node['glance']['config']['rabbit_password'] %>
 rabbit_virtual_host = /
-rabbit_notification_exchange = <%= node["glance"]["config"]["rabbit_notification_exchange"] %>
-rabbit_notification_topic = <%= node["glance"]["config"]["rabbit_notification_topic"] %>
-rabbit_durable_queues = <%= node["glance"]["config"]["rabbit_durable_queues"] %>
+rabbit_notification_exchange = <%= node['glance']['config']['rabbit_notification_exchange'] %>
+rabbit_notification_topic = <%= node['glance']['config']['rabbit_notification_topic'] %>
+rabbit_durable_queues = <%= node['glance']['config']['rabbit_durable_queues'] %>
 
 # Configuration options if sending notifications via Qpid (these are
 # the defaults)
@@ -204,7 +204,7 @@ rabbit_durable_queues = <%= node["glance"]["config"]["rabbit_durable_queues"] %>
 
 # Directory that the Filesystem backend store
 # writes image data to
-filesystem_store_datadir = <%= node["glance"]["config"]["filesystem_store_datadir"] %>
+filesystem_store_datadir = <%= node['glance']['config']['filesystem_store_datadir'] %>
 
 # ============ Swift Store Options =============================
 
@@ -377,14 +377,14 @@ scrubber_datadir = /var/lib/glance/scrubber
 # =============== Image Cache Options =============================
 
 # Base directory that the Image Cache uses
-image_cache_dir = <%= node["glance"]["config"]["image_cache_dir"] %>
+image_cache_dir = <%= node['glance']['config']['image_cache_dir'] %>
 
 [keystone_authtoken]
 auth_host = <%= node[:keystone][:private_ip] %>
-auth_port = <%= node["keystone"]["config"]["admin_port"] %>
+auth_port = <%= node['keystone']['config']['admin_port'] %>
 auth_protocol = http
-admin_tenant_name = <%= node["glance"]["service_tenant_name"] %>
-admin_user = <%= node["glance"]["service_user"] %>
+admin_tenant_name = <%= node['glance']['service_tenant_name'] %>
+admin_user = <%= node['glance']['service_user'] %>
 admin_password = <%= node[:admin][:password] %>
 
 [paste_deploy]
@@ -396,4 +396,4 @@ admin_password = <%= node[:admin][:password] %>
 # [pipeline:glance-api-keystone], you would configure the flavor below
 # as 'keystone'.
 #flavor=
-flavor=<%= node["glance"]["config"]["flavor"] %>
+flavor=<%= node['glance']['config']['flavor'] %>

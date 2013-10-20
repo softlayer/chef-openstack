@@ -1,14 +1,14 @@
-<%= node["admin"]["banner"] %>
+<%= node['admin']['banner'] %>
 
 [DEFAULT]
 # Show debugging output in log (sets DEBUG log level output)
 # debug = True
 
 # The Neutron user information for accessing the Neutron API.
-auth_url = http://<%= node[:keystone][:private_ip] %>:<%= node["keystone"]["config"]["admin_port"] %>/v2.0
+auth_url = http://<%= node[:keystone][:private_ip] %>:<%= node['keystone']['config']['admin_port'] %>/v2.0
 auth_region = <%= node.chef_environment %>
-admin_tenant_name = <%= node["neutron"]["service_tenant_name"] %>
-admin_user = <%= node["neutron"]["service_user"] %>
+admin_tenant_name = <%= node['neutron']['service_tenant_name'] %>
+admin_user = <%= node['neutron']['service_user'] %>
 admin_password = <%= node[:admin][:password] %>
 
 # Network service endpoint type to pull from the keystone catalog
