@@ -1,5 +1,5 @@
 article,aside,details,figcaption,figure,header,hgroup,main,nav,section,summary,.bs-docs-home,.bs-docs-nav,.bs-masthead {
-  background: url(http://i40.tinypic.com/31470n7.png) #474747;
+  background: url(http://i40.tinypic.com/31470n7.png) #171717;
 }
 
 .bs-docs-home {
@@ -162,10 +162,20 @@ li,ul,ol {
 pre {
   font-size: 13.5px;
   line-height: 1.42857;
-  color: #474747;
-  background-color: #f4f4f4;
-  border: 1px solid #e8e8e8;
-  border-radius: 4px 4px 4px 4px;
+  color: #fff;
+  background-color: #181818;
+  border: 1px solid #181818;
+  border-radius: 4px;
+  margin: 0 0 20px;
+}
+
+output pre {
+  font-size: 13.5px;
+  line-height: 1.42857;
+  color: #7f8c8d;
+  background-color: #f9f9f9;
+  border: 1px solid #ecf0f1;
+  border-radius: 4px;
   margin: 0 0 20px;
 }
 
@@ -174,7 +184,7 @@ pre {
 }
 
 .lead {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .row .col-lg-6 h2 {
@@ -198,6 +208,7 @@ pre {
 
 .table thead {
   background-color: #474747;
+  border: 1px solid #474747;
 }
 
 .table thead > tr > th {
@@ -218,12 +229,29 @@ pre {
 .navbar-inverse .navbar-nav > .active > a {
   background-image: none;
 }
+ 
+.table-bordered > tbody > tr > th, 
+.table-bordered > tbody > tr > td
+{
+  border: 1px solid #c6c6c6;
+}
+
+a {
+  color: #357aa9;
+}
+
+a:hover, a:focus {
+  color: #3D6498;
+}
 
 /*
 *
-* Blue      #1b84b5   #197ba8
-* White     #ffffff   #e8e8e8
-* Grey      #d8d8d8   #474747   #c6c6c6   #747474   #f4f4f4
-* Aqua      #1bb5ad   #13c29b
-* Green     #31b29e   #268c7c
+* Blue          #1b84b5   #197ba8
+* Purple        #950ea7   #xxxxxx
+* White         #ffffff   #e8e8e8
+* Light Gray    #d8d8d8   #c6c6c6
+* Gray          #747474   #474747   
+* Dark Gray     #292929
+
+New Blue: #357aa9 and #3D6498
 */

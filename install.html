@@ -114,14 +114,14 @@ $ knife role from file ~/chef-repo/roles/*
 
   <p>Edit the script for each hardware node you would like to include in the OpenStack installation. It is highly recommended that at least three nodes be used—-one for a controller node, one for a network node, and one for a compute node. After the bootstrap process completes, the script will assign an OpenStack role to the hardware nodes. A node can have more than one role. A three-node bootstrap example script is shown below.</p>
 
-<pre><code>#!/bin/bash
-</code>
-<code>## Bootstrap three nodes with chef-client, registering them with Chef Server
+<output><pre>#!/bin/bash
+
+## Bootstrap three nodes with chef-client, registering them with Chef Server
 knife bootstrap control1.example.com -x USER --sudo -i ~/.ssh/id_rsa -E ENVIRONMENT
 knife bootstrap compute2.example.com -x USER --sudo -i ~/.ssh/id_rsa -E ENVIRONMENT
 knife bootstrap network3.example.com -x USER --sudo -i ~/.ssh/id_rsa -E ENVIRONMENT
-</code>
-<code>## Now, add specific roles to each node&#39;s run list that will run once `chef-client` is run
+
+## Now, add specific roles to each node&#39;s run list that will run once <code>chef-client</code> is run
 ## Controller node:
 knife node run_list add control1.example.com &#39;role[grizzly-mysql-all]&#39;
 knife node run_list add control1.example.com &#39;role[grizzly-rabbitmq]&#39;
@@ -129,14 +129,13 @@ knife node run_list add control1.example.com &#39;role[grizzly-cinder]&#39;
 knife node run_list add control1.example.com &#39;role[grizzly-keystone]&#39;
 knife node run_list add control1.example.com &#39;role[grizzly-glance]&#39;
 knife node run_list add control1.example.com &#39;role[grizzly-controller]&#39;
-</code>
-<code>## Compute node:
-knife node run_list add compute2.example.com &#39;role[grizzly-compute]&#39;
-</code>
-<code>## Network node:
-knife node run_list add network3.example.com &#39;role[grizzly-network]&#39;
-</code></pre>
 
+## Compute node:
+knife node run_list add compute2.example.com &#39;role[grizzly-compute]&#39;
+
+## Network node:
+knife node run_list add network3.example.com &#39;role[grizzly-network]&#39;
+</pre></output>
 
   <h2 id="configure-chef">Configure Chef Overrides for OpenStack</h2>
 
@@ -156,7 +155,7 @@ knife node run_list add network3.example.com &#39;role[grizzly-network]&#39;
 
   <p>The following is an example of the recommended minimum attributes that can be overridden in the environment, illustrating the required attributes to deploy:</p>
 
-  <pre><code>"override_attributes": {
+  <output><pre>"override_attributes": {
     "admin": {
       "password": "admin_pass"
     },
@@ -192,7 +191,7 @@ knife node run_list add network3.example.com &#39;role[grizzly-network]&#39;
       }
     }
   }
-}</code></pre>
+}</pre></output>
 
   <h2 id="chef-nodes">Chef Your Nodes</h2>
 
@@ -215,7 +214,7 @@ knife node run_list add network3.example.com &#39;role[grizzly-network]&#39;
 
   <p>The output should look similar to this:</p>
 
-<pre><code>Node Name: control1.example.com
+<output><pre>Node Name: control1.example.com
 Environment: Region
 FQDN: control1.example.com
 IP: XX.XX.XX.XX
@@ -224,7 +223,7 @@ Roles: grizzly-mysql-cinder, grizzly-mysql-glance, grizzly-mysql-keystone, grizz
 Recipes: grizzly::set_attributes, grizzly::set_cloudnetwork, ntp, grizzly::mysql-cinder, grizzly::mysql-glance, grizzly::mysql-keystone, grizzly::mysql-nova, grizzly::mysql-quantum, grizzly::ip_forwarding, grizzly::repositories, grizzly::rabbitmq-server, grizzly::keystone, grizzly::quantum-controller, grizzly::nova, grizzly::dashboard, grizzly::cinder, grizzly::glance, grizzly::quantum-network
 Platform: ubuntu 12.04
 Tags:
-</code></pre>
+</pre></output>
 
   <p>To chef the controller node you can either connect directly to the remote server and (with root privileges) run <code>chef-client</code> from the node itself or use <a href="http://docs.opscode.com/knife_ssh.html">knife ssh</a> to run it from the Chef server:</p>
 

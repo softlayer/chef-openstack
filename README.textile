@@ -41,7 +41,7 @@ Rather than generating a new url, you can easily modify the GitHub user, path, a
 * @repo=@: GitHub repo name
 * @type=@: defines which procedure to support, i.e. "fork" or "watch"
 
-h3. Community
+h1. Community
 
 Keep track of development and community news.
 
