@@ -1,41 +1,43 @@
 h1. GitHub Page: Chef-OpenStack
 
-Our GitHub Page for Chef-OpenStack is a branded theme made using "Bootstrap CSS":http://getboostrap.com and served up with Jekyll. It is a minimal way to create static landing pages for each repo and publish them on our GitHub Pages.
+Our GitHub Page for Chef-OpenStack is a branded theme made using "Bootstrap CSS":http://getboostrap.com and served up by Jekyll. It is a minimal way to create static landing pages for each repo and publish them on our GitHub Pages.
 
 h2. Before Starting
 
-To harness all the power for this theme, you need to install Ruby and Jekyll (a Ruby gem). However, you do not have to install either to make your own page. By making just a few changes to the @_config.yml@ file, you can "create a page on-the-fly in minutes":#configuration.
+To harness all the power behind this theme, you need to install Ruby and Jekyll (a Ruby gem). However, you do not have to install either to make your own page. By making just a few changes to the @_config.yml@ file, you can "create a page on-the-fly in minutes":#configuration.
 
-Of course, should you prefer to have all the power, keep reading.
+Of course, should you prefer to eat your own dog food, keep reading.
 
 h2. Downloading
 
 Two download options are available.
 
-* "Download the latest release":https://github.com/softlayer/chef-openstack/archive/master.zip.
-* Clone the repo: @git clone https://github.com/softlayer/chef-openstack.git gh-pages@.
+* "Download the latest release":https://github.com/softlayer/chef-openstack/archive/master.zip
+* Clone the repo: @git clone https://github.com/softlayer/chef-openstack.git gh-pages@
 
-Search our "Getting Started":../getting-started page for information on installing, configuring, and much more.
+Search our "Getting Started":../getting-started page for information on installing, configuring, and more.
 
-Below is a list of some other documentation related to this project.
+Below is a list of other documents related to this project.
+
+h2. Documents
 
 * "Getting Started":../getting-started
 * "Technical Documents":../documents
-* To learn more about Jekyll, check out the "documentation":http://jekyllrb.com/docs/home on their website..
+* To learn more about Jekyll, check out their "documentation":http://jekyllrb.com/docs/home on their website.
 
 h2(#configuration). Configuration
 
 The @_config.yml@ file contains everything necessary to make a page on-the-fly in minutes. Open it using any editor and edit the specified fields before pushing it up to the @gh-pages@ branch.
 
-* @project@: the _public_ name for the project
-* @lead@: high-level description for the product
-* @repo@: url for the GitHub repository
-* @star@: url that lets users to "star" us on GitHub without leaving the page (see the GutHub URL section)
-* @fork@: url that lets users to "fork" us on GitHub without leaving the page (see the GutHub URL section)
+* @project@: The _public_ name for the project
+* @lead@: High-level description for the product
+* @repo@: GitHub repository
+* @star@: Lets users "star" us on GitHub without leaving the page
+* @fork@: Lets users "fork" us on GitHub without leaving the page
 
 h3. GitHub URL
 
-Rather than generating a new url, you can easily modify the GitHub user, path, and type by modifying three references:
+You can easily modify the GitHub user, path, and type by modifying three references:
 
 * @user=@: GitHub username, i.e. "softlayer"
 * @repo=@: GitHub repo name
