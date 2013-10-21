@@ -17,9 +17,9 @@ Two download options are available.
 
 Search our "Getting Started":../getting-started page for information on installing, configuring, and more.
 
-Below is a list of other documents related to this project.
-
 h2. Documents
+
+Below is a list of other documents related to this project.
 
 * "Getting Started":../getting-started
 * "Technical Documents":../documents
