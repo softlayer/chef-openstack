@@ -1,5 +1,5 @@
 article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar {
-  background: url('img/bg.png') #555;
+  background: url('http://s7.postimg.org/euigafzgb/image.png') #3b3b3d;
 }
 
 .bs-docs-nav {
@@ -40,7 +40,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 .bs-header {
-  background: url('img/bg.png') #555;
+  background: url('http://s7.postimg.org/euigafzgb/image.png') #3b3b3d;
   color: #fff;
   padding: 30px 14px;
   text-shadow: none;
@@ -108,7 +108,7 @@ table code {
 }
 
 a:hover,a:focus {
-  color: #34495e;
+  color: #2980b9;
   text-decoration: none;
 }
 
@@ -180,22 +180,22 @@ output pre {
 
 .row .col-lg-6 h2 {
   border-bottom: none;
-  color: #555;
+  color: #3b3b3d;
   font-size: 26px;
   font-weight: 500;
 }
 
 .row .col-lg-6 h2 a {
-  color: #555;
+  color: #3b3b3d;
 }
 
 .table thead {
-  background-color: #555;
-  border: 1px solid #555;
+  background-color: #3b3b3d;
+  border: 1px solid #3b3b3d;
 }
 
 .table thead > tr > th {
-  border-color: #555;
+  border-color: #3b3b3d;
   color: #fff;
   text-align: center;
 }
@@ -237,10 +237,10 @@ p {
 /*
 * Flat UI Scheme
 * -------------- 
-* Blue          #1b84b5   #34495e
+* Blue          #2980b9   #34495e
 * Blue-Green    #1abc9c   #16a085
 * White         #fff      #eee
 * Light Gray    #ccc
-* Gray          #777      #555   
-* Dark Gray     #3d3f41
+* Gray          #777      #3b3b3d   
+* Dark Gray     #3b3b3d
 */
