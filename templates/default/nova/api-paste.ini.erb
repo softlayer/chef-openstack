@@ -1,4 +1,4 @@
-<%= node["admin"]["banner"] %>
+<%= node['admin']['banner'] %>
 
 ############
 # Metadata #
@@ -111,10 +111,10 @@ paste.filter_factory = nova.api.auth:NovaKeystoneContext.factory
 [filter:authtoken]
 paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory
 auth_host = <%= node[:keystone][:private_ip] %>
-auth_port = <%= node["keystone"]["config"]["admin_port"] %>
+auth_port = <%= node['keystone']['config']['admin_port'] %>
 auth_protocol = http
-admin_tenant_name = <%= node["nova"]["service_tenant_name"] %>
-admin_user = <%= node["nova"]["service_user"] %>
+admin_tenant_name = <%= node['nova']['service_tenant_name'] %>
+admin_user = <%= node['nova']['service_user'] %>
 admin_password = <%= node[:admin][:password] %>
 # signing_dir is configurable, but the default behavior of the authtoken
 # middleware should be sufficient.  It will create a temporary directory

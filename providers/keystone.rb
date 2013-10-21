@@ -1,262 +1,205 @@
+service_env = { 'SERVICE_TOKEN' => new_resource.keystone_service_pass,
+                'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0' }
+
+id_regex = %r(/[a-f0-9]{25,}/)
+
+
+
 action :create_user do
-	finduser = Mixlib::ShellOut.new("keystone", "user-get", new_resource.user,
+  shell = Mixlib::ShellOut.new('keystone', 'user-get',
+                               new_resource.user,
+                               :environment => service_env)
+  shell.run_command
 
-		:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-						'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
+  if shell.stderr.index('No user with a name')
+    create = Mixlib::ShellOut.new('keystone', 'user-create',
+                               "--name=#{new_resource.user}",
+                               "--pass=#{new_resource.password}",
+                               "--email=#{new_resource.email}",
+                               :environment => service_env)
+    create.run_command
+    create.error!  # Tell chef user if something went wrong
 
-		)
-
-	finduser.run_command
-
-	if finduser.stderr.index("No user with a name")
-
-		run = Mixlib::ShellOut.new("keystone", 
-			"user-create", 
-			"--name=#{new_resource.user}", 
-			"--pass=#{new_resource.password}", 
-			"--email=#{new_resource.email}",
-
-		:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-						'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
-			)
-
-		run.run_command
-		run.error! #Tell chef user if something went wrong
-		
-		puts "\nUser \"#{new_resource.user}\" was created with ID \"#{run.stdout.match /[a-f0-9]{25,}/}\""
-	else
-		puts "\nThe user \"#{new_resource.user}\" already exists with ID \"#{finduser.stdout.match /[a-f0-9]{25,}/}\""
-	end
+    user_id = create.stdout.match id_regex
+    puts "\nUser #{new_resource.user} was created with ID #{user_id}"
+  else
+    user_id = shell.stdout.match id_regex
+    puts "\nUser #{new_resource.user} already exists with ID #{user_id}"
+  end
 
 end
 
 
 
 action :create_tenant do
+  find = Mixlib::ShellOut.new('keystone', 'tenant-get',
+                               new_resource.tenant,
+                              :environment => service_env)
+  find.run_command
 
-	findtenant = Mixlib::ShellOut.new("keystone", "tenant-get", new_resource.tenant,
+  if find.stderr.index('No tenant with a name')
+    create = Mixlib::ShellOut.new('keystone', 'tenant-create',
+                                  "--name=#{new_resource.tenant}",
+                                  :environment => service_env)
+    create.run_command
+    create.error!  # Tell chef user if something went wrong
 
-		:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-						'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
-
-		)
-
-	findtenant.run_command
-		
-	if findtenant.stderr.index("No tenant with a name")
-
-		run = Mixlib::ShellOut.new("keystone", 
-			"tenant-create", 
-			"--name=#{new_resource.tenant}", 
-
-		:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-						'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
-			)
-
-		run.run_command
-		run.error! #Tell chef user if something went wrong
-		
-		puts "\nTenant #{new_resource.tenant} was created with ID \"#{run.stdout.match /[a-f0-9]{25,}/}\""
-	else
-		puts "\nThe tenant \"#{new_resource.tenant}\" already exists with ID \"#{findtenant.stdout.match /[a-f0-9]{25,}/}\""
-	end
+    tenant_id = create.stdout.match id_regex
+    puts "\nTenant #{new_resource.tenant} was created with ID #{tenant_id}"
+  else
+    tenant_id = find.stdout.match id_regex
+    puts "\nTenant #{new_resource.tenant} already exists with ID #{tenant_id}"
+  end
 end
+
+
 
 action :create_role do
+  find = Mixlib::ShellOut.new('keystone', 'role-get',
+                              new_resource.role,
+                              :environment => service_env)
+  find.run_command
 
-	findrole = Mixlib::ShellOut.new("keystone", "role-get", new_resource.role,
+  if find.stderr.index('No role with a name')
+    create = Mixlib::ShellOut.new('keystone', 'role-create',
+                                  "--name=#{new_resource.role}",
+                                  :environment => service_env)
+    create.run_command
+    create.error!  # Tell chef user if something went wrong
 
-		:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-						'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
-
-		)
-
-	findrole.run_command
-
-	if findrole.stderr.index("No role with a name")
-
-		run = Mixlib::ShellOut.new("keystone", 
-			"role-create", 
-			"--name=#{new_resource.role}", 
-
-		:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-						'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
-			)
-
-		run.run_command
-		run.error! #Tell chef user if something went wrong
-		
-		puts "\nRole #{new_resource.role} was created with ID \"#{run.stdout.match /[a-f0-9]{25,}/}\""
-	else
-		puts "\nThe role \"#{new_resource.role}\" already exists with ID \"#{findrole.stdout.match /[a-f0-9]{25,}/}\""
-	end
-
+    role_id = create.stdout.match id_regex
+    puts "\nRole #{new_resource.role} was created with ID #{role_id}"
+  else
+    role_id = find.stdout.match id_regex
+    puts "\nRole #{new_resource.role} already exists with ID #{role_id}"
+  end
 end
 
+
+
 action :user_role_add do
-	user_id = nil
-	tenant_id = nil
-	role_id = nil
+  user_id = nil
+  tenant_id = nil
+  role_id = nil
 
-	finduser = Mixlib::ShellOut.new("keystone", "user-get", new_resource.user,
+  find = Mixlib::ShellOut.new('keystone', 'user-get',
+                              new_resource.user,
+                              :environment => service_env)
+  find.run_command
 
-		:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-						'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
-
-		)
-
-	finduser.run_command
-		
-	if finduser.stderr.index("No user with a name")
-		puts "The user \"#{new_resource.user}\" does not exist!!!"
-	else
-		user_id = finduser.stdout.match /[a-f0-9]{25,}/
-	end
-
-	findtenant = Mixlib::ShellOut.new("keystone", "tenant-get", new_resource.tenant,
-
-		:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-						'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
-
-		)
-
-	findtenant.run_command
-		
-	if findtenant.stderr.index("No tenant with a name")
-		puts "The tenant \"#{new_resource.tenant}\" does not exist!!!"
-	else
-		tenant_id = findtenant.stdout.match /[a-f0-9]{25,}/
-	end
+  if find.stderr.index('No user with a name')
+    puts "The user #{new_resource.user} does not exist!"
+  else
+    user_id = find.stdout.match id_regex
+  end
 
 
-	findrole = Mixlib::ShellOut.new("keystone", "role-get", new_resource.role,
+  find = Mixlib::ShellOut.new('keystone', 'tenant-get',
+                              new_resource.tenant,
+                              :environment => service_env)
+  find.run_command
 
-		:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-						'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
-
-		)
-
-	findrole.run_command
-
-	if findrole.stderr.index("No role with a name")
-		puts "The role \"#{new_resource.role}\" does not exist!!!"
-	else
-		role_id = findrole.stdout.match /[a-f0-9]{25,}/
-	end
+  if find.stderr.index('No tenant with a name')
+    puts "The tenant #{new_resource.tenant} does not exist!"
+  else
+    tenant_id = find.stdout.match id_regex
+  end
 
 
-	user_update = Mixlib::ShellOut.new("keystone", "user-role-add", 
-									 "--user-id", user_id.to_s,
-									 "--tenant-id", tenant_id.to_s,
-									 "--role-id", role_id.to_s,
+  find = Mixlib::ShellOut.new('keystone', 'role-get',
+                              new_resource.role,
+                              :environment => service_env)
+  find.run_command
 
-		:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-						'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
+  if find.stderr.index('No role with a name')
+    puts "The role #{new_resource.role} does not exist!"
+  else
+    role_id = find.stdout.match id_regex
+  end
 
-		)
+  update = Mixlib::ShellOut.new('keystone', 'user-role-add',
+                                '--user-id', user_id.to_s,
+                                '--tenant-id', tenant_id.to_s,
+                                '--role-id', role_id.to_s,
+                                :environment => service_env)
+  update.run_command
 
-	user_update.run_command
-
-
-	if user_update.stderr.index("already has")
-		puts "\nThe user-role has already been created."
-	else
-		puts "\nThe \"#{new_resource.user}\", \"#{new_resource.tenant}\", \"#{new_resource.role}\" definition has been added."
-	end
-
-
+  if update.stderr.index('already has')
+    puts "\nThat user-role has already been created."
+  else
+    puts "\nUser role #{new_resource.user}, #{new_resource.tenant}, " +
+         "#{new_resource.role} has been added."
+  end
 end
 
 
 
 action :create_service do
+  find = Mixlib::ShellOut.new('keystone', 'service-get',
+                              new_resource.name,
+                              :environment => service_env)
+  find.run_command
 
-	findservice = Mixlib::ShellOut.new("keystone", "service-get", new_resource.name,
+  if find.stderr.index('No service with a name')
+    create = Mixlib::ShellOut.new('keystone', 'service-create',
+                                  '--name', new_resource.name,
+                                  '--type', new_resource.service_type,
+                                  '--description', new_resource.description,
+                                  :environment => service_env)
+    create.run_command
+    create.error! #Let chef user know something then wrong.
 
-		:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-						'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
-
-		)
-
-	findservice.run_command
-	puts findservice.stderr
-		
-	if findservice.stderr.index("No service with a name")
-
-		run = Mixlib::ShellOut.new("keystone", 
-			"service-create", 
-			"--name", new_resource.name,
-			"--type", new_resource.service_type,
-			"--description", new_resource.description, 
-
-		:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-						'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
-			)
-
-		run.run_command
-		run.error! #Let chef user know something then wrong.
-		
-		puts "\nService #{new_resource.name} was created with ID \"#{run.stdout.match /[a-f0-9]{25,}/}\""
-	else
-		puts "\nThe service \"#{new_resource.name}\" already exists with ID \"#{findservice.stdout.match /[a-f0-9]{25,}/}\""
-	end
-
+    service_id = create.stdout.match id_regex
+    puts "\nService #{new_resource.name} was created with ID #{service_id}"
+  else
+    service_id = find.stdout.match id_regex
+    puts "\nService #{new_resource.name} already exists with ID #{service_id}"
+  end
 end
 
 
+
 action :create_endpoint do
+  find = Mixlib::ShellOut.new('keystone', 'service-get',
+                              new_resource.service_type,
+                              :environment => service_env)
+  find.run_command
 
-	findservice = Mixlib::ShellOut.new("keystone", "service-get", new_resource.service_type,
+  if find.stderr.index('No service with a name')
+    puts "The service #{new_resource.service_type} doesn't exist." +
+         'ENDPOINT NOT CREATED!'
+  else
+    service_id = find.stdout.match id_regex
+    endpoint_found = false
 
-	:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-					'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
+    find = Mixlib::ShellOut.new('keystone', 'endpoint-list',
+                                :environment => service_env)
+    find.run_command
 
-	)
+    find.stdout.each_line do |line|
+      if line.index(new_resource.internal_url) \
+         and line.index(service_id.to_s) \
+         and line.index(new_resource.region)
 
-	findservice.run_command
-		
-	if findservice.stderr.index("No service with a name")
-		puts "The service \"#{new_resource.service_type}\" doesn't exist.  ENDPOINT NOT CREATED"
-	else
+        endpoint_found = true
+      end
+    end
 
+    if endpoint_found
+      puts "\nEndpoint for #{new_resource.service_type} already exists"
+    else
+      create = Mixlib::ShellOut.new('keystone', 'endpoint-create',
+                                    '--region', new_resource.region,
+                                    '--service_id', service_id.to_s,
+                                    '--publicurl', new_resource.public_url,
+                                    '--adminurl', new_resource.admin_url,
+                                    '--internalurl', new_resource.internal_url,
+                                    :environment => service_env)
+      create.run_command
+      create.error!
 
-		findendpoint = Mixlib::ShellOut.new("keystone", "endpoint-list",
-
-			:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-							'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
-
-			)
-
-		findendpoint.run_command
-		key_service = findservice.stdout.match /[a-f0-9]{25,}/
-		endpoint_found = false
-
-		findendpoint.stdout.each_line do |line|
-			if line.index(new_resource.internal_url) and line.index(key_service.to_s) and line.index(new_resource.region)
-				endpoint_found = true
-			end
-		end
-
-		if endpoint_found
-			puts "\n\t\tThe endpoint for \"#{new_resource.service_type}\" already exists.  Doing nothing.\n\n"
-		else
-			createendpoint = Mixlib::ShellOut.new("keystone", "endpoint-create",
-												"--region", new_resource.region,
-												"--service_id", key_service.to_s,
-												"--publicurl", new_resource.public_url,
-												"--adminurl", new_resource.admin_url,
-												"--internalurl", new_resource.internal_url,
-
-			:environment => {'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-							'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0'}
-
-			)
-
-			createendpoint.run_command
-			createendpoint.error!
-			puts "\n\t\tEndpoint for \"#{new_resource.service_type}\" in region \"#{new_resource.region}\" has been created.\n\n"
-		end
-
-	end
-
+      puts "\nEndpoint created for #{new_resource.service_type} " +
+           "in region #{new_resource.region}"
+    end
+  end
 end

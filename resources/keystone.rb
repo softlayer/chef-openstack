@@ -1,4 +1,5 @@
-actions :create_user, :create_tenant, :create_role, :user_role_add, :create_endpoint, :create_service
+actions :create_user, :create_tenant, :create_role, :user_role_add,
+        :create_endpoint, :create_service
 
 attribute :password, :kind_of => String, :default => nil
 attribute :email, :kind_of => String, :default => nil

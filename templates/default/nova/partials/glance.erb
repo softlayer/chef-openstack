@@ -1,3 +1,3 @@
 # Glance Image Store #
-glance_api_servers=<%= node[:glance][:private_ip] %>:<%= node["glance"]["config"]["bind_port"]["api"] %>
+glance_api_servers=<%= node[:glance][:private_ip] %>:<%= node['glance']['config']['bind_port']['api'] %>
 image_service=nova.image.glance.GlanceImageService

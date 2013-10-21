@@ -1,4 +1,4 @@
-<%= node["admin"]["banner"] %>
+<%= node['admin']['banner'] %>
 
 [ovs]
 # (StrOpt) Type of network to allocate for tenant networks. The
@@ -143,14 +143,14 @@ firewall_driver = neutron.agent.linux.iptables_firewall.OVSHybridIptablesFirewal
 # local_ip = 10.0.0.3
 
 [database]
-connection = mysql://<%= node["neutron"]["db"]["name"] %>:<%= node["neutron"]["db"]["password"] %>@<%= node[:mysqlneutron][:private_ip] %>:3306/<%= node["neutron"]["db"]["username"]  %>
+connection = mysql://<%= node['neutron']['db']['name'] %>:<%= node['neutron']['db']['password'] %>@<%= node[:mysqlneutron][:private_ip] %>:3306/<%= node['neutron']['db']['username']  %>
 
 [OVS]
-enable_tunneling = <%= node["neutron"]["ovs_plugin"]["enable_tunneling"] %>
-tenant_network_type = <%= node["neutron"]["ovs_plugin"]["tenant_network_type"] %>
+enable_tunneling = <%= node['neutron']['ovs_plugin']['enable_tunneling'] %>
+tenant_network_type = <%= node['neutron']['ovs_plugin']['tenant_network_type'] %>
 network_vlan_ranges = slpublic1,slprivate1
 bridge_mappings = slpublic1:br-ex,slprivate1:br-priv
-tunnel_id_ranges = <%= node["neutron"]["ovs_plugin"]["tunnel_id_ranges"] %>
+tunnel_id_ranges = <%= node['neutron']['ovs_plugin']['tunnel_id_ranges'] %>
 integration_bridge = br-int
 tunnel_bridge = br-tun
 local_ip = <%= node[:node_info][:private_ip] %>

@@ -3,20 +3,21 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
-$prepare_chef= <<SCRIPT
+$prepare_chef = <<SCRIPT
+
 sudo echo "192.168.50.4     openstack" >> /etc/hosts
 
 wget https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
 sudo dpkg -i chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
-#sudo dpkg -i /vagrant/chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
+# sudo dpkg -i /vagrant/chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
 sudo chef-server-ctl reconfigure
 sudo apt-get install git sshpass -y
 
-#Not for production: Follow OpsCode guide for setting up knife.
+# Not for production: Follow Opscode guide for setting up knife.
 sudo chmod 644 /etc/chef-server/*
 sudo chmod 755 /etc/chef-server
 
-mkdir /home/vagrant/.chef
+mkdir -p /home/vagrant/.chef
 cat >/home/vagrant/.chef/knife.rb <<EOF
 log_level                :info
 log_location             STDOUT
@@ -30,7 +31,7 @@ cookbook_path            [ '/home/vagrant/chef-repo/cookbooks' ]
 role_path                [ '/home/vagrant/chef-repo/cookbooks/chef-openstack/roles']
 EOF
 
-mkdir ~/.chef
+mkdir -p ~/.chef
 cat >~/.chef/knife.rb <<EOF
 log_level                :info
 log_location             STDOUT
@@ -67,22 +68,23 @@ cat >~/openstack.json <<EOF
   "default_attributes": {
   },
   "override_attributes": {
-   "network": {
+    "network": {
       "public_interface": "eth0",
       "private_interface": "eth1"
-   },
-   "cinder": {
+    },
+    "cinder": {
       "config": {
-       "lvm_disk": "/dev/sdb" 
-     }
+        "lvm_disk": "/dev/sdb"
       }
-   }
+    }
+  }
 }
 EOF
 
+
 /opt/chef-server/embedded/bin/knife environment from file ~/openstack.json
 
-#Not for production: Use SSH keys
+# Not for production: Use SSH keys
 /opt/chef-server/embedded/bin/knife bootstrap 192.168.50.4 -x vagrant --sudo -P vagrant -E OpenStack
 
 /opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-mysql-all]'
@@ -95,27 +97,27 @@ EOF
 /opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-compute]'
 
 echo 'Waiting on Chef-Server configuration'
-echo -ne '#####                     (25%)\r'
+echo -ne '#####                     (25%)\n'
 sleep 20
-echo -ne '###########               (50%)\r'
+echo -ne '###########               (50%)\n'
 sleep 20
-echo -ne '###################       (75%)\r'
+echo -ne '###################       (75%)\n'
 sleep 20
-echo -ne '######################### (100%)\r'
+echo -ne '######################### (100%)\n'
 echo -ne '\n\n'
 echo 'Installing OpenStack, this can take a few minutes...'
 sleep 2
 
-#Not for production: Use SSH keys
-sshpass -p 'vagrant' ssh openstack -l vagrant -o StrictHostKeyChecking=no "sudo chef-client"
+# Not for production: Use SSH keys
+sshpass -p 'vagrant' ssh openstack -l vagrant -o StrictHostKeyChecking=no 'sudo chef-client'
 
-echo 'Chef-Server is located at: https://127.0.0.1/  login: admin password: p@ssw0rd1'
-echo 'Openstack is located at: http://127.0.0.1:7081/horizon login: admin password: passwordsf'
+echo 'Chef Server located at: https://127.0.0.1/  login: admin password: p@ssw0rd1'
+echo 'OpenStack dashboard located at: http://127.0.0.1:7081/horizon login: admin password: passwordsf'
 SCRIPT
 
 $prepare_openstack = <<SCRIPT
 sudo apt-get update
-sudo echo "192.168.50.5    chef-server" >> /etc/hosts
+sudo echo '192.168.50.5    chef-server' >> /etc/hosts
 SCRIPT
 
 
@@ -123,27 +125,42 @@ SCRIPT
 Vagrant::Config.run do |config|
 
   config.vm.box_url = 'http://nitron-vagrant.s3-website-us-east-1.amazonaws.com/vagrant_ubuntu_12.04.3_amd64_virtualbox.box'
-  config.vm.box = "vagrant_ubuntu_12.04.3_amd64_virtualbox.box"
+  config.vm.box = 'vagrant_ubuntu_12.04.3_amd64_virtualbox.box'
 
   config.vm.define 'openstack' do |openstack_config|
-	openstack_config.vm.host_name = 'openstack'
-	openstack_config.vm.customize ["modifyvm", :id, "--memory", 4096, "--cpus", "4", "--natdnshostresolver1", "on", "--natdnsproxy1", "on"]
-	openstack_config.vm.forward_port 80, 7081
-	file_to_disk = 'openstack_large_disk.vdi'
-	openstack_config.vm.customize ['createhd', '--filename', file_to_disk, '--size', 20 * 1024]
-    openstack_config.vm.customize ['storageattach', :id, '--storagectl', 'IDE Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
-	openstack_config.vm.network :hostonly, "192.168.50.4", :adapter => 2
-	openstack_config.vm.provision :shell, inline: $prepare_openstack
+    openstack_config.vm.host_name = 'openstack'
+    openstack_config.vm.customize ['modifyvm', :id,
+                                   '--memory', 4096,
+                                   '--cpus', '4',
+                                   '--natdnshostresolver1', 'on',
+                                   '--natdnsproxy1', 'on']
+    openstack_config.vm.forward_port 80, 7081
+
+    file_to_disk = 'openstack_large_disk.vdi'
+    openstack_config.vm.customize ['createhd',
+                                   '--filename', file_to_disk,
+                                   '--size', 20 * 1024]
+    openstack_config.vm.customize ['storageattach', :id,
+                                   '--storagectl', 'IDE Controller',
+                                   '--port', 1,
+                                   '--device', 0,
+                                   '--type', 'hdd',
+                                   '--medium', file_to_disk]
+    openstack_config.vm.network :hostonly, '192.168.50.4', :adapter => 2
+    openstack_config.vm.provision :shell, inline: $prepare_openstack
   end
 
   config.vm.define 'chef-server' do |chef_server|
     chef_server.vm.host_name = 'chef-server'
-	chef_server.vm.customize ["modifyvm", :id, "--memory", 1024, "--cpus", "2", "--natdnshostresolver1", "on", "--natdnsproxy1", "on"]
-	chef_server.vm.forward_port 80, 80
-	chef_server.vm.forward_port 443, 443
-	chef_server.vm.network :hostonly, "192.168.50.5", :adapter => 2
-	chef_server.vm.provision :shell, inline: $prepare_chef
+    chef_server.vm.customize ['modifyvm', :id,
+                              '--memory', 1024,
+                              '--cpus', '2',
+                              '--natdnshostresolver1', 'on',
+                              '--natdnsproxy1', 'on']
+    chef_server.vm.forward_port 80, 80
+    chef_server.vm.forward_port 443, 443
+    chef_server.vm.network :hostonly, '192.168.50.5', :adapter => 2
+    chef_server.vm.provision :shell, inline: $prepare_chef
   end
-  
-  
+
 end

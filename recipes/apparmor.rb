@@ -1,3 +1,3 @@
-package "apparmor" do
-	action :purge
+package 'apparmor' do
+  action :purge
 end

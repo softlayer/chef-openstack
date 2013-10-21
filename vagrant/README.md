@@ -1,7 +1,7 @@
 Vagrant
 =======
 
-Vagrant provides a quick and configuration-free platform to test drive the SoftLayer private cloud recipes on your own. Vagrant uses VirtualBox to preconfigure virtual machines without manual intervention.  Vagrant will be used to deploy Chef Server, download and install the SoftLayer private cloud cookbook, and then provision the OpenStack all-in-one node. This workflow is similar to what is seen in a production environment, and will work for Microsoft Windows and most Linux distributions.
+Vagrant provides a quick and configuration-free platform to test drive the SoftLayer Chef recipes on your own. Vagrant uses VirtualBox to preconfigure virtual machines without manual intervention. Vagrant will be used to deploy Chef Server, download and install the SoftLayer Chef cookbooks, and then provision an OpenStack all-in-one node. This workflow is similar to what is seen in a production environment, and will work for Microsoft Windows and most Linux distributions.
 
 > OpenStack is meant to be run on hardware with virtual extensions enabled.  Running VM's inside Vagrant will be slow.
 
@@ -18,8 +18,7 @@ Download the latest version from [https://www.virtualbox.org/wiki/Downloads](htt
 
 Launch Vagrant Up
 -----------------
-Download the Vagrant file from the Softlayer chef repo.  
-> LINK TO DOWNLOAD
+Download the Vagrant file from the SoftLayer chef repo at [https://github.com/softlayer/chef-openstack](https://github.com/softlayer/chef-openstack).
 
 Then, open a command prompt or terminal.
 
