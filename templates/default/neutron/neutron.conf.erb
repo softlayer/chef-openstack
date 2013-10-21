@@ -51,8 +51,7 @@ bind_port = <%= node['neutron']['config']['bind_port'] %>
 core_plugin = neutron.plugins.openvswitch.ovs_neutron_plugin.OVSNeutronPluginV2
 
 # Advanced service modules
-# service_plugins = neutron.plugins.services.agent_loadbalancer.plugin.LoadBalancerPlugin, neutron.services.firewall.fwaas_plugin.FirewallPlugin
-
+#service_plugins = neutron.services.loadbalancer.plugin.LoadBalancerPlugin  #, neutron.services.firewall.fwaas_plugin.FirewallPlugin
 # Paste configuration file
 #api_paste_config = api-paste.ini
 

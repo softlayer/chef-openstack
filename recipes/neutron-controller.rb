@@ -1,4 +1,4 @@
-%w[neutron-server haproxy].each do |pkg|
+%w[neutron-server].each do |pkg|
   package pkg do
     action :install
   end
@@ -41,11 +41,3 @@ template 'Neutron controller configuration' do
   source 'neutron/neutron.conf.erb'
   notifies :restart, resources(:service => 'neutron-server'), :immediately
 end
-
-# bash 'Enable the controller OVS plugin' do
-#   not_if {File.symlink?('/etc/neutron/plugin.ini')}
-#   code <<-CODE
-#     ln -s /etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini \
-#           /etc/neutron/plugin.ini
-#   CODE
-# end

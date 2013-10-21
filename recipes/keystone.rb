@@ -89,6 +89,8 @@ directory '/usr/share/keystone/wsgi' do
   mode 00755
   recursive true
   action :create
+	notifies :stop, "service[keystone]"
+	notifies :restart, "service[apache2]"
 end
 
 template '/usr/share/keystone/wsgi/main' do
@@ -96,6 +98,8 @@ template '/usr/share/keystone/wsgi/main' do
   owner 'root'
   group 'root'
   mode 00644
+	notifies :stop, "service[keystone]"
+	notifies :restart, "service[apache2]"
 end
 
 template '/usr/share/keystone/wsgi/admin' do
@@ -103,6 +107,8 @@ template '/usr/share/keystone/wsgi/admin' do
   owner 'root'
   group 'root'
   mode 00644
+	notifies :stop, "service[keystone]"
+	notifies :restart, "service[apache2]"
 end
 
 directory '/var/log/keystone' do
@@ -131,6 +137,7 @@ template '/etc/apache2/conf.d/wsgi-keystone.conf' do
   owner 'root'
   group 'root'
   mode 00644
+  notifies :restart, resources(:service => 'keystone'), :immediately
   notifies :restart, resources(:service => 'apache2'), :immediately
 end
 

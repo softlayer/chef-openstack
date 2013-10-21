@@ -41,12 +41,21 @@ template '/etc/neutron/dhcp_agent.ini' do
   notifies :restart, resources(:service => 'neutron-dhcp-agent')
 end
 
+	notifies :restart, resources(:service => 'neutron-metadata-agent')
+template '/etc/neutron/lbaas_agent.ini' do
+	source 'neutron/lbaas_agent.ini.erb'
+	owner 'root'
+	group 'root'
+	mode '0644'
+	notifies :restart, resources(:service => 'neutron-lbaas-agent')
+end
+
 template '/etc/neutron/metadata_agent.ini' do
-  owner 'root'
-  group 'neutron'
-  mode '0644'
-  source 'neutron/metadata_agent.ini.erb'
-  notifies :restart, resources(:service => 'neutron-metadata-agent')
+	owner 'root'
+	group 'neutron'
+	mode '0644'
+	source 'neutron/metadata_agent.ini.erb'
+	notifies :restart, resources(:service => 'neutron-metadata-agent')
 end
 
 template '/etc/neutron/l3_agent.ini' do
