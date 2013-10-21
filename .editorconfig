@@ -1,14 +1,19 @@
-# editorconfig.org
+# editorconfig.org 
 
 root = true
 
 [*]
-indent_style: space,
-indent_size: 2,
-end_of_line: lf,
-charset: utf-8,
-trim_trailing_whitespace: true,
-insert_final_newline: true,
-draw_white_space: all,
-tab_size: 2,
-translate_tabs_to_spaces: true
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+translate_tabs_to_spaces = true
+draw_white_space = all
+
+[**.bat]
+end_of_line = crlf
+
+[**.rb]
+indent_style = space
+indent_size = 2

@@ -5,7 +5,7 @@
       {% include header-page.html %}
   
   </head>
-  <body data-spy="scroll" data-target="welcome">
+  <body>
       
       {% include nav-main.html %}
     
@@ -24,9 +24,7 @@
           <div class="bs-sidebar hidden-print" role="complementary">
             <ul class="nav bs-sidenav">
               
-              {% if page.slug == "getting-started-menu" %}
-                {% include nav-getting-started-menu.html %}
-              {% elsif page.slug == "getting-started" %}
+              {% if page.slug == "getting-started" %}
                 {% include nav-getting-started.html %}
               {% elsif page.slug == "documents" %}
                 {% include nav-documents.html %}
