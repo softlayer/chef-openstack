@@ -1,6 +1,6 @@
-h1. GitHub Page: Chef-OpenStack
+h1. GitHub Page for Chef-OpenStack
 
-Our GitHub Page for Chef-OpenStack is a branded theme made using "Bootstrap CSS":http://getboostrap.com and served up by Jekyll. It is a minimal way to create static landing pages for each repo and publish them on our GitHub Pages.
+Our GitHub Page for Chef-OpenStack is a branded theme made using "Bootstrap CSS":http://getboostrap.com and served up by "Jekyll":http://jekyllrb.com/docs/home on their website. It is a minimal way to create static landing pages for each repo and publish them on our GitHub Pages.
 
 h2. Before Starting
 
@@ -13,9 +13,7 @@ h2. Downloading
 Two download options are available.
 
 * "Download the latest release":https://github.com/softlayer/chef-openstack/archive/master.zip
-* Clone the repo: @git clone https://github.com/softlayer/chef-openstack.git gh-pages@
-
-Search our "Getting Started":../getting-started page for information on installing, configuring, and more.
+* Clone the repo: @git clone https://github.com/softlayer/chef-openstack.git origin gh-pages@
 
 h2. Documents
 
@@ -23,7 +21,8 @@ Below is a list of other documents related to this project.
 
 * "Getting Started":../getting-started
 * "Technical Documents":../documents
-* To learn more about Jekyll, check out their "documentation":http://jekyllrb.com/docs/home on their website.
+* "Release Notes":../notes
+* "Planning":../planning
 
 h2(#configuration). Configuration
 
@@ -37,7 +36,7 @@ The @_config.yml@ file contains everything necessary to make a page on-the-fly i
 
 h3. GitHub URL
 
-You can easily modify the GitHub user, path, and type by modifying three references:
+You can easily modify the GitHub URL by modifying three references:
 
 * @user=@: GitHub username, i.e. "softlayer"
 * @repo=@: GitHub repo name

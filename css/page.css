@@ -1,10 +1,10 @@
 article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar {
-  background: url('http://s7.postimg.org/euigafzgb/image.png') #3b3b3d;
+  background: url('http://s8.postimg.org/xykbcs6g5/bg_fabric.png') #34302F;
 }
 
 .bs-docs-nav {
   border: none;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.04);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .bs-docs-nav .navbar-nav > li > a {
@@ -40,7 +40,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 .bs-header {
-  background: url('http://s7.postimg.org/euigafzgb/image.png') #3b3b3d;
+  background: url('http://s8.postimg.org/xykbcs6g5/bg_fabric.png') #34302F;
   color: #fff;
   padding: 30px 14px;
   text-shadow: none;
@@ -55,7 +55,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 
 .bs-footer {
   background: transparent;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #e3e3e3;
   padding-top: 0;
 }
 
@@ -85,7 +85,7 @@ h1,.h1 {
 }
 
 h2,.h2 {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e3e3e3;
   font-size: 26px;
   margin-bottom: 14px;
   padding-bottom: 10px;
@@ -129,7 +129,7 @@ code {
 }
 
 .bs-sidebar .nav > li > a:hover,.bs-sidebar .nav > li > a:focus {
-  background: #e6e6e6;
+  background: #e3e3e3;
   border-right: 1px solid #34495e;
   text-decoration: none;
 }
@@ -180,22 +180,22 @@ output pre {
 
 .row .col-lg-6 h2 {
   border-bottom: none;
-  color: #3b3b3d;
+  color: #34302F;
   font-size: 26px;
   font-weight: 500;
 }
 
 .row .col-lg-6 h2 a {
-  color: #3b3b3d;
+  color: #34302F;
 }
 
 .table thead {
-  background-color: #3b3b3d;
-  border: 1px solid #3b3b3d;
+  background-color: #34302F;
+  border: 1px solid #34302F;
 }
 
 .table thead > tr > th {
-  border-color: #3b3b3d;
+  border-color: #34302F;
   color: #fff;
   text-align: center;
 }
@@ -222,8 +222,14 @@ p {
   margin-bottom: 20px;
 }
 
-.bs-docs-home,.bs-masthead .lead {
-  color: #eee;
+.bs-docs-home {
+  color: #fff;
+}
+
+.bs-masthead .lead {
+  color: #e3e3e3;
+  font-size: 34px;
+  margin-right: 20%;
 }
 
 .lead,.row .col-lg-6 p a {
@@ -239,8 +245,7 @@ p {
 * -------------- 
 * Blue          #2980b9   #34495e
 * Blue-Green    #1abc9c   #16a085
-* White         #fff      #eee
+* White         #fff      #e3e3e3
 * Light Gray    #ccc
-* Gray          #777      #3b3b3d   
-* Dark Gray     #3b3b3d
+* Gray          #777      #34302F
 */

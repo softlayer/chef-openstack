@@ -1,5 +1,6 @@
 h1,.h1 {
   border-bottom: none;
+  margin-top: 20px;
 }
 
 a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .navbar-nav > li > a:focus {
@@ -12,18 +13,22 @@ a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .na
 }
 
 .btn-outline-inverse {
-  background-color: #449BB5;
-  border: 1px solid #449BB5;
+  background-color: #357aa9;
+  border: 1px solid #357aa9;
   color: #fff;
   width: 150px;
 }
 
 .btn-outline-inverse:hover,.btn-outline-inverse:focus,.btn-outline-inverse:active {
-  background-color: #16a085;
-  border: 1px solid #16a085;
+  background-color: #3d6498;
+  border: 1px solid #3d6498;
   color: #fff;
 }
 
 .callout {
   visibility: hidden;
+}
+
+.bs-social-buttons li {
+  padding: 0 4px;
 }
