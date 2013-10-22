@@ -1,5 +1,5 @@
 article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar {
-  background: url(http://s8.postimg.org/xykbcs6g5/bg_fabric.png) #33322f;
+  background: #3b3b3d;
 }
 
 .bs-docs-nav {
@@ -40,7 +40,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 .bs-header {
-  background: url(http://s8.postimg.org/xykbcs6g5/bg_fabric.png) #33322f;
+  background: #585d60;
   color: #fff;
   padding: 30px 14px;
   text-shadow: none;
@@ -67,9 +67,9 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
   text-align: left;
 }
 
-.bs-masthead h1 {
+/*.bs-masthead h1 {
   font-size: 74px;
-}
+} */
 
 h1[id] {
   margin-top: 20px;

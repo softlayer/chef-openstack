@@ -1,6 +1,5 @@
 h1,.h1 {
   border-bottom: none;
-  margin-top: 20px;
 }
 
 a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .navbar-nav > li > a:focus {
@@ -8,8 +7,8 @@ a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .na
 }
 
 .bs-masthead-links {
-  margin-top: -10px;
-  text-align: left;
+  margin-top: 0;
+  text-align: center;
 }
 
 .btn-primary {
@@ -24,14 +23,18 @@ a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .na
   margin-right: 0;
 }
 
-.callout {
-  visibility: hidden;
-}
-
 .bs-social-buttons li {
   padding: 0 4px;
 }
 
 .btn-lg {
     padding: 10px 0;
+}
+
+.container {
+text-align: center;
+}
+
+.bs-masthead .lead {
+  margin-right: 0;
 }
