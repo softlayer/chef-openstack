@@ -10,7 +10,7 @@ sudo echo "192.168.50.4     openstack" >> /etc/hosts
 wget https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
 sudo dpkg -i chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
 # sudo dpkg -i /vagrant/chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
-
+sudo chef-server-ctl reconfigure
 sudo cat >/etc/chef-server/chef-server.rb <<EOF
 chef_solr['commit_interval'] = 5000  # 5sec flush time for Lucene
 EOF
@@ -102,13 +102,13 @@ EOF
 /opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-compute]'
 
 echo 'Waiting on Chef-Server configuration'
-echo -ne '#####                     (25%)\n'
+echo -ne '#####                     (25%)\r'
 sleep 2
-echo -ne '###########               (50%)\n'
+echo -ne '###########               (50%)\r'
 sleep 2
-echo -ne '###################       (75%)\n'
+echo -ne '###################       (75%)\r'
 sleep 2
-echo -ne '######################### (100%)\n'
+echo -ne '######################### (100%)\r'
 echo -ne '\n\n'
 echo 'Installing OpenStack, this can take a few minutes...'
 sleep 2

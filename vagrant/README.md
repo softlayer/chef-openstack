@@ -28,6 +28,6 @@ Vagrant will provision a fully working Chef server and OpenStack all-in-one node
 
 Chef-Server is located at: https://127.0.0.1/  login: admin password: p@ssw0rd1
 
-Openstack is located at: http://127.0.0.1:7081/horizon login: admin password: passwordsf
+Openstack is located at: http://127.0.0.1:7081 login: admin password: passwordsf
 
 
