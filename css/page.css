@@ -1,5 +1,5 @@
 article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar {
-  background: #333;
+  background: #272727;
 }
 
 .bs-docs-nav {
@@ -16,7 +16,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 
 .navbar-nav > li {
   float: left;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .navbar {
@@ -40,7 +40,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 .bs-header {
-  background: #333;
+  background: #272727;
   color: #fff;
   padding: 30px 14px;
   text-shadow: none;
@@ -59,7 +59,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 .bs-footer a {
-  color: #cdcecb;
+  color: #c9c9c9;
   text-decoration: none;
 }
 
@@ -80,7 +80,7 @@ h1,.h1 {
 }
 
 h2,.h2 {
-  border-bottom: 1px solid #e3e4e1;
+  border-bottom: 1px solid #e9e9e9;
   font-size: 26px;
   margin-bottom: 14px;
   padding-bottom: 10px;
@@ -103,7 +103,7 @@ table code {
 }
 
 a:hover,a:focus {
-  color: #2980b9;
+  color: #2ba6cb;
   text-decoration: none;
 }
 
@@ -118,7 +118,7 @@ code {
 }
 
 .bs-sidebar .nav > li > a {
-  color: #777875;
+  color: #797979;
   display: block;
   padding: 4px 20px;
 }
@@ -130,7 +130,7 @@ code {
 }
 
 blockquote p {
-  color: #777875;
+  color: #797979;
   font-size: 13.5px;
 }
 
@@ -177,22 +177,22 @@ output pre {
 
 .row .col-lg-6 h2 {
   border-bottom: none;
-  color: #33322f;
+  color: #272727;
   font-size: 26px;
   font-weight: 500;
 }
 
 .row .col-lg-6 h2 a {
-  color: #33322f;
+  color: #272727;
 }
 
 .table thead {
-  background: #33322f;
-  border: 1px solid #33322f;
+  background: #272727;
+  border: 1px solid #272727;
 }
 
 .table thead > tr > th {
-  border-color: #33322f;
+  border-color: #272727;
   color: #fff;
   text-align: center;
 }
@@ -202,7 +202,7 @@ output pre {
 }
 
 .table-bordered > tbody > tr > th,.table-bordered > tbody > tr > td {
-  border: 1px solid #cdcecb;
+  border: 1px solid #c9c9c9;
 }
 
 p {
@@ -215,7 +215,7 @@ p {
 }
 
 .bs-masthead .lead {
-  color: #fafbf8;
+  color: #f3f3f3;
   margin-right: 25%;
 }
 
@@ -230,16 +230,23 @@ p {
 .row .col-lg-6 p {
   margin-bottom: 8px;
 }
-.navbar-inverse .navbar-nav > .active > a {
-    background-color: #1399bd;
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:focus,
+.navbar-inverse .navbar-nav > .active > a:hover {
+  background-color: #1399bd;
+  background-image: none;
 }
 
+.navbar > .container .navbar-brand {
+  margin-left: 0;
+  width: 200px;
 
 /*
 * Flat UI Scheme
 * -------------- 
-* Blue          #2980b9   #34495e
+* Blue          #2ba6cb   #34495e
 * Blue-Green    #1abc9c   #16a085
-* Light Gray    #e3e4e1   #cdcecb
-* Gray          #777875   #33322f
+* Light Gray    #f3f3f3   #e9e9e9   #c9c9c9
+* Gray          #797979   #272727
 */

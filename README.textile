@@ -1,6 +1,8 @@
-h1. GitHub Page for Chef-OpenStack
+h1. Unveil
 
-Our GitHub Page for Chef-OpenStack is a branded theme made using "Bootstrap CSS":http://getboostrap.com and served up by "Jekyll":http://jekyllrb.com/docs/home on their website. It is a minimal way to create static landing pages for each repo and publish them on our GitHub Pages.
+"Unveil" is a GitHub Page made using "Bootstrap CSS":http://getboostrap.com, "Foundation":http://foundation.zurb.com, and "Jekyll":http://jekyllrb.com. It is a minimal way to create static webpages and publish them on GitHub.
+
+Unveil is "CCPL-licensed":https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE and absolutely free to use.
 
 h2. Before Starting
 
@@ -8,23 +10,23 @@ To harness all the power behind this theme, you need to install Ruby and Jekyll 
 
 Of course, should you prefer to eat your own dog food, keep reading.
 
-h2. Downloading
+h2. Download
 
 Two download options are available.
 
 * "Download the latest release":https://github.com/softlayer/chef-openstack/archive/master.zip
 * Clone the repo: @git clone https://github.com/softlayer/chef-openstack.git origin gh-pages@
 
-h2. Documents
+h2. Docs
 
-Below is a list of other documents related to this project.
+Below is a list of other docs related to this project.
 
 * "Getting Started":../getting-started
 * "Technical Documents":../documents
 * "Release Notes":../notes
 * "Planning":../planning
 
-h2(#configuration). Configuration
+h2(#configuration). Configure
 
 The @_config.yml@ file contains everything necessary to make a page on-the-fly in minutes. Open it using any editor and edit the specified fields before pushing it up to the @gh-pages@ branch.
 
@@ -34,9 +36,9 @@ The @_config.yml@ file contains everything necessary to make a page on-the-fly i
 * @star@: Lets users "star" us on GitHub without leaving the page
 * @fork@: Lets users "fork" us on GitHub without leaving the page
 
-h3. GitHub URL
+h3. GitHub Links
 
-You can easily modify the GitHub URL by modifying three references:
+You can easily modify the GitHub links by modifying three references:
 
 * @user=@: GitHub username, i.e. "softlayer"
 * @repo=@: GitHub repo name
@@ -57,4 +59,4 @@ h1. Finding Support
 
 h1. Copyright and License
 
-Copyright (c) 2013 SoftLayer Technologies, Inc., an IBM Company. We license our code under the "MIT license":https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE. By contributing your code, you agree to license your contribution under the terms of this license.
+Copyright (c) 2013 SoftLayer Technologies, Inc., an IBM Company. The code for Unveil is licensed under the "Creative Commons Public License":https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE.

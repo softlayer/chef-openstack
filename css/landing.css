@@ -18,10 +18,6 @@ a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .na
   margin-right: 30px;
 }
 
-.bs-social-buttons li {
-  padding: 0 4px;
-}
-
 .container {
   text-align: center;
 }
@@ -29,3 +25,48 @@ a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .na
 .bs-masthead .lead {
   margin-right: 0;
 }
+
+#watch { display: block; overflow: hidden; *zoom: 1; margin-top: 15px; }
+#watch section { float: left; width: 150px; margin-bottom: 4px; }
+#watch a { color: #fff; opacity: .7; padding-left: 25px; -webkit-transition: opacity 0.1s ease-in; -webkit-transition-delay: ease-out; -moz-transition: opacity 0.1s ease-in ease-out; -o-transition: opacity 0.1s ease-in ease-out; transition: opacity 0.1s ease-in ease-out; }
+#watch a:hover { opacity: 1; }
+#watch #stargazers a { background: url("../img/png/icon-stargazer.png") no-repeat left center; }
+#watch #twitter a { background: url("../img/png/icon-twitter.png") no-repeat left center; }
+#watch small { content: ""; display: block; width: 0; height: 0; border: solid 4px; border-color: transparent rgba(0, 0, 0, 0.05) transparent transparent; position: absolute; left: -8px; top: 7px; }
+
+
+#watch {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 300px;
+}
+
+/*
+@media only screen and (max-width: 767px) { #mainDownload { display: none; }
+  #deviceDownload { margin-bottom: 12px; }
+  #watch { float: none; width: 100%; }
+  #watch section { float: left; width: 50%; }
+  #watch section .button { width: 80%; display: inline-block; float: right; }
+  #watch section:first-child .button { width: 60%; float: none; } }
+
+@media only screen and (max-width: 767px) { .fndtn-templates.add-ons div > div > a .template .row .column, .fndtn-templates.add-ons div > div > a .template .row .columns { padding: 0 15px; }
+  .template-dl { display: none; }
+  .get-code span { display: none; }
+  .get-code span { display: none; }
+  .fndtn-templates .template-wrap span.html { display: none !important; }
+  .fndtn-templates .template-wrap span.notes { display: none !important; }
+  .fndtn-templates .template-wrap { margin-bottom: 20px; }
+  .fndtn-templates .template-wrap.last { float: none; }
+  #templates { display: block; width: 100%; margin-top: 25px; }
+  #watch section#stargazers { text-align: center; }
+  #watch section#twitter { text-align: center; }
+  #github { padding: 12px 0px 35px 0px !important; }
+  #github h4 { float: none !important; margin-bottom: 3px; opacity: 1 !important; }
+  #newsletter p { margin-bottom: 0px; }
+  #newsletter p a { white-space: nowrap; }
+  #newsletter { padding: 11px 0 11px 0 !important; }
+  .fndtn-templates.add-ons div > div > a + p { text-align: center; }
+  .top-bar .attached > ul.right > li.download { border-left: none; padding-left: 0px !important; } }
+*/
