@@ -10,6 +10,11 @@ sudo echo "192.168.50.4     openstack" >> /etc/hosts
 wget https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
 sudo dpkg -i chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
 # sudo dpkg -i /vagrant/chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
+
+sudo cat >/etc/chef-server/chef-server.rb <<EOF
+chef_solr['commit_interval'] = 5000  # 5sec flush time for Lucene
+EOF
+
 sudo chef-server-ctl reconfigure
 sudo apt-get install git sshpass -y
 
@@ -98,11 +103,11 @@ EOF
 
 echo 'Waiting on Chef-Server configuration'
 echo -ne '#####                     (25%)\n'
-sleep 20
+sleep 2
 echo -ne '###########               (50%)\n'
-sleep 20
+sleep 2
 echo -ne '###################       (75%)\n'
-sleep 20
+sleep 2
 echo -ne '######################### (100%)\n'
 echo -ne '\n\n'
 echo 'Installing OpenStack, this can take a few minutes...'
@@ -112,7 +117,7 @@ sleep 2
 sshpass -p 'vagrant' ssh openstack -l vagrant -o StrictHostKeyChecking=no 'sudo chef-client'
 
 echo 'Chef Server located at: https://127.0.0.1/  login: admin password: p@ssw0rd1'
-echo 'OpenStack dashboard located at: http://127.0.0.1:7081/horizon login: admin password: passwordsf'
+echo 'OpenStack dashboard located at: http://127.0.0.1:7081 login: admin password: passwordsf'
 SCRIPT
 
 $prepare_openstack = <<SCRIPT

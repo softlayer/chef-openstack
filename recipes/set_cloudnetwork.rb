@@ -30,13 +30,14 @@ node['admin']['cloud_network']['roles'].each_pair do |var, role|
   nodes = partial_search(:node, "role:#{role} AND chef_environment:#{node.chef_environment}", 
                          :keys => { 'network_info' => ['network'] })
 
+
   current_node = nil
   current_node = nodes[rand(nodes.length)]
   if current_node == nil
     raise "Cannot find role: #{role} " +
           "in environment #{node.chef_environment}\n\n" +
-          "You may need to wait a few seconds after bootstrapping or check " +
-          "that all roles have been assigned."
+          "You may need to wait up to 60 seconds after bootstrapping" +
+          "or check that all roles have been assigned."
   end
   is_bonded = "False"
   current_node['br-ex_ip'] = nil
@@ -62,6 +63,5 @@ node['admin']['cloud_network']['roles'].each_pair do |var, role|
   else
     node.default[var][:public_ip] = current_node['br-ex_ip']
   end
-
 
 end

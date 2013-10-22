@@ -1,6 +1,5 @@
 id_regex = /[a-f0-9]{25,}/
 
-
 action :create_user do
   shell = Mixlib::ShellOut.new('keystone', 'user-get',
                                new_resource.user,
@@ -27,6 +26,9 @@ end
 
 
 action :create_tenant do
+  service_env = { 'SERVICE_TOKEN' => new_resource.keystone_service_pass,
+                'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0' }
+
   find = Mixlib::ShellOut.new('keystone', 'tenant-get',
                                new_resource.tenant,
                               :environment => new_resource.env)
@@ -50,6 +52,9 @@ end
 
 
 action :create_role do
+  service_env = { 'SERVICE_TOKEN' => new_resource.keystone_service_pass,
+                'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0' }
+
   find = Mixlib::ShellOut.new('keystone', 'role-get',
                               new_resource.role,
                               :environment => new_resource.env)
@@ -73,6 +78,9 @@ end
 
 
 action :user_role_add do
+  service_env = { 'SERVICE_TOKEN' => new_resource.keystone_service_pass,
+                'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0' }
+
   user_id = nil
   tenant_id = nil
   role_id = nil
@@ -130,6 +138,9 @@ end
 
 
 action :create_service do
+  service_env = { 'SERVICE_TOKEN' => new_resource.keystone_service_pass,
+                'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0' }
+
   find = Mixlib::ShellOut.new('keystone', 'service-get',
                               new_resource.name,
                               :environment => new_resource.env)
@@ -155,6 +166,9 @@ end
 
 
 action :create_endpoint do
+  service_env = { 'SERVICE_TOKEN' => new_resource.keystone_service_pass,
+                'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0' }
+  
   find = Mixlib::ShellOut.new('keystone', 'service-get',
                               new_resource.service_type,
                               :environment => new_resource.env)
