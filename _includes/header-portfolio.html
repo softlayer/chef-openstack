@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>
+
+  {% if page.title == "Chef-OpenStack" %}
+    {{ page.title }}
+  {% else %}
+    {{ page.title }} &middot; Chef-OpenStack
+  {% endif %}
+
+</title>
+
+<!-- Core CSS -->
+<link href="{{ page.baseurl }}css/bootstrap.css" rel="stylesheet">
+<link href="{{ page.baseurl }}css/content.css" rel="stylesheet">
+<link href="{{ page.baseurl }}css/page.css" rel="stylesheet">
+<link href="{{ page.baseurl }}css/portfolio.css" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '{{ site.analytics }}']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>

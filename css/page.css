@@ -1,5 +1,5 @@
 article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar {
-  background: #3b3b3d;
+  background: #333;
 }
 
 .bs-docs-nav {
@@ -40,7 +40,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 .bs-header {
-  background: #585d60;
+  background: #333;
   color: #fff;
   padding: 30px 14px;
   text-shadow: none;
@@ -64,12 +64,8 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 .bs-masthead-links {
-  text-align: left;
+  text-align: center;
 }
-
-/*.bs-masthead h1 {
-  font-size: 74px;
-} */
 
 h1[id] {
   margin-top: 20px;
@@ -220,8 +216,7 @@ p {
 
 .bs-masthead .lead {
   color: #fafbf8;
-  font-size: 30px;
-  margin-right: 14%;
+  margin-right: 25%;
 }
 
 .lead,.row .col-lg-6 p a {
@@ -235,6 +230,10 @@ p {
 .row .col-lg-6 p {
   margin-bottom: 8px;
 }
+.navbar-inverse .navbar-nav > .active > a {
+    background-color: #1399bd;
+}
+
 
 /*
 * Flat UI Scheme

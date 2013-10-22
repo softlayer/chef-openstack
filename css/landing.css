@@ -11,28 +11,19 @@ a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .na
   text-align: center;
 }
 
-.btn-primary {
-  color: #fff;
-  width: 190px;
-  margin-right: 34px;
-}
-
+.btn-primary,
 .btn-success {
   color: #fff;
-  width: 190px;
-  margin-right: 0;
+  width: 160px;
+  margin-right: 30px;
 }
 
 .bs-social-buttons li {
   padding: 0 4px;
 }
 
-.btn-lg {
-    padding: 10px 0;
-}
-
 .container {
-text-align: center;
+  text-align: center;
 }
 
 .bs-masthead .lead {
