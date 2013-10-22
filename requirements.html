@@ -8,15 +8,11 @@ baseurl: "../"
 
 <h1 id="requirements">Requirements</h1>
 
-<p>Review the requirements below in their entirety before beginning
-installation.</p>
+<p>Review the requirements below in their entirety before beginning installation.</p>
 
 <h2 id="node-requirements">Node Requirements</h2>
 
-<p>Consistent with OpenStack&#8217;s reference architecture, we recommend a
-minimum of the following three nodes to operate an officially supported
-architecture. These are optimal for users seeking a private cloud offering on
-the SoftLayer platform.</p>
+<p>Consistent with OpenStack&#8217;s reference architecture, we recommend a minimum of the following three nodes to operate an officially supported architecture. These are optimal for users seeking a private cloud offering on the SoftLayer platform.</p>
 
 <ul>
   <li>Cloud Controller Node</li>
@@ -27,9 +23,7 @@ the SoftLayer platform.</p>
 </ul>
 
 <blockquote>
-  <p>Note: OpenStack can scale to hundreds or thousands of nodes. Running
-  OpenStack on systems that do not meet the minimum requirements may negatively
-  affect system or overall cluster performance.</p>
+  <p>Note: OpenStack can scale to hundreds or thousands of nodes. Running OpenStack on systems that do not meet the minimum requirements may negatively affect system or overall cluster performance.</p>
 </blockquote>
 
 <div class="table-responsive">
@@ -90,8 +84,7 @@ the SoftLayer platform.</p>
       <tr>
         <td>Disk (MySQL Database)</td>
 
-        <td>Two physical disks in RAID0 or RAID1, or 4+ physical disks in
-        RAID10</td>
+        <td>Two physical disks in RAID0 or RAID1, or 4+ physical disks in RAID10</td>
 
         <td>N/A</td>
 
@@ -142,9 +135,7 @@ the SoftLayer platform.</p>
 </div>
 
 <blockquote>
-  <p>(1) 10K <span class="caps">SAS</span>/SCSI <span class="caps">RPM</span>
-  drives, or alternatively <span class="caps">SSD</span>s, may provide much
-  better performance for Cinder when allocating and destroying volumes.</p>
+  <p>(1) 10K <span class="caps">SAS</span>/SCSI <span class="caps">RPM</span> drives, or alternatively <span class="caps">SSD</span>s, may provide much better performance for Cinder when allocating and destroying volumes.</p>
 </blockquote>
 
 <h2 id="software-requirements">Software Requirements</h2>
@@ -153,14 +144,9 @@ the SoftLayer platform.</p>
 
 <h3>Operating System</h3>
 
-<p>OpenStack supports <strong>Ubuntu Server Minimal 12.04 <span class=
-"caps">LTS</span></strong>.</p>
+<p>OpenStack supports <strong>Ubuntu Server Minimal 12.04 <span class="caps">LTS</span></strong>.</p>
 
-<p>The SoftLayer Chef recipes make use of the <a href=
-"https://wiki.ubuntu.com/ServerTeam/CloudArchive">Ubuntu Cloud repository</a>,
-which is where current OpenStack packages are maintained. The recipes
-automatically handle the configuration needed to use the Ubuntu Cloud
-repository.</p>
+<p>The SoftLayer Chef recipes make use of the <a href="https://wiki.ubuntu.com/ServerTeam/CloudArchive">Ubuntu Cloud repository</a>, which is where current OpenStack packages are maintained. The recipes automatically handle the configuration needed to use the Ubuntu Cloud repository.</p>
 
 <h3>Chef</h3>
 
@@ -168,16 +154,11 @@ repository.</p>
 
 <h3>Cookbooks</h3>
 
-<p>Have the following cookbooks handy before beginning the install process.
-You<br>
-can download them at <a href=
-"https://github.com/opscode-cookbooks/mysql">Opscode Cookbooks GitHub
-account</a>.</p>
+<p>Have the following cookbooks handy before beginning the install process. You can download them at <a href="https://github.com/opscode-cookbooks/mysql">Opscode Cookbooks GitHub account</a>.</p>
 
 <ul>
   <li>
-    <a href=
-    "https://github.com/opscode-cookbooks/partial_search">partial_search</a>
+    <a href="https://github.com/opscode-cookbooks/partial_search">partial_search</a>
   </li>
 
   <li>
@@ -189,8 +170,7 @@ account</a>.</p>
   </li>
 
   <li>
-    <a href=
-    "https://github.com/opscode-cookbooks/build-essential">build_essential</a>
+    <a href="https://github.com/opscode-cookbooks/build-essential">build_essential</a>
   </li>
 
   <li>
@@ -200,22 +180,15 @@ account</a>.</p>
 
 <h2 id="networking-requirements">Networking Requirements</h2>
 
-<p>Within the SoftLayer environment and the Chef cookbooks provided, the
-reference architecture consists of three separate networks (two physical
-interfaces and one virtual interface). Refer to the following diagram to
-determine how various components and are connected, and the networks
-they&#8217;re connected to.</p>
+<p>Within the SoftLayer environment and the Chef cookbooks provided, the reference architecture consists of three separate networks (two physical interfaces and one virtual interface). Refer to the following diagram to determine how various components and are connected, and the networks they&#8217;re connected to.</p>
 
 <blockquote>
   <p>Add gliffy image</p>
 </blockquote>
 
-<p>For OpenStack private cloud deployments, we recommend following best
-practices to secure your public network, exposing only the systems and services
-that you wish to make available over the Internet.</p>
+<p>For OpenStack private cloud deployments, we recommend following best practices to secure your public network, exposing only the systems and services that you wish to make available over the Internet.</p>
 
-<p>Included below is a table you can use to reference each description and some
-important notes.</p>
+<p>Included below is a table you can use to reference each description and some important notes.</p>
 
 <div class="table-responsive">
   <table class="table table-bordered table-hover">
@@ -235,23 +208,17 @@ important notes.</p>
 
         <td>
           <ul>
-            <li>Existing SoftLayer back-end network where all your hardware
-            exists, including <span class="caps caps">VLAN</span>s attached to
-            your account.</li>
+            <li>Existing SoftLayer back-end network where all your hardware exists, including <span class="caps caps">VLAN</span>s attached to your account.</li>
 
-            <li>Most SoftLayer servers are connected to this network on the
-            <strong>bond0</strong> interface, but other servers may be
-            connected on <strong>eth0</strong>.</li>
+            <li>Most SoftLayer servers are connected to this network on the <strong>bond0</strong> interface, but other servers may be connected on <strong>eth0</strong>.</li>
 
-            <li>This provides access to other non-OpenStack servers and
-            services on the SoftLayer private network.</li>
+            <li>This provides access to other non-OpenStack servers and services on the SoftLayer private network.</li>
           </ul>
         </td>
 
         <td>
           <ul>
-            <li>You must order an IPv4 pool of Portable <em>Private</em> IPs to
-            dole out across instances.</li>
+            <li>You must order an IPv4 pool of Portable <em>Private</em> IPs to dole out across instances.</li>
 
             <li>See important info about IP addressing.</li>
           </ul>
@@ -263,20 +230,15 @@ important notes.</p>
 
         <td>
           <ul>
-            <li>Existing SoftLayer front-end network from which all incoming
-            Internet traffic is received and all outbound Internet traffic is
-            sent.</li>
+            <li>Existing SoftLayer front-end network from which all incoming Internet traffic is received and all outbound Internet traffic is sent.</li>
 
-            <li>Most SoftLayer servers are connected to this network on the
-            <strong>bond1</strong> interface, but other servers may be
-            connected on <strong>eth1</strong>.</li>
+            <li>Most SoftLayer servers are connected to this network on the <strong>bond1</strong> interface, but other servers may be connected on <strong>eth1</strong>.</li>
           </ul>
         </td>
 
         <td>
           <ul>
-            <li>Must order an IPv4 pool of Portable <em>Public</em> IPs to dole
-            out across instances.</li>
+            <li>Must order an IPv4 pool of Portable <em>Public</em> IPs to dole out across instances.</li>
 
             <li>See important info about IP addressing.</li>
           </ul>
@@ -288,27 +250,19 @@ important notes.</p>
 
         <td>
           <ul>
-            <li>Networks created within OpenStack Quantum are part of the data
-            network.</li>
+            <li>Networks created within OpenStack Quantum are part of the data network.</li>
 
-            <li>OpenStack instances communicate with each other over the data
-            network, including when they issue <span class=
-            "caps caps">DHCP</span> requests during boots and reboots.</li>
+            <li>OpenStack instances communicate with each other over the data network, including when they issue DHCP requests during boots and reboots.</li>
 
-            <li>This network is an IP-over-<span class="caps caps">GRE</span>
-            network between Network and Compute Nodes.</li>
+            <li>This network is an IP-over-<span class="caps caps">GRE</span> network between Network and Compute Nodes.</li>
 
-            <li>The virtual network appliance used is Open vSwitch combined
-            with the <code>quantum-plugin-openvswitch-agent</code> in
-            Quantum.</li>
+            <li>The virtual network appliance used is Open vSwitch combined with the <code>quantum-plugin-openvswitch-agent</code> in Quantum.</li>
           </ul>
         </td>
 
         <td>
           <ul>
-            <li>Default environment attributes in our cookbooks allow you to
-            create overlapping IPv4 subnet ranges between different tenants and
-            projects.</li>
+            <li>Default environment attributes in our cookbooks allow you to create overlapping IPv4 subnet ranges between different tenants and projects.</li>
 
             <li>See important info about IP addressing.</li>
           </ul>
@@ -319,52 +273,26 @@ important notes.</p>
 
   <h3>Important Information about IP Addressing</h3>
 
-  <p>A minimum, but not recommended, range of /30 (or four total IP addresses
-  with <strong>one</strong> usable address) is required in order to use a
-  SoftLayer Portable IP block within your OpenStack private cloud, whether on
-  the public network or the private network. Whenever possible, we recommend
-  using blocks larger than /30.</p>
+  <p>A minimum, but not recommended, range of /30 (or four total IP addresses with <strong>one</strong> usable address) is required in order to use a SoftLayer Portable IP block within your OpenStack private cloud, whether on the public network or the private network. Whenever possible, we recommend using blocks larger than /30.</p>
 
-  <p>As with all networks, the first IP in a subnet is reserved for addressing
-  the subnet, the second IP is already used by the upstream SoftLayer router
-  (and in many networks this is the case), and the final address in the subnet
-  is used for broadcast traffic.</p>
+  <p>As with all networks, the first IP in a subnet is reserved for addressing the subnet, the second IP is already used by the upstream SoftLayer router (and in many networks this is the case), and the final address in the subnet is used for broadcast traffic.</p>
 
-  <p>With these constraints in mind, a /29 portable subnet would thusly provide
-  six total with three usable IP addresses, a /28 subnet would provide 14 total
-  with 11 usable IP addresses, a /27 subnet would provide 30 total with 27
-  usable addresses, and so forth.</p>
+  <p>With these constraints in mind, a /29 portable subnet would thusly provide six total with three usable IP addresses, a /28 subnet would provide 14 total with 11 usable IP addresses, a /27 subnet would provide 30 total with 27 usable addresses, and so forth.</p>
 
-  <p>Remember that the <span class="caps">DHCP</span> server used in Quantum
-  will need an IP address on each subnet where <span class="caps">DHCP</span>
-  is enabled. Keep this in mind when planning how large of a SoftLayer Portable
-  IP block to order.</p>
+  <p>Remember that the <span class="caps">DHCP</span> server used in Quantum will need an IP address on each subnet where DHCP is enabled. Keep this in mind when planning how large of a SoftLayer Portable IP block to order.</p>
 
-  <p>OpenStack utilizes <span class="caps">NAT</span> (Network Address
-  Translation) across externally connected Quantum/Neutron virtual routers. Any
-  network that is attached to the router then has external network access
-  through <span class="caps">NAT</span>. The use of floating IP&#8217;s can
-  reduce the size of the portable block you will have to purchase by allowing
-  all compute instances to have outbound network access when not running
-  inbound public services.</p>
+  <p>OpenStack utilizes <span class="caps">NAT</span> (Network Address Translation) across externally connected Quantum/Neutron virtual routers. Any network that is attached to the router then has external network access through <span class="caps">NAT</span>. The use of floating IP&#8217;s can reduce the size of the portable block you will have to purchase by allowing all compute instances to have outbound network access when not running inbound public services.</p>
 
   <h3>IP Constraints on Data Networks</h3>
 
-  <p>When creating new Data Networks to connect your instances, we recommend
-  limiting Data Network subnets to the following IP ranges:</p>
+  <p>When creating new Data Networks to connect your instances, we recommend limiting Data Network subnets to the following IP ranges:</p>
 
   <ul>
     <li>172.16.0.0/12 (or 172.16.0.0 &#8211; 172.31.255.255)</li>
-
     <li>192.168.0.0/16 (or 192.168.0.0 &#8211; 192.168.255.255)</li>
   </ul>
 
-  <p>Please note that any instance that is simultaneously connected to the
-  SoftLayer Private Network <strong>and</strong> Data Network subnet within
-  10.0.0.0/8 is very likely to conflict and cause unforeseen problems, since
-  the SoftLayer Private Network uses subnets within 10.0.0.0/8 as well.</p>
+  <p>Please note that any instance that is simultaneously connected to the SoftLayer Private Network <strong>and</strong> Data Network subnet within 10.0.0.0/8 is very likely to conflict and cause unforeseen problems, since the SoftLayer Private Network uses subnets within 10.0.0.0/8 as well.</p>
 
-  <p>If you absolutely need to create and use Data Network subnets within
-  10.0.0.0/8, ensure each instance assigned to them are not connected to the
-  SoftLayer Private Network.</p>
+  <p>If you absolutely need to create and use Data Network subnets within 10.0.0.0/8, ensure each instance assigned to them are not connected to the SoftLayer Private Network.</p>
 </div>

@@ -1,10 +1,3 @@
-<!-- CORE JS -->
-<!-- Placed at the end of the document so the pages load faster -->
-
-<script src="{{ page.base_url }}js/jquery.js"></script>
-<script src="{{ page.base_url }}js/bootstrap.js"></script>
-<script src="{{ page.base_url }}js/scrollspy.js"></script> 
-
 <ul class="bs-masthead-links">
   <li><a href="{{ site.www }}" target="_blank">© 2013 SoftLayer Technologies, Inc. All rights reserved.</a></li>
   <li><a href="{{ site.repo }}/blob/master/LICENSE" target="_blank">MIT License</a></li>
@@ -12,3 +5,42 @@
   <li><a href="{{ site.portal }}" target="_blank">Portal Login</a></li>
   <li><a href="http://github.com/softlayer"><img src="{{ page.baseurl }}img/png/github.png" width="42px" height="42px"></a>
 </ul>
+
+<!-- CORE JS -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/scrollspy.js"></script> 
+
+<!-- Custom JavaScript for the Side Menu -->
+  <script>
+      $("#menu-close").click(function(e) {
+          e.preventDefault();
+          $("#sidebar-wrapper").toggleClass("active");
+      });
+  </script>
+  <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#sidebar-wrapper").toggleClass("active");
+      });
+  </script>
+  <script>
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+              || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+    </script>

@@ -12,17 +12,16 @@ a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .na
   text-align: left;
 }
 
-.btn-outline-inverse {
-  background-color: #357aa9;
-  border: 1px solid #357aa9;
+.btn-primary {
   color: #fff;
-  width: 150px;
+  width: 190px;
+  margin-right: 34px;
 }
 
-.btn-outline-inverse:hover,.btn-outline-inverse:focus,.btn-outline-inverse:active {
-  background-color: #3d6498;
-  border: 1px solid #3d6498;
+.btn-success {
   color: #fff;
+  width: 190px;
+  margin-right: 0;
 }
 
 .callout {
@@ -31,4 +30,8 @@ a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .na
 
 .bs-social-buttons li {
   padding: 0 4px;
+}
+
+.btn-lg {
+    padding: 10px 0;
 }

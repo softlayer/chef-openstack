@@ -1,5 +1,5 @@
 article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar {
-  background: url('http://s8.postimg.org/xykbcs6g5/bg_fabric.png') #34302F;
+  background: url(http://s8.postimg.org/xykbcs6g5/bg_fabric.png) #33322f;
 }
 
 .bs-docs-nav {
@@ -40,7 +40,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 .bs-header {
-  background: url('http://s8.postimg.org/xykbcs6g5/bg_fabric.png') #34302F;
+  background: url(http://s8.postimg.org/xykbcs6g5/bg_fabric.png) #33322f;
   color: #fff;
   padding: 30px 14px;
   text-shadow: none;
@@ -54,13 +54,12 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 .bs-footer {
-  background: transparent;
-  border-top: 1px solid #e3e3e3;
+  border-top: 1px solid #f3f3f3;
   padding-top: 0;
 }
 
 .bs-footer a {
-  color: #ccc;
+  color: #cdcecb;
   text-decoration: none;
 }
 
@@ -69,7 +68,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 .bs-masthead h1 {
-  font-size: 80px;
+  font-size: 74px;
 }
 
 h1[id] {
@@ -85,7 +84,7 @@ h1,.h1 {
 }
 
 h2,.h2 {
-  border-bottom: 1px solid #e3e3e3;
+  border-bottom: 1px solid #e3e4e1;
   font-size: 26px;
   margin-bottom: 14px;
   padding-bottom: 10px;
@@ -123,7 +122,7 @@ code {
 }
 
 .bs-sidebar .nav > li > a {
-  color: #777;
+  color: #777875;
   display: block;
   padding: 4px 20px;
 }
@@ -135,7 +134,7 @@ code {
 }
 
 blockquote p {
-  color: #777;
+  color: #777875;
   font-size: 13.5px;
 }
 
@@ -144,8 +143,8 @@ ul,ol {
 }
 
 .callout {
-  background-color: #95a5a6;
-  border-top: #fafafa;
+  background: #95a5a6;
+  border-top: #fafbf8;
   color: #fff;
 }
 
@@ -155,11 +154,13 @@ ul,ol {
 }
 
 .callout a:hover,.callout a:focus {
-  color: #ecf0f1;
+  border-bottom: 1px dotted #fff;
+  color: #fff;
+  padding-bottom: 2px;
 }
 
 pre {
-  background-color: #3d3f41;
+  background: #3d3f41;
   border: 1px solid #3d3f41;
   border-radius: 4px;
   color: #fff;
@@ -169,7 +170,7 @@ pre {
 }
 
 output pre {
-  background-color: #f9f9f9;
+  background: #f9f9f9;
   border: 1px solid #ecf0f1;
   border-radius: 4px;
   color: #7f8c8d;
@@ -180,41 +181,32 @@ output pre {
 
 .row .col-lg-6 h2 {
   border-bottom: none;
-  color: #34302F;
+  color: #33322f;
   font-size: 26px;
   font-weight: 500;
 }
 
 .row .col-lg-6 h2 a {
-  color: #34302F;
+  color: #33322f;
 }
 
 .table thead {
-  background-color: #34302F;
-  border: 1px solid #34302F;
+  background: #33322f;
+  border: 1px solid #33322f;
 }
 
 .table thead > tr > th {
-  border-color: #34302F;
+  border-color: #33322f;
   color: #fff;
   text-align: center;
 }
 
 .navbar-nav > .active > a {
-  background-color: transparent;
   border-radius: 6px;
 }
 
-.navbar-inverse .navbar-nav > .active > a,.navbar-inverse .navbar-nav > .active > a:hover,.navbar-inverse .navbar-nav > .active > a:focus {
-  background-color: transparent;
-}
-
-.navbar-inverse .navbar-nav > .active > a {
-  background-image: none;
-}
-
 .table-bordered > tbody > tr > th,.table-bordered > tbody > tr > td {
-  border: 1px solid #ccc;
+  border: 1px solid #cdcecb;
 }
 
 p {
@@ -227,9 +219,9 @@ p {
 }
 
 .bs-masthead .lead {
-  color: #e3e3e3;
-  font-size: 34px;
-  margin-right: 20%;
+  color: #fafbf8;
+  font-size: 30px;
+  margin-right: 14%;
 }
 
 .lead,.row .col-lg-6 p a {
@@ -240,12 +232,15 @@ p {
   color: #1b84b5;
 }
 
+.row .col-lg-6 p {
+  margin-bottom: 8px;
+}
+
 /*
 * Flat UI Scheme
 * -------------- 
 * Blue          #2980b9   #34495e
 * Blue-Green    #1abc9c   #16a085
-* White         #fff      #e3e3e3
-* Light Gray    #ccc
-* Gray          #777      #34302F
+* Light Gray    #e3e4e1   #cdcecb
+* Gray          #777875   #33322f
 */
