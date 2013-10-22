@@ -25,11 +25,11 @@ package 'openstack-dashboard-ubuntu-theme' do
   action :purge
 end
 
-template '/etc/openstack-dashboard/local_settings.py' do
-  source 'horizon/local_settings.py.erb'
+template '/etc/apache2/conf-available/openstack-dashboard.conf' do
+  source 'horizon/openstack-dashboard.conf.erb'
   owner 'root'
   group 'root'
-  mode 00644
+  mode 00755
   notifies :restart, resources(:service => 'apache2')
   notifies :restart, resources(:service => 'memcached')
 end

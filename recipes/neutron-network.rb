@@ -1,15 +1,10 @@
 packages = %w[neutron-l3-agent
               neutron-dhcp-agent
-              neutron-metadata-agent
-              neutron-plugin-openvswitch-agent
-              neutron-lbaas-agent]
+              neutron-metadata-agent]
 
-network_services = %w[openvswitch-switch
-                      neutron-plugin-openvswitch-agent
-                      neutron-dhcp-agent
+network_services = %w[neutron-dhcp-agent
                       neutron-l3-agent
-                      neutron-metadata-agent
-                      neutron-lbaas-agent]
+                      neutron-metadata-agent]
 
 packages.each do |pkg|
   package pkg do

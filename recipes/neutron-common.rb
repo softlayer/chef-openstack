@@ -1,7 +1,11 @@
 prereq_packages = %w[openvswitch-datapath-dkms]
 common_packages = %w[openvswitch-switch
-                     neutron-plugin-openvswitch-agent]
-
+                     neutron-plugin-openvswitch-agent
+                     neutron-lbaas-agent
+                     haproxy]
+network_services = %w[openvswitch-switch
+                      neutron-plugin-openvswitch-agent
+                      neutron-lbaas-agent]
 
 prereq_packages.each do |pkg|
   package prereq_packages.join(' ') do
@@ -15,16 +19,12 @@ common_packages.each do |pkg|
   end
 end
 
-service 'openvswitch-switch' do
-  supports :status => true, :restart => true, :reload => true
-  action :nothing
+network_services.each do |srv|
+  service srv do
+    provider Chef::Provider::Service::Upstart
+    action :nothing
+  end
 end
-
-service 'neutron-plugin-openvswitch-agent' do
-  provider Chef::Provider::Service::Upstart
-  action :nothing
-end
-
 
 template 'neutron network node OVS config' do
   path '/etc/neutron/plugins/openvswitch/ovs_neutron_plugin.ini'
@@ -38,6 +38,14 @@ template 'neutron network node OVS config' do
   notifies :restart,
            resources(:service => 'openvswitch-switch'),
            :immediately
+end
+
+template '/etc/neutron/lbaas_agent.ini' do
+  source 'neutron/lbaas_agent.ini.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  notifies :restart, resources(:service => 'neutron-lbaas-agent')
 end
 
 bash 'create external bridge' do

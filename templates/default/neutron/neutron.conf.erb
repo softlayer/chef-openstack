@@ -51,7 +51,7 @@ bind_port = <%= node['neutron']['config']['bind_port'] %>
 core_plugin = neutron.plugins.openvswitch.ovs_neutron_plugin.OVSNeutronPluginV2
 
 # Advanced service modules
-#service_plugins = neutron.services.loadbalancer.plugin.LoadBalancerPlugin  #, neutron.services.firewall.fwaas_plugin.FirewallPlugin
+service_plugins = neutron.services.loadbalancer.plugin.LoadBalancerPlugin, neutron.services.firewall.fwaas_plugin.FirewallPlugin
 # Paste configuration file
 #api_paste_config = api-paste.ini
 
@@ -383,5 +383,5 @@ connection = mysql://<%= node['neutron']['db']['name'] %>:<%= node['neutron']['d
 # example of non-default provider:
 # service_provider=FIREWALL:name2:firewall_driver_path
 # --- Reference implementations ---
-#service_provider=LOADBALANCER:Haproxy:neutron.services.loadbalancer.drivers.haproxy.plugin_driver.HaproxyOnHostPluginDriver:default
+service_provider=LOADBALANCER:Haproxy:neutron.services.loadbalancer.drivers.haproxy.plugin_driver.HaproxyOnHostPluginDriver:default
 #service_provider=FIREWALL:Iptables:neutron.services.firewall.drivers.linux.iptables_fwaas.IptablesFwaasDriver:default

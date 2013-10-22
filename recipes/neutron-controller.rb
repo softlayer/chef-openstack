@@ -1,4 +1,4 @@
-%w[neutron-server].each do |pkg|
+%w[neutron-server python-neutronclient].each do |pkg|
   package pkg do
     action :install
   end
