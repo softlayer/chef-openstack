@@ -8,16 +8,7 @@ services = %w[neutron-dhcp-agent
               neutron-l3-agent-public
               neutron-l3-agent-private]
 
-keystone_auth_url = "http://#{node[:keystone][:private_ip]}:" \
-                    "#{node['keystone']['config']['public_port']}/v2.0"
-
-admin_env = {"OS_USERNAME" => "admin",
-             "OS_PASSWORD" => node[:admin][:password],
-             "OS_TENANT_NAME" => "admin",
-             "OS_AUTH_URL"  => keystone_auth_url}
-
 uuid_regex = /[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/
-
 
 
 action :setup_softlayer_networks do
@@ -103,7 +94,7 @@ action :softlayer_l3_config do
                                  "public-router",
                                  "--variable", "id",
                                  "-f", "shell",
-                                 :environment => admin_env)
+                                 :environment => env)
   command.run_command
 
   if command.stderr.index("Unable to find router")
@@ -118,7 +109,7 @@ action :softlayer_l3_config do
                                  "private-router",
                                  "--variable", "id",
                                  "-f", "shell",
-                                 :environment => admin_env)
+                                 :environment => env)
   command.run_command
 
   if command.stderr.index("Unable to find router")
@@ -133,7 +124,7 @@ action :softlayer_l3_config do
                                  "softlayer-public",
                                  "--variable", "id",
                                  "-f", "shell",
-                                 :environment => admin_env)
+                                 :environment => env)
   command.run_command
 
   if command.stderr.index("Unable to find network")
@@ -149,7 +140,7 @@ action :softlayer_l3_config do
                                  "softlayer-private",
                                  "--variable", "id",
                                  "-f", "shell",
-                                 :environment => admin_env)
+                                 :environment => env)
   command.run_command
 
   if command.stderr.index("Unable to find network")

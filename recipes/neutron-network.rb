@@ -41,21 +41,20 @@ template '/etc/neutron/dhcp_agent.ini' do
   notifies :restart, resources(:service => 'neutron-dhcp-agent')
 end
 
-	notifies :restart, resources(:service => 'neutron-metadata-agent')
 template '/etc/neutron/lbaas_agent.ini' do
-	source 'neutron/lbaas_agent.ini.erb'
-	owner 'root'
-	group 'root'
-	mode '0644'
-	notifies :restart, resources(:service => 'neutron-lbaas-agent')
+  source 'neutron/lbaas_agent.ini.erb'
+  owner 'root'
+  group 'root'
+  mode '0644'
+  notifies :restart, resources(:service => 'neutron-lbaas-agent')
 end
 
 template '/etc/neutron/metadata_agent.ini' do
-	owner 'root'
-	group 'neutron'
-	mode '0644'
-	source 'neutron/metadata_agent.ini.erb'
-	notifies :restart, resources(:service => 'neutron-metadata-agent')
+  owner 'root'
+  group 'neutron'
+  mode '0644'
+  source 'neutron/metadata_agent.ini.erb'
+  notifies :restart, resources(:service => 'neutron-metadata-agent')
 end
 
 template '/etc/neutron/l3_agent.ini' do
@@ -113,96 +112,15 @@ if (node['neutron']['network']['softlayer_private_portable'] \
 
 
   # Load SoftLayer configuration and call bash to create the SoftLayer Neutron
-  # networks. This creates a gre openstack network which is attached to the
+  # networks. This creates a Neutron GRE network which is attached to the
   # Neutron L3 router. The router's gateway is the public SoftLayer network.
   # Floating IPs can be assigned across the router. The private network is
   # bridged only; more portable blocks must be ordered to attach additional
   # devices.
+
   bash "Create SoftLayer Neutron networks for #{node.chef_environment}" do
 
-    environment 'OS_USERNAME' => 'admin',
-                'OS_PASSWORD' => node[:admin][:password],
-                'OS_TENANT_NAME' => 'admin',
-                'OS_AUTH_URL' => keystone_auth_url
-
-    code <<-EOH
-
-      # GRE network for openstack
-      neutron net-create \
-        #{node['neutron']['network']['openstack_network_name']} \
-        --provider:network_type=gre \
-        --provider:segmentation_id=1 \
-        --shared
-      neutron subnet-create \
-        --name #{node['neutron']['network']['openstack_subnet_name']} \
-        --dns-nameserver #{node['neutron']['network']['public_nameserver_1']} \
-        --dns-nameserver #{node['neutron']['network']['public_nameserver_2']} \
-        #{node['neutron']['network']['openstack_network_name']} \
-        #{node['neutron']['network']['openstack_network_cidr']}
-
-      # Public network based on bridge
-      neutron net-create \
-        #{node['neutron']['network']['public_network_name']} \
-        --provider:network_type=flat \
-        --provider:physical_network=#{node['neutron']['network']['public_physical_network_name']} \
-        --router:external=True \
-        --shared
-      neutron subnet-create \
-        --name #{node['neutron']['network']['public_subnet_name']} \
-        --gateway #{sl_public_router.to_s} \
-        --dns-nameserver #{node['neutron']['network']['public_nameserver_1']} \
-        --dns-nameserver #{node['neutron']['network']['public_nameserver_2']} \
-        #{node['neutron']['network']['public_network_name']} \
-        #{node['neutron']['network']['softlayer_public_portable']}
-
-      # Private network based on bridge (no router)
-      neutron net-create #{node['neutron']['network']['private_network_name']} \
-        --provider:network_type=flat \
-        --provider:physical_network=#{node['neutron']['network']['private_physical_network_name']} \
-        --router:external=False --shared
-      neutron subnet-create \
-        --name #{node['neutron']['network']['private_subnet_name']} \
-        --no-gateway \
-        --allocation-pool start=#{sl_private_host_start.to_s},end=#{sl_private_host_end.to_s} \
-        --host-route destination=#{node['neutron']['network']['softlayer_private_network_cidr']},nexthop=#{sl_private_router.to_s} \
-        --dns-nameserver #{node['neutron']['network']['private_nameserver_1']} \
-        --dns-nameserver #{node['neutron']['network']['private_nameserver_2']} \
-        #{node['neutron']['network']['private_network_name']} \
-        #{node['neutron']['network']['softlayer_private_portable']}
-
-      neutron router-create \
-        #{node['neutron']['network']['public_l3_router_name']}
-      neutron router-gateway-set \
-        #{node['neutron']['network']['public_l3_router_name']} \
-        #{node['neutron']['network']['public_network_name']}
-      neutron router-interface-add \
-        #{node['neutron']['network']['public_l3_router_name']} \
-        #{node['neutron']['network']['openstack_subnet_name']}
-
-      neutron security-group-create \
-        #{node['neutron']['network']['security_group_name']}
-      neutron security-group-rule-create \
-        --direction ingress \
-        --ethertype IPv4 \
-        --protocol tcp \
-        --port-range-min 22 \
-        --port-range-max 22 \
-        #{node['neutron']['network']['security_group_name']}
-      neutron security-group-rule-create \
-        --direction ingress \
-        --ethertype IPv4 \
-        --protocol icmp \
-        #{node['neutron']['network']['security_group_name']}
-    EOH
-
-    not_if "neutron router-list | grep \"#{node['neutron']['network']['public_l3_router_name'].to_s}\""
-
-  end
-
-else
-
-  bash 'Create a default OpenStack GRE Network' do
-
+    node_network = node['neutron']['network']
     environment 'OS_USERNAME' => 'admin',
                 'OS_PASSWORD' => node[:admin][:password],
                 'OS_TENANT_NAME' => 'admin',
@@ -212,40 +130,124 @@ else
 
       # GRE network for OpenStack
       neutron net-create \
-        #{node['neutron']['network']['openstack_network_name']} \
+        #{node_network['openstack_network_name']} \
         --provider:network_type=gre \
         --provider:segmentation_id=1 \
         --shared
       neutron subnet-create \
-        --name #{node['neutron']['network']['openstack_subnet_name']} \
-        --dns-nameserver #{node['neutron']['network']['public_nameserver_1']} \
-        --dns-nameserver #{node['neutron']['network']['public_nameserver_2']} \
-        #{node['neutron']['network']['openstack_network_name']} \
-        #{node['neutron']['network']['openstack_network_cidr']}
+        --name #{node_network['openstack_subnet_name']} \
+        --dns-nameserver #{node_network['public_nameserver_1']} \
+        --dns-nameserver #{node_network['public_nameserver_2']} \
+        #{node_network['openstack_network_name']} \
+        #{node_network['openstack_network_cidr']}
+
+      # Public network based on bridge
+      neutron net-create \
+        #{node_network['public_network_name']} \
+        --provider:network_type=flat \
+        --provider:physical_network=#{node_network['public_physical_network_name']} \
+        --router:external=True \
+        --shared
+      neutron subnet-create \
+        --name #{node_network['public_subnet_name']} \
+        --gateway #{sl_public_router.to_s} \
+        --dns-nameserver #{node_network['public_nameserver_1']} \
+        --dns-nameserver #{node_network['public_nameserver_2']} \
+        #{node_network['public_network_name']} \
+        #{node_network['softlayer_public_portable']}
+
+      # Private network based on bridge (no router)
+      neutron net-create #{node_network['private_network_name']} \
+        --provider:network_type=flat \
+        --provider:physical_network=#{node_network['private_physical_network_name']} \
+        --router:external=False --shared
+      neutron subnet-create \
+        --name #{node_network['private_subnet_name']} \
+        --no-gateway \
+        --allocation-pool start=#{sl_private_host_start.to_s},end=#{sl_private_host_end.to_s} \
+        --host-route destination=#{node_network['softlayer_private_network_cidr']},nexthop=#{sl_private_router.to_s} \
+        --dns-nameserver #{node_network['private_nameserver_1']} \
+        --dns-nameserver #{node_network['private_nameserver_2']} \
+        #{node_network['private_network_name']} \
+        #{node_network['softlayer_private_portable']}
 
       neutron router-create \
-        #{node['neutron']['network']['public_l3_router_name']}
+        #{node_network['public_l3_router_name']}
+      neutron router-gateway-set \
+        #{node_network['public_l3_router_name']} \
+        #{node_network['public_network_name']}
       neutron router-interface-add \
-        #{node['neutron']['network']['public_l3_router_name']} \
-        #{node['neutron']['network']['openstack_subnet_name']}
+        #{node_network['public_l3_router_name']} \
+        #{node_network['openstack_subnet_name']}
 
       neutron security-group-create \
-        #{node['neutron']['network']['security_group_name']}
+        #{node_network['security_group_name']}
       neutron security-group-rule-create \
         --direction ingress \
         --ethertype IPv4 \
         --protocol tcp \
         --port-range-min 22 \
         --port-range-max 22 \
-        #{node['neutron']['network']['security_group_name']}
+        #{node_network['security_group_name']}
       neutron security-group-rule-create \
         --direction ingress \
         --ethertype IPv4 \
         --protocol icmp \
-        #{node['neutron']['network']['security_group_name']}
+        #{node_network['security_group_name']}
     EOH
 
-    not_if "neutron router-list | grep \"#{node['neutron']['network']['public_l3_router_name'].to_s}\""
+    not_if "neutron router-list | grep \"#{node_network['public_l3_router_name'].to_s}\""
+
+  end
+
+else
+
+  bash 'Create a default OpenStack GRE Network' do
+
+    node_network = node['neutron']['network']
+    environment 'OS_USERNAME' => 'admin',
+                'OS_PASSWORD' => node[:admin][:password],
+                'OS_TENANT_NAME' => 'admin',
+                'OS_AUTH_URL' => keystone_auth_url
+
+    code <<-EOH
+
+      # GRE network for OpenStack
+      neutron net-create \
+        #{node_network['openstack_network_name']} \
+        --provider:network_type=gre \
+        --provider:segmentation_id=1 \
+        --shared
+      neutron subnet-create \
+        --name #{node_network['openstack_subnet_name']} \
+        --dns-nameserver #{node_network['public_nameserver_1']} \
+        --dns-nameserver #{node_network['public_nameserver_2']} \
+        #{node_network['openstack_network_name']} \
+        #{node_network['openstack_network_cidr']}
+
+      neutron router-create \
+        #{node_network['public_l3_router_name']}
+      neutron router-interface-add \
+        #{node_network['public_l3_router_name']} \
+        #{node_network['openstack_subnet_name']}
+
+      neutron security-group-create \
+        #{node_network['security_group_name']}
+      neutron security-group-rule-create \
+        --direction ingress \
+        --ethertype IPv4 \
+        --protocol tcp \
+        --port-range-min 22 \
+        --port-range-max 22 \
+        #{node_network['security_group_name']}
+      neutron security-group-rule-create \
+        --direction ingress \
+        --ethertype IPv4 \
+        --protocol icmp \
+        #{node_network['security_group_name']}
+    EOH
+
+    not_if "neutron router-list | grep \"#{node_network['public_l3_router_name'].to_s}\""
 
   end
 
@@ -255,6 +257,6 @@ end
 
 # Use the Neutron LWRP when you need multiple L3 routers configured.
 # A router for each SoftLayer public and private networks
-# chef_openstack_neutron 'Setup softlayer L3 router config for openstack' do
+# chef_openstack_neutron 'Set up SoftLayer L3 router config for OpenStack' do
 #   action :softlayer_l3_config
 # end

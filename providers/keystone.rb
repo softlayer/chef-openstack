@@ -1,14 +1,10 @@
-service_env = { 'SERVICE_TOKEN' => new_resource.keystone_service_pass,
-                'SERVICE_ENDPOINT' => 'http://localhost:35357/v2.0' }
-
-id_regex = %r(/[a-f0-9]{25,}/)
-
+id_regex = /[a-f0-9]{25,}/
 
 
 action :create_user do
   shell = Mixlib::ShellOut.new('keystone', 'user-get',
                                new_resource.user,
-                               :environment => service_env)
+                               :environment => new_resource.env)
   shell.run_command
 
   if shell.stderr.index('No user with a name')
@@ -16,7 +12,7 @@ action :create_user do
                                "--name=#{new_resource.user}",
                                "--pass=#{new_resource.password}",
                                "--email=#{new_resource.email}",
-                               :environment => service_env)
+                               :environment => new_resource.env)
     create.run_command
     create.error!  # Tell chef user if something went wrong
 
@@ -26,7 +22,6 @@ action :create_user do
     user_id = shell.stdout.match id_regex
     puts "\nUser #{new_resource.user} already exists with ID #{user_id}"
   end
-
 end
 
 
@@ -34,13 +29,13 @@ end
 action :create_tenant do
   find = Mixlib::ShellOut.new('keystone', 'tenant-get',
                                new_resource.tenant,
-                              :environment => service_env)
+                              :environment => new_resource.env)
   find.run_command
 
   if find.stderr.index('No tenant with a name')
     create = Mixlib::ShellOut.new('keystone', 'tenant-create',
                                   "--name=#{new_resource.tenant}",
-                                  :environment => service_env)
+                                  :environment => new_resource.env)
     create.run_command
     create.error!  # Tell chef user if something went wrong
 
@@ -57,13 +52,13 @@ end
 action :create_role do
   find = Mixlib::ShellOut.new('keystone', 'role-get',
                               new_resource.role,
-                              :environment => service_env)
+                              :environment => new_resource.env)
   find.run_command
 
   if find.stderr.index('No role with a name')
     create = Mixlib::ShellOut.new('keystone', 'role-create',
                                   "--name=#{new_resource.role}",
-                                  :environment => service_env)
+                                  :environment => new_resource.env)
     create.run_command
     create.error!  # Tell chef user if something went wrong
 
@@ -84,7 +79,7 @@ action :user_role_add do
 
   find = Mixlib::ShellOut.new('keystone', 'user-get',
                               new_resource.user,
-                              :environment => service_env)
+                              :environment => new_resource.env)
   find.run_command
 
   if find.stderr.index('No user with a name')
@@ -96,7 +91,7 @@ action :user_role_add do
 
   find = Mixlib::ShellOut.new('keystone', 'tenant-get',
                               new_resource.tenant,
-                              :environment => service_env)
+                              :environment => new_resource.env)
   find.run_command
 
   if find.stderr.index('No tenant with a name')
@@ -108,7 +103,7 @@ action :user_role_add do
 
   find = Mixlib::ShellOut.new('keystone', 'role-get',
                               new_resource.role,
-                              :environment => service_env)
+                              :environment => new_resource.env)
   find.run_command
 
   if find.stderr.index('No role with a name')
@@ -121,7 +116,7 @@ action :user_role_add do
                                 '--user-id', user_id.to_s,
                                 '--tenant-id', tenant_id.to_s,
                                 '--role-id', role_id.to_s,
-                                :environment => service_env)
+                                :environment => new_resource.env)
   update.run_command
 
   if update.stderr.index('already has')
@@ -137,7 +132,7 @@ end
 action :create_service do
   find = Mixlib::ShellOut.new('keystone', 'service-get',
                               new_resource.name,
-                              :environment => service_env)
+                              :environment => new_resource.env)
   find.run_command
 
   if find.stderr.index('No service with a name')
@@ -145,7 +140,7 @@ action :create_service do
                                   '--name', new_resource.name,
                                   '--type', new_resource.service_type,
                                   '--description', new_resource.description,
-                                  :environment => service_env)
+                                  :environment => new_resource.env)
     create.run_command
     create.error! #Let chef user know something then wrong.
 
@@ -162,7 +157,7 @@ end
 action :create_endpoint do
   find = Mixlib::ShellOut.new('keystone', 'service-get',
                               new_resource.service_type,
-                              :environment => service_env)
+                              :environment => new_resource.env)
   find.run_command
 
   if find.stderr.index('No service with a name')
@@ -173,7 +168,7 @@ action :create_endpoint do
     endpoint_found = false
 
     find = Mixlib::ShellOut.new('keystone', 'endpoint-list',
-                                :environment => service_env)
+                                :environment => new_resource.env)
     find.run_command
 
     find.stdout.each_line do |line|
@@ -194,7 +189,7 @@ action :create_endpoint do
                                     '--publicurl', new_resource.public_url,
                                     '--adminurl', new_resource.admin_url,
                                     '--internalurl', new_resource.internal_url,
-                                    :environment => service_env)
+                                    :environment => new_resource.env)
       create.run_command
       create.error!
 

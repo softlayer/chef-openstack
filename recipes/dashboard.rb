@@ -29,16 +29,16 @@ template '/etc/openstack-dashboard/local_settings.py' do
   source 'horizon/local_settings.py.erb'
   owner 'root'
   group 'root'
-	mode 00644
-	notifies :restart, resources(:service => 'apache2')
-	notifies :restart, resources(:service => 'memcached')
+  mode 00644
+  notifies :restart, resources(:service => 'apache2')
+  notifies :restart, resources(:service => 'memcached')
 end
 
 template '/etc/openstack-dashboard/local_settings.py' do
-	source 'horizon/local_settings.py.erb'
-	owner 'root'
-	group 'root'
-	mode 00644
-	notifies :restart, resources(:service => 'apache2'), :immediately
-	notifies :restart, resources(:service => 'memcached'), :immediately
+  source 'horizon/local_settings.py.erb'
+  owner 'root'
+  group 'root'
+  mode 00644
+  notifies :restart, resources(:service => 'apache2'), :immediately
+  notifies :restart, resources(:service => 'memcached'), :immediately
 end

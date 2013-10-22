@@ -66,79 +66,80 @@ end
 
 # =================================================
 # BEGIN Keystone HTTP setup
-
-service 'keystone' do
-  provider Chef::Provider::Service::Upstart
-  action [:disable, :stop]
-end
-
-%w[apache2 libapache2-mod-wsgi].each do |pkg|
-  package pkg do
-    action :install
+if node['keystone']['apache_frontend']
+  service 'keystone' do
+    provider Chef::Provider::Service::Upstart
+    action [:disable, :stop]
   end
-end
 
-service 'apache2' do
-  supports :status => true, :restart => true, :reload => true
-  action :nothing
-end
+  %w[apache2 libapache2-mod-wsgi].each do |pkg|
+    package pkg do
+      action :install
+    end
+  end
 
-directory '/usr/share/keystone/wsgi' do
-  owner 'root'
-  group 'root'
-  mode 00755
-  recursive true
-  action :create
-	notifies :stop, "service[keystone]"
-	notifies :restart, "service[apache2]"
-end
+  service 'apache2' do
+    supports :status => true, :restart => true, :reload => true
+    action :nothing
+  end
 
-template '/usr/share/keystone/wsgi/main' do
-  source 'keystone/keystone.py'
-  owner 'root'
-  group 'root'
-  mode 00644
-	notifies :stop, "service[keystone]"
-	notifies :restart, "service[apache2]"
-end
+  directory '/usr/share/keystone/wsgi' do
+    owner 'root'
+    group 'root'
+    mode 00755
+    recursive true
+    action :create
+    notifies :stop, "service[keystone]"
+    notifies :restart, "service[apache2]"
+  end
 
-template '/usr/share/keystone/wsgi/admin' do
-  source 'keystone/keystone.py'
-  owner 'root'
-  group 'root'
-  mode 00644
-	notifies :stop, "service[keystone]"
-	notifies :restart, "service[apache2]"
-end
+  template '/usr/share/keystone/wsgi/main' do
+    source 'keystone/keystone.py'
+    owner 'root'
+    group 'root'
+    mode 00644
+    notifies :stop, "service[keystone]"
+    notifies :restart, "service[apache2]"
+  end
 
-directory '/var/log/keystone' do
-  group 'www-data'
-  mode '0777'
-  action :create
-end
+  template '/usr/share/keystone/wsgi/admin' do
+    source 'keystone/keystone.py'
+    owner 'root'
+    group 'root'
+    mode 00644
+    notifies :stop, "service[keystone]"
+    notifies :restart, "service[apache2]"
+  end
 
-file '/var/log/keystone/keystone.log' do
-  group 'www-data'
-  mode '0666'
-  action :create
-end
+  directory '/var/log/keystone' do
+    group 'www-data'
+    mode '0777'
+    action :create
+  end
 
-# Ubuntu
-directory '/etc/apache2/conf.d/' do
-  owner 'root'
-  group 'root'
-  mode 00755
-  recursive true
-  action :create
-end
+  file '/var/log/keystone/keystone.log' do
+    group 'www-data'
+    mode '0666'
+    action :create
+  end
 
-template '/etc/apache2/conf.d/wsgi-keystone.conf' do
-  source 'keystone/wsgi-keystone.conf'
-  owner 'root'
-  group 'root'
-  mode 00644
-  notifies :restart, resources(:service => 'keystone'), :immediately
-  notifies :restart, resources(:service => 'apache2'), :immediately
+  # Ubuntu
+  directory '/etc/apache2/conf.d/' do
+    owner 'root'
+    group 'root'
+    mode 00755
+    recursive true
+    action :create
+  end
+
+  template '/etc/apache2/conf.d/wsgi-keystone.conf' do
+    source 'keystone/wsgi-keystone.conf'
+    owner 'root'
+    group 'root'
+    mode 00644
+    notifies :stop, resources(:service => 'keystone'), :immediately
+    notifies :restart, resources(:service => 'apache2'), :immediately
+  end
 end
 
 # END Keystone HTTP setup
