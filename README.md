@@ -158,6 +158,7 @@ It is not recommended to change the physical network configuration unless you ha
 
 
 ### Keystone ###
+* `node['keystone']['apache_frontend']` - Run Keystone under Apache's mod_wsgi to allow for more concurrent connections (default: true)
 * `node['keystone']['config']['debug']` - Set debug mode for Keystone services
 * `node['keystone']['config']['verbose']` - Set verbose logging mode for Keystone services
 
@@ -168,9 +169,9 @@ It is not recommended to change the physical network configuration unless you ha
 * `node['keystone']['service_tenant_name']` - Keystone tenant name for Keystone services
 * `node['keystone']['service_user']` - Keystone user name for Keystone services
 
-* `node['keystone']['config']['bind_host']` - IP to listen on (default 0.0.0.0)
-* `node['keystone']['config']['public_port']` - Public port to listen on (default 5000)
-* `node['keystone']['config']['admin_port']` - Admin port to listen on (default 35357)
+* `node['keystone']['config']['bind_host']` - IP to listen on (default: 0.0.0.0)
+* `node['keystone']['config']['public_port']` - Public port to listen on (default: 5000)
+* `node['keystone']['config']['admin_port']` - Admin port to listen on (default: 35357)
 
 * `node['keystone']['region_servers']` - Horizon can be populated with your other OpenStack clusters.  To do so add keypairs of the region names and their respective IP address location:
 

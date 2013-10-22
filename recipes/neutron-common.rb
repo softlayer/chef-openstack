@@ -2,6 +2,7 @@ prereq_packages = %w[openvswitch-datapath-dkms]
 common_packages = %w[openvswitch-switch
                      neutron-plugin-openvswitch-agent]
 
+
 prereq_packages.each do |pkg|
   package prereq_packages.join(' ') do
     action :install
@@ -46,7 +47,7 @@ bash 'create external bridge' do
   CODE
 end
 
-bash 'create softlayer private bridge' do
+bash 'create SoftLayer private bridge' do
   not_if('ovs-vsctl list-br | grep br-priv')
   code <<-CODE
   ovs-vsctl add-br br-priv

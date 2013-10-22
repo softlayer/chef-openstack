@@ -8,6 +8,7 @@ default['keystone']['db']['password'] = 'k3yst0n3'
 default['keystone']['service_tenant_name'] = 'service'
 default['keystone']['service_user'] = 'keystone'
 
+default['keystone']['apache_frontend'] = true
 default['keystone']['config']['bind_host'] = '0.0.0.0'
 default['keystone']['config']['public_port'] = '5000'
 default['keystone']['config']['admin_port'] = '35357'

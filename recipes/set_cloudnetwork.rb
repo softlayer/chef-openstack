@@ -46,7 +46,7 @@ node['admin']['cloud_network']['roles'].each_pair do |var, role|
     is_bonded = "True" if iface.start_with?('bond')
    
     addrs['addresses'].each do |ip, params|
-    current_node['#{iface}_ip'] = ip if params['family'].eql?('inet')
+    current_node["#{iface}_ip"] = ip if params['family'].eql?('inet')
     end
    
   end

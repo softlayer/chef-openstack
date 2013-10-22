@@ -1,6 +1,7 @@
 actions :create_user, :create_tenant, :create_role, :user_role_add,
         :create_endpoint, :create_service
 
+attribute :env, :kind_of => Hash, :default => nil
 attribute :password, :kind_of => String, :default => nil
 attribute :email, :kind_of => String, :default => nil
 attribute :tenant, :kind_of => String, :default => nil
