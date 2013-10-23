@@ -51,10 +51,17 @@
                 {% include nav-use-scenario.html %}
               {% elsif page.slug == "sandbox" %}
                 {% include nav-sandbox.html %}
-
               {% endif %}
 
             </ul>
+
+            {% if page.slug != "getting-started" %}
+            <a class="btn btn-default" href="../getting-started"><strong>Go Back to Menu</strong></a>
+            {% endif %}
+
+
+            <a class="btn btn-default" href="{{ site.repo }}"><strong>Go to GitHub</strong></a>
+
           </div>
         </div>
         <div class="col-md-9" role="main">

@@ -1,67 +1,114 @@
+h1,.h1 {
+border-bottom:none;
+}
 
-h1, .h1 {
-border-bottom : none;
+a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .navbar-nav > li > a:focus {
+color:#fff;
 }
-a, a:hover, a:focus, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-color : #fff;
+
+a:hover, a:focus {
+opacity:.7;
 }
+
 .bs-masthead-links {
-margin-top : 0;
-text-align : center;
+margin-top:0;
+text-align:center;
 }
+
+.btn-lg {
+padding:10px 0;
+}
+
+.btn-default {
+background-color:#fff;
+background-image:none;
+border:1px solid #fff;
+border-radius:50px;
+color:#222;
+margin-bottom:20px;
+margin-right:20px;
+width:160px;
+text-shadow:none;
+box-shadow:none;
+}
+
+.btn-default:hover,.btn-default:focus {
+background-color:#fff;
+background-image:none;
+border:1px solid #fff;
+border-radius:50px;
+color:#ccc;
+margin-bottom:20px;
+margin-right:20px;
+opacity:.7;
+width:160px;
+}
+
 .btn-success {
-color : #fff;
-width : 160px;
-margin-right : 45px;
-margin-bottom : 20px;
+background-color:#16a085;
+background-image:none;
+border:1px solid #16a085;
+border-radius:50px;
+margin-bottom:20px;
+margin-right:20px;
+width:160px;
+text-shadow:none;
+box-shadow:none;
 }
-.btn-primary {
-background-image : none;
-background-color : #fff;
-border-radius: 50px;
-color : #222;
-width : 160px;
-margin-right : 45px;
-margin-bottom : 20px;
+
+.btn-success:hover, .btn-success:focus {
+background-color:#16a085;
+background-image:none;
+border:1px solid #16a085;
+border-radius:50px;
+margin-bottom:20px;
+margin-right:20px;
+color:#ccc;
+opacity:.7;
+width:160px;
 }
-.btn-success {
-background-image : none;
-background-color : #1bb5ad;
-}
+
 .container {
-text-align : center;
+text-align:center;
 }
+
 .bs-masthead .lead {
-margin-right : 0;
+margin-right:0;
 }
+
 #watch {
-display : block;
-overflow : hidden;
-margin-top : 10px;
-margin-left : auto;
-margin-right : auto;
-display : block;
-width : 300px;
+display:block;
+margin-left:auto;
+margin-right:auto;
+margin-top:10px;
+overflow:hidden;
+width:300px;
 }
+
 #watch section {
-float : left;
-width : 150px;
-margin-bottom : 4px;
+float:left;
+margin-bottom:4px;
+width:150px;
 }
+
 #watch a {
-color : #fff;
-opacity : 1;
-padding-left : 25px;
+color:#fff;
+opacity:1;
+padding-left:25px;
 }
+
 #watch a:hover {
-opacity : 0.699999988079071044921875;
+opacity:0.7;
 }
+
 #watch #stargazers a {
-background : url(../img/png/icon-stargazer.png) left center no-repeat;
+background:url(/img/png/icon-stargazer.png) left center no-repeat;
 }
+
 #watch #twitter a {
-background : url(../img/png/icon-twitter.png) left center no-repeat;
+background:url(/img/png/icon-twitter.png) left center no-repeat;
 }
+
 .bs-masthead h1 {
-font-size : 84px;
+font-size:84px;
 }
