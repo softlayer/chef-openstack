@@ -25,6 +25,9 @@ action :create_user do
 		
 		puts "\nUser \"#{new_resource.user}\" was created with ID \"#{run.stdout.match /[a-f0-9]{25,}/}\""
 	else
+		if user_id.empty? || user_id.nil?
+     		raise "ID could not be found.  Check Keystone and retry."
+    	end
 		puts "\nThe user \"#{new_resource.user}\" already exists with ID \"#{finduser.stdout.match /[a-f0-9]{25,}/}\""
 	end
 
