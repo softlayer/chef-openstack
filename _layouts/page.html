@@ -24,6 +24,7 @@
           <div class="bs-sidebar hidden-print" role="complementary">
             <ul class="nav bs-sidenav">
               
+              <!-- Main pages -->
               {% if page.slug == "getting-started" %}
                 {% include nav-getting-started.html %}
               {% elsif page.slug == "documents" %}
@@ -32,6 +33,25 @@
                 {% include nav-notes.html %}
               {% elsif page.slug == "contributing" %}
                 {% include nav-contributing.html %}
+
+              <!-- Getting Started pages -->
+              {% elsif page.slug == "chef-openstack" %}
+                {% include nav-chef-openstack.html %}
+              {% elsif page.slug == "install" %}
+                {% include nav-install.html %}
+              {% elsif page.slug == "requirements" %}
+                {% include nav-requirements.html %}
+              {% elsif page.slug == "start-openstack" %}
+                {% include nav-start-openstack.html %}
+              {% elsif page.slug == "support" %}
+                {% include nav-support.html %}
+              {% elsif page.slug == "testing-openstack" %}
+                {% include nav-testing-openstack.html %}
+              {% elsif page.slug == "use-scenario" %}
+                {% include nav-use-scenario.html %}
+              {% elsif page.slug == "sandbox" %}
+                {% include nav-sandbox.html %}
+
               {% endif %}
 
             </ul>

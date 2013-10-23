@@ -270,6 +270,7 @@ baseurl: "../"
       </tr>
     </tbody>
   </table>
+</div>
 
   <h3>Important Information about IP Addressing</h3>
 
@@ -288,11 +289,10 @@ baseurl: "../"
   <p>When creating new Data Networks to connect your instances, we recommend limiting Data Network subnets to the following IP ranges:</p>
 
   <ul>
-    <li>172.16.0.0/12 (or 172.16.0.0 &#8211; 172.31.255.255)</li>
-    <li>192.168.0.0/16 (or 192.168.0.0 &#8211; 192.168.255.255)</li>
+    <li>172.16.0.0/12 (or 172.16.0.0 - 172.31.255.255)</li>
+    <li>192.168.0.0/16 (or 192.168.0.0 - 192.168.255.255)</li>
   </ul>
 
   <p>Please note that any instance that is simultaneously connected to the SoftLayer Private Network <strong>and</strong> Data Network subnet within 10.0.0.0/8 is very likely to conflict and cause unforeseen problems, since the SoftLayer Private Network uses subnets within 10.0.0.0/8 as well.</p>
 
   <p>If you absolutely need to create and use Data Network subnets within 10.0.0.0/8, ensure each instance assigned to them are not connected to the SoftLayer Private Network.</p>
-</div>

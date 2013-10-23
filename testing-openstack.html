@@ -5,210 +5,73 @@ slug: test-openstack
 lead: "Find out just how easy it is to get off the ground (cloud pun intended)"
 baseurl: "../"
 ---
+
 <h1 id="test">Testing OpenStack</h1>
-    <p>Use the testing procedures below before pushing your server into a production environment. Additionally, in case you want to create your
-own testing environment (or sandbox), those instructions are also included below.</p>
+    
+    <p>Use the testing procedures below before pushing your server into a production environment. Additionally, in case you want to create your own testing environment (or sandbox), those instructions are also included below.</p>
 
   <h2 id="test-connectivity">Test Connectivity</h2>
-  <p>The hostname for each server must meet the following requirements:</p>
+
+    <p>The hostname for each server must meet the following requirements:</p>
 
   <ol>
-    <li>
-      The hostname must be a fully qualified domain name (FQDN), which includes the domain suffix. Example: mychefserver.example.com (not simply mychefserver).
-    </li>
-    <li>
-     The hostname must be resolvable. In most cases, such as for a server that will run in a production environment, add the hostname for the server to the DNS system. In some cases, such as when deploying server into a testing environment, just adding the hostname to the /etc/hosts file is enough to ensure that a hostname is resolvable.
-    </li>
+    <li>The hostname must be a fully qualified domain name (FQDN), which includes the domain suffix. Example: mychefserver.example.com (not simply mychefserver).</li>
+    <li>The hostname must be resolvable. In most cases, such as for a server that will run in a production environment, add the hostname for the server to the DNS system. In some cases, such as when deploying server into a testing environment, just adding the hostname to the /etc/hosts file is enough to ensure that a hostname is resolvable.</li>
   </ol>
 
-  <h2 id="resolvable-hostname">Resolvable Hostname</h2>
+  <h3>Resolvable Hostname</h2>
+    
     <p>To verify if a hostname is resolvable, run the following command:</p>
 
-    <pre><code>$ hostname -f</code></pre>
+<pre><code>$ hostname -f</code></pre>
 
-<p>If the hostname is resolvable, it will return something like:</p>
+    <p>If the hostname is resolvable, it will return something like:</p>
 
-<div class="code panel pdl" style="border-width: 1px;">
-  <div class="codeContent panelContent pdl">
-    <div>
-      <div class="syntaxhighlighter nogutter bash" id="highlighter_607700">
-        <div class="toolbar">
-          <span><a class="toolbar_item command_help help" href="#">?</a></span>
-        </div>
+<pre><code>mychefserver.example.com</code></pre>
 
-        <table border="0" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td class="code">
-                <div class="container" title="Hint: double-click to select code">
-                  <div class="line number1 index0 alt2">
-                    <code class="bash plain">mychefserver.example.com</code>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
+    <p>Alternatively, you can <code>ping</code> the host:</p>
 
-<p>Alternatively, you can <code>ping</code> the host:</p>
+<pre><code>$ ping mychefserver.example.com
 
-<div class="code panel pdl" style="border-width: 1px;">
-  <div class="codeContent panelContent pdl">
-    <div>
-      <div class="syntaxhighlighter nogutter bash" id="highlighter_809450">
-        <div class="toolbar">
-          <span><a class="toolbar_item command_help help" href="#">?</a></span>
-        </div>
+PING mychefserver.example.com (127.0.0.1) 56(84) bytes of data.
+64 bytes from mychefserver.example.com (127.0.0.1): icmp_req=1 ttl=64 time=0.034 ms
+64 bytes from mychefserver.example.com (127.0.0.1): icmp_req=2 ttl=64 time=0.028 ms
+64 bytes from mychefserver.example.com (127.0.0.1): icmp_req=3 ttl=64 time=0.014 ms
+64 bytes from mychefserver.example.com (127.0.0.1): icmp_req=4 ttl=64 time=0.014 ms</code></pre>
 
-        <table border="0" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td class="code">
-                <div class="container" title="Hint: double-click to select code">
-                  <div class="line number1 index0 alt2">
-                    <code class="bash plain">$</code> <code class="bash functions">ping</code> <code class=
-                    "bash plain">mychefserver.example.com</code>
-                  </div>
+  <h3>Check Connectivity</h2>
 
-                  <div class="line number2 index1 alt1">
-                    <code class="bash plain">PING mychefserver.example.com (127.0.0.1) 56(84) bytes of data.</code>
-                  </div>
+    <p>A simple routine to mark off your checklist is making sure that each server is able to communicate with the rest of the cluster. This is important when preparing for deployment and for testing afterward. To do this use the ping&nbsp;command to ping the other server's FQDN.</p>
 
-                  <div class="line number3 index2 alt2">
-                    <code class="bash plain">64 bytes from mychefserver.example.com (127.0.0.1): icmp_req=1 ttl=64</code> <code class=
-                    "bash functions">time</code><code class="bash plain">=0.034 ms</code>
-                  </div>
+<pre><code>$ ping control1.example.com
+$ ping compute2.example.com
+$ ping network3.example.com</code></pre>
 
-                  <div class="line number4 index3 alt1">
-                    <code class="bash plain">64 bytes from mychefserver.example.com (127.0.0.1): icmp_req=2 ttl=64</code> <code class=
-                    "bash functions">time</code><code class="bash plain">=0.028 ms</code>
-                  </div>
+<h1 id="test-your-install">Test Your Install</h1>
 
-                  <div class="line number5 index4 alt2">
-                    <code class="bash plain">64 bytes from mychefserver.example.com (127.0.0.1): icmp_req=3 ttl=64</code> <code class=
-                    "bash functions">time</code><code class="bash plain">=0.014 ms</code>
-                  </div>
+    <p>Run the following commands on the controller node to check if OpenStack has been deployed and is running correctly. Before running them, be sure to update your bash environment with the correct OpenStack variables to use them:</p>
 
-                  <div class="line number6 index5 alt1">
-                    <code class="bash plain">64 bytes from mychefserver.example.com (127.0.0.1): icmp_req=4 ttl=64</code> <code class=
-                    "bash functions">time</code><code class="bash plain">=0.014 ms</code>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
+<pre><code># source .openrc</code></pre>
 
-<h2 id="TestYourOpenStackEnvironment-CheckConnectivity">Check Connectivity</h2>
+  <h3>Nova</h3>
 
-<p>A simple routine to mark off your checklist is making sure that each server is able to communicate with the rest of the cluster. This is
-important when preparing for deployment and for testing afterward. To do this use the ping&nbsp;command to ping the other server's
-FQDN.</p>
+<output><pre>root@control1:~# nova-manage service list 
 
-<div class="code panel pdl" style="border-width: 1px;">
-  <div class="codeContent panelContent pdl">
-    <div>
-      <div class="syntaxhighlighter nogutter bash" id="highlighter_474004">
-        <div class="toolbar">
-          <span><a class="toolbar_item command_help help" href="#">?</a></span>
-        </div>
-
-        <table border="0" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td class="code">
-                <div class="container" title="Hint: double-click to select code">
-                  <div class="line number1 index0 alt2">
-                    <code class="bash plain">$</code> <code class="bash functions">ping</code> <code class=
-                    "bash plain">control1.example.com</code>
-                  </div>
-
-                  <div class="line number2 index1 alt1">
-                    <code class="bash plain">$</code> <code class="bash functions">ping</code> <code class=
-                    "bash plain">compute2.example.com</code>
-                  </div>
-
-                  <div class="line number3 index2 alt2">
-                    <code class="bash plain">$</code> <code class="bash functions">ping</code> <code class=
-                    "bash plain">network3.example.com</code>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h1 id="TestYourOpenStackEnvironment-TestYourInstall"><strong>Test Your Install</strong></h1>
-
-<p><span class="confluence-anchor-link" id="TestYourOpenStackEnvironment-d2"></span></p>
-
-<p>Run the following commands on the controller node to check if OpenStack has been deployed and is running correctly. Before running them,
-be sure to update your bash environment with the correct OpenStack variables to use them:</p>
-
-<div class="code panel pdl" style="border-width: 1px;">
-  <div class="codeContent panelContent pdl">
-    <div>
-      <div class="syntaxhighlighter nogutter bash" id="highlighter_611930">
-        <div class="toolbar">
-          <span><a class="toolbar_item command_help help" href="#">?</a></span>
-        </div>
-
-        <table border="0" cellpadding="0" cellspacing="0">
-          <tbody>
-            <tr>
-              <td class="code">
-                <div class="container" title="Hint: double-click to select code">
-                  <div class="line number1 index0 alt2">
-                    <code class="bash comments"># source .openrc</code>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-
-<h2 id="TestYourOpenStackEnvironment-Nova"><span style="color: rgb(0,0,0);">Nova</span></h2>
-
-<div class="preformatted panel" style="border-width: 1px;">
-  <div class="preformattedContent panelContent">
-    <pre>
-root@control1:~# nova-manage service list 
 Binary           Host      Zone             Status     State Updated_At                                                                         
 nova-cert        control1  internal         enabled    :-)   2013-09-03 15:21:29
 nova-scheduler   control1  internal         enabled    :-)   2013-09-03 15:21:29
 nova-conductor   control1  internal         enabled    :-)   2013-09-03 15:21:29
 nova-consoleauth control1  internal         enabled    :-)   2013-09-03 15:21:30
 nova-compute     compute2  nova             enabled    :-)   2013-09-03 15:21:23
+</pre></output>
 
-</pre>
-  </div>
-</div>
-
-<p>Each service or agent will display a&nbsp;<code>:-)</code>&nbsp;if they are running correctly, and&nbsp;<code>XX</code>&nbsp;if they are
+    <p>Each service or agent will display a&nbsp;<code>:-)</code>&nbsp;if they are running correctly, and&nbsp;<code>XX</code>&nbsp;if they are
 not.</p>
 
-<h2 id="TestYourOpenStackEnvironment-Quantum/Neutron">Quantum/Neutron</h2>
+    <h3>Quantum/Neutron</h3>
 
-<div class="preformatted panel" style="border-width: 1px;">
-  <div class="preformattedContent panelContent">
-    <pre>
-root@control1:~# quantum agent-list
+<output><pre>root@control1:~# quantum agent-list
+
 +--------------------------------------+--------------------+----------+-------+----------------+                                                
 | id                                   | agent_type         | host     | alive | admin_state_up |
 +--------------------------------------+--------------------+----------+-------+----------------+
@@ -217,19 +80,14 @@ root@control1:~# quantum agent-list
 | 98c3d818-0ebe-4cd6-89bf-0f107a7532ab | DHCP agent         | network3 | :-)   | True           |
 | dd3b9134-ab76-440a-ba7a-70135202eb82 | Open vSwitch agent | network3 | :-)   | True           |
 +--------------------------------------+--------------------+----------+-------+----------------+
-</pre>
-  </div>
-</div>
+</pre></output>
 
-<p>Each service or agent will display a <code style="line-height: 1.4285715;">:-)</code> if they are running correctly,
-and&nbsp;<code style="line-height: 1.4285715;">XX</code> if they are not.</p>
+    <p>Each service or agent will display a <code>:-)</code> if they are running correctly, and&nbsp;<code>XX</code> if they are not.</p>
 
-<h2 id="TestYourOpenStackEnvironment-Glance">Glance</h2>
+    <h3>Glance</h3>
 
-<div class="preformatted panel" style="border-width: 1px;">
-  <div class="preformattedContent panelContent">
-    <pre>
-root@control1:~# glance image-list
+<output><pre>root@control1:~# glance image-list
+
 +--------------------------------------+-----------------------------------+-------------+------------------+-----------+--------+
 | ID                                   | Name                              | Disk Format | Container Format | Size      | Status |
 +--------------------------------------+-----------------------------------+-------------+------------------+-----------+--------+
@@ -246,44 +104,31 @@ root@control1:~# glance image-list
 | 668e92c6-b6c0-4f9e-bf0d-078ede9667e9 | Ubuntu 13.04 Server (Cloud) amd64 | qcow2       | bare             | 235143168 | active |
 | 169fc708-cdbf-4dd3-a106-ced48a88922f | Ubuntu 13.04 Server (Cloud) i386  | qcow2       | bare             | 233308160 | active |
 +--------------------------------------+-----------------------------------+-------------+------------------+-----------+--------+
+</pre></output>
 
-</pre>
-  </div>
-</div>
+  <h3>Cinder</h3>
 
-<h2 id="TestYourOpenStackEnvironment-Cinder">Cinder</h2>
+    <p>If you haven't created any Cinder volumes yet, this command will return nothing. Otherwise, a list of created volumes will be returned.</p>
 
-<p>If you haven't created any Cinder volumes yet, this command will return nothing. Otherwise, a list of created volumes will be
-returned.</p>
+<output><pre>root@control1:~# cinder list
 
-<div class="preformatted panel" style="border-width: 1px;">
-  <div class="preformattedContent panelContent">
-    <pre>
-root@control1:~# cinder list
 +--------------------------------------+-----------+--------------+------+-------------+----------+-------------+
 |                  ID                  |   Status  | Display Name | Size | Volume Type | Bootable | Attached to |
 +--------------------------------------+-----------+--------------+------+-------------+----------+-------------+
 | e60def40-03a0-4e08-a9e5-3f60be89ad57 | available |     test     |  1   |     None    |  false   |             |
 +--------------------------------------+-----------+--------------+------+-------------+----------+-------------+
+</pre></output>
 
-</pre>
-  </div>
-</div>
+  <h3>Keystone</h3>
 
-<h2 id="TestYourOpenStackEnvironment-Keystone">Keystone</h2>
+    <p>Keystone authentication has several commands that are worth checking, especially if you are experience any difficulty with user accounts, OpenStack component communication, or authentication problems.</p>
 
-<p>Keystone authentication has several commands that are worth checking, especially if you are experience any difficulty with user
-accounts, OpenStack component communication, or authentication problems.</p>
+    <p>For detailed information on troubleshooting and debugging Keystone, please refer to its documentation at <a href="http://docs.openstack.org/">http://docs.openstack.org</a>.</p>
 
-<p>For detailed information on troubleshooting and debugging Keystone, please refer to its documentation at <a class="external-link" href=
-"http://docs.openstack.org/" rel="nofollow">http://docs.openstack.org</a>.</p>
+    <h4>Check Keystone Users</h4>
 
-<h3 id="TestYourOpenStackEnvironment-CheckKeystoneUsers"><strong>Check Keystone Users</strong></h3>
+<output><pre>root@control1:~# keystone user-list
 
-<div class="preformatted panel" style="border-width: 1px;">
-  <div class="preformattedContent panelContent">
-    <pre>
-root@control1:~# keystone user-list
 +----------------------------------+----------+---------+--------------------+
 |                id                |   name   | enabled |       email        |
 +----------------------------------+----------+---------+--------------------+
@@ -294,16 +139,12 @@ root@control1:~# keystone user-list
 | 62a9c425721f48d8892a9132e23ede03 |   nova   |   True  |   nova@localhost   |
 | b22df525c6714c259189fd2da82b72af | quantum  |   True  | quantum@localhost  |
 +----------------------------------+----------+---------+--------------------+
-</pre>
-  </div>
-</div>
+</pre></output>
 
-<h3 id="TestYourOpenStackEnvironment-CheckKeystoneTenants"><strong>Check Keystone Tenants</strong></h3>
+    <h4>Check Keystone Tenants</h4>
 
-<div class="preformatted panel" style="border-width: 1px;">
-  <div class="preformattedContent panelContent">
-    <pre>
-root@control1:~# keystone tenant-list
+<output><pre>root@control1:~# keystone tenant-list
+
 +----------------------------------+--------------------+---------+
 |                id                |        name        | enabled |
 +----------------------------------+--------------------+---------+
@@ -312,16 +153,12 @@ root@control1:~# keystone tenant-list
 | be05a0ac2e034f3aa43ac06a90943a14 | invisible_to_admin |   True  |
 | cc0804251a5145c485ad87ab384350be |      service       |   True  |
 +----------------------------------+--------------------+---------+
-</pre>
-  </div>
-</div>
+</pre></output>
 
-<h3 id="TestYourOpenStackEnvironment-CheckKeystoneServices"><strong>Check Keystone Services</strong></h3>
+      <h4>Check Keystone Services</h4>
 
-<div class="preformatted panel" style="border-width: 1px;">
-  <div class="preformattedContent panelContent">
-    <pre>
-root@control1:~# keystone service-list
+<output><pre>root@control1:~# keystone service-list
+
 +----------------------------------+----------+----------+------------------------------+
 |                id                |   name   |   type   |         description          |
 +----------------------------------+----------+----------+------------------------------+
@@ -332,20 +169,12 @@ root@control1:~# keystone service-list
 | 8f50ec8454b9432b94cd7d68172dc98a |   nova   | compute  |  OpenStack Compute Service   |
 | 3de9a5a7e57943739f59c014554ea602 | quantum  | network  | OpenStack Networking service |
 +----------------------------------+----------+----------+------------------------------+
-</pre>
-  </div>
-</div>
+</pre></output>
 
-<p>Keystone endpoints are extremely important and can cripple your deployment when not configured correctly. However, Chef wires up the
-necessary endpoint information correctly during deployment. In any event, checking the endpoint list to make sure it's correct is always a
-good idea when troubleshooting issues connecting or authenticating to Keystone. Each endpoint should correspond to the correct server in
-your cluster. Note that the ports in the example below are the defaults, and may vary if you've overridden the default attributes for
-them.</p>
+    <p>Keystone endpoints are extremely important and can cripple your deployment when not configured correctly. However, Chef wires up the necessary endpoint information correctly during deployment. In any event, checking the endpoint list to make sure it's correct is always a good idea when troubleshooting issues connecting or authenticating to Keystone. Each endpoint should correspond to the correct server in your cluster. Note that the ports in the example below are the defaults, and may vary if you've overridden the default attributes for them.</p>
 
-<div class="preformatted panel" style="border-width: 1px;">
-  <div class="preformattedContent panelContent">
-    <pre>
-root@openstack1:~# keystone endpoint-list
+<output><pre>root@openstack1:~# keystone endpoint-list
+
 +----------------------------------+---------+-------------------------------------------+-------------------------------------------+-------------------------------------------+----------------------------------+
 |                id                |  region |                 publicurl                 |                internalurl                |                  adminurl                 |            service_id            |
 +----------------------------------+---------+-------------------------------------------+-------------------------------------------+-------------------------------------------+----------------------------------+
@@ -356,12 +185,4 @@ root@openstack1:~# keystone endpoint-list
 | e81953d02428499bb981e78be560bc88 | Region  |        http://XX.XX.XX.XX:9292/v2         |        http://XX.XX.XX.XX:9292/v2         |        http://XX.XX.XX.XX:9292/v2         | 844e120b3b594f68838e6b0e5a227427 |
 | f560ac6915f241019b95e103146326dd | Region  | http://XX.XX.XX.XX:8774/v2/$(tenant_id)s  | http://XX.XX.XX.XX:8774/v2/$(tenant_id)s  | http://XX.XX.XX.XX:8774/v2/$(tenant_id)s  | 8f50ec8454b9432b94cd7d68172dc98a |
 +----------------------------------+---------+-------------------------------------------+-------------------------------------------+-------------------------------------------+----------------------------------+
-</pre>
-  </div>
-</div>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
+</pre></output>

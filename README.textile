@@ -2,11 +2,11 @@ h1. Unveil
 
 "Unveil" is a GitHub Page made using "Bootstrap CSS":http://getboostrap.com, "Foundation":http://foundation.zurb.com, and "Jekyll":http://jekyllrb.com. It is a minimal way to create static webpages and publish them on GitHub.
 
-Unveil is "CCPL-licensed":https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE and absolutely free to use.
+Unveil is "CCPL-licensed":https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE and free to use.
 
 h2. Before Starting
 
-To harness all the power behind this theme, you need to install Ruby and Jekyll (a Ruby gem). However, you do not have to install either to make your own page. By making just a few changes to the @_config.yml@ file, you can "create a page on-the-fly in minutes":#configuration.
+To harness all the power behind this theme, you need to install Ruby and Jekyll (a Ruby gem). However, you do not have to install either to make your own page. By making just a few changes to the @_config.yml@ file, you can "create a page in minutes":#configuration.
 
 Of course, should you prefer to eat your own dog food, keep reading.
 
@@ -24,11 +24,10 @@ Below is a list of other docs related to this project.
 * "Getting Started":../getting-started
 * "Technical Documents":../documents
 * "Release Notes":../notes
-* "Planning":../planning
 
 h2(#configuration). Configure
 
-The @_config.yml@ file contains everything necessary to make a page on-the-fly in minutes. Open it using any editor and edit the specified fields before pushing it up to the @gh-pages@ branch.
+The @_config.yml@ file contains everything necessary to make a page in minutes. Open it using any editor and edit the specified fields before pushing it up to the @gh-pages@ branch.
 
 * @project@: The _public_ name for the project
 * @lead@: High-level description for the product
@@ -49,7 +48,7 @@ h1. Community
 Keep track of development and community news.
 
 * Follow "@SoftLayerDev on Twitter":http://twitter.com/softlayerdev.
-* Fork any of our public "GitHub repo’s":http://github.com/softlayer.
+* Fork any of our public "GitHub repos":http://github.com/softlayer.
 * Get the latest new and join conversations on our "Customer Forum":http://forums.softlayer.com.
 
 h1. Finding Support

@@ -1,5 +1,5 @@
 article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar {
-  background: #272727;
+  background: #2b2e2e;
 }
 
 .bs-docs-nav {
@@ -16,7 +16,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 
 .navbar-nav > li {
   float: left;
-  margin-top: 15px;
+  margin-top: 18px;
 }
 
 .navbar {
@@ -40,7 +40,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 .bs-header {
-  background: #272727;
+  background: #2b2e2e;
   color: #fff;
   padding: 30px 14px;
   text-shadow: none;
@@ -54,12 +54,12 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 .bs-footer {
-  border-top: 1px solid #f3f3f3;
+  border-top: 1px solid #f5f7fa;
   padding-top: 0;
 }
 
 .bs-footer a {
-  color: #c9c9c9;
+  color: #ccd1d9;
   text-decoration: none;
 }
 
@@ -80,7 +80,7 @@ h1,.h1 {
 }
 
 h2,.h2 {
-  border-bottom: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e6e9ed;
   font-size: 26px;
   margin-bottom: 14px;
   padding-bottom: 10px;
@@ -113,24 +113,24 @@ code {
 }
 
 .bs-sidenav {
-  background: #f4f4f4;
+  background: #f5f7fa;
   text-shadow: none;
 }
 
 .bs-sidebar .nav > li > a {
-  color: #797979;
+  color: #656d78;
   display: block;
   padding: 4px 20px;
 }
 
 .bs-sidebar .nav > li > a:hover,.bs-sidebar .nav > li > a:focus {
-  background: #e3e3e3;
+  background: #e6e9ed;
   border-right: 1px solid #34495e;
   text-decoration: none;
 }
 
 blockquote p {
-  color: #797979;
+  color: #656d78;
   font-size: 13.5px;
 }
 
@@ -177,22 +177,22 @@ output pre {
 
 .row .col-lg-6 h2 {
   border-bottom: none;
-  color: #272727;
+  color: #2b2e2e;
   font-size: 26px;
   font-weight: 500;
 }
 
 .row .col-lg-6 h2 a {
-  color: #272727;
+  color: #2b2e2e;
 }
 
 .table thead {
-  background: #272727;
-  border: 1px solid #272727;
+  background: #2b2e2e;
+  border: 1px solid #2b2e2e;
 }
 
 .table thead > tr > th {
-  border-color: #272727;
+  border-color: #2b2e2e;
   color: #fff;
   text-align: center;
 }
@@ -202,7 +202,7 @@ output pre {
 }
 
 .table-bordered > tbody > tr > th,.table-bordered > tbody > tr > td {
-  border: 1px solid #c9c9c9;
+  border: 1px solid #ccd1d9;
 }
 
 p {
@@ -215,7 +215,7 @@ p {
 }
 
 .bs-masthead .lead {
-  color: #f3f3f3;
+  color: #f5f7fa;
   margin-right: 25%;
 }
 
@@ -228,7 +228,7 @@ p {
 }
 
 .row .col-lg-6 p {
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .navbar-inverse .navbar-nav > .active > a, 
@@ -240,13 +240,18 @@ p {
 
 .navbar > .container .navbar-brand {
   margin-left: 0;
-  width: 200px;
+}
+
+.navbar-nav {
+    float: right;
+}
 
 /*
 * Flat UI Scheme
 * -------------- 
 * Blue          #2ba6cb   #34495e
 * Blue-Green    #1abc9c   #16a085
-* Light Gray    #f3f3f3   #e9e9e9   #c9c9c9
-* Gray          #797979   #272727
+* Light Gray    #f5f7fa   #e6e9ed   
+* Medium Gray   #ccd1d9   #aab2bd
+* Gray          #656d78   #2b2e2e
 */
