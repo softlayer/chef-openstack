@@ -1,84 +1,67 @@
-h1,.h1 {
-  border-bottom: none;
-}
 
-a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .navbar-nav > li > a:focus {
-  color: #fff;
+h1, .h1 {
+border-bottom : none;
 }
-
+a, a:hover, a:focus, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+color : #fff;
+}
 .bs-masthead-links {
-  margin-top: 0;
-  text-align: center;
+margin-top : 0;
+text-align : center;
 }
-
-.btn-primary,
 .btn-success {
-  color: #fff;
-  width: 160px;
-  margin-right: 45px;
-  margin-bottom: 20px;
+color : #fff;
+width : 160px;
+margin-right : 45px;
+margin-bottom : 20px;
 }
-
 .btn-primary {
-  background-image: none;
-  background-color: #1b84b5;
+background-image : none;
+background-color : #fff;
+border-radius: 50px;
+color : #222;
+width : 160px;
+margin-right : 45px;
+margin-bottom : 20px;
 }
-
 .btn-success {
-  background-image: none;
-  background-color: #1bb5ad;
+background-image : none;
+background-color : #1bb5ad;
 }
-
 .container {
-  text-align: center;
+text-align : center;
 }
-
 .bs-masthead .lead {
-  margin-right: 0;
+margin-right : 0;
 }
-
-#watch { 
-  display: block; 
-  overflow: hidden; 
-  *zoom: 1; 
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  width: 300px;
+#watch {
+display : block;
+overflow : hidden;
+margin-top : 10px;
+margin-left : auto;
+margin-right : auto;
+display : block;
+width : 300px;
 }
-
-#watch section { 
-  float: left; 
-  width: 150px; 
-  margin-bottom: 4px; 
+#watch section {
+float : left;
+width : 150px;
+margin-bottom : 4px;
 }
-
-#watch a { 
-  color: #fff; 
-  opacity: 1;
-  padding-left: 25px; 
-  -webkit-transition: opacity 0.1s ease-in; 
-  -webkit-transition-delay: ease-out; 
-  -moz-transition: opacity 0.1s ease-in ease-out; 
-  -o-transition: opacity 0.1s ease-in ease-out; 
-  transition: opacity 0.1s ease-in ease-out; 
+#watch a {
+color : #fff;
+opacity : 1;
+padding-left : 25px;
 }
-
-#watch a:hover { 
-  opacity: .7; 
+#watch a:hover {
+opacity : 0.699999988079071044921875;
 }
-
-#watch #stargazers a { 
-  background: url("../img/png/icon-stargazer.png") no-repeat left center; 
+#watch #stargazers a {
+background : url(../img/png/icon-stargazer.png) left center no-repeat;
 }
-
-#watch #twitter a { 
-  background: url("../img/png/icon-twitter.png") no-repeat left center; 
+#watch #twitter a {
+background : url(../img/png/icon-twitter.png) left center no-repeat;
 }
-
-.btn-primary {
-    background-image: linear-gradient(to bottom, rgb(66, 139, 202) 0%, rgb(45, 108, 162) 100%);
-    background-repeat: repeat-x;
-    border-color: rgb(43, 102, 154);
+.bs-masthead h1 {
+font-size : 84px;
 }
