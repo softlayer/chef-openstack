@@ -1,3 +1,7 @@
+body {
+	font-size: 1.438em;
+}
+
 article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar {
 background:url(http://s23.postimg.org/pbjf0mbtn/image.png);
 background-color:#222;
@@ -168,19 +172,21 @@ margin-bottom:14px;
 }
 
 .callout {
-background:#959798;
 border-top:#f2f2f2;
-color:#fff;
-}
-
-.callout a {
-color:#fff;
-font-weight:700;
+color:#777;
+background-color:none;
 }
 
 .callout a:hover,.callout a:focus {
-border-bottom:1px dotted #fff;
-color:#fff;
+color:#777;
+font-weight:700;
+border-bottom:1px dotted #777;
+}
+
+.callout a {
+font-color:#77;
+font-weight:700;
+color:#777;
 padding-bottom:2px;
 }
 
@@ -257,7 +263,8 @@ color:#1b84b5;
 }
 
 .row .col-lg-6 p {
-margin-bottom:4px;
+margin-bottom:6px;
+margin-left:30px;
 }
 
 .navbar-inverse .navbar-nav > .active > a,.navbar-inverse .navbar-nav > .active > a:focus,.navbar-inverse .navbar-nav > .active > a:hover {
@@ -282,12 +289,12 @@ text-shadow:none;
 color:#777;
 background-image: none;
 background-repeat: repeat-x;
-border-color: #f39c12;
+border-color: #e74c3c;
 }
 
 .btn-default:hover, .btn-default:focus {
-border-color: #f39c12;
-background-color:#f39c12;
+border-color: #e74c3c;
+background-color:#e74c3c;
 color:#fff;
 }
 
