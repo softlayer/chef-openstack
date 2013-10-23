@@ -274,6 +274,23 @@ margin-left:0;
 float:right;
 }
 
+.btn-default {
+margin-left:auto;
+margin-right:auto;
+width:129px;
+text-shadow:none;
+color:#777;
+background-image: none;
+background-repeat: repeat-x;
+border-color: #f39c12;
+}
+
+.btn-default:hover, .btn-default:focus {
+border-color: #f39c12;
+background-color:#f39c12;
+color:#fff;
+}
+
 /*
 * 	Green			#16a085
 *	Blue 			#2980b9		#34495e

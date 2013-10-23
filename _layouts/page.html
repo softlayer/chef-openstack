@@ -56,11 +56,10 @@
             </ul>
 
             {% if page.slug != "getting-started" %}
-            <a class="btn btn-default" href="../getting-started"><strong>Go Back to Menu</strong></a>
+              <a button type="button" class="btn btn-default btn-sm" href="../getting-started"><strong><< Back to Menu</strong></a>
+              <a button type="button" class="btn btn-default btn-sm" href="{{ site.repo }}"><strong>Go to GitHub >></strong></a>
             {% endif %}
 
-
-            <a class="btn btn-default" href="{{ site.repo }}"><strong>Go to GitHub</strong></a>
 
           </div>
         </div>

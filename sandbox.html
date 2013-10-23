@@ -1,0 +1,133 @@
+---
+layout: page
+title: All-in-One Sandbox
+slug: sandbox
+lead: "Find out just how easy it is to get off the ground (cloud pun intended)"
+baseurl: "../"
+---
+
+<h1 class="create-sandbox">Create Your Own Sandbox</h1>
+
+<p>This section is designed to illustrate a proof-of-concept installation for learning or development purposes, in which you may wish to
+run everything on a single machine. This installation process includes:</p>
+
+<ol>
+  <li>Installing VirtualBox on your laptop or desktop</li>
+
+  <li>Installing Vagrant on your laptop or desktop</li>
+
+  <li>Creating an initial VirtualBox VM for Chef Server</li>
+
+  <li>Creating a second VirtualBox VM for OpenStack</li>
+
+  <li>Deploying OpenStack in your second VM using the Chef Server in your first VM</li>
+</ol>
+
+<h1 class="work-vagrant">Working with Vagrant</h1>
+
+<p>Vagrant provides a quick and configuration-free platform to test drive the SoftLayer private cloud recipes on your own. Vagrant uses
+VirtualBox to preconfigure virtual machines without manual intervention. In this section, Vagrant will be used to deploy Chef Server,
+install the SoftLayer private cloud cookbook, and then provision the OpenStack all-in-one node. This workflow is similar to what is seen in
+a production environment, and will work for Microsoft Windows and most Linux distributions.</p>
+
+<h1 class="install-process">Installation Process</h1>
+
+<p>Follow the instructions below to install Virtual Box and Vagrant.</p>
+
+<h2 class="install-virtualbox">Install VirtualBox</h2>
+
+<ol>
+  <li>Go to the <a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box download page</a>.
+  </li>
+
+  <li>Download the AMD64 version for your operating system.</li>
+
+  <li>Install VirtualBox using the downloaded package. For example, on Ubuntu and Debian Linux, run the following command:</li>
+</ol>
+
+<p><code>$ dpkg -i virtualbox-4.2_4.2.18-88780~Ubuntu~precise_amd64.deb</code></p>
+
+<ol>
+  <li>On Windows, proceed through installation using the setup wizard:</li>
+</ol>
+
+<h2 class="install-vagrant">Install Vagrant</h2>
+
+<ol>
+  <li>Go to the <a href="http://downloads.vagrantup.com">Vagrant download page</a>.
+  </li>
+
+  <li>Click the latest version. (At the time this guide was written, the most recent version was 1.3.3.)</li>
+
+  <li>Download the package for your operating system.</li>
+
+  <li>Install Vagrant from the package.</li>
+</ol>
+
+<h3>Download the Vagrant File Scripts</h3>
+
+<ol>
+  <li>Make a temporary directory to place the Vagrant files.</li>
+</ol>
+
+<p>Linux command:<br>
+<code>$ mkdir ~/softlayer</code></p>
+
+<p>Windows command:<br>
+<code>&gt; mkdir C:\softlayer</code></p>
+
+<p>#_ Next, save the Vagrant files to the created location and open a terminal window or Windows command line window.</p>
+
+<ol>
+  <li>Change your directory (cd) to the vagrant directory you just created.</li>
+
+  <li>Run vagrant up.</li>
+
+  <li>The install will take approximately 15 minutes, and will provision two VirtualBox VMs, install Chef Server, and bootstrap the
+  OpenStack installation.</li>
+
+  <li>After completion, the Vagrant script will tell you how to access the new Chef Server, as well as Horizon (the OpenStack
+  dashboard).</li>
+</ol>
+<p>
+
+<h2 class="navigation">Navigation</h2>
+
+<blockquote>
+  <p>Note: Vagrant uses VirtualBox to deploy Chef Server and OpenStack. Running OpenStack compute instances inside an already virtualized
+  environment is very slow compared to the speed of a hardware deployment.</p>
+</blockquote>
+
+<h3>Chef Server</h3>
+
+<ol>
+  <li>From your computer’s browser, navigate to <a href="https://127.0.0.1/">https://127.0.0.1/</a>.
+  </li>
+
+  <li>The Chef server uses a self-generated, unsigned certificate. There will be a prompt to accept and proceed.</li>
+
+  <li>The Chef Server login prompt will be next. Enter in the following credentials:
+
+    <ul>
+      <li>username: admin</li>
+
+      <li>password: p@ssw0rd1</li>
+    </ul>
+  </li>
+</ol>
+
+<h3>OpenStack</h3>
+
+<ol>
+  <li>From your computer’s browser, navigate to <a href="http://127.0.0.1:7081/horizon/">http://127.0.0.1:7081/horizon/</a>.
+  </li>
+
+  <li>Log into OpenStack using the provided credentials:
+
+    <ul>
+      <li>username: admin</li>
+
+      <li>password: passwordsf</li>
+    </ul>
+  </li>
+</ol>
