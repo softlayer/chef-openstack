@@ -6,3 +6,633 @@ lead: "For those that want to know what's under the hood"
 baseurl: "../"
 ---
 
+  <h1 id="technical-docs">Technical Documentation</h1>
+
+  <p>The intent of this product is to provide a compatibility layer for our <span class="caps">API</span> using the published OpenStack <span class="caps">API</span>. Our cursory release includes the following components.</p>
+
+  <ul>
+    <li>Keystone (required for authentication)</li>
+    <li>Nova (compute for virtual guests)</li>
+    <li>Glance (for images)</li>
+  </ul>
+
+  <h2 id="api-ref"><span class="caps">API</span> References</h2>
+
+  <ul>
+    <li><a href="http://docs.openstack.org/api/api-specs.html">OpenStack <span class="caps">API</span></a></li>
+    <li><a href="http://api.openstack.org/api-ref.html">OpenStack <span class="caps">API</span> Quick Reference</a></li>
+    <li><a href="http://sldn.softlayer.com/reference/softlayerapi">SoftLayer <span class="caps">API</span></a></li>
+  </ul>
+
+  <h2 id="api-compatibility">API Compatibility Reference</h3>
+
+<h3>Identity</h3>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead>
+<tr>
+<th>Verb</th>
+<th>Endpoint</th>
+<th>Done?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>v2.0</td>
+<td>Yes</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2.0/extensions</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2.0/extensions/{alias}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>v2.0/tokens</td>
+<td>Partial</td>
+<td>The endpoints that are returned are currently hardcoded</td>
+</tr>
+
+<tr>
+<td>HEAD</td>
+<td>v2.0/tokens/{tokenId}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2.0/tokens/tenants</td>
+<td>Yes</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2.0/users/</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2.0/users/{user_id}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2.0/users/{user_id}/roles</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2.0/tenants</td>
+<td>Yes</td>
+<td>The return values need to be expanded a bit, but basic data is accurate.</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2.0/tenants/{tenantId}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2.0/tenants/{tenantId}/users/{userId}/roles</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+</tbody>
+</table>
+
+<h4>Compute</h4>
+
+<table border="1" cellpadding="0">
+<tbody>
+<tr>
+<td><b>Verb</b></td>
+<td><b>Endpoint</b></td>
+<td><b>Done?</b></td>
+<td><b>Notes</b></td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2</td>
+<td>Yes</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/extensions</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/extensions/{alias}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/limits</td>
+<td>Mocked</td>
+<td>Hardcoded to garbage data. This needs major discussion because it doesn't match our business model. This would effect Horizon's neat graphical displays.</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/servers</td>
+<td>Yes</td>
+<td>Missing: public network only, direct IP allocation</td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>v2/{tenant_id}/servers</td>
+<td>Yes</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/servers/detail</td>
+<td>Yes</td>
+<td>Only some of the optional response parameters are supported</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/servers/{server_id}</td>
+<td>Yes</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>v2/{tenant_id}/servers/{server_id}</td>
+<td>Yes</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>v2/{tenant_id}/servers/{server_id}</td>
+<td>Yes</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>v2/{tenant_id}/servers/{server_id}/metadata</td>
+<td>No</td>
+<td>First implementation on 'metadata' branch</td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>v2/{tenant_id}/servers/{server_id}/metadata</td>
+<td>No</td>
+<td>First implementation on 'metadata' branch</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/servers/{server_id}/metadata</td>
+<td>No</td>
+<td>First implementation on 'metadata' branch</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/servers/{server_id}/metadata/{key}</td>
+<td>No</td>
+<td>First implementation on 'metadata' branch</td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>v2/{tenant_id}/servers/{server_id}/metadata/{key}</td>
+<td>No</td>
+<td>First implementation on 'metadata' branch</td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>v2/{tenant_id}/servers/{server_id}/metadata/{key}</td>
+<td>No</td>
+<td>First implementation on 'metadata' branch</td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>v2/{tenant_id}/servers/{server_id}/action</td>
+<td>Yes</td>
+<td>Missing: suspend/unsuspend/console log/change password/resize/confirmResize/revertResize/createImage</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/servers/ips</td>
+<td>No</td>
+<td>???</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/servers/ips/{network_id}</td>
+<td>No</td>
+<td>???</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/images</td>
+<td>Yes</td>
+<td>How we handle images needs to be better determined</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/images/detail</td>
+<td>Yes</td>
+<td>How we handle images needs to be better determined</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/images/{image_id}</td>
+<td>Yes</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>v2/{tenant_id}/images/{image_id}</td>
+<td>No</td>
+<td>Missing: Importing images</td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>v2/{tenant_id}/images/{image_id}/metadata</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>v2/{tenant_id}/images/{image_id}/metadata</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/images/{image_id}/metadata</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/images/{image_id}/metadata/{key}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/images/{image_id}/metadata/{key}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>v2/{tenant_id}/images/{image_id}/metadata/{key}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/flavors</td>
+<td>Mocked</td>
+<td>This is currently hardcoded until we determine how we're going to support flavors.</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/flavors/detail</td>
+<td>Mocked</td>
+<td>This is currently hardcoded until we determine how we're going to support flavors.</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/flavors/{flavor_id}</td>
+<td>Mocked</td>
+<td>This is currently hardcoded until we determine how we're going to support flavors.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Image</h4>
+
+<table border="1" cellpadding="0">
+<tbody>
+<tr>
+<td><b>Verb</b></td>
+<td><b>Endpoint</b></td>
+<td><b>Done?</b></td>
+<td><b>Notes</b></td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/schemas/images</td>
+<td>Mocked</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/schemas/image</td>
+<td>Mocked</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/images</td>
+<td>Yes</td>
+<td>Need to understand how this differs from /v2/{tenant_id}/images</td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>v2/images</td>
+<td>No</td>
+<td>Mocked, but not even remotely functional</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/images/{image_id}</td>
+<td>Yes</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>PATCH</td>
+<td>v2/images/{image_id}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>v2/images/{image_id}</td>
+<td>No</td>
+<td>Mocked, but does nothing</td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>v2/images/{image_id}/file</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/images/{image_id}/file</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>v2/images/{image_id}/tags/{tag}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>v2/images/{image_id}/tags/{tag}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v1/images</td>
+<td>Yes</td>
+<td>Simple to implement based on /v1/images/detail</td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>v1/images</td>
+<td>No</td>
+<td>Mocked, but not functional</td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v1/images/detail</td>
+<td>Yes</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v1/images/{image_id}</td>
+<td>Yes</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>v1/images/{image_id}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>v1/images/{image_id}</td>
+<td>No</td>
+<td>Mocked, but does nothing</td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>v1/images/{image_id}/members</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>v1/images/{image_id}/members/{owner}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>v1/images/{image_id}/members/{owner}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v1/shared-images/{owner}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+</tbody>
+</table>
+
+<h4>Block Storage</h4>
+
+<table border="1" cellpadding="0">
+<tbody>
+<tr>
+<td><b>Verb</b></td>
+<td><b>Endpoint</b></td>
+<td><b>Done?</b></td>
+<td><b>Notes</b></td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>v2/{tenant_id}/volumes</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/volumes</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/volumes/detail</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/volumes/{volume_id</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>v2/{tenant_id}/volumes/{volume_id}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>v2/{tenant_id}/volumes/{volume_id}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/types</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/types/{volume_type_id}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>POST</td>
+<td>v2/{tenant_id}/snapshots</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/snapshots</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/snapshots/detail</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>GET</td>
+<td>v2/{tenant_id}/snapshots/{snapshot_id}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>v2/{tenant_id}/snapshots/{snapshot_id}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>v2/{tenant_id}/snapshots/{snapshot_id}</td>
+<td>No</td>
+<td> </td>
+</tr>
+
+</tbody>
+</table>
+
