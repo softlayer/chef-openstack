@@ -5,13 +5,12 @@
   <li><a href="{{ site.portal }}" target="_blank">Portal Login</a></li>
 
 <!-- CORE JS -->
-<!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="{{ page.baseurl }}js/bootstrap.js"></script>
+  <script src="{{ page.baseurl }}js/scrollspy.js"></script>
+  <script src="{{ page.baseurl }}js/affix.js"></script>
 
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/scrollspy.js"></script> 
-
-<!-- Custom JavaScript for the Side Menu -->
+<!-- CUSTOM JS FOR SIDE MENU -->
   <script>
       $("#menu-close").click(function(e) {
           e.preventDefault();

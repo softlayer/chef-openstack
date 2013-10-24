@@ -10,12 +10,8 @@ fork: "http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&
 # Server
 domain: softlayer.github.com
 
-# Settings
-analytics: UA-40037365-1
-permalink: pretty
-
 # Websites
 www: http://www.softlayer.com
 sldn: http://sldn.softlayer.com
 portal: http://manage.softlayer.com
-twitter: http://twitter.com/SoftLayerDev
+twitter: http://twitter.com/softlayerdev

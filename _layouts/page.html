@@ -6,6 +6,7 @@
   
   </head>
   <body>
+    <a class="sr-only" href="#content">Skip to main content</a>
       
       {% include nav-main.html %}
     
@@ -56,8 +57,8 @@
             </ul>
 
             {% if page.slug != "getting-started" %}
-              <a button type="button" class="btn btn-default btn-sm" href="../getting-started"><strong><< Back to Menu</strong></a>
-              <a button type="button" class="btn btn-default btn-sm" href="{{ site.repo }}"><strong>Go to GitHub >></strong></a>
+              <a button type="button" class="btn btn-default btn-sm" href="../getting-started"><strong>Back to Menu</strong></a>
+              <a button type="button" class="btn btn-default btn-sm" href="{{ site.repo }}"><strong>Go to GitHub</strong></a>
             {% endif %}
 
 

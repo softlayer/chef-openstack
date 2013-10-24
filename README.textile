@@ -58,4 +58,4 @@ h1. Finding Support
 
 h1. Copyright and License
 
-Copyright (c) 2013 SoftLayer Technologies, Inc., an IBM Company. The code for Unveil is licensed under the "Creative Commons Public License":https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE.
+Copyright (c) 2013 SoftLayer Technologies, Inc., an IBM Company. Unveil is licensed under the "Creative Commons Public License":https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE.
