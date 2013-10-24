@@ -9,6 +9,7 @@ fork: "http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&
 
 # Server
 domain: softlayer.github.com
+permalink: pretty
 
 # Websites
 www: http://www.softlayer.com
