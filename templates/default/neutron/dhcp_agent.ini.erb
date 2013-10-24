@@ -16,7 +16,7 @@ debug = <%= node['neutron']['config']['debug'] %>
 interface_driver = neutron.agent.linux.interface.OVSInterfaceDriver
 # OVS based plugins(Ryu, NEC, NVP, BigSwitch/Floodlight) that use OVS
 # as OpenFlow switch and check port status
-ovs_use_veth = <%= node['neutron']['dhcp_agent']['ovs_use_veth'] %>
+ovs_use_veth = <%= node['neutron']['config']['ovs_use_veth'] %>
 # LinuxBridge
 #interface_driver = neutron.agent.linux.interface.BridgeInterfaceDriver
 

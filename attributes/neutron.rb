@@ -16,6 +16,7 @@ default['neutron']['config']['bind_host'] = '0.0.0.0'
 default['neutron']['config']['bind_port'] = '9696'
 default['neutron']['config']['auth_strategy'] = 'keystone'
 default['neutron']['config']['agent_down_time'] = '15'
+default['neutron']['config']['ovs_use_veth'] = 'True'
 
 # Neutron quotas
 default['neutron']['config']['default_quota'] = '-1'
@@ -26,7 +27,6 @@ default['neutron']['config']['quota_security_group'] = '10'
 default['neutron']['config']['quota_security_group_rule'] = '100'
 
 # DHCP agent
-default['neutron']['dhcp_agent']['ovs_use_veth'] = 'True'
 default['neutron']['dhcp_agent']['enable_isolated_metadata'] = 'True'
 default['neutron']['dhcp_agent']['use_namespaces'] = 'True'
 default['neutron']['dhcp_agent']['enable_metadata_network'] = 'True'

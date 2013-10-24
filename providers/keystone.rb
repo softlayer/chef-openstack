@@ -19,7 +19,7 @@ action :create_user do
     puts "\nUser #{new_resource.user} was created with ID #{user_id}"
   else
     user_id = shell.stdout.match id_regex
-    if user_id.empty? || user_id.nil?
+    if user_id.size == 0
       raise "ID could not be found.  Check Keystone and retry."
     end
     puts "\nUser #{new_resource.user} already exists with ID #{user_id}"
