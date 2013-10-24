@@ -6,7 +6,7 @@ lead: "Find out just how easy it is to get off the ground (cloud pun intended)"
 baseurl: "../"
 ---
 
-<h1 class="create-sandbox">Create Your Own Sandbox</h1>
+<h1 id="create-sandbox">Create Your Own Sandbox</h1>
 
 <p>This section is designed to illustrate a proof-of-concept installation for learning or development purposes, in which you may wish to
 run everything on a single machine. This installation process includes:</p>
@@ -23,35 +23,28 @@ run everything on a single machine. This installation process includes:</p>
   <li>Deploying OpenStack in your second VM using the Chef Server in your first VM</li>
 </ol>
 
-<h1 class="work-vagrant">Working with Vagrant</h1>
+<h1 id="work-vagrant">Working with Vagrant</h1>
 
 <p>Vagrant provides a quick and configuration-free platform to test drive the SoftLayer private cloud recipes on your own. Vagrant uses
 VirtualBox to preconfigure virtual machines without manual intervention. In this section, Vagrant will be used to deploy Chef Server,
 install the SoftLayer private cloud cookbook, and then provision the OpenStack all-in-one node. This workflow is similar to what is seen in
 a production environment, and will work for Microsoft Windows and most Linux distributions.</p>
 
-<h1 class="install-process">Installation Process</h1>
+<h1 id="install-process">Installation Process</h1>
 
 <p>Follow the instructions below to install Virtual Box and Vagrant.</p>
 
-<h2 class="install-virtualbox">Install VirtualBox</h2>
+<h2 id="install-virtualbox">Install VirtualBox</h2>
 
 <ol>
-  <li>Go to the <a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box download page</a>.
-  </li>
-
+  <li>Go to the <a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box download page</a>.</li>
   <li>Download the AMD64 version for your operating system.</li>
-
   <li>Install VirtualBox using the downloaded package. For example, on Ubuntu and Debian Linux, run the following command:</li>
+<pre><code>$ dpkg -i virtualbox-4.2_4.2.18-88780~Ubuntu~precise_amd64.deb</code></pre>
+<li>On Windows, proceed through installation using the setup wizard:</li>
 </ol>
 
-<p><code>$ dpkg -i virtualbox-4.2_4.2.18-88780~Ubuntu~precise_amd64.deb</code></p>
-
-<ol>
-  <li>On Windows, proceed through installation using the setup wizard:</li>
-</ol>
-
-<h2 class="install-vagrant">Install Vagrant</h2>
+<h2 id="install-vagrant">Install Vagrant</h2>
 
 <ol>
   <li>Go to the <a href="http://downloads.vagrantup.com">Vagrant download page</a>.
@@ -68,30 +61,23 @@ a production environment, and will work for Microsoft Windows and most Linux dis
 
 <ol>
   <li>Make a temporary directory to place the Vagrant files.</li>
-</ol>
-
-<p>Linux command:<br>
-<code>$ mkdir ~/softlayer</code></p>
-
-<p>Windows command:<br>
-<code>&gt; mkdir C:\softlayer</code></p>
-
-<p>#_ Next, save the Vagrant files to the created location and open a terminal window or Windows command line window.</p>
-
-<ol>
-  <li>Change your directory (cd) to the vagrant directory you just created.</li>
-
-  <li>Run vagrant up.</li>
-
-  <li>The install will take approximately 15 minutes, and will provision two VirtualBox VMs, install Chef Server, and bootstrap the
+<ul>
+<li>Linux command:
+<pre><code>$ mkdir ~/softlayer</code></pre></li>
+<li>Windows command: 
+<pre><code>&gt; mkdir C:\softlayer</code></pre></li>
+</ul>
+<li>Next, save the Vagrant files to the created location and open a terminal window or Windows command line window.</li>
+<li>Change your directory (cd) to the vagrant directory you just created.</li>
+<li>Run vagrant up.</li>
+<li>The install will take approximately 15 minutes, and will provision two VirtualBox VMs, install Chef Server, and bootstrap the
   OpenStack installation.</li>
-
   <li>After completion, the Vagrant script will tell you how to access the new Chef Server, as well as Horizon (the OpenStack
   dashboard).</li>
 </ol>
 <p>
 
-<h2 class="navigation">Navigation</h2>
+<h2 id="navigation">Navigation</h2>
 
 <blockquote>
   <p>Note: Vagrant uses VirtualBox to deploy Chef Server and OpenStack. Running OpenStack compute instances inside an already virtualized

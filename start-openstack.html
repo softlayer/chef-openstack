@@ -6,11 +6,11 @@ lead: "Find out just how easy it is to get off the ground (cloud pun intended)"
 baseurl: "../"
 ---
 
-<h1 class="start-openstack">Start Using OpenStack</h1>
+<h1 id="start-openstack">Start Using OpenStack</h1>
 
     <p>Here’s how to start getting familiar with the OpenStack client utilities. </p>
 
-  <h2 class="using-private-cloud">Using Your Private Cloud</h2>
+  <h2 id="using-private-cloud">Using Your Private Cloud</h2>
 
     <p>You can access the OpenStack command-line tools by logging in to the Controller node via <span class="caps">SSH</span> as root, and running the following commands:</p>
 
@@ -157,7 +157,7 @@ pip install python-glanceclient</code></pre>
     <p>Note: Individual utilities are maintained by differing communities. Refer to their help documentation for more information, or by using the &#8212;help flag for a given utility.</p>
   </blockquote>
 
-  <h2 class="using-our-tools">Using Our DevOps Tools</h2>
+  <h2 id="using-our-tools">Using Our DevOps Tools</h2>
 
     <p>We offer two new tools to help interact with the SoftLayer environment:
     <ol>
@@ -205,7 +205,7 @@ $ knife cookbook site install swftp</code></pre>
 
     <p>Afterwards, set the attributes on either the role/environment and add it to your run list. You can find a full list of swftp attributes in its README file.</p>
 
-  <h2 class="scaling-deployments">Scaling and Branching Deployments</h2>
+  <h2 id="scaling-deployments">Scaling and Branching Deployments</h2>
 
   <p>The private cloud recipes were designed with scaling in mind. OpenStack was built to be scaled, but most small deployments adhere to the three-node model of a Compute, Network, and Controller node. SoftLayer provides several options for deployers who need to scale out. You can add Compute and Network nodes where necessary to compensate for load, and you can branch components of the install to separate servers in any configuration you choose. Going to be a heavy user of block storage? Move the Cinder role to a separate server and deploy it as the sole component on that system.</p>
 
@@ -228,7 +228,7 @@ $ knife cookbook site install swftp</code></pre>
 
   <p>The components (roles) can be branched into the traditional three-node OpenStack model.</p>
 
-<div class="table-responsive">
+<div id="component-table" class="table-responsive">
   <table class="table table-bordered table-hover">
     <thead>
     <tr>
@@ -275,7 +275,7 @@ $ knife cookbook site install swftp</code></pre>
 
   <p>At scale, you may wish to have some separation of these roles to handle the increased load on any single component. Database roles can actually be split and scaled out to suit environments with heavy database churn or a desire for stronger isolation, helping to more evenly distribute load:</p>
 
-<div class="table-responsive">
+<div id="component-table" class="table-responsive">
   <table class="table table-bordered table-hover">
   <thead>
     <tr>

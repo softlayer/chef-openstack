@@ -198,7 +198,7 @@ border-radius:4px;
 color:#fff;
 font-size:13.5px;
 line-height:1.45;
-margin:0 0 20px;
+margin:10px 0 20px;
 }
 
 output pre {
@@ -306,10 +306,14 @@ margin-left:auto;
 width:254px;
 }
 
+DIV#component-table.table-responsive {
+width:65%;
+}
+
 /*
-* Green			    #16a085
-*	Blue          #2980b9		#34495e
-* Light Gray    #f2f2f2		#e2e2e2   
-* Medium Gray   #ccc		#aaa
-* Gray          #777		#222
+* Green: 		#16a085
+* Blue: 		#2980b9 	#34495e
+* Light Gray:	#f2f2f2 	#e2e2e2   
+* Medium Gray: 	#ccc		#aaa
+* Gray: 		#777		#222
 */

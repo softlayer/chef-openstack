@@ -108,3 +108,15 @@ background:url(http://s10.postimg.org/t5xz11xut/icon_twitter.png) left center no
 .bs-masthead h1 {
 font-size:84px;
 }
+
+#github a.commit { 
+color:#fff; 
+font-weight:bold; font-size: 12px; 
+font-size:1.2rem; 
+word-break:break-word; 
+white-space:break-word; 
+word-wrap:break-word; 
+opacity:.7; 
+top:13px; 
+position:relative; 
+}
