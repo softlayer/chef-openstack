@@ -4,7 +4,7 @@ font-size: 1.438em;
 
 article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar {
 background:url(http://s23.postimg.org/pbjf0mbtn/image.png);
-background-color:#222;
+background-color:#323232;
 }
 
 .bs-docs-nav {
@@ -66,7 +66,7 @@ padding-top:0;
 }
 
 .bs-footer a {
-color:#ccc;
+color:#c7c7c7;
 text-decoration:none;
 }
 
@@ -111,11 +111,11 @@ font-size:12px;
 }
 
 a {
-color:#2980b9;
+color:#0676cd;
 }
 
 a:hover,a:focus {
-color:#34495e;
+color:#0567b3;
 text-decoration:none;
 }
 
@@ -191,22 +191,22 @@ margin:0 0 20px;
 
 .row .col-lg-6 h2 {
 border-bottom:none;
-color:#222;
+color:#323232;
 font-size:25px;
 font-weight:500;
 }
 
 .row .col-lg-6 h2 a {
-color:#222;
+color:#323232;
 }
 
 .table thead {
-background:#666;
-border:#666 solid 1px;
+background:#4c4c4c;
+border:#4c4c4c solid 1px;
 }
 
 .table thead > tr > th {
-border-color:#666;
+border-color:#4c4c4c;
 color:#fff;
 text-align:center;
 }
@@ -216,7 +216,7 @@ border-radius:4px;
 }
 
 .table-bordered > tbody > tr > th,.table-bordered > tbody > tr > td {
-border:#ccc solid 1px;
+border:#c7c7c7 solid 1px;
 }
 
 p {
@@ -290,8 +290,8 @@ width:65%;
 
 /*
 * Green: #16a085
-* Blue: #2980b9, #34495e
+* Blue: #0676cd, #0567b3
 * Light: #f2f2f2, #e2e2e2   
-* Medium: #ccc, #aaa
-* Gray: #777, #222
+* Medium: #c7c7c7, #aeaeae
+* Gray: #777777, #323232
 */
