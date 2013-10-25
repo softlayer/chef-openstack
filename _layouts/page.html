@@ -38,8 +38,8 @@
               <!-- Getting Started pages -->
               {% elsif page.slug == "chef-openstack" %}
                 {% include nav-chef-openstack.html %}
-              {% elsif page.slug == "install" %}
-                {% include nav-install.html %}
+              {% elsif page.slug == "install-openstack" %}
+                {% include nav-install-openstack.html %}
               {% elsif page.slug == "requirements" %}
                 {% include nav-requirements.html %}
               {% elsif page.slug == "start-openstack" %}
@@ -58,8 +58,8 @@
 
             <ul class="nav bs-sidenav-buttons">
             {% if page.slug != "getting-started" %}
-              <a button type="button" class="btn btn-default btn-sm" href="../getting-started"><strong>Back to Menu</strong></a>
-              <a button type="button" class="btn btn-default btn-sm" href="{{ site.repo }}"><strong>Go to GitHub</strong></a>
+              <a button type="button" class="btn btn-default btn-sm" href="../getting-started"><strong><< Back to Menu</strong></a>
+              <a button type="button" class="btn btn-default btn-sm" href="{{ site.repo }}"><strong>Go to GitHub >></strong></a>
             {% endif %}
 
             </ul>

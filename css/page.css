@@ -1,5 +1,5 @@
 body {
-	font-size: 1.438em;
+font-size: 1.438em;
 }
 
 article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar {
@@ -38,29 +38,6 @@ margin:0;
 padding-bottom:0;
 }
 
-/* -- do not delete -- *
-.bs-header {
-background:url(http://s23.postimg.org/pbjf0mbtn/image.png);
-background-color:#222;
-color:#fff;
-padding:30px 14px;
-text-shadow:none;
-}
-
-.bs-header h1 {
-border-bottom:none;
-font-size:50px;
-margin-bottom:0;
-padding-bottom:0;
-}
-
-.bs-header p {
-color:#fff;
-font-size:24px;
-font-weight:500;
-}
--- */
-
 .bs-header {
 background:none;
 background-color:#fff;
@@ -95,11 +72,12 @@ text-decoration:none;
 
 .bs-masthead-links {
 text-align:center;
+margin-left:0;
 }
 
 h1[id] {
 margin-top:20px;
-padding-top:30px;
+padding-top:20px;
 }
 
 h1,.h1 {
@@ -114,7 +92,7 @@ border-bottom:1px solid #e2e2e2;
 font-size:26px;
 margin-bottom:10px;
 padding-bottom:6px;
-padding-top:10px;
+padding-top:20px;
 }
 
 h3,.h3 {
@@ -214,7 +192,7 @@ margin:0 0 20px;
 .row .col-lg-6 h2 {
 border-bottom:none;
 color:#222;
-font-size:26px;
+font-size:25px;
 font-weight:500;
 }
 
@@ -223,18 +201,18 @@ color:#222;
 }
 
 .table thead {
-background:#222;
-border:#222 solid 1px;
+background:#666;
+border:#666 solid 1px;
 }
 
 .table thead > tr > th {
-border-color:#222;
+border-color:#666;
 color:#fff;
 text-align:center;
 }
 
 .navbar-nav > .active > a {
-border-radius:6px;
+border-radius:4px;
 }
 
 .table-bordered > tbody > tr > th,.table-bordered > tbody > tr > td {
@@ -287,17 +265,17 @@ width:125px;
 text-shadow:none;
 background-image:none;
 background-repeat:no-repeat;
-background-color:#e74c3c;
-border-color:#e74c3c;
-margin-bottom:10px;
+background-color:#16a085;
+border-color:#16a085;
 color:#fff;
-border-radius:16px;
+border-radius:4px;
 }
 
 .btn-default:hover, .btn-default:focus {
-border-color: #e74c3c;
-background-color:#e74c3c;
+border-color:#16a085;
+background-color:#16a085;
 color:#fff;
+opacity:.8;
 }
 
 UL.nav.bs-sidenav-buttons {
@@ -311,9 +289,9 @@ width:65%;
 }
 
 /*
-* Green: 		#16a085
-* Blue: 		#2980b9 	#34495e
-* Light Gray:	#f2f2f2 	#e2e2e2   
-* Medium Gray: 	#ccc		#aaa
-* Gray: 		#777		#222
+* Green: #16a085
+* Blue: #2980b9, #34495e
+* Light: #f2f2f2, #e2e2e2   
+* Medium: #ccc, #aaa
+* Gray: #777, #222
 */
