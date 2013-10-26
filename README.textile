@@ -31,16 +31,6 @@ The @_config.yml@ file contains everything necessary to make a page in minutes. 
 * @project@: The _public_ name for the project
 * @lead@: High-level description for the product
 * @repo@: GitHub repository
-* @star@: Lets users "star" us on GitHub without leaving the page
-* @fork@: Lets users "fork" us on GitHub without leaving the page
-
-h3. GitHub Links
-
-You can easily modify the GitHub links by modifying three references:
-
-* @user=@: GitHub username, i.e. "softlayer"
-* @repo=@: GitHub repo name
-* @type=@: defines which procedure to support, i.e. "fork" or "watch"
 
 h1. Community
 
