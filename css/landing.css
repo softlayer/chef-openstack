@@ -2,7 +2,7 @@ h1,.h1 {
 border-bottom:none;
 }
 
-a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .navbar-nav > li > a:focus {
+a,a:hover,a:focus,.navbar-inverse .navbar-nav>li>a:hover,.navbar-inverse .navbar-nav>li>a:focus {
 color:#fff;
 }
 
@@ -98,15 +98,15 @@ padding-left:25px;
 opacity:0.95;
 }
 
-#watch #stargazers a {
+#stargazers a {
 background:url(http://s14.postimg.org/ab95j0zfh/icon_stargazer.png) left center no-repeat;
 }
 
-#watch #twitter a {
+#twitter a {
 background:url(http://s10.postimg.org/t5xz11xut/icon_twitter.png) left center no-repeat;
 }
 
-FOOTER.container UL.bs-masthead-links {
+footer.container ul.bs-masthead-links {
 margin-left:0;
 margin-top:0;
 margin-right:0;

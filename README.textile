@@ -22,7 +22,6 @@ h2. Docs
 Below is a list of other docs related to this project.
 
 * "Getting Started":../getting-started
-* "Technical Documents":../documents
 * "Release Notes":../notes
 
 h2(#configuration). Configure
@@ -48,7 +47,7 @@ h1. Community
 Keep track of development and community news.
 
 * Follow "@SoftLayerDev on Twitter":http://twitter.com/softlayerdev.
-* Fork any of our public "GitHub repos":http://github.com/softlayer.
+* Star any of our public "GitHub repos":http://github.com/softlayer.
 * Get the latest new and join conversations on our "Customer Forum":http://forums.softlayer.com.
 
 h1. Finding Support
