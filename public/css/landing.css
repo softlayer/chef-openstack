@@ -46,9 +46,9 @@ width:160px;
 }
 
 .btn-success {
-background-color:#16a085;
+background-color:#e74c3c;
 background-image:none;
-border:1px solid #16a085;
+border:1px solid #e74c3c;
 border-radius:50px;
 margin-bottom:20px;
 margin-right:14px;
@@ -58,15 +58,19 @@ box-shadow:none;
 }
 
 .btn-success:hover, .btn-success:focus {
-background-color:#16a085;
+background-color:#e74c3c;
 background-image:none;
-border:1px solid #16a085;
+border:1px solid #e74c3c;
 border-radius:50px;
 margin-bottom:20px;
 margin-right:14px;
 color:#ccc;
 opacity:.95;
 width:160px;
+}
+
+.btn-lg {
+font-size:24px;
 }
 
 .container {
@@ -110,6 +114,7 @@ footer.container ul.bs-masthead-links {
 margin-left:0;
 margin-top:0;
 margin-right:0;
+font-size: 14px;
 }
 
 div.bs-buttons {
