@@ -341,3 +341,7 @@ display: table;
 .bs-sidenav ul:after {
 clear: both;
 }
+
+.navbar-form {
+margin-top: -100px;
+}

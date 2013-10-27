@@ -18,8 +18,12 @@
 <!-- Core CSS -->
 <link href="{{ page.baseurl }}public/css/bootstrap.min.css" rel="stylesheet">
 <link href="{{ page.baseurl }}public/css/bootstrap.docs.min.css" rel="stylesheet">
+<link href="{{ page.baseurl }}public/css/pyments-manni.css" rel="stylesheet">
 <link href="{{ page.baseurl }}public/css/page.css" rel="stylesheet">
+
+{% if page.slug == "landing-layout" %}
 <link href="{{ page.baseurl }}public/css/landing.css" rel="stylesheet">
+{% endif %}
 
 <!-- FAVICONS -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ page.baseurl }}public/ico/apple-touch-icon-144-precomposed.png">

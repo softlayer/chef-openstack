@@ -18,6 +18,7 @@ margin-right:0;
 
 .btn-lg {
 padding:10px 0;
+line-height: 1.5;
 }
 
 .btn-default {
@@ -79,17 +80,16 @@ text-align:center;
 
 #watch {
 display:block;
-margin-left:auto;
-margin-right:auto;
-margin-top:10px;
+font-weight: 700;
+margin:0 auto 20px;
 overflow:hidden;
-width:280px;
+width:306px;
 }
 
 #watch section {
 float:left;
-margin-bottom:4px;
-width:134px;
+margin-bottom:0;
+width:153px;
 }
 
 #watch a {
@@ -99,11 +99,12 @@ padding-left:25px;
 }
 
 #watch a:hover {
-opacity:0.95;
+opacity:0.8;
 }
 
 #stargazers a {
 background:url(http://s14.postimg.org/ab95j0zfh/icon_stargazer.png) left center no-repeat;
+padding-right: 25px;
 }
 
 #twitter a {

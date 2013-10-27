@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
       
-      {% include header-page.html %}
+      {% include header.html %}
   
   </head>
   <body>
     <a class="sr-only" href="#content">Skip to main content</a>
       
-      {% include nav-main.html %}
+      {% include main.html %}
     
     <div class="bs-header" id="content">
       <div class="container">
@@ -28,12 +28,12 @@
               <!-- Main pages -->
               {% if page.slug == "getting-started" %}
                 {% include nav-getting-started.html %}
-              {% elsif page.slug == "documents" %}
-                {% include nav-documents.html %}
-              {% elsif page.slug == "notes" %}
-                {% include nav-notes.html %}
+              {% elsif page.slug == "release-notes" %}
+                {% include nav-release-notes.html %}
               {% elsif page.slug == "contributing" %}
                 {% include nav-contributing.html %}
+              {% elsif page.slug == "planning" %}
+                {% include nav-planning.html %}
 
               <!-- Getting Started pages -->
               {% elsif page.slug == "chef-openstack" %}
@@ -58,8 +58,8 @@
 
             <ul class="nav bs-sidenav-buttons">
             {% if page.slug != "getting-started" %}
-              <a button type="button" class="btn btn-default btn-lg" href="../getting-started">→ Menu</a>
-              <a button type="button" class="btn btn-default btn-lg" href="{{ site.repo }}">GitHub →</a>
+              <a button type="button" class="btn btn-default btn-lg" href="../getting-started">Menu</a>
+              <a button type="button" class="btn btn-default btn-lg" href="{{ site.repo }}">GitHub</a>
             {% endif %}
 
             </ul>
