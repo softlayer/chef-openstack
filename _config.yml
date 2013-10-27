@@ -13,3 +13,4 @@ twitter: http://twitter.com/softlayerdev
 # Server
 domain: softlayer.github.com
 permalink: pretty
+exclude: [".gitignore", "LICENSE", "README.md"]
