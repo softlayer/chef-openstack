@@ -5,29 +5,29 @@
 <meta name="author" content="SoftLayer Technologies, Inc., an IBM Company">
 <meta name="copyright" content="(c) 2013 SoftLayer Technologies, Inc., an IBM Company">
 
+<!-- Page Title -->
 <title>
-
   {% if page.title == "Chef-OpenStack" %}
     {{ page.title }}
   {% else %}
     {{ page.title }} &middot; Chef-OpenStack
   {% endif %}
-
 </title>
 
-<!-- Core CSS -->
-<link href="{{ page.baseurl }}public/css/bootstrap.min.css" rel="stylesheet">
-<link href="{{ page.baseurl }}public/css/bootstrap.docs.min.css" rel="stylesheet">
-<link href="{{ page.baseurl }}public/css/pyments-manni.css" rel="stylesheet">
-<link href="{{ page.baseurl }}public/css/softlayer.pages.css" rel="stylesheet">
+<!-- Font -->
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Merriweather+Sans:400,400italic,700,700italic,800|Paytone+One|Raleway:400,500,600,800,900,300' rel='stylesheet' type='text/css'>
 
-{% if page.slug == "home" %}
-  <link href="{{ page.baseurl }}public/css/softlayer.home.css" rel="stylesheet">
-{% elsif page.slug == "planb" %}
-  <link href="{{ page.baseurl }}public/css/softlayer.planb.css" rel="stylesheet">
+<!-- CSS -->
+<link href="{{ page.baseurl }}public/css/fonts.css" rel="stylesheet">
+<link href="{{ page.baseurl }}public/css/bootstrap.css" rel="stylesheet">
+<link href="{{ page.baseurl }}public/css/getbootstrap.css" rel="stylesheet">
+<link href="{{ page.baseurl }}public/css/pages.css" rel="stylesheet">
+  
+{% if page.slug == "home" %}<link href="{{ page.baseurl }}public/css/home.css" rel="stylesheet">
+  {% elsif page.slug == "planb" %}<link href="{{ page.baseurl }}public/css/planb.css" rel="stylesheet">
 {% endif %}
 
-<!-- FAVICONS -->
+<!-- Icons -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ page.baseurl }}public/ico/apple-touch-icon-144-precomposed.png">
 <link rel="shortcut icon" href="{{ page.baseurl }}public/ico/favicon.png">
 

@@ -125,3 +125,31 @@ text-align:center;
 body {
 font-size:13.5px;
 }
+
+/*-- The start of new script --*/
+
+.bs-masthead h1 {
+    font-size: 74px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 5px;
+    font-family: 'futurand-bold', sans-serif;
+}
+
+.bs-docs-nav {
+    border: medium none;
+    box-shadow: none;
+}
+
+.bs-masthead .lead {
+    font-size: 24px;
+}
+
+.navbar-nav {
+    float: left;
+}
+
+.navbar > .container .navbar-brand {
+    margin-right: 20px;
+    margin-left: 20px;
+}

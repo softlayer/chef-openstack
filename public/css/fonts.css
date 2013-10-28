@@ -1,0 +1,35 @@
+/* @license
+ * MyFonts Webfont Build ID 2355343, 2012-09-03T23:35:03-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Futura ND Book by Neufville Digital
+ * URL: http://www.myfonts.com/fonts/neufville/futura-nd/book/
+ * Copyright: © Copyright 1998, Neufville Digital. ALL RIGHTS RESERVED. This font is licensed, not sold, and may not be reproduced without the written consent of Neufville Digital. Parts © Visualogik Technology & Design, 1998. The digitally encoded ma
+ * Licensed pageviews: unspecified
+ * 
+ * Webfont: Futura ND Book Oblique by Neufville Digital
+ * URL: http://www.myfonts.com/fonts/neufville/futura-nd/book-oblique/
+ * Copyright: © Copyright 1998, Neufville Digital. ALL RIGHTS RESERVED. This font is licensed, not sold, and may not be reproduced without the written consent of Neufville Digital. Parts © Visualogik Technology & Design, 1998.The digitally encoded mac
+ * Licensed pageviews: 10,000
+ * 
+ * Webfont: Futura ND Bold by Neufville Digital
+ * URL: http://www.myfonts.com/fonts/neufville/futura-nd/bold/
+ * Copyright: © Copyright 1998, Neufville Digital. ALL RIGHTS RESERVED. This font is licensed, not sold, and may not be reproduced without the written consent of Neufville Digital. Parts © Visualogik Technology & Design, 1998.The digitally encoded mac
+ * Licensed pageviews: unspecified
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2355343
+ * 
+ * © 2012 Bitstream Inc
+*/
+ 
+ @font-face {font-family: 'FuturaNDBook';src: url('../webfonts/23F08F_0_0.eot');src: url('../webfonts/23F08F_0_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/23F08F_0_0.woff') format('woff'),url('../webfonts/23F08F_0_0.ttf') format('truetype');}
+  
+ @font-face {font-family: 'FuturaNDBook-Oblique';src: url('../webfonts/23F08F_1_0.eot');src: url('../webfonts/23F08F_1_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/23F08F_1_0.woff') format('woff'),url('webfonts/23F08F_1_0.ttf') format('truetype');}
+ 
+ @font-face {font-family: 'FuturaND-Bold';src: url('../webfonts/23F08F_2_0.eot');src: url('../webfonts/23F08F_2_0.eot?#iefix') format('embedded-opentype'),url('../webfonts/23F08F_2_0.woff') format('woff'),url('../webfonts/23F08F_2_0.ttf') format('truetype');}
