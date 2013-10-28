@@ -55,20 +55,45 @@
               {% endif %}
 
             </ul>
+          </div>
 
-            <ul class="nav bs-sidenav-buttons">
-            {% if page.slug != "getting-started" %}
-              <a button type="button" class="btn btn-default btn-lg" href="../getting-started">Menu</a>
-              <a button type="button" class="btn btn-default btn-lg" href="{{ site.repo }}">GitHub</a>
+
+            <!-- Page toggle -->
+          <div class="page-toggle">
+            <ul class="pager">
+        
+            {% if page.slug == "chef-openstack" %}
+              <li class="previous disabled"><a href="#">Previous</a></li>
+              <li class="next"><a href="../requirements">Next</a></li>
+            {% elsif page.slug == "requirements" %}
+              <li class="previous"><a href="../chef-openstack">Previous</a></li>
+              <li class="next"><a href="../install-openstack">Next</a></li>
+            {% elsif page.slug == "install-openstack" %}
+              <li class="previous"><a href="../requirements">Previous</a></li>
+              <li class="next"><a href="../start-openstack">Next</a></li>
+            {% elsif page.slug == "start-openstack" %}
+              <li class="previous"><a href="../install-openstack">Previous</a></li>
+              <li class="next"><a href="../testing-openstack">Next</a></li>
+            {% elsif page.slug == "testing-openstack" %}
+              <li class="previous"><a href="../start-openstack">Previous</a></li>
+              <li class="next"><a href="../sandbox">Next</a></li>
+            {% elsif page.slug == "sandbox" %}
+              <li class="previous"><a href="../testing-openstack">Previous</a></li>
+              <li class="next"><a href="../use-scenario">Next</a></li>
+            {% elsif page.slug == "use-scenario" %}
+              <li class="previous"><a href="../sandbox">Previous</a></li>
+              <li class="next"><a href="../support">Next</a></li>
+            {% elsif page.slug == "support" %}
+              <li class="previous"><a href="../use-scenario">Previous</a></li>
+              <li class="next disabled"><a href="#">Next</a></li>
             {% endif %}
-
+            
             </ul>
-
           </div>
         </div>
         <div class="col-md-9" role="main">
         
-      {{ content }}
+            {{ content }}
         
         </div>
       </div>

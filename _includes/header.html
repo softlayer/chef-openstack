@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keywords" content="openstack, development, add-on, innovation, sldn, softlayer, open source, chef, api, github, recipes, compatibility">
 <meta name="description" content="Founded in 2005, SoftLayer is a cloud infrastructure provider.">
-<meta name="author" content="Product Innovation Group @ SoftLayer">
+<meta name="author" content="SoftLayer Technologies, Inc., an IBM Company">
 <meta name="copyright" content="(c) 2013 SoftLayer Technologies, Inc., an IBM Company">
 
 <title>
@@ -19,10 +19,12 @@
 <link href="{{ page.baseurl }}public/css/bootstrap.min.css" rel="stylesheet">
 <link href="{{ page.baseurl }}public/css/bootstrap.docs.min.css" rel="stylesheet">
 <link href="{{ page.baseurl }}public/css/pyments-manni.css" rel="stylesheet">
-<link href="{{ page.baseurl }}public/css/page.css" rel="stylesheet">
+<link href="{{ page.baseurl }}public/css/softlayer.pages.css" rel="stylesheet">
 
-{% if page.slug == "landing-layout" %}
-<link href="{{ page.baseurl }}public/css/landing.css" rel="stylesheet">
+{% if page.slug == "home" %}
+  <link href="{{ page.baseurl }}public/css/softlayer.home.css" rel="stylesheet">
+{% elsif page.slug == "planb" %}
+  <link href="{{ page.baseurl }}public/css/softlayer.planb.css" rel="stylesheet">
 {% endif %}
 
 <!-- FAVICONS -->

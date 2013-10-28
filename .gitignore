@@ -1,14 +1,24 @@
-# ALWAYS IGNORE
-# -------------
+# BASIC
+# -----
 _site
 *.log
 *.vi
 *~
-.ruby-version
+.#*
 .githubsettings
 
-# OS & EDITOR GARBAGE
-# -------------------
+# OS & EDITORS
+# ------------
 .DS_Store
 Thumbs.db
 .cache
+tmp
+
+# PROJECT
+# -------
+.grunt
+node_modules
+npm-debug.log
+test/browser/less.js
+test/sourcemaps/*.map
+test/sourcemaps/*.css

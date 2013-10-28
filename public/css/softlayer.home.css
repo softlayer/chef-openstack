@@ -47,9 +47,9 @@ width:160px;
 }
 
 .btn-success {
-background-color:#e74c3c;
+background-color:#16a085;
 background-image:none;
-border:1px solid #e74c3c;
+border:1px solid #16a085;
 border-radius:50px;
 margin-bottom:20px;
 margin-right:14px;
@@ -59,9 +59,9 @@ box-shadow:none;
 }
 
 .btn-success:hover, .btn-success:focus {
-background-color:#e74c3c;
+background-color:#16a085;
 background-image:none;
-border:1px solid #e74c3c;
+border:1px solid #16a085;
 border-radius:50px;
 margin-bottom:20px;
 margin-right:14px;
@@ -80,7 +80,7 @@ text-align:center;
 
 #watch {
 display:block;
-font-weight: 700;
+font-weight:700;
 margin:0 auto 20px;
 overflow:hidden;
 width:306px;
@@ -104,7 +104,7 @@ opacity:0.8;
 
 #stargazers a {
 background:url(http://s14.postimg.org/ab95j0zfh/icon_stargazer.png) left center no-repeat;
-padding-right: 25px;
+padding-right:25px;
 }
 
 #twitter a {
@@ -115,9 +115,13 @@ footer.container ul.bs-masthead-links {
 margin-left:0;
 margin-top:0;
 margin-right:0;
-font-size: 14px;
+font-size:14px;
 }
 
 div.bs-buttons {
 text-align:center;
+}
+
+body {
+font-size:13.5px;
 }
