@@ -129,11 +129,11 @@ font-size:13.5px;
 /*-- The start of new script --*/
 
 .bs-masthead h1 {
-    font-size: 74px;
+    font-size: 94px;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 5px;
-    font-family: 'futurand-bold', sans-serif;
+    letter-spacing: 6px;
+    font-family: 'Gotham A', 'Gotham B', sans-serif;
 }
 
 .bs-docs-nav {
@@ -142,14 +142,56 @@ font-size:13.5px;
 }
 
 .bs-masthead .lead {
-    font-size: 24px;
+    font-size: 30px;
+    line-height:1;
 }
 
 .navbar-nav {
-    float: left;
+text-transform: uppercase;
+font-weight: 500;
+opacity: 1;
+cursor: pointer;
+transition-property: opacity;
+transition-duration: 0.1s;
+transition-timing-function: ease-out;
+font-size: 13px;
+font-family: 'Gotham SSm A','Gotham SSm B',sans-serif;
+}
+
+.lead {
+margin-bottom:60px;
 }
 
 .navbar > .container .navbar-brand {
     margin-right: 20px;
     margin-left: 20px;
+}
+
+.navbar > .container .navbar-brand {
+    margin-left: 1px;
+    opacity:.7;
+}
+
+article,aside,details,figcaption,figure,hgroup,main,section,summary,footer,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar {
+background:rgba(34,30,29,0.9);
+}
+
+footer.container ul.bs-masthead-links {
+font-family: 'Gotham SSm A','Gotham SSm B',sans-serif;
+text-transform: uppercase;
+font-weight: 500;
+opacity: 1;
+cursor: pointer;
+transition-property: opacity;
+transition-duration: 0.1s;
+transition-timing-function: ease-out;
+font-size: 13px;
+}
+
+.bs-masthead-links {
+padding:3px;
+}
+
+h1, .h1 {
+    margin-top: 60px;
 }

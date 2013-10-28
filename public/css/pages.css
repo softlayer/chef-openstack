@@ -353,3 +353,15 @@ padding:6px;
 width: 100px;
 float:none;
 }
+
+.bs-docs-nav .navbar-toggle {
+border-color:#fff;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+background: #aaa;
+}
+
+.bs-docs-nav .navbar-collapse {
+border-color: #aaa;
+}
