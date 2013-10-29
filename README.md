@@ -1,6 +1,6 @@
-# Unveil
+# unveil.less
 
-"Unveil" is a GitHub Page made using [Bootstrap CSS](http://getboostrap.com), [Mixture](http://mixture.io), and [Jekyll](http://jekyllrb.com). It is a minimal way to create static webpages and publish them on GitHub.
+"unveil.less" is a GitHub Page made using [Bootstrap CSS](http://getboostrap.com), [Foundation](http://foundation.zurb.com), [LESS](http://lesscss.org), and [Jekyll](http://jekyllrb.com). It is a minimal way to create static webpages and publish them on GitHub.
 
 Unveil is [CCPL-licensed](https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE) and free to use.
 

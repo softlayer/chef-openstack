@@ -81,8 +81,7 @@ baseurl: "../"
   <p>Change directory into <code>~/chef-repo/cookbooks</code> and then download the private cloud repository:</p>
 
 <pre><code>$ cd chef-repo/cookbooks
-$ git clone https://github.com/softlayer/TODO:PUBLIC_REPO_NAME
-</code></pre>
+$ git clone https://github.com/softlayer/TODO:PUBLIC_REPO_NAME</code></pre>
 
   <p>The private cloud repository also depends on several Opscode cookbooks. Download them into the <code>~/chef-repo/cookbooks</code> directory:</p>
 
@@ -90,19 +89,16 @@ $ git clone https://github.com/softlayer/TODO:PUBLIC_REPO_NAME
 $ git clone https://github.com/opscode-cookbooks/partial_search
 $ git clone https://github.com/opscode-cookbooks/ntp
 $ git clone https://github.com/opscode-cookbooks/build-essential
-$ git clone https://github.com/opscode-cookbooks/openssl
-</code></pre>
+$ git clone https://github.com/opscode-cookbooks/openssl</code></pre>
 
   <p>The needed OpenStack roles are packaged within the private cloud repository. Copy the roles from the <code>grizzly/</code> directory to the <code>~/chef-repo/roles</code> directory.</p>
 
-<pre><code>$ cp -r ~/chef-repo/cookbooks/TODO:PUBLIC_REPO_NAME/roles ~/chef-repo/roles
-</code></pre>
+<pre><code>$ cp -r ~/chef-repo/cookbooks/TODO:PUBLIC_REPO_NAME/roles ~/chef-repo/roles</code></pre>
 
   <p>Finally, upload the cookbooks and roles to your Chef server for deployment to remote nodes:</p>
 
 <pre><code>$ knife cookbook upload --all
-$ knife role from file ~/chef-repo/roles/*
-</code></pre>
+$ knife role from file ~/chef-repo/roles/*</code></pre>
 
   <p>If you get any errors during the upload, check that your <code>cookbook_path</code> and <code>role_path</code> are set correctly in the <code>~/.chef/knife.rb</code>. You can optionally re-run the <code>knife</code> configuration client.</p>
 
@@ -134,8 +130,7 @@ knife node run_list add control1.example.com &#39;role[grizzly-controller]&#39;
 knife node run_list add compute2.example.com &#39;role[grizzly-compute]&#39;
 
 ## Network node:
-knife node run_list add network3.example.com &#39;role[grizzly-network]&#39;
-</pre></output>
+knife node run_list add network3.example.com &#39;role[grizzly-network]&#39;</pre></output>
 
   <h2 id="configure-chef">Configure Chef Overrides for OpenStack</h2>
 
@@ -143,13 +138,11 @@ knife node run_list add network3.example.com &#39;role[grizzly-network]&#39;
 
   <p>First, create an environment. It will be used to house your nodes and configuration attributes. The attribute overrides will modify the OpenStack for your deployment without the need to edit the recipes directly.</p>
 
-<pre><code>$ knife environment create NAME -d &quot;Description for environment&quot;
-</code></pre>
+<pre><code>$ knife environment create NAME -d &quot;Description for environment&quot;</code></pre>
 
   <p>Edit your environment with the following command (you may also edit this from the Chef web-based UI). An editor will open where you may define your environment&#8217;s attributes in <span class="caps">JSON</span> format.</p>
 
-<pre><code>$ knife environment edit ENVIRONMENT
-</code></pre>
+<pre><code>$ knife environment edit ENVIRONMENT</code></pre>
 
   <p>Take special care to ensure your final environment document is valid <span class="caps">JSON</span>, as <code>knife</code> may discard your attempted change if the <span class="caps">JSON</span> does not properly validate once you save and exit the editor.</p>
 
@@ -209,8 +202,7 @@ knife node run_list add network3.example.com &#39;role[grizzly-network]&#39;
 
   <p>The controller node contains, at a minimum, the roles for the base Quantum and Nova services. If you are unfamiliar with OpenStack, it is recommended to do a standard installation as illustrated in the bootstrap example. Be sure that Chef shows that the node contains the MySQL backend, RabbitMQ, Keystone, Cinder, and Glance roles. You can verify this with a simple <code>knife</code> command:</p>
 
-<pre><code>knife node show FQDN
-</code></pre>
+<pre><code>knife node show FQDN</code></pre>
 
   <p>The output should look similar to this:</p>
 
@@ -222,23 +214,19 @@ Run List: role[grizzly-mysql-cinder], role[grizzly-mysql-glance], role[grizzly-m
 Roles: grizzly-mysql-cinder, grizzly-mysql-glance, grizzly-mysql-keystone, grizzly-mysql-nova, grizzly-mysql-quantum, grizzly-rabbitmq, grizzly-keystone, grizzly-controller, grizzly-cinder, grizzly-glance
 Recipes: grizzly::set_attributes, grizzly::set_cloudnetwork, ntp, grizzly::mysql-cinder, grizzly::mysql-glance, grizzly::mysql-keystone, grizzly::mysql-nova, grizzly::mysql-quantum, grizzly::ip_forwarding, grizzly::repositories, grizzly::rabbitmq-server, grizzly::keystone, grizzly::quantum-controller, grizzly::nova, grizzly::dashboard, grizzly::cinder, grizzly::glance, grizzly::quantum-network
 Platform: ubuntu 12.04
-Tags:
-</pre></output>
+Tags:</pre></output>
 
   <p>To chef the controller node you can either connect directly to the remote server and (with root privileges) run <code>chef-client</code> from the node itself or use <a href="http://docs.opscode.com/knife_ssh.html">knife ssh</a> to run it from the Chef server:</p>
 
-<pre><code>knife ssh SEARCH_TERM &#39;sudo chef-client&#39;
-</code></pre>
+<pre><code>knife ssh SEARCH_TERM &#39;sudo chef-client&#39;</code></pre>
 
   <p>For example:</p>
 
-<pre><code>knife ssh &#39;role:grizzly-controller&#39; &#39;sudo chef-client&#39;
-</code></pre>
+<pre><code>knife ssh &#39;role:grizzly-controller&#39; &#39;sudo chef-client&#39;</code></pre>
 
   <p>&#8230;or</p>
 
-<pre><code>knife ssh &#39;name:FQDN&#39; &#39;sudo chef-client&#39;
-</code></pre>
+<pre><code>knife ssh &#39;name:FQDN&#39; &#39;sudo chef-client&#39;</code></pre>
 
   <h3>Other Network and Compute Nodes</h3>
 
@@ -246,7 +234,6 @@ Tags:
 
 <pre><code>## Compute node:
 knife ssh &#39;name:FQDN_2&#39; &#39;sudo chef-client&#39;
-</code>
-<code>## Network node:
-knife ssh &#39;name:FQDN_3&#39; &#39;sudo chef-client&#39;
-</code></pre>
+
+## Network node:
+knife ssh &#39;name:FQDN_3&#39; &#39;sudo chef-client&#39;</code></pre>
