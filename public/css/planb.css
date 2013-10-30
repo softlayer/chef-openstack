@@ -108,8 +108,8 @@ background:url(http://s10.postimg.org/t5xz11xut/icon_twitter.png) left center no
 
 footer.container ul.bs-masthead-links {
 cursor:pointer;
-font-family:'Gotham SSm A','Gotham SSm B',sans-serif;
-font-size:12.5px;
+font-family:'Gotham SSm A','Gotham SSm B',helvetica,arial,sans-serif;
+font-size:12px;
 font-weight:500;
 margin-left:0;
 margin-right:0;
@@ -124,10 +124,10 @@ font-size:13.5px
 }
 
 .bs-masthead h1 {
-font-family:'Gotham A', 'Gotham B', sans-serif;
+font-family: 'source sans pro','Gotham A','Gotham B', helvetica,arial,sans-serif;
 font-size:80px;
-font-weight:700;
-letter-spacing:6px;
+font-weight:900;
+letter-spacing:11px;
 text-transform:uppercase;
 margin-bottom:14px;
 }
@@ -145,8 +145,8 @@ line-height:1
 
 .navbar-nav {
 cursor:pointer;
-font-family:'Gotham SSm A','Gotham SSm B',sans-serif;
-font-size:12.5px;
+font-family:'source sans pro','Gotham SSm A','Gotham SSm B',helvetica,arial,sans-serif;
+font-size:11px;
 font-weight:500;
 opacity:1;
 text-transform:uppercase;
@@ -175,8 +175,8 @@ text-align:center
 
 .navbar-nav {
     cursor: pointer;
-    font-family: 'Gotham SSm A','Gotham SSm B',sans-serif;
-    font-size: 12.5px;
+    font-family: 'Gotham SSm A','Gotham SSm B',helvetica,arial,sans-serif;
+    font-size: 12px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: -.1px;
@@ -192,7 +192,7 @@ text-align:center
     font-size: 54px;
     margin-bottom: 0px;
     padding-bottom: 0px;
-    font-family: 'gotham a','gotham b',sans-serif;
+    font-family: 'Montserrat',helvetica,arial,sans-serif;
     text-transform: uppercase;
     font-weight: 700;
 }

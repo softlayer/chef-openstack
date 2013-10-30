@@ -39,7 +39,7 @@ background:none;
 background-color:#fff;
 padding:40px 10px 20px;
 text-shadow:none;
-border-bottom:1px solid #f4f4f4;
+border-bottom:1px solid #f5f5f5;
 }
 
 .bs-header h1 {
@@ -57,13 +57,13 @@ font-weight:500;
 }
 
 .bs-footer {
-border-top:1px solid #f4f4f4;
-background:#f4f4f4;
+border-top:1px solid #f5f5f5;
+background:#f5f5f5;
 padding-top:0;
 }
 
 .bs-footer a {
-color:#666;
+color:#777;
 text-decoration:none;
 }
 
@@ -91,7 +91,7 @@ padding-bottom:10px;
 }
 
 h2,.h2 {
-border-bottom:1px solid #e4e4e4;
+border-bottom:1px solid #e5e5e5;
 font-size:26px;
 margin-bottom:10px;
 padding-bottom:6px;
@@ -128,25 +128,25 @@ color:#c0392b;
 }
 
 .bs-sidenav {
-background:#f4f4f4;
+background:#f5f5f5;
 text-shadow:none;
 margin-top: 44px;
 }
 
 .bs-sidebar .nav>li>a {
-color:#666;
+color:#777;
 display:block;
 padding:4px 20px;
 }
 
 .bs-sidebar .nav>li>a:hover,.bs-sidebar .nav>li>a:focus {
-background:#e4e4e4;
+background:#e5e5e5;
 border-right:1px solid #34495e;
 text-decoration:none;
 }
 
 blockquote p {
-color:#666;
+color:#777;
 font-size:13.5px;
 }
 
@@ -155,21 +155,21 @@ margin-bottom:14px;
 }
 
 .callout {
-border-top:#f4f4f4;
-color:#666;
+border-top:#f5f5f5;
+color:#777;
 background-color:none;
 }
 
 .callout a:hover,.callout a:focus {
-color:#666;
+color:#777;
 font-weight:700;
-border-bottom:1px dotted #666;
+border-bottom:1px dotted #777;
 }
 
 .callout a {
 font-color:#77;
 font-weight:700;
-color:#666;
+color:#777;
 padding-bottom:2px;
 }
 
@@ -185,7 +185,7 @@ margin:10px 0 20px;
 
 output pre {
 background:#f9f9f9;
-border:#e4e4e4 solid 1px;
+border:#e5e5e5 solid 1px;
 border-radius:4px;
 color:#777;
 font-size:13.5px;
@@ -364,4 +364,11 @@ background: #aaa;
 
 .bs-docs-nav .navbar-collapse {
 border-color: #aaa;
+}
+
+.bs-sidebar .nav > .active > a, .bs-sidebar .nav > .active:hover > a, .bs-sidebar .nav > .active:focus > a {
+    font-weight: 700;
+    color: #222;
+    background-color: transparent;
+    border-right: 1px solid #222;
 }
