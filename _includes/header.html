@@ -21,17 +21,14 @@
   {% endif %}
 </title>
 
-<!-- Fonts -->
-<link href='http://fonts.googleapis.com/css?family=Montserrat:700|Noto+Sans:400,700|Source+Sans+Pro:400,600,700,900' rel='stylesheet' type='text/css'>
-
 <!-- CSS -->
+<link href="{{ page.baseurl }}public/css/pygments.css" rel="stylesheet">
 <link href="{{ page.baseurl }}public/css/fonts.css" rel="stylesheet">
 <link href="{{ page.baseurl }}public/css/bootstrap.css" rel="stylesheet">
 <link href="{{ page.baseurl }}public/css/getbootstrap.css" rel="stylesheet">
 <link href="{{ page.baseurl }}public/css/pages.css" rel="stylesheet">
   
-{% if page.slug == "home" %}<link href="{{ page.baseurl }}public/css/home.css" rel="stylesheet">
-  {% elsif page.slug == "planb" %}<link href="{{ page.baseurl }}public/css/planb.css" rel="stylesheet">
+{% if page.slug == "landing" %}<link href="{{ page.baseurl }}public/css/landing.css" rel="stylesheet">
 {% endif %}
 
 <!-- Icons -->

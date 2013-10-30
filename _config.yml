@@ -1,6 +1,6 @@
 # Project
-project: Chef + OpenStack
-lead: "Get the Efficiency, Scalability and Control that Every Private Cloud Needs"
+project: Chef-OpenStack
+lead: "Get the efficiency, scalability and control that every private cloud needs"
 
 # Links
 repo: http://github.com/softlayer/chef-openstack
@@ -13,4 +13,4 @@ twitter: http://twitter.com/softlayerdev
 # Server
 domain: softlayer.github.com
 permalink: pretty
-exclude: [".gitignore", "LICENSE", "README.md", "Gruntfile.coffee", "package.json", "node_modules"]
+exclude: [".gitignore", "LICENSE", "README.md"]
