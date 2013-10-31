@@ -1,13 +1,12 @@
-<!-- CORE JS -->
-  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<!-- Core JS -->
+  <script src="{{ page.baseurl }}public/js/jquery.js"></script>
   <script src="{{ page.baseurl }}public/js/bootstrap.min.js"></script>
   <script src="{{ page.baseurl }}public/js/scrollspy.min.js"></script>
   <script src="{{ page.baseurl }}public/js/affix.min.js"></script>
   <script src="{{ page.baseurl }}public/js/holder.js"></script>
   <script src="{{ page.baseurl }}public/js/application.js"></script>
 
-
-<!-- CUSTOM JS FOR SIDE MENU -->
+<!-- JS for Side Menu -->
   <script>
       $("#menu-close").click(function(e) {
           e.preventDefault();
@@ -38,17 +37,6 @@
         });
       });
     </script>
-
-<!--
-<div id="watch">
-  <section id="stargazers">
-    <a href="{{ site.repo }}">27 Stargazers</a>
-  </section>
-  <section id="twitter">
-    <a href="{{ site.twitter }}">@SoftLayerDev</a>
-  </section>
-</div>
--->
 
 <ul class="bs-masthead-links">
   <li><a href="{{ site.www }}" target="_blank">© 2013 SoftLayer Technologies, Inc.</a></li>

@@ -7,13 +7,7 @@ a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .na
 color:#fff;
 }
 
-.btn-lg {
-font-size:24px;
-line-height:1.5;
-padding:10px 0;
-}
-
-.btn-default {
+.btn-info {
 background-color:#57ad68;
 background-image:none;
 border:#57ad68 solid 1px;
@@ -29,9 +23,10 @@ text-shadow:none;
 text-transform:uppercase;
 transition:background-color .3s ease-in-out;
 width:160px;
+line-height: 1.5;
 }
 
-.btn-default:hover,.btn-default:focus {
+.btn-info:hover,.btn-info:focus {
 background-color:#468c54;
 background-image:none;
 border:#468c54 solid 1px;
@@ -43,6 +38,7 @@ margin-right:20px;
 position:relative;
 text-transform:uppercase;
 width:160px;
+line-height: 1.5;
 }
 
 .btn-success {
@@ -52,7 +48,7 @@ border:#57ad68 solid 1px;
 border-radius:6px;
 box-shadow:none;
 color:#fff;
-font-family:'Gotham A', 'Gotham B', Helvetica, Arial, Sans-serif;
+font-family: Helvetica, Arial, Sans-serif;
 font-size:16px;
 margin-bottom:20px;
 margin-right:20px;
@@ -61,6 +57,7 @@ text-shadow:none;
 text-transform:uppercase;
 transition:background-color .3s ease-in-out;
 width:160px;
+line-height: 1.5;
 }
 
 .btn-success:hover,.btn-success:focus {
@@ -69,24 +66,25 @@ background-image:none;
 border:#468c54 solid 1px;
 border-radius:6px;
 color:#fff;
-font-family:'Gotham A', 'Gotham B', Helvetica, Arial, Sans-serif;
+font-family: Helvetica, Arial, Sans-serif;
 margin-bottom:20px;
 margin-right:20px;
 position:relative;
 text-transform:uppercase;
 width:160px;
+line-height: 1.5;
 }
 
 footer.container ul.bs-masthead-links {
 cursor:pointer;
-font-family:'Gotham SSm A', 'Gotham SSm B', helvetica, arial, sans-serif;
-font-size:12px;
+font-family:"Nimbus-Sans";
+font-size:14px;
 font-weight:500;
-letter-spacing:-.1px;
+letter-spacing:0;
 margin-left:0;
 margin-right:0;
-margin-top:0;
-text-transform:uppercase;
+margin:2px 0;
+text-transform:none;
 }
 
 body {
@@ -118,25 +116,22 @@ font-size:28px;
 margin-bottom:60px;
 }
 
-article,aside,body,details,figcaption,figure,hgroup,main,section,summary,footer,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar,.navbar-collapse {
-background:#222;
-}
-
-.bs-docs-home {
-background-image: url(public/ico/street.jpg);
-}
+/* article,aside,body,details,figcaption,figure,hgroup,main,section,summary,footer,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar,.navbar-collapse {
+background:#212121;
+} */
 
 .container,div.bs-buttons {
 text-align:center;
 }
 
-.bs-header h1 {
-border-bottom:medium none;
-color:#333;
-font-family:helvetica, arial, sans-serif;
-font-size:54px;
-font-weight:700;
-margin-bottom:0;
-padding-bottom:0;
-text-transform:uppercase;
+.header {
+height:70%;
+}
+
+.bs-docs-home { 
+  background: url(/public/ico/bg2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }

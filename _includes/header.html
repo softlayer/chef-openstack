@@ -8,10 +8,6 @@
 <meta name="author" content="SoftLayer Technologies, Inc., an IBM Company">
 <meta name="copyright" content="(c) 2013 SoftLayer Technologies, Inc., an IBM Company">
 
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="SoftLayer" />
-
 <!-- Page Title -->
 <title>
   {% if page.title == "Chef-OpenStack" %}
@@ -22,22 +18,21 @@
 </title>
 
 <!-- Font -->
+<link href="{{ page.baseurl }}public/css/font-awesome.min.css" rel="stylesheet">
 <script type="text/javascript" src="//use.typekit.net/ckv5rav.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <!-- CSS -->
-<link href="{{ page.baseurl }}public/css/fonts.css" rel="stylesheet">
 <link href="{{ page.baseurl }}public/css/bootstrap.css" rel="stylesheet">
 <link href="{{ page.baseurl }}public/css/getbootstrap.css" rel="stylesheet">
 <link href="{{ page.baseurl }}public/css/pages.css" rel="stylesheet">
-  
-{% if page.slug == "landing" %}<link href="{{ page.baseurl }}public/css/landing.css" rel="stylesheet">
+
+{% if page.slug == "landing" %}
+<link href="{{ page.baseurl }}public/css/portfolio.css" rel="stylesheet">
+<link href="{{ page.baseurl }}public/css/landing.css" rel="stylesheet">
 {% endif %}
 
-<!-- Icons -->
-<link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ page.baseurl }}public/ico/apple-touch-icon-144-precomposed.png?v=2">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ page.baseurl }}public/ico/apple-touch-icon-144-precomposed.png?v=2">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ page.baseurl }}public/ico/apple-touch-icon-144-precomposed.png?v=2">
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ page.baseurl }}public/ico/apple-touch-icon-144-precomposed.png?v=2">
+<!-- Icon -->
 <link rel="shortcut icon" href="{{ page.baseurl }}public/ico/favicon.png">
 
 <!-- Google Analytics -->

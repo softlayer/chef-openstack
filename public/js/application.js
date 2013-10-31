@@ -2,14 +2,6 @@
 // IT'S ALL JUST JUNK FOR OUR DOCS!
 // ++++++++++++++++++++++++++++++++++++++++++
 
-/*!
- * Copyright 2013 Twitter, Inc.
- *
- * Licensed under the Creative Commons Attribution 3.0 Unported License. For
- * details, see http://creativecommons.org/licenses/by/3.0/.
- */
-
-
 !function ($) {
 
   $(function(){
@@ -98,6 +90,9 @@
           btn.button('reset')
         }, 3000)
       })
+
+    // carousel demo
+    $('.bs-docs-carousel-example').carousel()
 })
 
 }(window.jQuery)
