@@ -26,9 +26,7 @@
             <ul class="nav bs-sidenav">
               
               <!-- Main pages -->
-              {% if page.slug == "getting-started" %}
-                {% include nav-getting-started.html %}
-              {% elsif page.slug == "release-notes" %}
+              {% if page.slug == "release-notes" %}
                 {% include nav-release-notes.html %}
               {% elsif page.slug == "contributing" %}
                 {% include nav-contributing.html %}
@@ -36,6 +34,8 @@
                 {% include nav-planning.html %}
 
               <!-- Havana "Getting Started" pages -->
+              {% elsif page.slug == "havana-getting-started" %}
+                {% include nav-getting-started.html %}
               {% elsif page.slug == "havana-chef-openstack" %}
                 {% include nav-chef-openstack.html %}
               {% elsif page.slug == "havana-install-openstack" %}
@@ -54,6 +54,8 @@
                 {% include nav-sandbox.html %}
 
               <!-- Grizzly "Getting Started" pages -->
+              {% elsif page.slug == "grizzly-getting-started" %}
+                {% include nav-getting-started.html %}
               {% elsif page.slug == "grizzly-chef-openstack" %}
                 {% include nav-chef-openstack.html %}
               {% elsif page.slug == "grizzly-install-openstack" %}
@@ -109,29 +111,29 @@
 
             <!-- Grizzly page toggle -->
             {% if page.slug == "grizzly-chef-openstack" %}
-              <li class="previous disabled"><a href="#">Previous</a></li>
-              <li class="next"><a href="../grizzly-requirements">Next</a></li>
+              <li class="previous disabled"><a href="#">Beginning</a></li>
+              <li class="next"><a href="../grizzly-requirements">Section 2</a></li>
             {% elsif page.slug == "grizzly-requirements" %}
-              <li class="previous"><a href="../grizzly-chef-openstack">Previous</a></li>
-              <li class="next"><a href="../grizzly-install-openstack">Next</a></li>
+              <li class="previous"><a href="../grizzly-chef-openstack">Section 1</a></li>
+              <li class="next"><a href="../grizzly-install-openstack">Section 3</a></li>
             {% elsif page.slug == "grizzly-install-openstack" %}
-              <li class="previous"><a href="../grizzly-requirements">Previous</a></li>
-              <li class="next"><a href="../grizzly-start-openstack">Next</a></li>
+              <li class="previous"><a href="../grizzly-requirements">Section 2</a></li>
+              <li class="next"><a href="../grizzly-start-openstack">Section 4</a></li>
             {% elsif page.slug == "grizzly-start-openstack" %}
-              <li class="previous"><a href="../grizzly-install-openstack">Previous</a></li>
-              <li class="next"><a href="../grizzly-testing-openstack">Next</a></li>
+              <li class="previous"><a href="../grizzly-install-openstack">Section 3</a></li>
+              <li class="next"><a href="../grizzly-testing-openstack">Section 5</a></li>
             {% elsif page.slug == "grizzly-testing-openstack" %}
-              <li class="previous"><a href="../grizzly-start-openstack">Previous</a></li>
-              <li class="next"><a href="../grizzly-sandbox">Next</a></li>
+              <li class="previous"><a href="../grizzly-start-openstack">Section 4</a></li>
+              <li class="next"><a href="../grizzly-sandbox">Section 6</a></li>
             {% elsif page.slug == "grizzly-sandbox" %}
-              <li class="previous"><a href="../grizzly-testing-openstack">Previous</a></li>
-              <li class="next"><a href="../grizzly-use-scenario">Next</a></li>
+              <li class="previous"><a href="../grizzly-testing-openstack">Section 5</a></li>
+              <li class="next"><a href="../grizzly-use-scenario">Section 7</a></li>
             {% elsif page.slug == "grizzly-use-scenario" %}
-              <li class="previous"><a href="../grizzly-sandbox">Previous</a></li>
-              <li class="next"><a href="../grizzly-support">Next</a></li>
+              <li class="previous"><a href="../grizzly-sandbox">Section 6</a></li>
+              <li class="next"><a href="../grizzly-support">Section 8</a></li>
             {% elsif page.slug == "grizzly-support" %}
-              <li class="previous"><a href="../grizzly-use-scenario">Previous</a></li>
-              <li class="next disabled"><a href="#">Next</a></li>
+              <li class="previous"><a href="../grizzly-use-scenario">Section 7</a></li>
+              <li class="next disabled"><a href="#">Fin</a></li>
             {% endif %}
             
             </ul>

@@ -15,7 +15,7 @@ border-radius:6px;
 box-shadow:none;
 color:#fff;
 font-family:'Gotham A', 'Gotham B', Helvetica, Arial, Sans-serif;
-font-size:16px;
+font-size:14px;
 margin-bottom:20px;
 margin-right:20px;
 position:relative;
@@ -49,7 +49,7 @@ border-radius:6px;
 box-shadow:none;
 color:#fff;
 font-family: Helvetica, Arial, Sans-serif;
-font-size:16px;
+font-size:14px;
 margin-bottom:20px;
 margin-right:20px;
 position:relative;
@@ -91,7 +91,7 @@ body {
 font-size:13.5px;
 }
 
-.bs-masthead h1 {
+.vert-text h1 {
 font-family:"Myriad Pro", Helvetica, Arial, Sans-serif;
 font-size:76px;
 font-weight:900;
@@ -106,7 +106,7 @@ box-shadow:none;
 height:74px;
 }
 
-.bs-masthead .lead {
+.vert-text .lead {
 font-family:"Myriad Pro", Helvetica, Arial, Sans-serif;
 font-size:28px;
 
@@ -116,7 +116,7 @@ font-size:28px;
 margin-bottom:60px;
 }
 
-/* article,aside,body,details,figcaption,figure,hgroup,main,section,summary,footer,header,.bs-docs-nav,nav,.bs-docs-home,.bs-masthead,.navbar,.navbar-collapse {
+/* article,aside,body,details,figcaption,figure,hgroup,main,section,summary,footer,header,.bs-docs-nav,nav,.bs-docs-home,.vert-text,.navbar,.navbar-collapse {
 background:#212121;
 } */
 
@@ -128,8 +128,15 @@ text-align:center;
 height:70%;
 }
 
-.bs-docs-home { 
-  background: url(/public/ico/bg2.jpg) no-repeat center center fixed; 
+.header {
+  display: table;
+  height: 70%;
+  width: 100%;
+  position: relative;
+}
+
+.bs-docs-home {
+  background: url(/public/ico/bg.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
