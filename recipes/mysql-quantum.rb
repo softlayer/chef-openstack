@@ -8,4 +8,5 @@ bash "create database for quantum" do
 			mysql -uroot -p#{node['mysql']['server_root_password']} -e "GRANT ALL PRIVILEGES ON #{node["quantum"]["db"]["name"]}.* TO '#{node["quantum"]["db"]["username"]}'@'localhost' IDENTIFIED BY '#{node["quantum"]["db"]["password"]}';"
 			mysql -uroot -p#{node['mysql']['server_root_password']} -e "GRANT ALL PRIVILEGES ON #{node["quantum"]["db"]["name"]}.* TO '#{node["quantum"]["db"]["username"]}'@'#{node[:controller][:private_ip]}' IDENTIFIED BY '#{node["quantum"]["db"]["password"]}';"
 		CODE
+		notifies :restart, resources(:service => 'mysql'), :immediately
 end
