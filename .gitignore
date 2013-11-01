@@ -1,20 +1,19 @@
-# BASIC
+# Basic
 # -----
 _site
 *.log
 *.vi
 *~
 .#*
-.githubsettings
 
-# OS & EDITORS
+# OS & Editos
 # ------------
 .DS_Store
 Thumbs.db
 .cache
 tmp
 
-# PROJECT
+# Project
 # -------
 .grunt
 node_modules
