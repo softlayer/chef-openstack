@@ -222,7 +222,7 @@ div.bs-buttons {
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
-  background: url(/public/ico/bg4.jpg) no-repeat center center fixed;
+  background: url(/public/img/bg7.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -255,7 +255,6 @@ div.bs-buttons {
   margin-right: 20px;
   padding: 0 20px;
   position: relative;
-  text-rendering: optimizelegibility;
   text-shadow: none;
   text-transform: uppercase;
   transition: all .1s ease 0;
