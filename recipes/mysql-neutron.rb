@@ -8,4 +8,5 @@ bash 'create database for neutron' do
     mysql -uroot -p#{node['mysql']['server_root_password']} -e "GRANT ALL PRIVILEGES ON #{node['neutron']['db']['name']}.* TO '#{node['neutron']['db']['username']}'@'localhost' IDENTIFIED BY '#{node['neutron']['db']['password']}';"
     mysql -uroot -p#{node['mysql']['server_root_password']} -e "GRANT ALL PRIVILEGES ON #{node['neutron']['db']['name']}.* TO '#{node['neutron']['db']['username']}'@'#{node[:controller][:private_ip]}' IDENTIFIED BY '#{node['neutron']['db']['password']}';"
   CODE
+  notifies :restart, resources(:service => 'mysql'), :immediately
 end

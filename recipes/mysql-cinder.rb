@@ -8,4 +8,5 @@ bash 'create database for cinder' do
     mysql -uroot -p#{node['mysql']['server_root_password']} -e "GRANT ALL PRIVILEGES ON #{node['cinder']['db']['name']}.* TO '#{node['cinder']['db']['username']}'@'localhost' IDENTIFIED BY '#{node['cinder']['db']['password']}';"
     mysql -uroot -p#{node['mysql']['server_root_password']} -e "GRANT ALL PRIVILEGES ON #{node['cinder']['db']['name']}.* TO '#{node['cinder']['db']['username']}'@'#{node[:cinder][:private_ip]}' IDENTIFIED BY '#{node['cinder']['db']['password']}';"
   CODE
+  notifies :restart, resources(:service => 'mysql'), :immediately
 end

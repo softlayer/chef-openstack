@@ -8,4 +8,5 @@ bash 'create database for nova' do
     mysql -uroot -p#{node['mysql']['server_root_password']} -e "GRANT ALL PRIVILEGES ON #{node['nova']['db']['name']}.* TO '#{node['nova']['db']['username']}'@'localhost' IDENTIFIED BY '#{node['nova']['db']['password']}';"
     mysql -uroot -p#{node['mysql']['server_root_password']} -e "GRANT ALL PRIVILEGES ON #{node['nova']['db']['name']}.* TO '#{node['nova']['db']['username']}'@'#{node[:controller][:private_ip]}' IDENTIFIED BY '#{node['nova']['db']['password']}';"
   CODE
+  notifies :restart, resources(:service => 'mysql'), :immediately
 end
