@@ -27,9 +27,10 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 .bs-header {
   background: none;
   background-color: #fff;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: none;
   padding: 0;
   text-shadow: none;
+  margin-top: 35px;
 }
 
 .bs-header h1 {
@@ -45,11 +46,14 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 
 .bs-header p {
   color: #222;
-  visibility: hidden;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 500;
   margin-right: 0;
-  margin-left: 292px;
+  margin-left: 0;
+  margin-bottom: 10px;
+  line-height: 0;
+  margin-top: 10px;
+  padding-top: 20px;
 }
 
 .bs-footer {
@@ -80,8 +84,8 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,header,.bs-d
 }
 
 h1[id] {
-  margin-top: 20px;
-  padding-top: 20px;
+  margin-top: 50px;
+  padding-top: 0;
 }
 
 h1,.h1 {
@@ -93,14 +97,14 @@ h1,.h1 {
 
 h2,.h2 {
   border-bottom: 1px solid #e5e5e5;
-  font-size: 30px;
+  font-size: 28px;
   margin-bottom: 10px;
   padding-bottom: 6px;
   padding-top: 20px;
 }
 
 h3,.h3 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   padding-top: 10px;
 }
@@ -129,11 +133,11 @@ code {
 }
 
 .bs-sidenav {
-  background: #f5f5f5;
+  background: #f0f0f0;
   float: left;
   font-family: helvetica, arial, sans-serif;
   font-size: 14px;
-  margin-top: 44px;
+  margin-top: 55px;
   min-width: 260px;
   text-shadow: none;
   width: 21%;
@@ -363,4 +367,14 @@ footer {
 
 .typekit-badge {
   display: none !important;
+}
+
+a#version-selector.dropdown-toggle {
+color: #222;
+font-size: 14px;
+padding: 4px 0;
+}
+
+.dropdown {
+text-align: left;
 }

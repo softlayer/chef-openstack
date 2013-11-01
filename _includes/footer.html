@@ -6,7 +6,7 @@
   <script src="{{ page.baseurl }}public/js/holder.min.js"></script>
   <script src="{{ page.baseurl }}public/js/application.min.js"></script>
 
-<!-- JS for Side Menu -->
+<!-- Side Menu -->
   <script>
       $("#menu-close").click(function(e) {
           e.preventDefault();
@@ -37,6 +37,12 @@
         });
       });
     </script>
+
+<!-- Version Selector -->
+  <script>
+      $('#version-selector').on('show.bs.dropdown', function () {
+      })
+  </script>
 
 <ul class="bs-masthead-links">
   <li><a href="{{ site.www }}" target="_blank">© 2013 SoftLayer Technologies, Inc.</a></li>

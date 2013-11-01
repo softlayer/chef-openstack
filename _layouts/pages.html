@@ -12,12 +12,18 @@
     
     <div class="bs-header" id="content">
       <div class="container">
-        <h1>{{ page.title }}</h1>
-        <p>{{ page.lead }}</p>
+        <div class="dropdown">
+            <p>{{ page.tag }} Release</p>
+              <a href="#" id="version-selector" role="button" class="dropdown-toggle" data-toggle="dropdown">Switch to another version <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="version-selector">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}havana-getting-started">Havana</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}grizzly-getting-started">Grizzly</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}">Back to Home</a></li>
+              </ul>
+        </div>
       </div>
     </div>
-
-    <!--  {% include callout.html %} -->
 
     <div class="container bs-docs-container">
       <div class="row">
@@ -35,7 +41,7 @@
 
               <!-- Havana "Getting Started" pages -->
               {% elsif page.slug == "havana-getting-started" %}
-                {% include nav-getting-started.html %}
+                {% include nav-havana-getting-started.html %}
               {% elsif page.slug == "havana-chef-openstack" %}
                 {% include nav-chef-openstack.html %}
               {% elsif page.slug == "havana-install-openstack" %}
@@ -55,7 +61,7 @@
 
               <!-- Grizzly "Getting Started" pages -->
               {% elsif page.slug == "grizzly-getting-started" %}
-                {% include nav-getting-started.html %}
+                {% include nav-grizzly-getting-started.html %}
               {% elsif page.slug == "grizzly-chef-openstack" %}
                 {% include nav-chef-openstack.html %}
               {% elsif page.slug == "grizzly-install-openstack" %}
