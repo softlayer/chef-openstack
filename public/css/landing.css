@@ -129,42 +129,14 @@ i.service-icon:hover {
   font-size: 68px;
 }
 
-.callout {
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
-  background: url(../img/section-two.JPG) no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  display: table;
-  height: 400px;
-  width: 100%;
-}
-
-.portfolio-item {
-  margin-bottom: 25px;
-}
-
-.img-portfolio {
-  margin: 0 auto;
-}
-
-.call-to-action {
-  background: #0a5175;
-  color: #fff;
-  padding: 50px 0;
-}
-
-.call-to-action .btn {
-  margin: 10px;
-}
-
 h1,.h1 {
   border-bottom: none;
   margin-top: 40px;
 }
 
-a,a:hover,a:focus,.navbar-inverse .navbar-nav > li > a:hover,.navbar-inverse .navbar-nav > li > a:focus {
+a,a:hover,a:focus,
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
   color: #fff;
 }
 
@@ -193,7 +165,7 @@ padding: 50px 0 0;
 }
 
 .vert-text .lead {
-  font-family: "Myriad Pro", Helvetica, Arial, Sans-serif;
+  font-family: helvetica, arial, sans-serif;
   font-size: 26px;
 }
 
@@ -232,17 +204,13 @@ div.bs-buttons {
   color: #fff;
 }
 
-.intro,.portfolio {
-  padding: 50px 0;
-}
-
-.btn-info,.btn-info:hover,.btn-info:focus {
+.btn-info,
+.btn-info:hover,
+.btn-info:focus {
   background-color: #27ae60;
   background-image: none;
   border: #27ae60 solid 1px;
-  border-color: 0 0 rgba(0,0,0,0.9);
   border-radius: 6px;
-  box-shadow: none;
   color: #fff;
   cursor: pointer;
   font-family: freight-sans-pro, helvetica, arial, sans-serif;
@@ -251,8 +219,7 @@ div.bs-buttons {
   font-weight: 500;
   height: 40px;
   line-height: 39px;
-  margin-bottom: 20px;
-  margin-right: 20px;
+  margin: 0 20px 20px 0;
   padding: 0 20px;
   position: relative;
   text-shadow: none;
