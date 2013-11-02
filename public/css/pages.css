@@ -1,5 +1,5 @@
 body {
-line-height: 1.45;
+line-height: 1.5;
 }
 
 article,aside,details,figcaption,figure,hgroup,main,section,summary,.bs-docs-home,.bs-masthead {
@@ -79,27 +79,27 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,.bs-docs-hom
 }
 
 h1[id] {
-  margin-top: 50px;
+  margin-top: 60px;
   padding-top: 0;
 }
 
 h1,.h1 {
+  border-bottom: 1px solid #f2f2f2;
   font-size: 36px;
-  margin-bottom: 4px;
+  margin-bottom: 20px;
   margin-top: 14px;
   padding-bottom: 10px;
 }
 
 h2,.h2 {
-  border-bottom: 1px solid #e7e7e7;
   font-size: 28px;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   padding-bottom: 6px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 h3,.h3 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   padding-top: 10px;
 }
@@ -164,22 +164,22 @@ ul,ol {
 }
 
 pre {
-  background: #3d3f41;
-  border: #3d3f41 solid 1px;
+  background: #333;
+  border: #333 solid 1px;
   border-radius: 4px;
   color: #fff;
   font-size: 13.5px;
-  line-height: 1.45;
+  line-height: 1.5;
   margin: 10px 0 20px;
 }
 
 output pre {
-  background: #f9f9f9;
+  background: #f8f8f8;
   border: #e7e7e7 solid 1px;
   border-radius: 4px;
   color: #777;
   font-size: 13.5px;
-  line-height: 1.45;
+  line-height: 1.5;
   margin: 0 0 20px;
 }
 
@@ -214,7 +214,7 @@ output pre {
 }
 
 p {
-  line-height: 1.45;
+  line-height: 1.5;
   margin-bottom: 20px;
 }
 
@@ -358,11 +358,19 @@ div#component-table.table-responsive {
 }
 
 .divider {
-  background: none repeat scroll 0 0 #fff;
+  background: none repeat scroll 0 0 #e7e7e7;
   height: 2px;
   margin: 30px auto 60px;
   opacity: 0.2;
   width: 50px;
+}
+
+.page-divider {
+  background: none repeat scroll 0 0 #999;
+  height: 2px;
+  margin: 30px auto 60px;
+  opacity: 0.2;
+  width:70px;
 }
 
 footer {
@@ -384,12 +392,11 @@ text-align: left;
 }
 
 .bs-sidebar.affix .bs-sidenav {
-    margin-top: 24px;
+    margin-top: 34px;
     margin-bottom: 0;
 }
 
 .breadcrumb {
-background-color:#f7f7f7;
 display: none;
 }
 
