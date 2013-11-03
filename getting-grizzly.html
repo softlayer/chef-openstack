@@ -15,19 +15,14 @@ baseurl: "../"
   <div class="row">
     <div class="col-12 col-lg-6">
       <h2><a href="#about">1. About Chef and OpenStack</a></h2>
-
       <p><a href="#about-chef">About Chef</a></p>
-
       <p><a href="#about-openstack">About OpenStack</a></p>
     </div>
 
     <div class="col-12 col-lg-6">
       <h2><a href="#requirements">2. Requirements</a></h2>
-
       <p><a href="#node-requirements">Node Requirements</a></p>
-
       <p><a href="#software-requirements">Software Requirements</a></p>
-
       <p><a href="#networking-requirements">Networking Requirements</a></p>
     </div>
   </div>
@@ -35,23 +30,16 @@ baseurl: "../"
   <div class="row">
     <div class="col-12 col-lg-6">
       <h2><a href="#install">3. Installation</a></h2>
-
       <p><a href="#install-chef">Install Chef</a></p>
-
       <p><a href="#install-openstack">Install OpenStack</a></p>
-
       <p><a href="#install-bootstrap-nodes">Bootstrap Your Nodes</a></p>
-
       <p><a href="#install-chef-nodes">Chef Your Nodes</a></p>
     </div>
 
     <div class="col-12 col-lg-6">
       <h2><a href="#using">4. Using OpenStack</a></h2>
-
       <p><a href="#using-private-cloud">Using Your Private Cloud</a></p>
-
       <p><a href="#using-our-tools">Using Our DevOps Tools</a></p>
-
       <p><a href="#using-deployments">Scaling and Branching Deployments</a></p>
     </div>
   </div>
@@ -59,19 +47,14 @@ baseurl: "../"
   <div class="row">
     <div class="col-12 col-lg-6">
       <h2><a href="#test">5. Testing OpenStack</a></h2>
-
       <p><a href="#test-connectivity">Test Connectivity</a></p>
-
       <p><a href="#test-your-install">Test Your Install</a></p>
     </div>
 
     <div class="col-12 col-lg-6">
       <h2><a href="#sandbox">6. All-in-One Sandbox</a></h2>
-
       <p><a href="#sandbox-creation">Create Your Own Sandbox</a></p>
-
-      <p><a href="#sandbox-vagrant">Working with Vagrant</a></p>
-
+      <p><a href="#sandbox-vagrant">Introduction to Vagrant</a></p>
       <p><a href="#sandbox-install-process">Installation Process</a></p>
     </div>
   </div>
@@ -79,18 +62,14 @@ baseurl: "../"
   <div class="row">
     <div class="col-12 col-lg-6">
       <h2><a href="#scenario">7. Use Scenario</a></h2>
-
       <p><a href="#scenario-softcube">SoftCube</a></p>
     </div>
 
     <div class="col-12 col-lg-6">
       <h2><a href="#support">8. Find Support</a></h2>
-
       <p><a href="#support-resources">Technical Resources</a></p>
-
-      <p><a href="#support-components">Definitions for OpenStack Components</a></p>
-
-      <p><a href="#support-terms">Definitions for OpenStack Terms</a></p>
+      <p><a href="#support-components">Definitions for Components</a></p>
+      <p><a href="#support-terms">Definitions for Terms</a></p>
     </div>
   </div>
 </div>
@@ -117,7 +96,7 @@ relies on these to tell it how to configure each node in your organization. You 
 and settings—-with the same Chef server. Visit <a href="https://learnchef.opscode.com">https://learnchef.opscode.com</a> for more
 information.</p>
 
-<p><img class="img-thumbnail" src="{{ page.baseurl }}assets/img/chef-openstack/001.jpg"></p>
+<p><img class="img-thumbnail" id="no-height" src="{{ page.baseurl }}assets/img/chef-openstack/001.jpg"></p>
 
 <h2 id="about-openstack">About OpenStack</h2>
 
@@ -131,7 +110,6 @@ command-line tools has helped it gain a lot of traction in only a few short year
 <p>Visit <a href="http://docs.openstack.org">http://docs.openstack.org</a> for more information.</p>
 
 <!-- Requirements -->
-<br>
 
 <div class="page-divider"></div>
 
@@ -319,7 +297,7 @@ repository.</p>
 physical interfaces and one virtual interface). Refer to the following diagram to determine how various components and are connected, and
 the networks they&#8217;re connected to.</p>
 
-<p><img class="img-thumbnail" src="{{ page.baseurl }}assets/img/requirements/001.jpg"></p>
+<p><img class="img-thumbnail" id="custom-height" src="{{ page.baseurl }}assets/img/requirements/001.png"></p>
 
 <p>For OpenStack private cloud deployments, we recommend following best practices to secure your public network, exposing only the systems
 and services that you wish to make available over the Internet.</p>
@@ -439,7 +417,6 @@ you will have to purchase by allowing all compute instances to have outbound net
 
 <ul>
   <li>172.16.0.0/12 (or 172.16.0.0 - 172.31.255.255)</li>
-
   <li>192.168.0.0/16 (or 192.168.0.0 - 192.168.255.255)</li>
 </ul>
 
@@ -451,7 +428,6 @@ within 10.0.0.0/8 is very likely to conflict and cause unforeseen problems, sinc
 the SoftLayer Private Network.</p>
 
 <!-- Installation -->
-<br>
 
 <div class="page-divider"></div>
 
@@ -467,8 +443,8 @@ your nodes to achieve a functional private cloud installation.</p>
 
 <h2 id="install-chef">Install Chef</h2>
 
-<p><strong>You must install Chef Server first, and the Chef Server should be accessible by what will become your OpenStack nodes on ports
-443 and 80.</strong></p>
+<div class="alert alert-info">You must install Chef Server first, and the Chef Server should be accessible by what will become your OpenStack nodes on ports
+443 and 80.</div>
 
 <p>The Chef server acts as a hub for configuration data. It stores cookbooks, policies applied to each node, and metadata that describes
 each registered Chef node being managed by the chef-client command. Nodes use the <code>chef-client</code> command to ask the server for
@@ -584,15 +560,13 @@ $ git clone https://github.com/opscode-cookbooks/openssl</code>
 <p>The needed OpenStack roles are packaged within the private cloud repository. Copy the roles from the <code>grizzly/</code> directory to
 the <code>~/chef-repo/roles</code> directory.</p>
 <pre>
-<code>$ cp -r ~/chef-repo/cookbooks/TODO:PUBLIC_REPO_NAME/roles ~/chef-repo/roles
-</code>
+<code>$ cp -r ~/chef-repo/cookbooks/TODO:PUBLIC_REPO_NAME/roles ~/chef-repo/roles</code>
 </pre>
 
 <p>Finally, upload the cookbooks and roles to your Chef server for deployment to remote nodes:</p>
 <pre>
 <code>$ knife cookbook upload --all
-$ knife role from file ~/chef-repo/roles/*
-</code>
+$ knife role from file ~/chef-repo/roles/*</code>
 </pre>
 
 <p>If you get any errors during the upload, check that your <code>cookbook_path</code> and <code>role_path</code> are set correctly in the
@@ -761,7 +735,6 @@ knife ssh &#39;name:FQDN_3&#39; &#39;sudo chef-client&#39;</code>
 </pre>
 
 <!-- Using OpenStack -->
-<br>
 
 <div class="page-divider"></div>
 
@@ -801,9 +774,9 @@ instances. This is an example of the information that you can access through the
 <code># nova image-list</code>
 </pre>
 
-<p>The output should look similar to this:</p><output></output>
-<pre>
-<output>+--------------------------------------+-----------------------------------+--------+--------+
+<p>The output should look similar to this:</p>
+<output><pre>
++--------------------------------------+-----------------------------------+--------+--------+
 | ID                                   | Name                              | Status | Server |
 +--------------------------------------+-----------------------------------+--------+--------+
 | 3470a8b5-46a7-442b-ac75-7c8f663e271d | CirrOS 0.3.0 i386                 | ACTIVE |        |
@@ -819,17 +792,16 @@ instances. This is an example of the information that you can access through the
 | 668e92c6-b6c0-4f9e-bf0d-078ede9667e9 | Ubuntu 13.04 Server (Cloud) amd64 | ACTIVE |        |
 | 169fc708-cdbf-4dd3-a106-ced48a88922f | Ubuntu 13.04 Server (Cloud) i386  | ACTIVE |        |
 +--------------------------------------+-----------------------------------+--------+--------+
-</output>
-</pre>
+</pre></output>
 
 <p>To launch an instance, find the image ID and flavor name you would like to use.</p>
 <pre>
 <code># nova boot --flavor=2 --image=2baacb65-fa9d-4707-9856-5b6d5803d63e ubuntu</code>
 </pre>
 
-<p>The output should look similar to this:</p><output></output>
-<pre>
-<output>+-------------------------------------+--------------------------------------+
+<p>The output should look similar to this:</p>
+<output><pre>
++-------------------------------------+--------------------------------------+
 | Property                            | Value                                |
 +-------------------------------------+--------------------------------------+
 | status                              | BUILD                                |
@@ -859,8 +831,7 @@ instances. This is an example of the information that you can access through the
 | OS-EXT-AZ:availability_zone         | nova                                 |
 | config_drive                        |                                      |
 +-------------------------------------+--------------------------------------+
-</output>
-</pre>
+</pre></output>
 
 <p>You can also view the status of the controller and compute nodes and the Nova components active on each while logged in as the root
 user.</p>
@@ -868,16 +839,15 @@ user.</p>
 <code># nova-manage service list</code>
 </pre>
 
-<p>The output should look similar to this:</p><output></output>
-<pre>
-<output>Binary Host Zone Status State Updated_At
+<p>The output should look similar to this:</p>
+<output><pre>
+Binary Host Zone Status State Updated_At
 nova-conductor control1 nova enabled :-) 2013-09-20 10:41:39
 nova-cert control1 nova enabled :-) 2013-09-20 10:41:36
 nova-scheduler control1 nova enabled :-) 2013-09-20 10:41:34
 nova-consoleauth control1 nova enabled :-) 2013-09-20 10:41:41
 nova-compute compute2 nova enabled :-) 2013-09-20 10:41:35
-</output>
-</pre>
+</pre></output>
 
 <p>You can also view logs with the tail command. For example, to view nova-compute.log on your compute node(s), execute the following
 command:</p>
@@ -891,9 +861,9 @@ your network and compute nodes.</p>
 <code># quantum agent-list</code>
 </pre>
 
-<p>The output should look similar to this:</p><output></output>
-<pre>
-<output>+--------------------------------------+--------------------+----------+-------+----------------+
+<p>The output should look similar to this:</p>
+<output><pre>
++--------------------------------------+--------------------+----------+-------+----------------+
 | id                                   | agent_type         | host     | alive | admin_state_up |
 +--------------------------------------+--------------------+----------+-------+----------------+
 | 42b5f9cb-7244-499d-826a-2a056d987c44 | Open vSwitch agent | compute2 | :-)   | True           |
@@ -901,8 +871,7 @@ your network and compute nodes.</p>
 | 8eb94efa-8f41-44c8-8dc0-1387959de7be | DHCP agent         | network3 | :-)   | True           |
 | d6fdc505-094b-4bcd-9cca-32410aa5e6e3 | L3 agent           | network3 | :-)   | True           |
 +--------------------------------------+--------------------+----------+-------+----------------+
-</output>
-</pre>
+</pre></output>
 
 <h3>Accessing the Horizon Dashboard</h3>
 
@@ -942,7 +911,6 @@ pip install python-glanceclient</code>
 
 <ol>
   <li>sl, a command line tool to view and manage SoftLayer resources (using our Python client library)</li>
-
   <li>swftp-chef, a Chef cookbook for swftp, our <span class="caps">SFTP</span>/SCP-based interface to Swift Object Storage</li>
 </ol>
 <p>
@@ -1043,7 +1011,7 @@ sole component on that system.</p>
 <p>The components (roles) can be branched into the traditional three-node OpenStack model.</p>
 
 <div class="table-responsive" id="component-table">
-  <table class="table table-bordered table-hover">
+  <table class="table table-hover" id="no-borders">
     <thead>
       <tr>
         <th>Server</th>
@@ -1109,7 +1077,7 @@ actually be split and scaled out to suit environments with heavy database churn 
 distribute load:</p>
 
 <div class="table-responsive" id="component-table">
-  <table class="table table-bordered table-hover">
+  <table class="table table-hover" id="no-borders">
     <thead>
       <tr>
         <th>Server</th>
@@ -1222,7 +1190,6 @@ distribute load:</p>
 flexibility allows you to use the hardware you already have more effectively—before having to spend money on beefier hardware.</p>
 
 <!-- Testing OpenStack -->
-<br>
 
 <div class="page-divider"></div>
 
@@ -1286,9 +1253,8 @@ be sure to update your bash environment with the correct OpenStack variables to 
 <code># source .openrc</code>
 </pre>
 
-<h3>Nova</h3><output></output>
-<pre>
-<output>root@control1:~# nova-manage service list 
+<h3>Nova</h3>
+<output><pre>root@control1:~# nova-manage service list 
 
 Binary           Host      Zone             Status     State Updated_At                                                                         
 nova-cert        control1  internal         enabled    :-)   2013-09-03 15:21:29
@@ -1296,15 +1262,13 @@ nova-scheduler   control1  internal         enabled    :-)   2013-09-03 15:21:29
 nova-conductor   control1  internal         enabled    :-)   2013-09-03 15:21:29
 nova-consoleauth control1  internal         enabled    :-)   2013-09-03 15:21:30
 nova-compute     compute2  nova             enabled    :-)   2013-09-03 15:21:23
-</output>
-</pre>
+</pre></output>
 
 <p>Each service or agent will display a&nbsp;<code>:-)</code>&nbsp;if they are running correctly, and&nbsp;<code>XX</code>&nbsp;if they are
 not.</p>
 
-<h3>Quantum/Neutron</h3><output></output>
-<pre>
-<output>root@control1:~# quantum agent-list
+<h3>Quantum/Neutron</h3>
+<output><pre>root@control1:~# quantum agent-list
 
 +--------------------------------------+--------------------+----------+-------+----------------+                                                
 | id                                   | agent_type         | host     | alive | admin_state_up |
@@ -1314,14 +1278,15 @@ not.</p>
 | 98c3d818-0ebe-4cd6-89bf-0f107a7532ab | DHCP agent         | network3 | :-)   | True           |
 | dd3b9134-ab76-440a-ba7a-70135202eb82 | Open vSwitch agent | network3 | :-)   | True           |
 +--------------------------------------+--------------------+----------+-------+----------------+
-</output>
-</pre>
+</pre></output>
 
 <p>Each service or agent will display a <code>:-)</code> if they are running correctly, and&nbsp;<code>XX</code> if they are not.</p>
 
-<h3>Glance</h3><output></output>
-<pre>
-<output>root@control1:~# glance image-list
+<h3>Glance</h3>
+
+
+<output><pre class="nowrap">
+<div style="width:828px; overflow-x: scroll; overflow-y: hidden;">root@control1:~# glance image-list
 
 +--------------------------------------+-----------------------------------+-------------+------------------+-----------+--------+
 | ID                                   | Name                              | Disk Format | Container Format | Size      | Status |
@@ -1339,23 +1304,22 @@ not.</p>
 | 668e92c6-b6c0-4f9e-bf0d-078ede9667e9 | Ubuntu 13.04 Server (Cloud) amd64 | qcow2       | bare             | 235143168 | active |
 | 169fc708-cdbf-4dd3-a106-ced48a88922f | Ubuntu 13.04 Server (Cloud) i386  | qcow2       | bare             | 233308160 | active |
 +--------------------------------------+-----------------------------------+-------------+------------------+-----------+--------+
-</output>
-</pre>
+</div></pre></output>
 
 <h3>Cinder</h3>
 
 <p>If you haven't created any Cinder volumes yet, this command will return nothing. Otherwise, a list of created volumes will be
-returned.</p><output></output>
-<pre>
-<output>root@control1:~# cinder list
+returned.</p>
+
+<output><pre class="nowrap">
+<div style="width:828px; overflow-x: scroll; overflow-y: hidden;">root@control1:~# cinder list
 
 +--------------------------------------+-----------+--------------+------+-------------+----------+-------------+
 |                  ID                  |   Status  | Display Name | Size | Volume Type | Bootable | Attached to |
 +--------------------------------------+-----------+--------------+------+-------------+----------+-------------+
 | e60def40-03a0-4e08-a9e5-3f60be89ad57 | available |     test     |  1   |     None    |  false   |             |
 +--------------------------------------+-----------+--------------+------+-------------+----------+-------------+
-</output>
-</pre>
+</div></pre></output>
 
 <h3>Keystone</h3>
 
@@ -1365,9 +1329,8 @@ accounts, OpenStack component communication, or authentication problems.</p>
 <p>For detailed information on troubleshooting and debugging Keystone, please refer to its documentation at <a href=
 "http://docs.openstack.org/">http://docs.openstack.org</a>.</p>
 
-<h4>Check Keystone Users</h4><output></output>
-<pre>
-<output>root@control1:~# keystone user-list
+<h4>Check Keystone Users</h4>
+<output><pre>root@control1:~# keystone user-list
 
 +----------------------------------+----------+---------+--------------------+
 |                id                |   name   | enabled |       email        |
@@ -1379,12 +1342,10 @@ accounts, OpenStack component communication, or authentication problems.</p>
 | 62a9c425721f48d8892a9132e23ede03 |   nova   |   True  |   nova@localhost   |
 | b22df525c6714c259189fd2da82b72af | quantum  |   True  | quantum@localhost  |
 +----------------------------------+----------+---------+--------------------+
-</output>
-</pre>
+</pre></output>
 
-<h4>Check Keystone Tenants</h4><output></output>
-<pre>
-<output>root@control1:~# keystone tenant-list
+<h4>Check Keystone Tenants</h4>
+<output><pre>root@control1:~# keystone tenant-list
 
 +----------------------------------+--------------------+---------+
 |                id                |        name        | enabled |
@@ -1394,12 +1355,10 @@ accounts, OpenStack component communication, or authentication problems.</p>
 | be05a0ac2e034f3aa43ac06a90943a14 | invisible_to_admin |   True  |
 | cc0804251a5145c485ad87ab384350be |      service       |   True  |
 +----------------------------------+--------------------+---------+
-</output>
-</pre>
+</pre></output>
 
-<h4>Check Keystone Services</h4><output></output>
-<pre>
-<output>root@control1:~# keystone service-list
+<h4>Check Keystone Services</h4>
+<output><pre>root@control1:~# keystone service-list
 
 +----------------------------------+----------+----------+------------------------------+
 |                id                |   name   |   type   |         description          |
@@ -1411,16 +1370,16 @@ accounts, OpenStack component communication, or authentication problems.</p>
 | 8f50ec8454b9432b94cd7d68172dc98a |   nova   | compute  |  OpenStack Compute Service   |
 | 3de9a5a7e57943739f59c014554ea602 | quantum  | network  | OpenStack Networking service |
 +----------------------------------+----------+----------+------------------------------+
-</output>
-</pre>
+</pre></output>
 
 <p>Keystone endpoints are extremely important and can cripple your deployment when not configured correctly. However, Chef wires up the
 necessary endpoint information correctly during deployment. In any event, checking the endpoint list to make sure it's correct is always a
 good idea when troubleshooting issues connecting or authenticating to Keystone. Each endpoint should correspond to the correct server in
 your cluster. Note that the ports in the example below are the defaults, and may vary if you've overridden the default attributes for
-them.</p><output></output>
-<pre>
-<output>root@openstack1:~# keystone endpoint-list
+them.</p>
+
+<output><pre class="nowrap">
+<div style="width:828px; overflow-x: scroll; overflow-y: hidden;">root@openstack1:~# keystone endpoint-list
 
 +----------------------------------+---------+-------------------------------------------+-------------------------------------------+-------------------------------------------+----------------------------------+
 |                id                |  region |                 publicurl                 |                internalurl                |                  adminurl                 |            service_id            |
@@ -1432,11 +1391,9 @@ them.</p><output></output>
 | e81953d02428499bb981e78be560bc88 | Region  |        http://XX.XX.XX.XX:9292/v2         |        http://XX.XX.XX.XX:9292/v2         |        http://XX.XX.XX.XX:9292/v2         | 844e120b3b594f68838e6b0e5a227427 |
 | f560ac6915f241019b95e103146326dd | Region  | http://XX.XX.XX.XX:8774/v2/$(tenant_id)s  | http://XX.XX.XX.XX:8774/v2/$(tenant_id)s  | http://XX.XX.XX.XX:8774/v2/$(tenant_id)s  | 8f50ec8454b9432b94cd7d68172dc98a |
 +----------------------------------+---------+-------------------------------------------+-------------------------------------------+-------------------------------------------+----------------------------------+
-</output>
-</pre>
+</div></pre></output>
 
 <!-- All-in-One Sandbox -->
-<br>
 
 <div class="page-divider"></div>
 
@@ -1590,7 +1547,6 @@ a production environment, and will work for Microsoft Windows and most Linux dis
     <p><img class="img-thumbnail" src="{{ page.baseurl }}assets/img/sandbox/010.png"></p>
   </li>
 </ol><!-- Use Scenario -->
-<br>
 
 <div class="page-divider"></div>
 
@@ -1807,7 +1763,6 @@ assigning Floating IPs, which is our next step.</p>
 <p>Looks like SoftCube is well on its way to a successful future in the private cloud.</p>
 
 <!-- Find Support -->
-<br>
 
 <div class="page-divider"></div>
 

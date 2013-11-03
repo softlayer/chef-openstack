@@ -176,11 +176,14 @@ pre {
 output pre {
   background: #f8f8f8;
   border: #e7e7e7 solid 1px;
-  border-radius: 4px;
+  border-radius: 6px;
   color: #777;
   font-size: 13.5px;
-  line-height: 1.5;
-  margin: 0 0 20px;
+  margin: -10px 0 20px;
+}
+
+pre.nowrap {
+  white-space: pre;
 }
 
 .row .col-lg-6 h2 {
@@ -188,6 +191,7 @@ output pre {
   color: #222;
   font-size: 25px;
   font-weight: 500;
+  margin-bottom: 0;
 }
 
 .row .col-lg-6 h2 a {
@@ -409,6 +413,27 @@ b.caret {
 }
 
 .img-thumbnail {
-height: 354px;
-margin-top: 14px
+  height: 354px;
+  margin-top: 14px
+}
+
+img#no-height.img-thumbnail {
+  height: auto;
+  margin-top: 0;
+}
+
+img#custom-height.img-thumbnail {
+  height: 500px;
+  margin-top: 0;
+}
+
+TABLE#no-borders.table.table-hover > thead {
+background: transparent;
+color: #333;
+border: none;
+}
+
+TABLE#no-borders.table.table-hover > thead > tr > th {
+color: #333;
+text-align: left;
 }
