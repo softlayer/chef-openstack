@@ -1,0 +1,20 @@
+/* Chef-OpenStack is the creation of SoftLayer, a global cloud infrastructure provider based in Dallas, TX */
+/* softlayer.com */
+/* humanstxt.org */
+
+/* TEAM */
+  Product Manager: Michael O'Rourke
+  Twitter: @caleorourke
+  Location: Dallas, TX
+
+/* THANKS */
+  Twitter Bootstrap: http://getbootstrap.com
+  Mixture: http://mixture.io
+  ZURB Foundation: http://foundation.zurb.com
+
+/* SITE */
+  Last update: 2013/11/03
+  Language: English
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery, Reveal
+  Software: Sublime Text, Git, Mixture, Jekyll

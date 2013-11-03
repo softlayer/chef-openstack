@@ -310,14 +310,6 @@ div#component-table.table-responsive {
   margin-top: -100px;
 }
 
-.pager > .next > a,
-.pager > .disabled > a,
-.pager > .previous > a {
-  float: none;
-  padding: 6px;
-  width: 100px;
-}
-
 .bs-docs-nav .navbar-toggle {
   border-color: #fff;
 }
@@ -370,7 +362,7 @@ div#component-table.table-responsive {
   height: 2px;
   margin: 30px auto 60px;
   opacity: 0.2;
-  width:70px;
+  width: 70px;
 }
 
 footer {
@@ -382,33 +374,36 @@ footer {
 }
 
 a#version-selector.dropdown-toggle {
-color: #222;
-font-size: 14px;
-padding: 4px 0;
-}
-
-.dropdown {
-text-align: left;
+  color: #999;
+  font-size: 14px;
+  padding: 0 20px;
 }
 
 .bs-sidebar.affix .bs-sidenav {
-    margin-top: 34px;
-    margin-bottom: 0;
-}
-
-.breadcrumb {
-display: none;
-}
-
-.dropdown {
-visibility: hidden;
+  margin-top: 34px;
+  margin-bottom: 0;
 }
 
 .bs-header {
-display: none;
+  display: none;
 }
 
 .bs-docs-nav .navbar-nav > li > a:focus,
 .bs-docs-nav .navbar-nav > li > a:hover {
-color:#333;
+  color:#333;
+}
+
+b.caret {
+  color: #999;
+}
+
+.bs-sidebar .nav .nav > li > a {
+  padding-top: 2px;
+  padding-bottom: 0px;
+  font-size: 95%;
+}
+
+.bs-docs-nav .navbar-nav > .active > a, .bs-docs-nav .navbar-nav > .active > a:hover {
+  background-color: transparent;
+  color: #333
 }
