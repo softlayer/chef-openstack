@@ -150,7 +150,7 @@ code {
 .bs-sidebar .nav > li > a:hover,
 .bs-sidebar .nav > li > a:focus {
   background: #e7e7e7;
-  border-right: 1px solid #34495e;
+  border-right: none;
   text-decoration: none;
 }
 
@@ -331,7 +331,7 @@ div#component-table.table-responsive {
 .bs-sidebar .nav > .active:focus > a {
 
   background-color: transparent;
-  border-right: 1px solid #222;
+  border-right: none;
   color: #222;
   font-weight: 400;
 }
@@ -404,7 +404,7 @@ b.caret {
 .bs-sidebar .nav .nav > li > a {
   padding-top: 2px;
   padding-bottom: 0px;
-  font-size: 95%;
+  font-size: 96%;
 }
 
 .bs-docs-nav .navbar-nav > .active > a, .bs-docs-nav .navbar-nav > .active > a:hover {
@@ -436,4 +436,23 @@ border: none;
 TABLE#no-borders.table.table-hover > thead > tr > th {
 color: #333;
 text-align: left;
+}
+
+.callout {
+border-top:#f2f2f2;
+color:#777;
+background-color:none;
+}
+
+.callout a:hover,.callout a:focus {
+color:#777;
+font-weight:700;
+border-bottom:1px dotted #777;
+}
+
+.callout a {
+font-color:#77;
+font-weight:700;
+color:#777;
+padding-bottom:2px;
 }

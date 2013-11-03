@@ -1,13 +1,13 @@
 ---
 layout: pages
-title: Getting Started (Grizzly)
+title: Getting Started
 tag: Grizzly
 slug: getting-grizzly
 baseurl: "../"
 ---
 
 <div class="bs-docs-section">
-  <h1 id="getting-started">Getting Started</h1>
+  <h1 id="getting-started">Getting Started: Grizzly Release</h1>
 
   <p>Our guide provides an overview for installing, configuring, deploying, and supporting OpenStack and Chef. Simply click any topic and
   get started.</p>
@@ -544,7 +544,7 @@ Chef Server. To do this, prepare a default Chef directory structure with this co
 <p>Change directory into <code>~/chef-repo/cookbooks</code> and then download the private cloud repository:</p>
 <pre>
 <code>$ cd chef-repo/cookbooks
-$ git clone https://github.com/softlayer/TODO:PUBLIC_REPO_NAME</code>
+$ git clone https://github.com/softlayer/chef-openstack</code>
 </pre>
 
 <p>The private cloud repository also depends on several Opscode cookbooks. Download them into the <code>~/chef-repo/cookbooks</code>
@@ -557,10 +557,10 @@ $ git clone https://github.com/opscode-cookbooks/build-essential
 $ git clone https://github.com/opscode-cookbooks/openssl</code>
 </pre>
 
-<p>The needed OpenStack roles are packaged within the private cloud repository. Copy the roles from the <code>grizzly/</code> directory to
+<p>The needed OpenStack roles are packaged within the private cloud repository. Copy the roles from the <code>chef-openstack/</code> directory to
 the <code>~/chef-repo/roles</code> directory.</p>
 <pre>
-<code>$ cp -r ~/chef-repo/cookbooks/TODO:PUBLIC_REPO_NAME/roles ~/chef-repo/roles</code>
+<code>$ cp -r ~/chef-repo/cookbooks/chef-openstack/roles ~/chef-repo/roles</code>
 </pre>
 
 <p>Finally, upload the cookbooks and roles to your Chef server for deployment to remote nodes:</p>
@@ -701,7 +701,7 @@ FQDN: control1.example.com
 IP: XX.XX.XX.XX
 Run List: role[grizzly-mysql-cinder], role[grizzly-mysql-glance], role[grizzly-mysql-keystone], role[grizzly-mysql-nova], role[grizzly-mysql-quantum], role[grizzly-rabbitmq], role[grizzly-keystone], role[grizzly-controller], role[grizzly-cinder], role[grizzly-glance]
 Roles: grizzly-mysql-cinder, grizzly-mysql-glance, grizzly-mysql-keystone, grizzly-mysql-nova, grizzly-mysql-quantum, grizzly-rabbitmq, grizzly-keystone, grizzly-controller, grizzly-cinder, grizzly-glance
-Recipes: grizzly::set_attributes, grizzly::set_cloudnetwork, ntp, grizzly::mysql-cinder, grizzly::mysql-glance, grizzly::mysql-keystone, grizzly::mysql-nova, grizzly::mysql-quantum, grizzly::ip_forwarding, grizzly::repositories, grizzly::rabbitmq-server, grizzly::keystone, grizzly::quantum-controller, grizzly::nova, grizzly::dashboard, grizzly::cinder, grizzly::glance, grizzly::quantum-network
+Recipes: chef-openstack::set_attributes, chef-openstack::set_cloudnetwork, ntp, chef-openstack::mysql-cinder, chef-openstack::mysql-glance, chef-openstack::mysql-keystone, chef-openstack::mysql-nova, chef-openstack::mysql-quantum, chef-openstack::ip_forwarding, chef-openstack::repositories, chef-openstack::rabbitmq-server, chef-openstack::keystone, chef-openstack::quantum-controller, chef-openstack::nova, chef-openstack::dashboard, chef-openstack::cinder, chef-openstack::glance, chef-openstack::quantum-network
 Platform: ubuntu 12.04
 Tags:
 </pre></output>

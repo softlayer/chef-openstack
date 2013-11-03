@@ -2,19 +2,24 @@
 <html lang="en">
   <head>
       
-      {% include header.html %}
+    {% include header.html %}
   
   </head>
   <body>
     <a class="sr-only" href="#content">Skip to main content</a>
       
-      {% include main-pages.html %}
+    {% include main-pages.html %}
+
+    {% if page.title == "Getting Started" %}
+      {% include callout.html %}
+    {% endif %}
 
     <div class="container bs-docs-container">
       <div class="row">
         <div class="col-md-3">
           <div class="bs-sidebar hidden-print" role="complementary">
             <ul class="nav bs-sidenav">
+              
               {% if page.slug == "release-notes" %}
                 {% include nav-release-notes.html %}
               {% elsif page.slug == "contributing" %}
@@ -26,27 +31,23 @@
               {% elsif page.slug == "getting-grizzly" %}
                 {% include nav-getting-started.html %}
               {% endif %}
+            
             </ul>
-                <a href="#" id="version-selector" role="button" class="dropdown-toggle" data-toggle="dropdown">Switch to another version <b class="caret"></b></a>
-                  <ul class="dropdown-menu" role="menu" aria-labelledby="version-selector">
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}getting-havana">Havana</a></li>
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}getting-grizzly">Grizzly</a></li>
-                  </ul>
-            </div>
           </div>
+        </div>
         <div class="col-md-9" role="main">
           
-          {{ content }}
+        {{ content }}
           
         </div>
       </div>
+    </div>
     <footer class="bs-footer" role="contentinfo">
       <div class="container">
         
-        {% include footer.html %}
+      {% include footer.html %}
       
       </div>
     </footer>
-  </div>
   </body>
 </html>
