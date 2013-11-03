@@ -1,4 +1,4 @@
-Our documents are minimal static webpages made using [Bootstrap CSS](http://getboostrap.com), [Foundation](http://foundation.zurb.com), and [Jekyll](http://jekyllrb.com). They are [CCPL-licensed](https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE) and free to use.
+All our public content is built from minimal static webpages made using [Bootstrap CSS](http://getboostrap.com), [Foundation](http://foundation.zurb.com), and [Jekyll](http://jekyllrb.com). Each are [CCPL-licensed](https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE) and free to use.
 
 ## Before Starting
 
