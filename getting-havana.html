@@ -533,7 +533,7 @@ Generally, your installation will follow these steps, with more details outlined
   </li>
 </ol>
 
-<h2 id="prepare-chef">Prepare Chef for Deployment</h2>
+<h2 id="prepare-chef">Prepare Chef</h2>
 
 <p>Before OpenStack can be installed to any servers, the private cloud repository needs to be downloaded locally and then uploaded to your
 Chef Server. To do this, prepare a default Chef directory structure with this command:</p>
@@ -607,7 +607,7 @@ knife node run_list add compute2.example.com &#39;role[openstack-compute]&#39;
 ## Network node:
 knife node run_list add network3.example.com &#39;role[openstack-network]&#39;</pre></output>
 
-<h2 id="configure-chef">Configure Chef Overrides</h2>
+<h2 id="configure-chef">Configure Chef</h2>
 
 <p>You will need to override some attributes for your OpenStack Chef deployment. These can be overridden at the environment level or at the
 node level, but the environment level is <strong>strongly</strong> recommended.</p>
@@ -1789,7 +1789,7 @@ thrown into the fire.</p>
   </li>
 </ul>
 
-<h2 id="support-components">Definitions for OpenStack Components</h2>
+<h2 id="support-components">Definitions for Components</h2>
 
 <p>Instead of using the names of the components, specialists in the OpenStack community always use the code/project names. This table
 translates those for you.</p>
@@ -1868,7 +1868,7 @@ translates those for you.</p>
   </table>
 </div>
 
-<h2 id="support-terms">Definitions for OpenStack Terms</h2>
+<h2 id="support-terms">Definitions for Terms</h2>
 
 <p>The list below contains only basic terms found throughout our documentation. For a beefier, more comprehensive list, go to <a href=
 "http://docs.openstack.org/glossary/content/glossary.html">http://docs.openstack.org/glossary/content/glossary</a>.</p>

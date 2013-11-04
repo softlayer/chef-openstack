@@ -1,15 +1,13 @@
 <div class="callout">
-  <div class="container">
   
-    {% if page.tag == "havana" %}
+    {% if page.slug == "getting-havana" %}
         
-      <strong><a href="{{ page.baseurl }}getting-grizzly">Trying to find the Grizzly stuff?</a></strong> We have separate guides for each release. You are viewing the guide for Havana. <a href="{{ page.baseurl }}getting-grizzly">The guide for Grizzly is available here.</a>
+      <p><strong><a href="{{ page.baseurl }}getting-grizzly">Trying to find the Grizzly stuff?</a></strong> We have separate guides for each release. You are viewing the guide for Havana. <a href="{{ page.baseurl }}getting-grizzly">The guide for Grizzly is available here.</a></p>
     
-    {% elsif page.title == "grizzly" %}
+    {% elsif page.slug == "getting-grizzly" %}
         
-      <strong><a href="{{ page.baseurl }}getting-havana">Trying to find the Havana stuff?</a></strong> We have separate guides for each release. You are viewing the guide for Grizzly. <a href="{{ page.baseurl }}getting-havana">The guide for Havana is available here.</a>
+      <p><strong><a href="{{ page.baseurl }}getting-havana">Trying to find the Havana stuff?</a></strong> We have separate guides for each release. You are viewing the guide for Grizzly. <a href="{{ page.baseurl }}getting-havana">The guide for Havana is available here.</a></p>
     
     {% endif %}  
 
-  </div>
 </div>

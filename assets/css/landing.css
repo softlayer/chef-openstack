@@ -228,3 +228,13 @@ div.bs-buttons {
   vertical-align: bottom;
   width: 160px;
 }
+
+.sidebar-nav > .sidebar-brand {
+  font-size: 14px;
+  line-height: 40px;
+  height: 40px;
+}
+
+#sidebar-wrapper {
+  background: none repeat scroll 0% 0% #222;
+}

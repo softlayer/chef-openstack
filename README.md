@@ -11,7 +11,7 @@ Of course, should you prefer to eat your own dog food, keep reading.
 Two download options are available.
 
 * [Download the latest release](https://github.com/softlayer/chef-openstack/archive/master.zip)
-* Clone the repo: `git clone https://github.com/softlayer/chef-openstack.git gh-pages`
+* Clone the repo: `git clone https://github.com/softlayer/chef-openstack.git`
 
 ## Docs
 

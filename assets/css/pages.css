@@ -9,7 +9,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,.bs-docs-hom
 .bs-docs-nav {
   box-shadow: 0 1px 0 rgba(255,255,255,0.05);
   background-color: #fff;
-  border-color: #f8f8f8;
+  border-color: #f4f4f4;
 }
 
 .bs-docs-nav .navbar-nav > li > a {
@@ -17,25 +17,6 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,.bs-docs-hom
   line-height: 0;
   margin-top: 0;
   text-shadow: none;
-}
-
-.page-header {
-  border-bottom: none;
-  margin: 0;
-  padding-bottom: 0;
-}
-
-.bs-header {
-  background: none;
-  background-color: #fff;
-  border-bottom: none;
-  padding: 0;
-  text-shadow: none;
-  margin-top: 0;
-}
-
-.bs-header h1 {
-  display: none;
 }
 
 .bs-header p {
@@ -51,14 +32,14 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,.bs-docs-hom
 }
 
 .bs-footer {
-  background: #f7f7f7;
-  border-top: 1px solid #f7f7f7;
+  background: #f4f4f4;
+  border-top: 1px solid #f4f4f4;
   font-weight: 300;
   padding-top: 0;
 }
 
 .bs-footer a {
-  color: #7f8c8d;
+  color: #777;
   text-decoration: none;
 }
 
@@ -73,7 +54,7 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,.bs-docs-hom
   font-family: helvetica, arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: -.1px;
+  letter-spacing: 0;
   margin: 20px 0 40px;
   text-align: center;
 }
@@ -91,7 +72,7 @@ h1,.h1 {
 }
 
 h2,.h2 {
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f4f4f4;
   font-size: 28px;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -129,7 +110,7 @@ code {
 }
 
 .bs-sidenav {
-  background: #f7f7f7;
+  background: #f4f4f4;
   float: left;
   font-family: helvetica, arial, sans-serif;
   font-size: 14px;
@@ -164,8 +145,8 @@ ul,ol {
 }
 
 pre {
-  background: #333;
-  border: #333 solid 1px;
+  background: #222;
+  border: #222 solid 1px;
   border-radius: 4px;
   color: #fff;
   font-size: 13.5px;
@@ -174,7 +155,7 @@ pre {
 }
 
 output pre {
-  background: #f8f8f8;
+  background: #f4f4f4;
   border: #e7e7e7 solid 1px;
   border-radius: 6px;
   color: #777;
@@ -199,12 +180,12 @@ pre.nowrap {
 }
 
 .table thead {
-  background: #4c4c4c;
-  border: #4c4c4c solid 1px;
+  background: #555;
+  border: #555 solid 1px;
 }
 
 .table thead > tr > th {
-  border-color: #4c4c4c;
+  border-color: #555;
   color: #fff;
   text-align: center;
 }
@@ -280,7 +261,7 @@ div#component-table.table-responsive {
 
 .bs-sidenav li a {
   background-color: transparent;
-  color: #fcfcfc;
+  color: #fafafa;
   display: block;
   padding: 15px 20px;
   position: relative;
@@ -348,7 +329,7 @@ div#component-table.table-responsive {
   font-family: helvetica, arial, sans-serif;
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: -.1px;
+  letter-spacing: 0;
   margin-right: 10px;
   margin-top: 20px;
 }
@@ -377,28 +358,14 @@ footer {
   display: none !important;
 }
 
-a#version-selector.dropdown-toggle {
-  color: #999;
-  font-size: 14px;
-  padding: 0 20px;
-}
-
 .bs-sidebar.affix .bs-sidenav {
   margin-top: 34px;
   margin-bottom: 0;
 }
 
-.bs-header {
-  display: none;
-}
-
 .bs-docs-nav .navbar-nav > li > a:focus,
 .bs-docs-nav .navbar-nav > li > a:hover {
-  color:#333;
-}
-
-b.caret {
-  color: #999;
+  color:#222;
 }
 
 .bs-sidebar .nav .nav > li > a {
@@ -409,7 +376,7 @@ b.caret {
 
 .bs-docs-nav .navbar-nav > .active > a, .bs-docs-nav .navbar-nav > .active > a:hover {
   background-color: transparent;
-  color: #333
+  color: #222
 }
 
 .img-thumbnail {
@@ -429,19 +396,37 @@ img#custom-height.img-thumbnail {
 
 TABLE#no-borders.table.table-hover > thead {
 background: transparent;
-color: #333;
+color: #222;
 border: none;
 }
 
 TABLE#no-borders.table.table-hover > thead > tr > th {
-color: #333;
+color: #222;
 text-align: left;
 }
 
-.callout {
-border-top:#f2f2f2;
+.callout a {
+font-color:#777;
+font-weight:700;
 color:#777;
-background-color:none;
+padding-bottom:2px;
+}
+
+SPAN.pull-right.hidden-sm a {
+  color: #0676cd;
+}
+
+.callout {
+  padding: 15px 20px;
+  color: #777;
+  background-color: #fafafa;
+  border-top: 1px solid #f4f4f4;
+  border-bottom: 1px solid #e7e7e7;
+  margin-top: 20px;
+}
+
+.callout strong {
+  color: #777;
 }
 
 .callout a:hover,.callout a:focus {
@@ -450,9 +435,7 @@ font-weight:700;
 border-bottom:1px dotted #777;
 }
 
-.callout a {
-font-color:#77;
-font-weight:700;
-color:#777;
-padding-bottom:2px;
+.callout p {
+  margin-left: 123px;
+  margin-bottom: 4px;
 }
