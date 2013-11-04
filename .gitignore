@@ -1,23 +1,9 @@
-# Basic
-# -----
 _site
 *.log
 *.vi
 *~
 .#*
-
-# OS & Editos
-# ------------
 .DS_Store
 Thumbs.db
 .cache
 tmp
-
-# Project
-# -------
-.grunt
-node_modules
-npm-debug.log
-test/browser/less.js
-test/sourcemaps/*.map
-test/sourcemaps/*.css

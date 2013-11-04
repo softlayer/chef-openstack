@@ -1,4 +1,4 @@
-All our public content is built from minimal static webpages made using [Bootstrap CSS](http://getboostrap.com), [Foundation](http://foundation.zurb.com), and [Jekyll](http://jekyllrb.com). Each are [CCPL-licensed](https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE) and free to use.
+All of our public content is built from minimal static webpages made using [Bootstrap CSS](http://getboostrap.com), [Mixture](http://mixture.io), and [Jekyll](http://jekyllrb.com). Each are [CCPL-licensed](https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE) and free to use.
 
 ## Before Starting
 
@@ -43,4 +43,4 @@ Keep track of development and community news.
 
 # Copyright and License
 
-Copyright (c) 2013 SoftLayer Technologies, Inc., an IBM Company. Unveil is licensed under the [Creative Commons Public License](https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE).
+Copyright (c) 2013 SoftLayer Technologies, Inc., an IBM Company. All content herein is licensed under the [Creative Commons Public License](https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE).

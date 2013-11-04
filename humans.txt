@@ -10,7 +10,6 @@
 /* THANKS */
   Twitter Bootstrap: http://getbootstrap.com
   Mixture: http://mixture.io
-  ZURB Foundation: http://foundation.zurb.com
 
 /* SITE */
   Last update: 2013/11/03
