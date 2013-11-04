@@ -248,10 +248,3 @@ else
 
 
 end
-
-
-# Use the Neutron LWRP when you need multiple L3 routers configured.
-# A router for each SoftLayer public and private networks
-# chef_openstack_neutron 'Set up SoftLayer L3 router config for OpenStack' do
-#   action :softlayer_l3_config
-# end
