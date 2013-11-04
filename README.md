@@ -1,10 +1,8 @@
-All of our public content is built from minimal static webpages made using [Bootstrap CSS](http://getboostrap.com), [Mixture](http://mixture.io), and [Jekyll](http://jekyllrb.com). Each are [CCPL-licensed](https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE) and free to use.
+All of our public content is built from minimal static webpages made using [Bootstrap CSS](http://getboostrap.com), [Mixture](http://mixture.io), and [Jekyll](http://jekyllrb.com). They are [MIT-licensed](https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE) and free to use.
 
 ## Before Starting
 
 To harness all the power behind this theme, you need to install Ruby and Jekyll (a Ruby gem). However, you do not have to install either to make your own page. By making just a few changes to the `_config.yml` file, you can create a page in minutes. See the "Configure" section below.
-
-Of course, should you prefer to eat your own dog food, keep reading.
 
 ## Download
 
@@ -43,4 +41,4 @@ Keep track of development and community news.
 
 # Copyright and License
 
-Copyright (c) 2013 SoftLayer Technologies, Inc., an IBM Company. All content herein is licensed under the [Creative Commons Public License](https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE).
+Copyright (c) 2013 SoftLayer Technologies, Inc., an IBM Company. All content herein is licensed under the [MIT License](https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE).

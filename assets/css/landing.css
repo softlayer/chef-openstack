@@ -48,7 +48,7 @@ vertical-align:middle;
 
 .vert-text h1 {
 font-family:freight-sans-pro, helvetica, arial, sans-serif;
-font-size:94px;
+font-size:7em;
 font-weight:700;
 letter-spacing:-2px;
 line-height:1.2;
@@ -163,7 +163,7 @@ height:74px;
 
 .vert-text .lead {
 font-family:helvetica, arial, sans-serif;
-font-size:34px;
+font-size:2.5em;
 }
 
 .lead {
@@ -242,7 +242,7 @@ border-color:#ccc;
 color:#aaa;
 }
 
-.navbar-brand {
-margin-right:70px;
-margin-top:-54px;
+img.navbar-brand {
+margin-right:60px;
+margin-top:-55px;
 }
