@@ -32,20 +32,20 @@ article,aside,details,figcaption,figure,hgroup,main,section,summary,.bs-docs-hom
 }
 
 .bs-footer {
-  background: #585858;
-  border-top: 1px solid #f4f4f4;
+  background: #f4f4f4;
+  border-top: 1px solid #e7e7e7;
   font-weight: 300;
   padding-top: 0;
 }
 
 .bs-footer a {
-  color: #fff;
+  color: #999;
   text-decoration: none;
 }
 
 .bs-footer a:hover,
 .bs-footer a:focus {
-  color: #fafafa;
+  color: #585858;
   text-decoration: none;
 }
 

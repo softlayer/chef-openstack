@@ -213,7 +213,7 @@ border:1px solid #fff;
 border-radius:50px;
 color:#222;
 margin-bottom:20px;
-margin-right:0px;
+margin-right:14px;
 width:160px;
 text-shadow:none;
 box-shadow:none;
@@ -227,7 +227,7 @@ border:1px solid #fff;
 border-radius:50px;
 color:#ccc;
 margin-bottom:20px;
-margin-right:0px;
+margin-right:14px;
 opacity:.9;
 width:160px;
 }
@@ -254,4 +254,9 @@ SPAN.pull-right.hidden-sm a {
     background-color: #ccc;
     border-color: #ccc;
     color: #aaa;
+}
+
+.navbar-brand {
+    margin-right: 60px;
+    margin-top: -54px;
 }
