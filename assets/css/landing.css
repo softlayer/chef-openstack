@@ -186,7 +186,7 @@ div.bs-buttons {
 
 .header {
   display: table;
-  height: 75%;
+  height: 78%;
   position: relative;
   width: 100%;
 }
@@ -195,15 +195,15 @@ div.bs-buttons {
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
-  background: url(/assets/img/bg.png) left center no-repeat;
+  background: url(http://s7.postimg.org/v0i3zvrd7/bg_dark.jpg) left center no-repeat;
   background-color: #222;
   background-size: cover;
 }
 
 .btn-primary {
-  background-color: #a6a6a6;
-  border-color: #aaa;
-  color: #fff;
+  background-color: #e7e7e7;
+  border-color: #e7e7e7;
+  color: #aaa;
 }
 
 .btn-info {
@@ -228,7 +228,7 @@ border-radius:50px;
 color:#ccc;
 margin-bottom:20px;
 margin-right:0px;
-opacity:.8;
+opacity:.9;
 width:160px;
 }
 
@@ -248,4 +248,10 @@ width:160px;
 
 SPAN.pull-right.hidden-sm a {
   display: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+    background-color: #ccc;
+    border-color: #ccc;
+    color: #aaa;
 }
