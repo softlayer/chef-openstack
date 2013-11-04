@@ -10,5 +10,6 @@ portal: http://manage.softlayer.com
 twitter: http://twitter.com/softlayerdev
 
 # Server
+baseurl: http://softlayer.github.io/chef-openstack
 permalink: pretty
 exclude: [".gitignore", "LICENSE", "README.md"]
