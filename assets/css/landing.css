@@ -148,6 +148,7 @@ footer.container ul.bs-masthead-links {
   letter-spacing: 0;
   margin: 2px 0;
   text-transform: uppercase;
+  margin-left: 0;
 }
 
 body {
@@ -194,7 +195,7 @@ div.bs-buttons {
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
-  background: url(/public/img/bg7.jpg) no-repeat center center fixed;
+  background: url(/assets/img/bg7.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -237,4 +238,12 @@ div.bs-buttons {
 
 #sidebar-wrapper {
   background: none repeat scroll 0% 0% #222;
+}
+
+.bs-docs-home .bs-masthead-links {
+    margin-left: 0;
+}
+
+SPAN.pull-right.hidden-sm a {
+  display: none;
 }
