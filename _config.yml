@@ -1,6 +1,8 @@
 # Project
 project: Chef-OpenStack
 lead: "Get the efficiency, scalability and control that every private cloud needs"
+version_havana: 0.3.3
+version_grizzly: 0.2.0
 
 # Links
 repo: http://github.com/softlayer/chef-openstack

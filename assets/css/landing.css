@@ -242,11 +242,6 @@ margin-top:100px;
 text-align:center;
 }
 
-/*-- Hide --*/
-span.pull-right.hidden-sm a {
-visibility:hidden;
-}
-
 /*-- Image --*/
 img.navbar-brand {
 margin-right:50px;

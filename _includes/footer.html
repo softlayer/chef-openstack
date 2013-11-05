@@ -40,12 +40,6 @@
       });
     </script>
 
-<!-- Version Selector -->
-  <script>
-      $('#version-selector').on('show.bs.dropdown', function () {
-      })
-  </script>
-
 <!-- Google Analytics -->
 <script>
   var _gaq = _gaq || [];
@@ -63,5 +57,7 @@
   <a href="https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE" target="_blank">License</a> &middot;
   <a href="{{ site.sldn }}" target="_blank">Development Network</a> &middot; 
   <a href="{{ site.portal }}" target="_blank">Portal</a>
-  <span class="pull-right hidden-sm"><a href="#">Back to top</a></span></p>
+  {% if page.layout == "pages" %}
+    <span class="pull-right hidden-sm"><a href="#">Back to top</a></span></p>
+  {% endif %}
 </div>
