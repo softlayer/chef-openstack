@@ -7,7 +7,7 @@ repo: http://github.com/softlayer/chef-openstack
 www: http://www.softlayer.com
 sldn: http://sldn.softlayer.com
 portal: http://manage.softlayer.com
-twitter: http://twitter.com/softlayerdev
+twitter: http://twitter.com/softlayerdevs
 
 # Server
 baseurl: http://softlayer.github.io/chef-openstack
