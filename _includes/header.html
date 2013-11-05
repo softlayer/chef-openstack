@@ -7,6 +7,12 @@
 <meta name="description" content="Founded in 2005, SoftLayer is a cloud infrastructure provider.">
 <meta name="author" content="SoftLayer Technologies, Inc., an IBM Company">
 <meta name="copyright" content="(c) 2013 SoftLayer Technologies, Inc., an IBM Company">
+<link type="text/plain" href="{{ page.baseurl }}humans.txt" rel="author">
+
+<!-- Fonts -->
+<link href="{{ page.baseurl }}assets/css/font-awesome.min.css" rel="stylesheet">
+<script type="text/javascript" src="//use.typekit.net/lzt3exy.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 <!-- Page Title -->
 <title>
@@ -17,17 +23,22 @@
   {% endif %}
 </title>
 
-<!-- Fonts -->
-<link href="{{ page.baseurl }}assets/css/font-awesome.min.css" rel="stylesheet">
-<script type="text/javascript" src="//use.typekit.net/lzt3exy.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<!-- Icon -->
+<link type="image/png" href="{{ page.baseurl }}assets/img/favicon.png" rel="shortcut icon">
 
-<!-- Styling -->
+<!-- Basic Styling -->
 <link type="text/css" href="{{ page.baseurl }}assets/css/bootstrap.min.css" rel="stylesheet">
 <link type="text/css" href="{{ page.baseurl }}assets/css/bootstrap.docs.min.css" rel="stylesheet">
-<link type="text/css" href="{{ page.baseurl }}assets/css/pages.css" rel="stylesheet">
 
-{% if page.slug == "landing" %}
-<link type="text/css" href="{{ page.baseurl }}assets/css/landing.css" rel="stylesheet">{% endif %}
-<link type="text/plain" href="{{ page.baseurl }}humans.txt" rel="author">
-<link type="image/png" href="{{ page.baseurl }}assets/img/favicon.png" rel="shortcut icon">
+<!-- Custom Styling -->
+{% if site.baseurl != "http://softlayer.github.io/chef-openstack" %} <!-- Minified file for Production, Non-minified for Dev -->
+	<link type="text/css" href="{{ page.baseurl }}assets/css/pages.css" rel="stylesheet">
+{% elsif site.baseurl == "http://softlayer.github.io/chef-openstack" %}
+	<link type="text/css" href="{{ page.baseurl }}assets/css/pages.min.css" rel="stylesheet">
+{% endif %}
+
+{% if page.slug == "landing" and site.baseurl != "http://softlayer.github.io/chef-openstack" %}
+	<link type="text/css" href="{{ page.baseurl }}assets/css/landing.css" rel="stylesheet">
+{% elsif page.slug == "landing" and site.baseurl == "http://softlayer.github.io/chef-openstack" %}
+	<link type="text/css" href="{{ page.baseurl }}assets/css/landing.min.css" rel="stylesheet">
+{% endif %}
