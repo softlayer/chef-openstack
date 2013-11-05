@@ -193,6 +193,10 @@ letter-spacing:0;
 margin:2px 0;
 }
 
+.bs-docs-home .bs-masthead-links {
+margin-left: 0;
+}
+
 /*-- Buttons --*/
 .btn-info {
 background-color:#fff;
