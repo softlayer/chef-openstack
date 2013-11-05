@@ -29,28 +29,7 @@ standards.</p>
   <li>Commit your changes and send a pull request.</li>
 </ol>
 
-  <h2 id="standards">Coding Standards</h2>
-
-<ul>
-  <li>We appreciate the use of professional code quality standards</li>
-  <li>Keep code simple and clean</li>
-  <li>Follow the widely accepted and reasonable Ruby coding standards
-
-    <ul>
-      <li>Line length capped at 80 characters</li>
-      <li>Hash indices use &#8216; instead of &#8220;</li>
-      <li>String delimiters use &#8216; instead of &#8220; when evaluation and escaping are not necessary</li>
-      <li>Align parameters of long function/method calls</li>
-      <li>Newlines at end of files</li>
-      <li>2-space indentation, no tabs</li>
-      <li>Full list of standards available on <a href="https://github.com/styleguide/ruby" target="_blank">GitHub</a> and <a href="http://tomdoc.org" target="_blank">TomDoc</a>
-      </li>
-    </ul>
-  </li>
-  <li>Use the correct letter case for syntax, products, and branding (e.g. SoftLayer, OpenStack, component names, etc.)</li>
-  <li>Make indentation consistent</li>
-  <li>Remove trailing whitespace</li>
-</ul>
+{% include standards-ruby.html %}
 
 <h1 id="features">Feature Requests</h1>
 
@@ -58,11 +37,11 @@ standards.</p>
 
 <h1 id="issues">Issues</h1>
 
-    <p>Have an issue to report? <a href="https://github.com/softlayer/chef-openstack/issues?milestone=1&page=1&state=open" target="_blank">Please open a new issue</a>. Before opening an issue, though, read our guidelines below.</p>
+    <p>Have an issue to report? <a href="{{ site.open_issues }}" target="_blank">Please open a new issue</a>. Before opening an issue, though, read our guidelines below.</p>
 
     <h3>Check for fixes</h3>
 
-    <p>Verify if your <a href="http://github.com/softlayer/chef-openstack/issues?milestone=1&amp;page=1&amp;state=closed" target="_blank">issue has already been resolved</a> before reporting an issue.</p>
+    <p>Verify if your <a href="{{ site.closed_issues }}" target="_blank">issue has already been resolved</a> before reporting an issue.</p>
 
     <h3>Steps to reproduce</h3>
 
@@ -72,22 +51,8 @@ standards.</p>
 
     <p>Include any test parameters, such as your OS edition and version, what components you used, when you deployed it, etc.</p>
 
-<h1 id="documentation">Documentation</h1>
-    <p>Our <a href="../">documentation</a> is hosted publicly on GitHub. Here&#8217;s a list of all content related to this project.</p>
-    <ul>
-      <li><a href="../getting-havana" target="_blank">Getting Started (Havana)</a></li>
-      <li><a href="../getting-grizzly" target="_blank">Getting Started (Grizzly)</a></li>
-      <li><a href="../release-notes" target="_blank">Release Notes</a></li>
-    </ul>
+{% include docs.html %}
 
-<h1 id="community">Community</h1>
-    <p>Keep track of development and community news.</p>
-    <ul>
-      <li>Follow <a href="http://twitter.com/softlayerdevs" target="_blank">@SoftLayerDevs</a> on Twitter.</li>
-      <li>Star any of our public <a href="http://github.com/softlayer" target="_blank">GitHub repos</a>.</li>
-      <li>Get the latest new and join conversations on our <a href="http://forums.softlayer.com" target="_blank">Customer Forum</a>.</li>
-    </ul>
+{% include community.html %}
 
-<h1 id="copyright">Copyright and License</h1>
-  
-    <p>Copyright &#169; 2013 SoftLayer Technologies, Inc., an IBM Company. Our code is licensed under the <a href="https://github.com/softlayer/chef-openstack/blob/gh-pages/LICENSE" target="_blank">MIT license</a>. By contributing your code, you agree to license your contribution under the terms of this license.</p>
+{% include copyright.html %}

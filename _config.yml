@@ -4,14 +4,18 @@ lead: "Get the efficiency, scalability and control that every private cloud need
 version_havana: 0.3.3
 version_grizzly: 0.2.0
 
-# Links
+# GitHub Links
 repo: http://github.com/softlayer/chef-openstack
+license: https://github.com/softlayer/chef-openstack/blob/Havana/LICENSE
+open_issues: https://github.com/softlayer/chef-openstack/issues?milestone=1&amp;state=open
+closed_issues: https://github.com/softlayer/chef-openstack/issues?milestone=1&amp;state=closed
+
+#Company Links
 www: http://www.softlayer.com
 sldn: http://sldn.softlayer.com
 portal: http://manage.softlayer.com
 twitter: http://twitter.com/softlayerdevs
 
 # Server
-baseurl: http://softlayer.github.io/chef-openstack
+#baseurl: http://softlayer.github.io/chef-openstack
 permalink: pretty
-exclude: [".gitignore", "LICENSE", "README.md"]
