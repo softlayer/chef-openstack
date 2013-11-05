@@ -8,6 +8,8 @@ The following requests are bundled by where they reside in priority. Moreover, n
 
 These requests fall under the general definition of incomplete, confusing, or unclear content.
 
+* [@morourke](https://github.com/caleorourke) Test maruku upgrade in hope of converting html back to md
+
 * [@morourke](https://github.com/caleorourke) All the disk storage in the node requirements tables is a little confusing.
 
 * Before the "Installing OpenStack" section, add a "Provision the Resources”. Be explicit on what is needed and what they would be used for. "Before going on in this guide, ensure you have the following resources in your account..." and then tell them what they need to provision i.e. at least 3 hardware nodes with Ubuntu, private portable subnet, public portable subnet, etc.
@@ -23,6 +25,8 @@ These requests fall under the general definition of incomplete, confusing, or un
 ### Standard Priority
 
 Requests here are not mission-critical, but do add clarity and usability.
+
+* [@morourke](https://github.com/caleorourke) Add less to minify css output and easier coding
 
 * [@morourke](https://github.com/caleorourke) Show the latest release versions on the landing page (ex. http://getbootstrap.com)
 
@@ -71,5 +75,7 @@ Priorities have not been defined yet for these request. Most are likely to be op
 * [@morourke](https://github.com/caleorourke) Before "About OpenStack" and "About Chef", add an "About this Guide" to lay out its purpose. Include: When I am done, what do I have? What will be created?" A picture would be nice.
 
 * [@morourke](https://github.com/caleorourke) Improve load time by adding js for typekit fonts locally in the header.
+
+* * [@morourke](https://github.com/caleorourke) Find out why responsiveness on mobile devices isn't complying with the viewport settings
 
 ## Done
