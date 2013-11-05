@@ -86,26 +86,20 @@ supports a wide variety of deployment scenarios. This section introduces each re
 
 <h2 id="about-chef">About Chef</h2>
 
-<p>Chef is a systems integration framework built to bring the benefits of configuration management to your entire infrastructure. This
-framework makes it easy to deploy servers and applications to any physical, virtual, or cloud location, no matter the size of the
-infrastructure.</p>
+<p>Chef is a systems integration framework built to bring the benefits of configuration management to your entire infrastructure. This framework makes it easy to deploy servers and applications to any physical, virtual, or cloud location, no matter the size of the infrastructure.</p>
 
-<p>Each organization is composed of one (or more) workstations, a single server, and every node configured and maintained by a Chef client.
-Install Chef client on every node and it will perform all necessary configuration tasks. Then come cookbooks and recipes. The Chef client
-relies on these to tell it how to configure each node in your organization. You can even manage multiple environments—-or groups of nodes
-and settings—-with the same Chef server. Visit <a href="https://learnchef.opscode.com">https://learnchef.opscode.com</a> for more
-information.</p>
+<p>Each organization is composed of one (or more) workstations, a single server, and every node configured and maintained by a Chef client. Install Chef client on every node and it will perform all necessary configuration tasks. Then come cookbooks and recipes. The Chef client relies on these to tell it how to
+configure each node in your organization. You can even manage multiple environments—-or groups of nodes and settings—-with the same Chef server. Visit <a href=
+"https://learnchef.opscode.com">https://learnchef.opscode.com</a> for more information.</p>
 
 <p><img class="img-thumbnail" id="no-height" src="{{ page.baseurl }}assets/img/chef-openstack/001.jpg"></p>
 
 <h2 id="about-openstack">About OpenStack</h2>
 
-<p>OpenStack is a free, open-source project that provides an infrastructure as a service (IaaS) for cloud computing. Backed by a vibrant
-community of both individuals and companies, its technology consists of a series of interrelated projects that manage pools of
-coordination, processing, storage, and networking throughout a data center.</p>
+<p>OpenStack is a free, open-source project that provides an infrastructure as a service (IaaS) for cloud computing. Backed by a vibrant community of both individuals and companies, its technology consists of a series of interrelated projects that manage pools of coordination, processing, storage, and networking
+throughout a data center.</p>
 
-<p>OpenStack’s ability to empower deployers and administrators, manage resources through its web interface, and provide easy-to-use
-command-line tools has helped it gain a lot of traction in only a few short years.</p>
+<p>OpenStack’s ability to empower deployers and administrators, manage resources through its web interface, and provide easy-to-use command-line tools has helped it gain a lot of traction in only a few short years.</p>
 
 <p>Visit <a href="http://docs.openstack.org">http://docs.openstack.org</a> for more information.</p>
 
@@ -367,15 +361,15 @@ and services that you wish to make available over the Internet.</p>
 
         <td>
           <ul>
-            <li>Networks created within OpenStack Quantum are part of the data network.</li>
+            <li>Networks created within OpenStack Neutron are part of the data network.</li>
 
             <li>OpenStack instances communicate with each other over the data network, including when they issue DHCP requests during boots
             and reboots.</li>
 
             <li>This network is an IP-over-GRE network between Network and Compute Nodes.</li>
 
-            <li>The virtual network appliance used is Open vSwitch combined with the <code>quantum-plugin-openvswitch-agent</code> in
-            Quantum.</li>
+            <li>The virtual network appliance used is Open vSwitch combined with the <code>neutron-plugin-openvswitch-agent</code> in
+            Neutron.</li>
           </ul>
         </td>
 
@@ -404,10 +398,10 @@ SoftLayer router (and in many networks this is the case), and the final address 
 <p>With these constraints in mind, a /29 portable subnet would thusly provide six total with three usable IP addresses, a /28 subnet would
 provide 14 total with 11 usable IP addresses, a /27 subnet would provide 30 total with 27 usable addresses, and so forth.</p>
 
-<p>Remember that the DHCP server used in Quantum will need an IP address on each subnet where DHCP is enabled. Keep this in mind when
+<p>Remember that the DHCP server used in Neutron will need an IP address on each subnet where DHCP is enabled. Keep this in mind when
 planning how large of a SoftLayer Portable IP block to order.</p>
 
-<p>OpenStack utilizes NAT (Network Address Translation) across externally connected Quantum/Neutron virtual routers. Any network that
+<p>OpenStack utilizes NAT (Network Address Translation) across externally connected Neutron virtual routers. Any network that
 attaches to the router has external network access through NAT. The use of floating IP&#8217;s can reduce the size of the portable block
 you will have to purchase by allowing all compute instances to have outbound network access when not running inbound public services.</p>
 
@@ -437,7 +431,7 @@ the SoftLayer Private Network.</p>
 your nodes to achieve a functional private cloud installation.</p>
 
 <blockquote>
-  <p>We strongly recommend that you review <a href="../openstack-requirements">OpenStack Requirements</a> before starting. This is to
+  <p>We strongly recommend that you review <a href="#requirements">OpenStack Requirements</a> before starting. This is to
   ensure that your environment is ready for install before getting in too deep.</p>
 </blockquote>
 
@@ -637,9 +631,9 @@ attributes to deploy:</p>
       "public_interface": "eth1",
       "private_interface": "eth0"
     },
-    "quantum": {
+    "neutron": {
       "db": {
-        "password": "my_new_quantum_pass"
+        "password": "my_new_neutron_pass"
       },
       "softlayer_public_portable": "XX.XX.XX.XX/YY",
       "softlayer_private_portable": "AA.AA.AA.AA/BB"
@@ -687,9 +681,7 @@ be performed prior to chefing the controller with any OpenStack services. It is 
 
 <h3>Controller Node</h3>
 
-<p>The controller node contains, at a minimum, the roles for the base Quantum and Nova services. If you are unfamiliar with OpenStack, it
-is recommended to do a standard installation as illustrated in the bootstrap example. Be sure that Chef shows that the node contains the
-MySQL backend, RabbitMQ, Keystone, Cinder, and Glance roles. You can verify this with a simple <code>knife</code> command:</p>
+  <p>The controller node contains, at a minimum, the roles for the base Neutron and Nova services. If you are unfamiliar with OpenStack, it is recommended to do a standard installation as illustrated in the bootstrap example. Be sure that Chef shows that the node contains the MySQL backend, RabbitMQ, Keystone, Cinder, and Glance roles. You can verify this with a simple <code>knife</code> command:</p>
 <pre>
 <code>knife node show FQDN</code>
 </pre>
@@ -699,9 +691,9 @@ MySQL backend, RabbitMQ, Keystone, Cinder, and Glance roles. You can verify this
 Environment: Region
 FQDN: control1.example.com
 IP: XX.XX.XX.XX
-Run List: role[openstack-mysql-cinder], role[openstack-mysql-glance], role[openstack-mysql-keystone], role[openstack-mysql-nova], role[openstack-mysql-quantum], role[openstack-rabbitmq], role[openstack-keystone], role[openstack-controller], role[openstack-cinder], role[openstack-glance]
-Roles: openstack-mysql-cinder, openstack-mysql-glance, openstack-mysql-keystone, openstack-mysql-nova, openstack-mysql-quantum, openstack-rabbitmq, openstack-keystone, openstack-controller, openstack-cinder, openstack-glance
-Recipes: chef-openstack::set_attributes, chef-openstack::set_cloudnetwork, ntp, chef-openstack::mysql-cinder, chef-openstack::mysql-glance, chef-openstack::mysql-keystone, chef-openstack::mysql-nova, chef-openstack::mysql-quantum, chef-openstack::ip_forwarding, chef-openstack::repositories, chef-openstack::rabbitmq-server, chef-openstack::keystone, chef-openstack::quantum-controller, chef-openstack::nova, chef-openstack::dashboard, chef-openstack::cinder, chef-openstack::glance, chef-openstack::quantum-network
+Run List: role[openstack-mysql-cinder], role[openstack-mysql-glance], role[openstack-mysql-keystone], role[openstack-mysql-nova], role[openstack-mysql-neutron], role[openstack-rabbitmq], role[openstack-keystone], role[openstack-controller], role[openstack-cinder], role[openstack-glance]
+Roles: openstack-mysql-cinder, openstack-mysql-glance, openstack-mysql-keystone, openstack-mysql-nova, openstack-mysql-neutron, openstack-rabbitmq, openstack-keystone, openstack-controller, openstack-cinder, openstack-glance
+Recipes: chef-openstack::set_attributes, chef-openstack::set_cloudnetwork, ntp, chef-openstack::mysql-cinder, chef-openstack::mysql-glance, chef-openstack::mysql-keystone, chef-openstack::mysql-nova, chef-openstack::mysql-neutron, chef-openstack::ip_forwarding, chef-openstack::repositories, chef-openstack::rabbitmq-server, chef-openstack::keystone, chef-openstack::neutron-controller, chef-openstack::nova, chef-openstack::dashboard, chef-openstack::cinder, chef-openstack::glance, chef-openstack::neutron-network
 Platform: ubuntu 12.04
 Tags:
 </pre></output>
@@ -855,10 +847,10 @@ command:</p>
 <code># tail /var/log/nova/nova-compute.log</code>
 </pre>
 
-<p>All logs are available in the /var/log/ directory and its subdirectories. You may also view the status of Quantum agents that reside on
+<p>All logs are available in the /var/log/ directory and its subdirectories. You may also view the status of Neutron agents that reside on
 your network and compute nodes.</p>
 <pre>
-<code># quantum agent-list</code>
+<code># neutron agent-list</code>
 </pre>
 
 <p>The output should look similar to this:</p>
@@ -895,7 +887,7 @@ these commands:</p>
 <pre>
 <code>pip install python-keystoneclient
 pip install python-novaclient
-pip install python-quantumclient
+pip install python-neutronclient
 pip install python-cinderclient
 pip install python-glanceclient</code>
 </pre>
@@ -982,7 +974,7 @@ sole component on that system.</p>
 <ul>
   <li>OpenStack MySQL Servers</li>
 
-  <li>Quantum/Neutron</li>
+  <li>Neutron</li>
 
   <li>Nova</li>
 
@@ -998,7 +990,7 @@ sole component on that system.</p>
 
   <li>OpenStack Nova Compute</li>
 
-  <li>OpenStack Quantum/Neutron</li>
+  <li>OpenStack Neutron</li>
 
   <li>OpenStack Keystone Authentication</li>
 
@@ -1066,7 +1058,7 @@ sole component on that system.</p>
       <tr>
         <td>OpenStack Network</td>
 
-        <td>Quantum/Neutron</td>
+        <td>Neutron</td>
       </tr>
     </tbody>
   </table>
@@ -1096,7 +1088,7 @@ distribute load:</p>
       <tr>
         <td></td>
 
-        <td>Quantum/Neutron</td>
+        <td>Neutron</td>
       </tr>
 
       <tr>
@@ -1180,7 +1172,7 @@ distribute load:</p>
       <tr>
         <td>OpenStack Network</td>
 
-        <td>Quantum/Neutron</td>
+        <td>Neutron</td>
       </tr>
     </tbody>
   </table>
@@ -1267,8 +1259,8 @@ nova-compute     compute2  nova             enabled    :-)   2013-09-03 15:21:23
 <p>Each service or agent will display a&nbsp;<code>:-)</code>&nbsp;if they are running correctly, and&nbsp;<code>XX</code>&nbsp;if they are
 not.</p>
 
-<h3>Quantum/Neutron</h3>
-<output><pre>root@control1:~# quantum agent-list
+<h3>Neutron</h3>
+<output><pre>root@control1:~# neutron agent-list
 
 +--------------------------------------+--------------------+----------+-------+----------------+                                                
 | id                                   | agent_type         | host     | alive | admin_state_up |
@@ -1340,7 +1332,7 @@ accounts, OpenStack component communication, or authentication problems.</p>
 | 2e15846831884959a6fc0be96a9bceaf |   demo   |   True  |   demo@localhost   |
 | ee1ffd860b9940c9bedcbd27e5439333 |  glance  |   True  |  glance@localhost  |
 | 62a9c425721f48d8892a9132e23ede03 |   nova   |   True  |   nova@localhost   |
-| b22df525c6714c259189fd2da82b72af | quantum  |   True  | quantum@localhost  |
+| b22df525c6714c259189fd2da82b72af | neutron  |   True  | neutron@localhost  |
 +----------------------------------+----------+---------+--------------------+
 </pre></output>
 
@@ -1368,7 +1360,7 @@ accounts, OpenStack component communication, or authentication problems.</p>
 | 844e120b3b594f68838e6b0e5a227427 |  glance  |  image   |   OpenStack Image Service    |
 | 1ef9095e84d44658a66a46aabe4ef551 | keystone | identity |      OpenStack Identity      |
 | 8f50ec8454b9432b94cd7d68172dc98a |   nova   | compute  |  OpenStack Compute Service   |
-| 3de9a5a7e57943739f59c014554ea602 | quantum  | network  | OpenStack Networking service |
+| 3de9a5a7e57943739f59c014554ea602 | neutron  | network  | OpenStack Networking service |
 +----------------------------------+----------+----------+------------------------------+
 </pre></output>
 
@@ -1711,7 +1703,7 @@ below.</p>
 <h3>Allocate Public IP Addresses</h3>
 
 <p>We&#8217;re getting closer, but we aren&#8217;t quite finished yet. Each web server will need a public IP for inbound public access.
-Currently, the compute instances are only accessible via the devices connected to OpenStack Quantum/Neutron network, or any device that is
+Currently, the compute instances are only accessible via the devices connected to OpenStack Neutron network, or any device that is
 on the SoftLayer Private Network. SoftCube can allocate public IP addresses purchased from SoftLayer to any instance at any time by
 assigning Floating IPs, which is our next step.</p>
 
@@ -1826,7 +1818,7 @@ translates those for you.</p>
       <tr>
         <td>Networking</td>
 
-        <td>Quantum (Neutron)</td>
+        <td>Neutron</td>
 
         <td>Manages state for all networks defined within a cluster, and provides network routing, IP management, DHCP, and load
         balancing.</td>
