@@ -76,6 +76,6 @@ Priorities have not been defined yet for these request. Most are likely to be op
 
 * [@morourke](https://github.com/caleorourke) Improve load time by adding js for typekit fonts locally in the header.
 
-* * [@morourke](https://github.com/caleorourke) Find out why responsiveness on mobile devices isn't complying with the viewport settings
+* [@morourke](https://github.com/caleorourke) Find out why responsiveness on mobile devices isn't complying with the viewport settings.
 
 ## Done
