@@ -28,6 +28,11 @@ Keep track of development and community news.
 * For more information on Jekyll, visit [Jekyll's Wiki](https://github.com/mojombo/jekyll/wiki)
 * For more information on GitHub Pages, visit [GitHub Pages](http://pages.github.com)
 
+# Known Issues
+
+Some consoles may throw a "Liquid Exception: incompatible character encodings: UTF-8 and IBM437 in index.html" error when you run `jekyll serve -w`.
+This means the console does not use UTF-8 by default. To get around this, first run `chcp 65001` or `cmd c/ "chcp 65001"` if you use Git for Windows.
+
 # Copyright and License
 
 Copyright (c) 2013 SoftLayer Technologies, Inc., an IBM Company. All content herein is licensed under the [MIT License](https://github.com/softlayer/chef-openstack/blob/Havana/LICENSE).
