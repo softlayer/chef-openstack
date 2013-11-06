@@ -74,10 +74,10 @@ Priorities have not been defined yet for these request. Most are likely to be op
 
 ## In-Flight
 
-* [@morourke](https://github.com/caleorourke) Improve load time by adding js for typekit fonts locally in the header.
-
 * [@morourke](https://github.com/caleorourke) Find out why responsiveness on mobile devices isn't complying with the viewport settings.
 
 ## Done
 
 * [@morourke](https://github.com/caleorourke) Transition the role and quantum/neutron changes into the current docs
+
+* [@morourke](https://github.com/caleorourke) Improve load time by adding js for typekit fonts locally in the header.
