@@ -1,42 +1,3 @@
-/*-- Toggle --*/
-#menu-toggle {
-position:fixed;
-right:0;
-top:0;
-z-index:1;
-}
-
-.toggle {
-margin:5px 5px 0 0;
-}
-
-/*-- Services --*/
-.services {
-background:#7fbbda;
-color:#fff;
-padding:50px 0;
-}
-
-.service-item {
-margin-bottom:15px;
-}
-
-i.service-icon {
-border:3px solid #fff;
-border-radius:50%;
-display:inline-block;
-font-size:56px;
-height:140px;
-line-height:136px;
-text-align:center;
-vertical-align:middle;
-width:140px;
-}
-
-i.service-icon:hover {
-font-size:68px;
-}
-
 /*-- Basic --*/
 html,body {
 height:100%;
@@ -47,6 +8,46 @@ a,
 a:hover,
 a:focus {
 color:#fff;
+}
+
+/*-- Nav --*/
+.container {
+margin-top:-40px;
+text-align:center;
+}
+
+.header {
+display:table;
+height:85%;
+position:relative;
+width:100%;
+}
+
+.bs-docs-home {
+-moz-background-size:cover;
+-o-background-size:cover;
+-webkit-background-size:cover;
+background:url(http://s7.postimg.org/v0i3zvrd7/bg_dark.jpg) left center no-repeat;
+background-color:#1d1d1d;
+background-size:cover;
+}
+
+.bs-docs-nav {
+border:none medium;
+box-shadow:none;
+height:74px;
+}
+
+.bs-masthead-links {
+cursor:pointer;
+font-size:14px;
+font-weight:500;
+letter-spacing:0;
+margin:2px 0;
+}
+
+.bs-docs-home .bs-masthead-links {
+margin-left: 0;
 }
 
 footer {
@@ -156,46 +157,6 @@ background:none;
 color:#fff;
 }
 
-/*-- Nav --*/
-.container {
-margin-top:-40px;
-text-align:center;
-}
-
-.header {
-display:table;
-height:85%;
-position:relative;
-width:100%;
-}
-
-.bs-docs-home {
--moz-background-size:cover;
--o-background-size:cover;
--webkit-background-size:cover;
-background:url(http://s7.postimg.org/v0i3zvrd7/bg_dark.jpg) left center no-repeat;
-background-color:#1d1d1d;
-background-size:cover;
-}
-
-.bs-docs-nav {
-border:none medium;
-box-shadow:none;
-height:74px;
-}
-
-.bs-masthead-links {
-cursor:pointer;
-font-size:14px;
-font-weight:500;
-letter-spacing:0;
-margin:2px 0;
-}
-
-.bs-docs-home .bs-masthead-links {
-margin-left: 0;
-}
-
 /*-- Buttons --*/
 .btn-info {
 background-color:#fff;
@@ -243,6 +204,45 @@ color:#aaa;
 div.bs-buttons {
 margin-top:100px;
 text-align:center;
+}
+
+/*-- Toggle --*/
+#menu-toggle {
+position:fixed;
+right:0;
+top:0;
+z-index:1;
+}
+
+.toggle {
+margin:5px 5px 0 0;
+}
+
+/*-- Services --*/
+.services {
+background:#7fbbda;
+color:#fff;
+padding:50px 0;
+}
+
+.service-item {
+margin-bottom:15px;
+}
+
+i.service-icon {
+border:3px solid #fff;
+border-radius:50%;
+display:inline-block;
+font-size:56px;
+height:140px;
+line-height:136px;
+text-align:center;
+vertical-align:middle;
+width:140px;
+}
+
+i.service-icon:hover {
+font-size:68px;
 }
 
 /*-- Image --*/
