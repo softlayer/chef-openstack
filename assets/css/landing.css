@@ -120,7 +120,7 @@ width:250px;
 }
 
 .sidebar-nav li {
-line-height:40px;
+line-height:43px;
 margin-top:6px;
 text-indent:20px;
 }
@@ -149,11 +149,10 @@ line-height:40px;
 }
 
 .sidebar-nav > .sidebar-brand a {
-color:#999;
+color:#ccc;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-background:none;
 color:#fff;
 }
 

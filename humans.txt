@@ -8,12 +8,14 @@
   Location: Dallas, TX
 
 /* THANKS */
-  Twitter Bootstrap: http://getbootstrap.com
-  Mixture: http://mixture.io
+  Twitter: http://getbootstrap.com
+  Iron Summit Media: http://startbootstrap.com
+  Thomas Park: http://bootswatch.com
+  WrapMarket: http://wrapbootstrap.com
 
 /* SITE */
-  Last update: 2013/11/03
+  Last update: 2013/11/06
   Language: English
   Standards: HTML5, CSS3
   Components: Modernizr, jQuery, Reveal
-  Software: Sublime Text, Git, Mixture, Jekyll
+  Software: Sublime Text, Git, Jekyll

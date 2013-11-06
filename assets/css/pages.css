@@ -211,6 +211,42 @@ pre.nowrap {
 white-space:pre;
 }
 
+/*-- Sidebar --*/
+.bs-sidebar.affix .bs-sidenav {
+    margin-top: 33px;
+    margin-bottom: 0px;
+}
+
+.bs-sidebar .nav > li > a {
+color:#999;
+display:block;
+font-size:14px;
+letter-spacing:0;
+padding:4px 20px;
+}
+
+.bs-sidebar .nav > li > a:hover,
+.bs-sidebar .nav > li > a:focus {
+background:#e7e7e7;
+border-right:none;
+text-decoration:none;
+}
+
+.bs-sidebar .nav > .active > a,
+.bs-sidebar .nav > .active:hover > a,
+.bs-sidebar .nav > .active:focus > a {
+background-color:transparent;
+border-right:none;
+color:#1d1d1d;
+font-weight:400;
+}
+
+.bs-sidebar .nav .nav > li > a {
+font-size:96%;
+padding-bottom:0;
+padding-top:2px;
+}
+
 /*-- Sidenav --*/ 
 .bs-sidenav {
 background:#f4f4f4;
@@ -266,43 +302,6 @@ display:table;
 .bs-sidenav ul:after {
 clear:both;
 }
-
-/*-- Sidebar --*/
-
-.bs-sidebar.affix .bs-sidenav {
-    margin-top: 33px;
-    margin-bottom: 0px;
-}
-
-.bs-sidebar .nav > li > a {
-color:#999;
-display:block;
-font-size:14px;
-letter-spacing:0;
-padding:4px 20px;
-}
-
-.bs-sidebar .nav > li > a:hover,
-.bs-sidebar .nav > li > a:focus {
-background:#e7e7e7;
-border-right:none;
-text-decoration:none;
-}
-
-.bs-sidebar .nav > .active > a,
-.bs-sidebar .nav > .active:hover > a,
-.bs-sidebar .nav > .active:focus > a {
-background-color:transparent;
-border-right:none;
-color:#1d1d1d;
-font-weight:400;
-}
-
-.bs-sidebar .nav .nav > li > a {
-font-size:96%;
-padding-bottom:0;
-padding-top:2px;
-} */
 
 /*-- Grid --*/
 .row .col-lg-6 h2 {

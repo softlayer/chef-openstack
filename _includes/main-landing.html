@@ -2,12 +2,10 @@
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="icon-remove"></i></a>
-        <li class="sidebar-brand"><a href="{{ page.baseurl }}"></a></li>
         <li {% if page.slug == "getting-havana" %} class="active" {% endif %}><a href="{{ page.baseurl }}getting-havana">Getting Started</a></li>
         <li {% if page.slug == "release-notes" %} class="active" {% endif %}><a href="{{ page.baseurl }}release-notes">Release Notes</a></li>
         <li {% if page.slug == "contributing" %} class="active" {% endif %}><a href="{{ page.baseurl }}contributing">Contributing</a></li>
-        <!-- Removed from header on 11/4/13 
-        <li {% if page.slug == "roadmap" %} class="active" {% endif %}><a href="{{ page.baseurl }}roadmap">Roadmap</a></li>-->
+        <li class="sidebar-brand"><a href="{{ site.repo }}">GitHub Repository</a></li>
     </ul>
   </div>
   <div class="pull-right">

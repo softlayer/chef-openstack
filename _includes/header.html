@@ -31,14 +31,14 @@
 <link type="text/css" href="{{ page.baseurl }}assets/css/bootstrap.docs.min.css" rel="stylesheet">
 
 <!-- Custom Styling -->
-{% if site.baseurl != "http://softlayer.github.io/chef-openstack" %} <!-- Minified file for Production, Non-minified for Dev -->
+{% if site.baseurl != "http://softlayer.github.io/chef-openstack" %}  <!-- Unminified styling for Dev -->
 	<link type="text/css" href="{{ page.baseurl }}assets/css/pages.css" rel="stylesheet">
-{% elsif site.baseurl == "http://softlayer.github.io/chef-openstack" %}
+{% elsif site.baseurl == "http://softlayer.github.io/chef-openstack" %}  <!-- Minified styling for Production -->
 	<link type="text/css" href="{{ page.baseurl }}assets/css/pages.min.css" rel="stylesheet">
 {% endif %}
 
-{% if page.slug == "landing" and site.baseurl != "http://softlayer.github.io/chef-openstack" %}
+{% if page.slug == "landing" and site.baseurl != "http://softlayer.github.io/chef-openstack" %}  <!-- Unminified styling for Dev -->
 	<link type="text/css" href="{{ page.baseurl }}assets/css/landing.css" rel="stylesheet">
-{% elsif page.slug == "landing" and site.baseurl == "http://softlayer.github.io/chef-openstack" %}
+{% elsif page.slug == "landing" and site.baseurl == "http://softlayer.github.io/chef-openstack" %}  <!-- Minified styling for Production  -->
 	<link type="text/css" href="{{ page.baseurl }}assets/css/landing.min.css" rel="stylesheet">
 {% endif %}
