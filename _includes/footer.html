@@ -1,3 +1,14 @@
+<div class="bs-masthead-links">
+  <a href="{{ site.www }}" target="_blank">© 2013 SoftLayer Technologies, Inc.</a> &middot;
+  <a href="{{ site.license }}" target="_blank">License</a> &middot;
+  <a href="{{ site.sldn }}" target="_blank">Development Network</a> &middot; 
+  <a href="{{ site.portal }}" target="_blank">Portal</a>
+  {% if page.layout == "pages" %}
+    <span class="pull-right hidden-sm"><a href="#">Back to top</a></span></p>
+  {% endif %}
+</div>
+
+
 <!-- Core JS -->
   <script src="{{ page.baseurl }}assets/js/jquery.min.js"></script>
   <script src="{{ page.baseurl }}assets/js/bootstrap.min.js"></script>
@@ -5,8 +16,6 @@
   <script src="{{ page.baseurl }}assets/js/affix.min.js"></script>
   <script src="{{ page.baseurl }}assets/js/holder.min.js"></script>
   <script src="{{ page.baseurl }}assets/js/application.min.js"></script>
-  <script src="{{ page.baseurl }}assets/js/custom.modernizr.min.js"></script>
-  <script src="{{ page.baseurl }}assets/js/zepto.min.js"></script>
 
 <!-- Side Menu -->
   <script>
@@ -41,23 +50,16 @@
     </script>
 
 <!-- Google Analytics -->
-<script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-40037365-1']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-40037365-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 
-<div class="bs-masthead-links">
-  <a href="{{ site.www }}" target="_blank">© 2013 SoftLayer Technologies, Inc.</a> &middot;
-  <a href="{{ site.license }}" target="_blank">License</a> &middot;
-  <a href="{{ site.sldn }}" target="_blank">Development Network</a> &middot; 
-  <a href="{{ site.portal }}" target="_blank">Portal</a>
-  {% if page.layout == "pages" %}
-    <span class="pull-right hidden-sm"><a href="#">Back to top</a></span></p>
-  {% endif %}
-</div>
+<!-- JIRA Issue Collector -->
+  <script type="text/javascript" src="http://jira.softlayer.local:8080/s/en_US-4qigax-1988229788/6100/10/1.4.0-m3/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?collectorId=66eb3799"></script>
