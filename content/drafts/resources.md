@@ -7,6 +7,14 @@ baseurl: "../"
 
 # Documents
 
+### API Documentation
+
+[OpenStack API](http://docs.openstack.org/api/api-specs.html)
+[OpenStack API Quick Reference](http://api.openstack.org/api-ref.html)
+[SoftLayer API](http://sldn.softlayer.com/reference/softlayerapi)
+
+
+
 ### README
 
 A whirlwind tour of Sinatra’s most interesting features.
@@ -46,9 +54,7 @@ See the CHANGELOG file included for release notes about each release:
     1.4.1 March 15, 2013
 
 
-### API Documentation
 
-RDoc documentation courtesy of rubydoc.info.
 
 ### In the Wild
 

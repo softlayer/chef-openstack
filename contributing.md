@@ -53,11 +53,12 @@ Below is our workflow for pull requests.
 
 {% include docs.md %}
 
-## Help Improve Our Guide
+## Help Improve Our Docs
 
-Contributing to our [Getting Started]({{ page.baseurl }}havana) guide is similar to contributing code. We use GitHub to track and manage changes.
+Our docs are treated like our code. 
 
-* Our web resources for [softlayer.guthub.io/chef-openstack](http://softlayer.guthub.io/chef-openstack) are managed under the `gh-pages` [branch](https://github.com/softlayer/chef-openstack/wiki/_pages).
+* We publish our Getting Started guide on [GitHub Pages](http://pages.github.com) and use GitHub to track and manage changes.
+* Our web resources for [softlayer.guthub.io/chef-openstack](http://softlayer.guthub.io/chef-openstack) are managed under the `gh-pages` [branch](https://github.com/softlayer/chef-openstack/tree/gh-pages).
 * The [wiki on GitHub](https://github.com/softlayer/chef-openstack/wiki/_pages) is a clone of our online content. We use it for sharing while we’re working remote. 
 
 {% include community.md %}

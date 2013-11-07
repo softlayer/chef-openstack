@@ -9,7 +9,7 @@ baseurl: "../"
 
 The release for Chef-OpenStack is now available on [GitHub]({{ site.repo }}). Browse the sections below to read more about what’s available.
 
-## Release Summary
+## Summary
 
 The details regarding the project are below.
 

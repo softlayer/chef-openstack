@@ -34,10 +34,10 @@ Some consoles may throw a "Liquid Exception: incompatible character encodings: U
 
 This means the console does not use UTF-8 by default. To get around this, run these commands first (especially if you use Git for Windows).
 
-    ~ cmd  #switches to windows console
-    ~ chcp 65001
-    ~ exit  #return to Git
-    ~ jekyll serve
+    $ cmd
+    $ chcp 65001
+    $ exit
+    $ jekyll serve
 
 > You only have to run these commands when you open your console. Until the console is closed out, you will not need to run these commands again.
 

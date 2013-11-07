@@ -6,9 +6,9 @@ version_grizzly: 0.2.0
 
 # GitHub Links
 repo: http://github.com/softlayer/chef-openstack
-license: https://github.com/softlayer/chef-openstack/blob/Havana/LICENSE
-open_issues: https://github.com/softlayer/chef-openstack/issues?milestone=1&amp;state=open
-closed_issues: https://github.com/softlayer/chef-openstack/issues?milestone=1&amp;state=closed
+license: http://github.com/softlayer/chef-openstack/blob/Havana/LICENSE
+open_issues: http://github.com/softlayer/chef-openstack/issues?milestone=1;state=open
+closed_issues: http://github.com/softlayer/chef-openstack/issues?milestone=1;state=closed
 
 #Company Links
 www: http://www.softlayer.com

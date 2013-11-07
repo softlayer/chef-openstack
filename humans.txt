@@ -7,15 +7,9 @@
   Twitter: @caleorourke
   Location: Dallas, TX
 
-/* THANKS */
-  Twitter: http://getbootstrap.com
-  Iron Summit Media: http://startbootstrap.com
-  Thomas Park: http://bootswatch.com
-  WrapMarket: http://wrapbootstrap.com
-
 /* SITE */
-  Last update: 2013/11/06
+  Last update: 2013/11/07
   Language: English
   Standards: HTML5, CSS3
-  Components: Modernizr, jQuery, Reveal
+  Components: Modernizr, jQuery
   Software: Sublime Text, Git, Jekyll
