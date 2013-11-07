@@ -60,7 +60,7 @@ git clone https://github.com/opscode-cookbooks/partial_search /home/vagrant/chef
 git clone https://github.com/opscode-cookbooks/ntp /home/vagrant/chef-repo/cookbooks/ntp
 git clone https://github.com/opscode-cookbooks/build-essential /home/vagrant/chef-repo/cookbooks/build-essential
 git clone https://github.com/opscode-cookbooks/openssl /home/vagrant/chef-repo/cookbooks/openssl
-cp -r /vagrant/cookbooks/chef-openstack /home/vagrant/chef-repo/cookbooks/
+git clone -b Grizzly https://github.com/softlayer/chef-openstack /home/vagrant/chef-repo/cookbooks/chef-openstack
 
 /opt/chef-server/embedded/bin/knife cookbook upload --all
 /opt/chef-server/embedded/bin/knife environment create OpenStack -d "OpenStack Test Suite"
