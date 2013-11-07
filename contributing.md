@@ -11,21 +11,7 @@ Looking to be a contributor? Here's how you can help.
 
 # Guidelines
 
-Read our contributing guidelines below. They include directions for pull requests, feature requests, issues, and our coding standards.
-
-## Pull Requests
-
-Below is our workflow for pull requests.
-
-1.  Visit our [GitHub repo]({{ site.repo }}).
-2.  Find something you would like to work on, including anything that's loitering in the issue tracker.
-3.  Fork the project and work in a topic branch.
-4.  Make sure any changes you made work with {{ site.project }}.
-5.  Add any content or documentation that describes the behavior you want to commit.
-6.  [Rebase](https://help.github.com/articles/interactive-rebase) your branch against the `master` branch to ensure everything is up to date.
-7.  Commit your changes and send a pull request.
-
-{% include code-ruby.md %}
+Read our contributing guidelines below. They include how to handle feature requests and issues, directions for pull requests, and our coding standards.
 
 ## Feature Requests
 
@@ -33,21 +19,46 @@ We are not actively accepting community requests. We are, however, accepting any
 
 ## Issues
 
-Have an issue to report? [Please open a new issue]({{ site.open_issues }}). Before opening an issue, though, read our guidelines below.
+Have an issue to report? Here are some guidelines to read through first.
 
-### Check for fixes
+### Check the list of closed issues
 
-Verify if your [issue has already been resolved]({{ site.closed_issues }}) before reporting an issue.
+Scroll through our list of [closed issues]({{ site.closed_issues }}) to see if yours has already been resolved or reported.
 
-### Steps to reproduce
+### Provide as much information as possible
 
-Providing a step-by-step repeatable procedure helps us get a fix out promptly.
+Be sure to include any relevant information, such as the OpenStack release (Grizzly, Havana), which version, what components you use, when it was deployed, and so on.
 
-### Provide testing parameters
+### Use Gist to help explain the issue
 
-Include any test parameters, such as your OS edition and version, what components you used, when you deployed it, etc.
+Create a [gist](https://gist.github.com) of the code causing the issue, as well as any error messages, and include its URL in the issue report.
+
+### Open a new issue
+
+Create a [new issue on GitHub]({{ site.open_issues }}).
+
+## Pull Requests
+
+Below is our workflow for pull requests.
+
+1.  Visit our [GitHub repo]({{ site.repo }}).
+2.  Pick something you'd like to hack on, including any items loitering in the [issues lists]({{ site.open_issues }}).
+3.  Fork the project and work in a topic branch.
+4.  Make sure any changes you made work with {{ site.project }}.
+5.  Add any documents or instructions that describe the behavior you're committing.
+6.  [Rebase](https://help.github.com/articles/interactive-rebase) your branch against the `master` to ensure everything is up to date.
+7.  Commit your changes and send a pull request.
+
+{% include code-ruby.md %}
 
 {% include docs.md %}
+
+## Help Improve Our Guide
+
+Contributing to our [Getting Started]({{ page.baseurl }}havana) guide is similar to contributing code. We use GitHub to track and manage changes.
+
+* Our web resources for [softlayer.guthub.io/chef-openstack](http://softlayer.guthub.io/chef-openstack) are managed under the `gh-pages` [branch](https://github.com/softlayer/chef-openstack/wiki/_pages).
+* The [wiki on GitHub](https://github.com/softlayer/chef-openstack/wiki/_pages) is a clone of our online content. We use it for sharing while we’re working remote. 
 
 {% include community.md %}
 
