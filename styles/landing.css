@@ -185,9 +185,10 @@ width:160px;
 }
 
 .btn-primary {
-background-color:#e7e7e7;
-border-color:#e7e7e7;
-color:#aaa;
+background-color:transparent;
+border-color:transparent;
+color:transparent;
+padding: 3px 3px;
 }
 
 .btn-primary:hover,
@@ -195,9 +196,9 @@ color:#aaa;
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-background-color:#ccc;
-border-color:#ccc;
-color:#aaa;
+background-color:transparent;
+border:1px solid #aaa;
+color:transparent;
 }
 
 div.bs-buttons {
