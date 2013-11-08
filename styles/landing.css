@@ -1,4 +1,5 @@
 /*-- Basic --*/
+
 html,body {
 height:100%;
 width:100%;
@@ -11,6 +12,7 @@ color:#fff;
 }
 
 /*-- Nav --*/
+
 .container {
 margin-top:-40px;
 text-align:center;
@@ -55,6 +57,7 @@ padding:50px 0 0;
 }
 
 /*-- Headings --*/
+
 h1,.h1 {
 border-bottom:none;
 margin-top:40px;
@@ -84,6 +87,7 @@ margin-bottom:30px;
 }
 
 /*-- Sidebar --*/
+
 #sidebar-wrapper {
 -moz-transition:all .4s ease 0;
 -ms-transition:all .4s ease 0;
@@ -157,6 +161,7 @@ color:#fff;
 }
 
 /*-- Buttons --*/
+
 .btn-info {
 background-color:#fff;
 background-image:none;
@@ -207,6 +212,7 @@ text-align:center;
 }
 
 /*-- Toggle --*/
+
 #menu-toggle {
 position:fixed;
 right:0;
@@ -219,6 +225,7 @@ margin:5px 5px 0 0;
 }
 
 /*-- Services --*/
+
 .services {
 background:#7fbbda;
 color:#fff;
@@ -246,6 +253,7 @@ font-size:68px;
 }
 
 /*-- Image --*/
+
 img.navbar-brand {
 margin-right:50px;
 margin-top:-57px;
