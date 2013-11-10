@@ -58,7 +58,7 @@ Below is our workflow for pull requests.
 Our docs are treated like our code. 
 
 * We publish our Getting Started guide on [GitHub Pages](http://pages.github.com) and use GitHub to track and manage changes.
-* Our web resources for [softlayer.guthub.io/chef-openstack](http://softlayer.guthub.io/chef-openstack) are managed under the `gh-pages` [branch](https://github.com/softlayer/chef-openstack/tree/gh-pages).
+* Our web resources for [Chef-OpenStack](http://softlayer.guthub.io/chef-openstack) are managed under the `gh-pages` [branch](https://github.com/softlayer/chef-openstack/tree/gh-pages).
 * The [wiki on GitHub](https://github.com/softlayer/chef-openstack/wiki/_pages) is a clone of our online content. We use it for sharing while we’re working remote. 
 
 {% include community.md %}
