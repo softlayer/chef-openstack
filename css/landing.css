@@ -30,7 +30,7 @@ width:100%;
 -o-background-size:cover;
 -webkit-background-size:cover;
 background:url(http://s7.postimg.org/v0i3zvrd7/bg_dark.jpg) left center no-repeat;
-background-color:#343433;
+background-color:#222;
 background-size:cover;
 }
 
@@ -41,10 +41,6 @@ height:74px;
 }
 
 .bs-masthead-links {
-cursor:pointer;
-font-size:14px;
-font-weight:500;
-letter-spacing:0;
 margin:2px 0;
 }
 
@@ -70,20 +66,20 @@ vertical-align:middle;
 }
 
 .vert-text h1 {
-font-family:freight-sans-pro, helvetica, arial, sans-serif;
-font-size:6.5em;
+font-family:"franklin-gothic-urw", helvetica, arial, sans-serif;
+font-size:114px;
 font-weight:700;
 letter-spacing:-2px;
 line-height:1.2;
-margin:0;
+margin:0 0 0 0;
 padding:0;
-text-transform:uppercase;
+text-transform:none;
 }
 
 .vert-text .lead {
 font-family:helvetica, arial, sans-serif;
-font-size:2.25em;
-margin-bottom:30px;
+font-size:30px;
+margin-bottom:120px;
 }
 
 /*-- Sidebar --*/
@@ -93,7 +89,7 @@ margin-bottom:30px;
 -ms-transition:all .4s ease 0;
 -o-transition:all .4s ease 0;
 -webkit-transition:all .4s ease 0;
-background:none repeat scroll 0 0 #676766;
+background:none repeat scroll 0 0 #666;
 height:100%;
 margin-right:-250px;
 overflow-y:auto;
@@ -130,7 +126,7 @@ text-indent:20px;
 }
 
 .sidebar-nav li a {
-color:#cdcdcc;
+color:#ccc;
 display:block;
 text-decoration:none;
 }
@@ -153,7 +149,7 @@ line-height:40px;
 }
 
 .sidebar-nav > .sidebar-brand a {
-color:#cdcdcc;
+color:#ccc;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -168,7 +164,7 @@ background-image:none;
 border:1px solid #fff;
 border-radius:50px;
 box-shadow:none;
-color:#343433;
+color:#222;
 font-size:16px;
 margin-bottom:20px;
 margin-right:14px;
@@ -182,7 +178,7 @@ background-color:#fff;
 background-image:none;
 border:1px solid #fff;
 border-radius:50px;
-color:#cdcdcc;
+color:#ccc;
 margin-bottom:20px;
 margin-right:14px;
 opacity:.9;
@@ -202,12 +198,12 @@ padding: 3px 3px;
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
 background-color:transparent;
-border:1px solid #ababaa;
+border:1px solid #aaa;
 color:transparent;
 }
 
 div.bs-buttons {
-margin-top:100px;
+margin-top:30px;
 text-align:center;
 }
 
