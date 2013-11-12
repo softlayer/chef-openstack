@@ -131,38 +131,29 @@ Included below is a table you can use to reference each description and some imp
         <td>Private</td>
         <td>
 
-*	Existing SoftLayer back-end network where all your hardware exists, including VLANs attached to your account.
-*	Most SoftLayer servers connect to this network on the <strong>bond0</strong> interface, but other servers may be connected on <strong>eth0</strong>.
-*	This provides access to other non-OpenStack servers and services on the SoftLayer private network.
+Existing SoftLayer back-end network where all your hardware exists, including VLANs attached to your account. Most SoftLayer servers connect to this network on the <strong>bond0</strong> interface, but other servers may be connected on <strong>eth0</strong>. This provides access to other non-OpenStack servers and services on the SoftLayer private network.
         </td>
         <td>
-* You must order an IPv4 pool of Portable <i>Private</i> IPs to dole out across instances.
-* See important info about IP addressing.
+You must order an IPv4 pool of Portable <i>Private</i> IPs to dole out across instances. See important info about IP addressing.
         </td>
       </tr>
       <tr>
         <td>Public</td>
         <td>
 
-* Existing SoftLayer front-end network from which all incoming Internet traffic is received and all outbound Internet traffic is sent.
-* Most SoftLayer servers connect to this network on the <strong>bond1</strong> interface, but other servers may be connected on <strong>eth1</strong>.
+Existing SoftLayer front-end network from which all incoming Internet traffic is received and all outbound Internet traffic is sent. Most SoftLayer servers connect to this network on the <strong>bond1</strong> interface, but other servers may be connected on <strong>eth1</strong>.
         </td>
         <td>
-* Must order an IPv4 pool of Portable <i>Public</i> IPs to dole out across instances.
-* See important info about IP addressing.
+Must order an IPv4 pool of Portable <i>Public</i> IPs to dole out across instances. See important info about IP addressing.
         </td>
       </tr>
       <tr>
         <td>Data</td>
         <td>
-* Networks created within OpenStack Quantum are part of the data network.
-* OpenStack instances communicate with each other over the data network, including when they issue DHCP requests during boots and reboots.
-* This network is an IP-over-GRE network between Network and Compute Nodes.
-* The virtual network appliance used is Open vSwitch combined with the `quantum-plugin-openvswitch-agent` in Quantum.
+Networks created within OpenStack Quantum are part of the data network. OpenStack instances communicate with each other over the data network, including when they issue DHCP requests during boots and reboots. This network is an IP-over-GRE network between Network and Compute Nodes. The virtual network appliance used is Open vSwitch combined with the `quantum-plugin-openvswitch-agent` in Quantum.
         </td>
         <td>
-* Default environment attributes in our cookbooks allow you to create overlapping IPv4 subnet ranges between different tenants and projects.
-* See important info about IP addressing.
+Default environment attributes in our cookbooks allow you to create overlapping IPv4 subnet ranges between different tenants and projects. See important info about IP addressing.
         </td>
       </tr>
     </tbody>
@@ -179,7 +170,7 @@ With these constraints in mind, a /29 portable subnet would thusly provide six t
 
 Remember that the DHCP server used in Quantum will need an IP address on each subnet where DHCP is enabled. Keep this in mind when planning how large of a SoftLayer Portable IP block to order.
 
-OpenStack utilizes NAT (Network Address Translation) across externally connected Quantum/Neutron virtual routers. Any network that attaches to the router has external network access through NAT. The use of floating IP&#8217;s can reduce the size of the portable block you will have to purchase by allowing all compute instances to have outbound network access when not running inbound public services.
+OpenStack utilizes NAT (Network Address Translation) across externally connected Quantum virtual routers. Any network that attaches to the router has external network access through NAT. The use of floating IP&#8217;s can reduce the size of the portable block you will have to purchase by allowing all compute instances to have outbound network access when not running inbound public services.
 
 ### IP Constraints on Data Networks
 

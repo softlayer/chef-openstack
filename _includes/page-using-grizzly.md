@@ -227,7 +227,7 @@ The private cloud recipes were designed with scaling in mind. OpenStack was buil
 The private cloud is made up of 12 components:
 
 *   OpenStack MySQL Servers
-*   Quantum/Neutron
+*   Quantum
 *   Nova
 *   Cinder
 *   Glance
@@ -235,7 +235,7 @@ The private cloud is made up of 12 components:
 *   RabbitMQ
 *   OpenStack Controller
 *   OpenStack Nova Compute
-*   OpenStack Quantum/Neutron
+*   OpenStack Quantum
 *   OpenStack Keystone Authentication
 *   OpenStack Glance
 *   OpenStack Cinder
@@ -298,7 +298,7 @@ The components (roles) can be branched into the traditional three-node OpenStack
       <tr>
         <td>OpenStack Network</td>
 
-        <td>Quantum/Neutron</td>
+        <td>Quantum</td>
       </tr>
     </tbody>
   </table>
@@ -326,7 +326,7 @@ At scale, you may wish to have some separation of these roles to handle the incr
       <tr>
         <td></td>
 
-        <td>Quantum/Neutron</td>
+        <td>Quantum</td>
       </tr>
 
       <tr>
@@ -410,7 +410,7 @@ At scale, you may wish to have some separation of these roles to handle the incr
       <tr>
         <td>OpenStack Network</td>
 
-        <td>Quantum/Neutron</td>
+        <td>Quantum</td>
       </tr>
     </tbody>
   </table>

@@ -116,7 +116,7 @@ below.
 ### Allocate Public IP Addresses
 
 We're getting closer, but we aren't quite finished yet. Each web server will need a public IP for inbound public access.
-Currently, the compute instances are only accessible via the devices connected to OpenStack Quantum/Neutron network, or any device that is
+Currently, the compute instances are only accessible via the devices connected to OpenStack Quantum (Grizzly)/Neutron (Havana) network, or any device that is
 on the SoftLayer Private Network. SoftCube can allocate public IP addresses purchased from SoftLayer to any instance at any time by
 assigning Floating IPs, which is our next step.
 

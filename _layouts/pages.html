@@ -9,7 +9,6 @@
       
     {% include main-pages.html %}
 
-    <!-- Docs page layout -->
     <div class="bs-header" id="content">
       <div class="container">
       </div>
@@ -33,6 +32,32 @@
             
             </ul>
           </div>
+
+        {% if page.slug == "getting-grizzly" %}
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown">
+              Pick a different OpenStack version 
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="version-selector">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}getting-havana">Havana</a></li>
+              <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}getting-grizzly">Grizzly</a></li>
+            </ul>
+          </div>
+
+        {% elsif page.slug == "getting-havana" %}
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown">
+              Pick a different OpenStack version
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="version-selector">
+              <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}getting-havana">Havana</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}getting-grizzly">Grizzly</a></li>
+            </ul>
+          </div>
+        {% endif %}
+
         </div>
         <div class="col-md-9" role="main">
           

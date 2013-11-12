@@ -672,7 +672,7 @@ pre.nowrap
 .bs-sidebar.affix 
 {
   position: fixed;
-  top: 125px;
+  top: 124px;
   width: 263px;
 }
 
@@ -890,4 +890,16 @@ div#component-table.table-responsive
 
 .bs-header {
   padding: 0 0 35px;
+}
+
+button#version-selector.btn.dropdown-toggle {
+  font-size: 13.5px;
+  color: #fff;
+  background-color:#222;
+  width: 260px;
+  padding: 5px 20px;
+}
+
+.caret {
+  border-color: #fff transparent -moz-use-text-color;
 }
