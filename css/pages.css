@@ -898,6 +898,7 @@ button#version-selector.btn.dropdown-toggle {
   background-color:#222;
   width: 260px;
   padding: 5px 20px;
+  position: fixed;
 }
 
 .caret {
