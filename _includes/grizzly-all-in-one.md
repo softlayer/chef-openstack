@@ -49,10 +49,10 @@ Follow the instructions below to install Virtual Box and Vagrant.
 
 <ol>
 <li>Make a temporary directory to place the Vagrant files.</li>
-<pre><code>## Linux:
+<pre><code>## Linux
 $ mkdir ~/softlayer
-## Windows:
-&gt; mkdir C:\softlayer</code></pre>
+## Windows
+> mkdir C:\softlayer</code></pre>
 <li>Next, save the Vagrant files to the created location and open a terminal window or Windows command line window.</li>
 <li>Change your directory (cd) to the vagrant directory you just created.</li>
 <li>Run vagrant up.</li>

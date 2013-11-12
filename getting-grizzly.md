@@ -1,8 +1,8 @@
 ---
 layout: pages
-title: Get Started
-tag: g
-slug: g
+title: Getting Started
+tag: Grizzly
+slug: getting-grizzly
 baseurl: "../"
 ---
 

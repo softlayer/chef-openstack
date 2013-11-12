@@ -10,7 +10,7 @@ The instructions below will guide you through the process of installing Chef, fo
 
 The Chef server acts as a hub for configuration data. It stores cookbooks, policies applied to each node, and metadata that describes each registered Chef node being managed by the chef-client command. Nodes use the `chef-client` command to ask the server for configuration details, such as recipes, templates, and file distributions. The `chef-client` command then performs much of the configuration work on the nodes themselves without much interaction with the server. This scalable approach provides consistent configuration management and quick deployments.
 
-<p>To install Chef Server, perform the following:</p>
+To install Chef Server, perform the following:
 
 <ol>
   <li>Go to <a href="http://www.opscode.com/chef/install">http://www.opscode.com/chef/install</a>.</li>
@@ -24,8 +24,8 @@ The Chef server acts as a hub for configuration data. It stores cookbooks, polic
 <img class="img-thumbnail" src="{{ page.baseurl }}img/installation/001.png">
 <br>
   </li>
-  <li>Verify the hostname for the server by running the <code>hostname</code> command. The hostname for the server must be a fully qualified domain name (<span class="caps">FQDN</span>). We recommend as well that the proper <code>A</code> records for each of your nodes&#8217; <span class="caps">FQDN</span>s exist in <span class="caps">DNS</span> for easier accessibility.</li>
-  <li>When you&#8217;re finished, verify the installation of Chef Server by running the following command:
+  <li>Verify the hostname for the server by running the <code>hostname</code> command. The hostname for the server must be a fully qualified domain name (FQDN). We recommend as well that the proper <code>A</code> records for each of your nodes' FQDNs exist in DNS for easier accessibility.</li>
+  <li>When you're finished, verify the installation of Chef Server by running the following command:
 
 <pre><code>$ sudo chef-server-ctl test</code></pre>
   </li>
@@ -147,13 +147,13 @@ First, create an environment. It will be used to house your nodes and configurat
 $ knife environment create NAME -d "Description for environment"
 </pre>
 
-Edit your environment with the following command (you may also edit this from the Chef web-based UI). An editor will open where you may define your environment's attributes in <span class="caps">JSON</span> format.
+Edit your environment with the following command (you may also edit this from the Chef web-based UI). An editor will open where you may define your environment's attributes in JSON format.
 
 <pre>
 $ knife environment edit ENVIRONMENT
 </pre>
 
-Take special care to ensure your final environment document is valid <span class="caps">JSON</span>, as `knife` may discard your attempted change if the <span class="caps">JSON</span> does not properly validate once you save and exit the editor.
+Take special care to ensure your final environment document is valid JSON, as `knife` may discard your attempted change if the JSON does not properly validate once you save and exit the editor.
 
 The following is an example of the recommended minimum attributes that can be overridden in the environment, illustrating the required attributes to deploy:
 

@@ -21,69 +21,46 @@ translates those for you.
     <thead>
       <tr>
         <th>Components</th>
-
         <th>Name</th>
-
         <th>Description</th>
       </tr>
     </thead>
-
     <tbody>
       <tr>
         <td>Identity / Authentication</td>
-
         <td>Keystone</td>
-
         <td>Provides authentication, token validation, and service URLs for each service to authorized users.</td>
       </tr>
-
       <tr>
         <td>Compute</td>
-
         <td>Nova</td>
-
         <td>Manages all hypervisor interaction, management, and instance state.</td>
       </tr>
-
       <tr>
         <td>Networking</td>
-
         <td>Quantum (Neutron)</td>
-
         <td>Manages state for all networks defined within a cluster, and provides network routing, IP management, DHCP, and load
         balancing.</td>
       </tr>
-
       <tr>
         <td>Image Management</td>
-
         <td>Glance</td>
-
         <td>Maintains state and stores copies of OS images for use in new instance deployments.</td>
       </tr>
-
       <tr>
         <td>Block Storage</td>
-
         <td>Cinder</td>
-
         <td>Allocates and manages block storage for instances, whether secondary, tertiary, etc. disks that are attached to instances. Also
         stores and manages snapshots created from instances.</td>
       </tr>
-
       <tr>
         <td>Object Storage</td>
-
         <td>Swift</td>
-
         <td>Provides generic object storage services, usually as a more generic file store.</td>
       </tr>
-
       <tr>
         <td>Management UI</td>
-
         <td>Horizon</td>
-
         <td>Allows administrators and end-users to manage each of the above.</td>
       </tr>
     </tbody>
@@ -99,85 +76,61 @@ The list below contains only basic terms found throughout our documentation. For
     <thead>
       <tr>
         <th>Term</th>
-
         <th>Definition</th>
       </tr>
     </thead>
-
     <tbody>
       <tr>
         <td>Action</td>
-
         <td>Providers take idempotent actions to configure resources.</td>
       </tr>
-
       <tr>
         <td>Attribute</td>
-
         <td>Attributes are data about nodes.</td>
       </tr>
-
       <tr>
         <td>Authentication</td>
-
         <td>Clients authenticate to a server using pre-shared RSA keys and signed HTTP headers.</td>
       </tr>
-
       <tr>
         <td>Auto-vivify</td>
-
         <td>Internally in the library, attributes are automatically created as methods.</td>
       </tr>
-
       <tr>
         <td>Bootstrap</td>
-
         <td>In this context, bootstrap means to get Chef installed and ready to run on the target system.</td>
       </tr>
-
       <tr>
         <td>
           <a href="http://wiki.opscode.com/display/chef/Chef+Client">Client</a>
         </td>
-
         <td>The client communicates with a server to download the cookbooks it needs to compile and run its configuration.</td>
       </tr>
-
       <tr>
         <td>Configuration Management</td>
-
         <td>Setting up all the various components and services on a server so it can fulfill a role is configuration management.</td>
       </tr>
-
       <tr>
         <td>Convergence</td>
-
         <td>The process by which systems are brought in line with the overall configuration management policy.</td>
       </tr>
-
       <tr>
         <td>
           <a href="http://wiki.opscode.com/display/chef/Cookbooks">Cookbook</a>
         </td>
-
         <td>Chef cookbooks are packages for code used to configure some aspect of a system.</td>
       </tr>
-
       <tr>
         <td>DSL</td>
-
         <td>Programming or specification language dedicated to a specific problem domain. Chef makes use of meta-programming features in
         Ruby to create a simple DSL for writing recipe, role, and metadata files.</td>
       </tr>
-
       <tr>
         <td>
           <a href="http://wiki.opscode.com/display/chef/Data+Bags">Data Bag</a>
         </td>
-
         <td>Arbitrary store of JSON data that is indexed for Search.</td>
       </tr>
-
       <tr>
         <td>Definition</td>
 

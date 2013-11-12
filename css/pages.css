@@ -64,7 +64,7 @@
 @media (min-width:768px) {
   .bs-footer 
 {
-    text-align: left;
+  text-align: left;
 }
 
 .bs-footer p 
@@ -113,7 +113,7 @@
 @media (min-width:768px) {
   .bs-social 
 {
-    text-align: left;
+  text-align: left;
 }
 
 .bs-social-buttons li:first-child 
@@ -271,6 +271,7 @@ body
 {
   position: relative;
   padding-top: 50px;
+  font-size: 14.25px;
 }
 
 a 
@@ -287,7 +288,7 @@ a:focus
 
 blockquote p 
 {
-  color:#777;
+  color:#666;
   font-size:13.5px;
 }
 
@@ -298,8 +299,8 @@ ol
 }
 
 p {
-  line-height:1.5;
-  margin-bottom:20px;
+  margin-bottom:14px;
+  font-size: 14.25px;
 }
 
 article, 
@@ -461,27 +462,27 @@ footer
 
 .bs-footer 
 {
-  background:#f4f4f4;
-  border-top:1px solid #e5e5e5;
-  color: #777;
+  background:#222;
+  border-top:1px solid #999;
+  color: #666;
   font-weight:300;
   margin-top: 100px;
-  padding-bottom: 30px;
+  padding-bottom: 0;
   padding-top:0;
   text-align: center;
 }
 
 .bs-footer a 
 {
-color:#999;
-text-decoration:none;
+  color:#666;
+  text-decoration:none;
 }
 
 .bs-footer a:hover,
 .bs-footer a:focus 
 {
-color:#666;
-text-decoration:none;
+  color:#666;
+  text-decoration:none;
 }
 
 /*-- Masthead --*/
@@ -489,15 +490,16 @@ text-decoration:none;
 .bs-masthead-links 
 {
   cursor:pointer;
-  font-family:"adelle-sans", helvetica, arial, sans-serif;
-  font-size:14.25px;
-  font-weight:500;
+  font-family: helvetica, arial, sans-serif;
+  font-size:13.5px;
+  font-weight:300;
   letter-spacing:0;
   list-style: none;
   margin:20px 0 40px;
   padding: 0 15px;
-  text-align:center;
+  text-align:left;
   text-transform: none;
+  letter-spacing: 0px;
 }
 
 .bs-masthead .lead 
@@ -547,40 +549,41 @@ text-decoration:none;
 
 table code 
 {
-font-size:12px;
-font-weight: 400px;
+  font-size:12px;
+  font-weight: 400px;
 }
 
 code 
 {
-background:#f9f0dc;
-color:#c0392b;
+  background:#f9f0dc;
+  color:#c0392b;
+  font-size: 94%;
 }
 
 pre 
 {
-background:#222;
-border:#222 solid 1px;
-border-radius:4px;
-color:#fff;
-font-size:13.5px;
-line-height:1.5;
-margin:10px 0 20px;
+  background:#222;
+  border:#222 solid 1px;
+  border-radius:4px;
+  color:#fff;
+  font-size:13.5px;
+  line-height:1.5;
+  margin:10px 0 20px;
 }
 
 output pre 
 {
-background:#f4f4f4;
-border:#e5e5e5 solid 1px;
-border-radius:6px;
-color:#777;
-font-size:13.5px;
-margin:-10px 0 20px;
+  background:#f4f4f4;
+  border:#e5e5e5 solid 1px;
+  border-radius:6px;
+  color:#666;
+  font-size:13.5px;
+  margin:-10px 0 20px;
 }
 
 pre.nowrap 
 {
-white-space:pre;
+  white-space:pre;
 }
 
 /*-- Sidenav --*/
@@ -663,7 +666,7 @@ white-space:pre;
 @media (min-width:992px) {
   .bs-sidebar .nav>.active > ul 
 {
-    display: block;
+  display: block;
 }
 
 .bs-sidebar.affix 
@@ -724,167 +727,167 @@ white-space:pre;
 
 .row .col-lg-6 h2 
 {
-border-bottom:none;
-color:#222;
-font-size:26px;
-font-weight:500;
-margin-bottom:0;
+  border-bottom:none;
+  color:#222;
+  font-size:26px;
+  font-weight:500;
+  margin-bottom:0;
 }
 
 .row .col-lg-6 h2 a 
 {
-color:#222;
+  color:#222;
 }
 
 .row .col-lg-6 h2 a:hover,
 .row .col-lg-6 h2 a:focus
 {
-color:#777;
+  color:#666;
 }
 
 .row .col-lg-6 p 
 {
-margin-bottom:6px;
-margin-left:0;
+  margin-bottom:6px;
+  margin-left:0;
 }
 
 /*-- Buttons --*/
 
 .btn-default 
 {
-background-image:none;
-background-repeat:no-repeat;
-border-radius:4px;
-font-size:18px;
-text-shadow:none;
+  background-image:none;
+  background-repeat:no-repeat;
+  border-radius:4px;
+  font-size:18px;
+  text-shadow:none;
 }
 
 .bs-sidenav-buttons 
 {
-margin-left:auto;
-margin-right:auto;
-width:254px;
+  margin-left:auto;
+  margin-right:auto;
+  width:254px;
 }
 
 .btn-lg,
 .lead,
 .row .col-lg-6 p a 
 {
-font-size:16px;
+  font-size:16px;
 }
 
 /*-- Divider --*/
 
 .divider 
 {
-background:none repeat scroll 0 0 #e5e5e5;
-height:2px;
-margin:30px auto 60px;
-opacity:0.2;
-width:50px;
+  background:none repeat scroll 0 0 #e5e5e5;
+  height:2px;
+  margin:30px auto 60px;
+  opacity:0.2;
+  width:50px;
 }
 
 .page-divider
 {
-background:none repeat scroll 0 0 #999;
-height:2px;
-margin:30px auto 60px;
-opacity:0.2;
-width:70px;
+  background:none repeat scroll 0 0 #999;
+  height:2px;
+  margin:30px auto 60px;
+  opacity:0.2;
+  width:70px;
 }
 
 /*-- Image --*/
 
 .img-thumbnail 
 {
-height:354px;
-margin-top:10px;
-margin-bottom: 20px;
+  height:354px;
+  margin-top:10px;
+  margin-bottom: 20px;
 }
 
 img#no-height.img-thumbnail 
 {
-height:auto;
-margin-top:0;
+  height:auto;
+  margin-top:0;
 }
 
 img#custom-height.img-thumbnail 
 {
-height:500px;
-margin-top:0;
+  height:500px;
+  margin-top:0;
 }
 
 /*-- Table --*/
 
 table#no-borders.table.table-hover > thead 
 {
-background:transparent;
-border:none;
-color:#222;
+  background:transparent;
+  border:none;
+  color:#222;
 }
 
 table#no-borders.table.table-hover > thead > tr > th 
 {
-color:#222;
-text-align:left;
+  color:#222;
+  text-align:left;
 }
 
 .table thead 
 {
-background:#666;
-border:#666 solid 1px;
+  background:#333;
+  border:#333 solid 1px;
 }
 
 .table thead > tr > th 
 {
-border-color:#999;
-color:#fff;
-text-align:center;
+  border-color:#666;
+  color:#fff;
+  text-align:center;
 }
 
 .table-bordered > tbody > tr > th,
 .table-bordered > tbody > tr > td 
 {
-border:#ccc solid 1px;
+  border:#ccc solid 1px;
 }
 
 div#component-table.table-responsive 
 {
-width:65%;
+  width:65%;
 }
 
 /*-- Callout --*/
 
 .callout 
 {
-background-color:#fafafa;
-border-bottom:1px solid #e5e5e5;
-border-top:1px solid #f4f4f4;
-color:#777;
-margin-top:0px;
-padding:15px 20px;
+  background-color:#fafafa;
+  border-bottom:1px solid #e5e5e5;
+  border-top:1px solid #f4f4f4;
+  color:#666;
+  margin-top:0px;
+  padding:15px 20px;
 }
 
 .callout a 
 {
-color:#777;
-font-weight:700;
-padding-bottom:2px;
+  color:#666;
+  font-weight:700;
+  padding-bottom:2px;
 }
 
 .callout a:hover,
 .callout a:focus 
 {
-border-bottom:1px dotted #777;
-color:#777;
-font-weight:700;
+  border-bottom:1px dotted #666;
+  color:#666;
+  font-weight:700;
 }
 
 .callout p 
 {
-margin-bottom:4px;
+  margin-bottom:4px;
 }
 
 .bs-header {
-    padding: 0 0 35px;
+  padding: 0 0 35px;
 }

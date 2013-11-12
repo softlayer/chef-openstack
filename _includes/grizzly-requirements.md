@@ -131,38 +131,38 @@ Included below is a table you can use to reference each description and some imp
         <td>Private</td>
         <td>
 
-*	Existing SoftLayer back-end network where all your hardware exists, including VLANs attached to your account.<br>
-*	Most SoftLayer servers connect to this network on the <strong>bond0</strong> interface, but other servers may be connected on <strong>eth0</strong>.<br>
-*	This provides access to other non-OpenStack servers and services on the SoftLayer private network.<br>
+*	Existing SoftLayer back-end network where all your hardware exists, including VLANs attached to your account.
+*	Most SoftLayer servers connect to this network on the <strong>bond0</strong> interface, but other servers may be connected on <strong>eth0</strong>.
+*	This provides access to other non-OpenStack servers and services on the SoftLayer private network.
         </td>
         <td>
-* You must order an IPv4 pool of Portable <i>Private</i> IPs to dole out across instances.<br>
-* See important info about IP addressing.<br>
+* You must order an IPv4 pool of Portable <i>Private</i> IPs to dole out across instances.
+* See important info about IP addressing.
         </td>
       </tr>
       <tr>
         <td>Public</td>
         <td>
 
-* Existing SoftLayer front-end network from which all incoming Internet traffic is received and all outbound Internet traffic is sent.<br>
-* Most SoftLayer servers connect to this network on the <strong>bond1</strong> interface, but other servers may be connected on <strong>eth1</strong>.<br>
+* Existing SoftLayer front-end network from which all incoming Internet traffic is received and all outbound Internet traffic is sent.
+* Most SoftLayer servers connect to this network on the <strong>bond1</strong> interface, but other servers may be connected on <strong>eth1</strong>.
         </td>
         <td>
-* Must order an IPv4 pool of Portable <i>Public</i> IPs to dole out across instances.<br>
-* See important info about IP addressing.<br>
+* Must order an IPv4 pool of Portable <i>Public</i> IPs to dole out across instances.
+* See important info about IP addressing.
         </td>
       </tr>
       <tr>
         <td>Data</td>
         <td>
-* Networks created within OpenStack Quantum are part of the data network.<br>
-* OpenStack instances communicate with each other over the data network, including when they issue DHCP requests during boots and reboots.<br>
-* This network is an IP-over-GRE network between Network and Compute Nodes.<br>
-* The virtual network appliance used is Open vSwitch combined with the `quantum-plugin-openvswitch-agent` in Quantum.<br>
+* Networks created within OpenStack Quantum are part of the data network.
+* OpenStack instances communicate with each other over the data network, including when they issue DHCP requests during boots and reboots.
+* This network is an IP-over-GRE network between Network and Compute Nodes.
+* The virtual network appliance used is Open vSwitch combined with the `quantum-plugin-openvswitch-agent` in Quantum.
         </td>
         <td>
-* Default environment attributes in our cookbooks allow you to create overlapping IPv4 subnet ranges between different tenants and projects.<br>
-* See important info about IP addressing.<br>
+* Default environment attributes in our cookbooks allow you to create overlapping IPv4 subnet ranges between different tenants and projects.
+* See important info about IP addressing.
         </td>
       </tr>
     </tbody>
