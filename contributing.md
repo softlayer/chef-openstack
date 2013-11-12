@@ -53,7 +53,7 @@ Below is our workflow for pull requests.
 
 {% include docs.md %}
 
-## Help Improve Our Docs
+## Contribute to Our Docs
 
 Our docs are treated like our code. 
 
