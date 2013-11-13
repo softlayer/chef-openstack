@@ -10,16 +10,16 @@
       
     {% include main-pages.html %}
 
-    <div class="bs-header" id="content">
+    <div class="header" id="content">
       <div class="container">
       </div>
     </div>
 
-    <div class="container bs-docs-container">
+    <div class="container docs-container">
       <div class="row">
         <div class="col-md-3">
-          <div class="bs-sidebar hidden-print" role="complementary">
-            <ul class="nav bs-sidenav">
+          <div class="sidebar hidden-print" role="complementary">
+            <ul class="nav sidenav">
               
               {% if page.slug == "release-notes" %}
                 {% include nav-release-notes.html %}
@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-    <footer class="bs-footer" role="contentinfo">
+    <footer class="footer" role="contentinfo">
       <div class="container">
         
       {% include footer.html %}

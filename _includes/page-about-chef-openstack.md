@@ -1,4 +1,4 @@
-<div class="bs-docs-section">
+<div class="docs-section">
   {% if page.tag == "Grizzly" %}
     <h1 id="getting-started">Getting Started (Grizzly)</h1>
   {% elsif page.tag == "Havana" %}
