@@ -66,10 +66,10 @@ vertical-align:middle;
 }
 
 .vert-text h1 {
-font-family:"franklin-gothic-urw", helvetica, arial, sans-serif;
-font-size:100px;
+font-family:helvetica, arial, sans-serif;
+font-size:94px;
 font-weight:700;
-letter-spacing:-2px;
+letter-spacing:-4px;
 line-height:1.2;
 margin:0 0 60px 0;
 padding:0;
