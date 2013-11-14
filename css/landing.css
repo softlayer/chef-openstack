@@ -29,9 +29,12 @@ width:100%;
 -moz-background-size:cover;
 -o-background-size:cover;
 -webkit-background-size:cover;
-background:url(http://s7.postimg.org/v0i3zvrd7/bg_dark.jpg) left center no-repeat;
 background-color:#222;
-background-size:cover;
+background: -webkit-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('http://s21.postimg.org/cliptsx7r/image.jpg');
+background: -moz-linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('http://s21.postimg.org/cliptsx7r/image.jpg');
+background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('http://s21.postimg.org/cliptsx7r/image.jpg');
+background-repeat: no-repeat; 
+background-size: cover; 
 }
 
 .docs-nav {
@@ -67,7 +70,7 @@ vertical-align:middle;
 
 .vert-text h1 {
 font-family:helvetica, arial, sans-serif;
-font-size:94px;
+font-size:100px;
 font-weight:700;
 letter-spacing:-4px;
 line-height:1.2;
