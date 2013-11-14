@@ -12,7 +12,7 @@ These requests fall under the general definition of incomplete, confusing, or un
 * Before the "Installing OpenStack" section, add a "Provision the Resources”. Be explicit on what is needed and what they would be used for. "Before going on in this guide, ensure you have the following resources in your account..." and then tell them what they need to provision i.e. at least 3 hardware nodes with Ubuntu, private portable subnet, public portable subnet, etc.
 * "Install OpenStack" - this section is confusing, these appear to be general steps that are just saying how the flow will work, but I also felt like I should have been doing something as I read them and looked at the samples (especially because of step 5 on page 11)?
 * Prepare chef for OpenStack deployment - where do I run these commands?
-* Bootstrap your nodes says, "It is recommended to use the bootstrap scripts." but whose? Yours of chefs? Then it says "Edit the script" .. But what script?
+* Bootstrap your nodes says, "It is recommended to use the bootstrap scripts." but whose? Yours or chefs? Then it says "Edit the script" .. But what script?
 * "Note: Log in with the admin user name and the password you created during the OpenStack Chef Deployment." ...unless I missed it, don't recall setting a password earlier.
 
 ## Standard Priority
@@ -20,10 +20,6 @@ These requests fall under the general definition of incomplete, confusing, or un
 Requests here are not mission-critical, but do add clarity and usability.
 
 * [@morourke](https://github.com/caleorourke) Add less to minify css output and easier coding
-* [@morourke](https://github.com/caleorourke) Show the latest release versions on the landing page (ex. http://getbootstrap.com)
-* [@morourke](https://github.com/caleorourke) Show when the last update was committed to GitHub on the landing page (ex. http://foundation.zurb.com)
-* [@morourke](https://github.com/caleorourke) Add GitHub social links back to footer. Do not include Twitter (PI doesn't have control over Twitter).
-* [@morourke](https://github.com/caleorourke) Let users know they can get notifications by watching our repo.
 * Point to docs that explain how to create A records and do DNS management at SoftLayer
 * "Using Our DevOps Tools" seems a little out of place alongside user content. It deserves a mention, but maybe a paragraph on key functions and a link off to more details. Content provided didn't make it clear why i would want it with my OpenStack install.
 * Drop "THE SWFTP-CHEF COOKBOOK". Swift is not installed in this from what I see.
@@ -41,8 +37,6 @@ Priorities have not been defined yet for these request. Most are likely to be op
 * Explain how to use your public Swift to back Glance and the pros/cons
 * Update social.html in _includes (all repos)
 * Update resources.md in _root (all repos)
-* Update all files in _includes for sidenav
-* Inject references.md file into Getting Started page
 * Add stackedit editor to each repo for quick local editing
 
 ## Open for Debate
@@ -54,9 +48,13 @@ Priorities have not been defined yet for these request. Most are likely to be op
 # In-Flight
 
 * [@morourke](https://github.com/caleorourke) Find out why responsiveness on mobile devices isn't complying with the viewport settings.
+* [@morourke](https://github.com/caleorourke) Show the latest release versions on the landing page (ex. http://getbootstrap.com)
+* [@morourke](https://github.com/caleorourke) Show when the last update was committed to GitHub on the landing page (ex. http://foundation.zurb.com)
+* [@morourke](https://github.com/caleorourke) Let users know they can get notifications by watching our repo.
 
 # Done
 
 * [@morourke](https://github.com/caleorourke) Transition the role and quantum/neutron changes into the current docs
 * [@morourke](https://github.com/caleorourke) Improve load time by adding js for typekit fonts locally in the header
 * [@morourke](https://github.com/caleorourke) Test maruku upgrade in hope of converting html back to md
+* [@morourke](https://github.com/caleorourke) Add GitHub and Twitter social links back to footer.

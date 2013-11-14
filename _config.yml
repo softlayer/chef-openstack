@@ -1,21 +1,27 @@
-# Project Name
+# Project
 project: Chef-OpenStack
 lead: "Get the efficiency, scalability, and control that every private cloud needs"
+public_url: http://softlayer.github.io/chef-openstack
 
-# Versioning
+# Versions
 version_havana: 0.3.3
 version_grizzly: 0.2.0
 
-# GitHub Links
+# GitHub
 repo: http://github.com/softlayer/chef-openstack
-license: http://github.com/softlayer/chef-openstack/blob/Havana/LICENSE
+fork: http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&amp;type=fork&amp;count=true
+star: http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&amp;type=watch&amp;count=true
 open_issues: http://github.com/softlayer/chef-openstack/issues?milestone=1;state=open
 closed_issues: http://github.com/softlayer/chef-openstack/issues?milestone=1;state=closed
 
-#Company Links
+# Company
 www: http://www.softlayer.com
+license: http://github.com/softlayer/chef-openstack/blob/Havana/LICENSE
 sldn: http://sldn.softlayer.com
 portal: http://manage.softlayer.com
+
+# Social
+github: http://github.com/softlayer
 twitter: http://twitter.com/softlayerdevs
 
 # Server

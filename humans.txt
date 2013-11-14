@@ -8,7 +8,7 @@
   Location: Dallas, TX
 
 /* SITE */
-  Last update: 2013/11/07
+  Last update: 2013/11/14
   Language: English
   Standards: HTML5, CSS3
   Components: Modernizr, jQuery

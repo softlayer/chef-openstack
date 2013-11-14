@@ -168,13 +168,14 @@ color:#fff;
 background-color:#fff;
 background-image:none;
 border:1px solid #fff;
-border-radius:20px;
+border-radius:50px;
 box-shadow:none;
 color:#222;
-font-size:16px;
+font-size:14px;
 margin-bottom:20px;
 margin-right:14px;
 text-shadow:none;
+text-transform: uppercase;
 width:160px;
 }
 
@@ -183,11 +184,10 @@ width:160px;
 background-color:#fff;
 background-image:none;
 border:1px solid #fff;
-border-radius:20px;
-color:#ccc;
+border-radius:50px;
+color:#aaa;
 margin-bottom:20px;
 margin-right:14px;
-opacity:.9;
 width:160px;
 }
 
