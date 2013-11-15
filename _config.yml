@@ -18,6 +18,7 @@ closed_issues: http://github.com/softlayer/chef-openstack/issues?milestone=1;sta
 www: http://www.softlayer.com
 license: http://github.com/softlayer/chef-openstack/blob/Havana/LICENSE
 sldn: http://sldn.softlayer.com
+kb: http://knowledgelayer.softlayer.com
 portal: http://manage.softlayer.com
 
 # Social

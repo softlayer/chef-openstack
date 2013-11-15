@@ -7,13 +7,17 @@ baseurl: "../"
 
 # About
 
-The combustion behind our innovation began at the grassroots level with free and open source software. Not only do we use it regularly, we also believe in the openness of development and collaboration as a means to producing viable and sustainable products. That’s why we’re thrilled to be contributors toward the development of OpenStack and Chef. 
+Our combustion began at the grassroots level with free and open source software. Not only do we use it regularly, we also believe in the openness of development and collaboration as a means to producing viable and sustainable products. That’s why we’re thrilled to be contributors toward the development of OpenStack and Chef. 
 
 All our work is happening publically on GitHub, and we invite everyone to join in. If you're looking to be a contributor, here's how you can help.
 
 # Guidelines
 
-Read our contributing guidelines below. They include how to handle feature requests and issues, directions for pull requests, and our coding standards.
+Read our contributing guidelines below. They include how to:
+
+* Handle feature requests and issues
+* Directions for pull requests
+* Our coding standards
 
 ## Feature Requests
 
@@ -51,13 +55,13 @@ Below is our workflow for pull requests.
 6.  [Rebase](https://help.github.com/articles/interactive-rebase) your branch against the `master` to ensure everything is up to date.
 7.  Commit your changes and send a pull request.
 
-{% include code-ruby.md %}
+{% include code-ruby.html %}
 
 {% include docs.md %}
 
 ## Contribute to Our Docs
 
-Our docs are treated like our code. 
+We treat our docs like we treat our code. And like our code, we invite everyone to join in.
 
 * We publish our Getting Started guide on [GitHub Pages](http://pages.github.com) and use GitHub to track and manage changes.
 * Our web resources for [Chef-OpenStack](http://softlayer.guthub.io/chef-openstack) are managed under the `gh-pages` [branch](https://github.com/softlayer/chef-openstack/tree/gh-pages).
