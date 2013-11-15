@@ -15,7 +15,7 @@ color:#fff;
 
 .container {
 margin-top:-40px;
-text-align:center;
+text-align:left;
 }
 
 .header {
@@ -62,29 +62,24 @@ border-bottom:none;
 margin-top:40px;
 }
 
-.vert-text {
-display:table-cell;
-text-align:center;
-vertical-align:middle;
-}
-
-.vert-text h1 {
+.masthead h1 {
 font-family:helvetica, arial, sans-serif;
 font-size:100px;
 font-weight:700;
 letter-spacing:-4px;
 line-height:1.2;
-margin:0 0 60px 0;
+margin:0 0 0px 0;
 padding:0;
 text-transform:none;
 }
 
-.vert-text .lead {
+.masthead .lead {
 font-family:"nimbus-sans", helvetica, arial, sans-serif;
-font-size:15px;
+font-size:34px;
+line-height: 1.2;
 margin-bottom:0px;
-letter-spacing: 2px;
-text-transform: uppercase;
+letter-spacing: 1px;
+margin-right: 20%;
 }
 
 /*-- Sidebar --*/
@@ -173,7 +168,7 @@ box-shadow:none;
 color:#222;
 font-size:14px;
 margin-bottom:20px;
-margin-right:14px;
+margin-right:20px;
 text-shadow:none;
 text-transform: uppercase;
 width:160px;
@@ -187,7 +182,7 @@ border:1px solid #fff;
 border-radius:50px;
 color:#aaa;
 margin-bottom:20px;
-margin-right:14px;
+margin-right:20px;
 width:160px;
 }
 
@@ -210,7 +205,7 @@ color:transparent;
 
 div.buttons {
 margin-top:30px;
-text-align:center;
+text-align:left;
 }
 
 /*-- Toggle --*/
