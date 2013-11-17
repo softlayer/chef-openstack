@@ -29,12 +29,15 @@
                 {% include nav-getting-started.html %}
               {% elsif page.slug == "getting-grizzly" %}
                 {% include nav-getting-started.html %}
+              {% elsif page.slug == "styleguide" %}
+                {% include nav-styleguide.html %}
               {% endif %}
             
             </ul>
           </div>
 
-        {% if page.slug == "getting-grizzly" %}
+              {% if page.slug == "getting-grizzly" %}
+          
           <div class="dropdown">
             <button class="btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown">
               Pick a different version 
@@ -46,7 +49,8 @@
             </ul>
           </div>
 
-        {% elsif page.slug == "getting-havana" %}
+              {% elsif page.slug == "getting-havana" %}
+          
           <div class="dropdown">
             <button class="btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown">
               Pick a different version
@@ -57,12 +61,13 @@
               <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}getting-grizzly">Grizzly</a></li>
             </ul>
           </div>
-        {% endif %}
+              
+              {% endif %}
 
         </div>
         <div class="col-md-9" role="main">
           
-        {{ content }}
+              {{ content }}
           
         </div>
       </div>
@@ -70,7 +75,7 @@
     <footer class="footer" role="contentinfo">
       <div class="container">
         
-        {% include footer.html %}
+              {% include footer.html %}
       
       </div>
     </footer>

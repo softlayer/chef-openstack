@@ -59,7 +59,10 @@ summary,
   background-color:#fff;
   border-color:#e5e5e5;
   box-shadow:0 3px 0 rgba(255,255,255,0.09);
-  text-shadow: 0 -1px 0 rgba(0,0,0,.15);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 0px 6px rgba(52, 73, 94, 0.1);
+  -moz-box-shadow: 0px 0px 6px rgba(52, 73, 94, 0.1);
+  box-shadow: 0px 0px 6px rgba(52, 73, 94, 0.1);
 }
 
 .docs-home 
@@ -93,7 +96,7 @@ summary,
 
 .docs-nav .navbar-nav > li > a 
 {
-  color:#999;
+  color:#666;
   line-height:0;
   margin-top:0;
   text-shadow:none;
@@ -102,7 +105,7 @@ summary,
 .docs-nav .navbar-nav > li > a:focus,
 .docs-nav .navbar-nav > li > a:hover 
 {
-  color:#666;
+  color:#222;
 }
 
 .docs-nav .navbar-nav > .active > a,
@@ -204,7 +207,7 @@ h4,.h4
 {
   font-weight:600;
   margin-top:20px;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
   font-size: 18px;
 }
 

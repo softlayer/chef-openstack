@@ -3,3 +3,18 @@
 # Light: #f4f4f4 #e5e5e5
 # Mid: #cccccc #aaaaaa
 # Dark: #999999 #666666 #222222
+# Green: #00BF8F #00D19D
+# Dark Blue: #2C4762 #2C5970
+
+
+Green background: 
+linear-gradient(to bottom, 
+rgb(0, 191, 143) 50%, 
+rgb(0, 209, 157) 100%) 
+repeat scroll 0% 0% transparent;
+
+Dark blue background:
+linear-gradient(to bottom, 
+rgb(44, 71, 98) 50%, 
+rgb(44, 89, 112) 100%) 
+repeat scroll 0% 0% transparent;

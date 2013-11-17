@@ -8,10 +8,10 @@
 <link type="text/plain" href="{{ page.baseurl }}humans.txt" rel="author">
 
 <title>
-  {% if page.title == "Chef-OpenStack" %}
+  {% if page.title == "{{ site.project }}" %}
     {{ page.title }}
   {% else %}
-    {{ page.title }} &middot; Chef-OpenStack
+    {{ page.title }} &middot; {{ site.project }}
   {% endif %}
 </title>
 

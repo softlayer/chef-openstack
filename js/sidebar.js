@@ -1,3 +1,5 @@
+/*! sidebar.js | Copyright (c) 2013 SoftLayer, an IBM Company | MIT License */
+
 $("#menu-close").click(function(e) {
   e.preventDefault();
   $("#sidebar-wrapper").toggleClass("active");
