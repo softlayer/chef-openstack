@@ -63,23 +63,26 @@ margin-top:40px;
 }
 
 .masthead h1 {
-font-family:helvetica, arial, sans-serif;
-font-size:100px;
+font-family:."nimbus-sans", helvetica, arial, sans-serif;
+font-size:92px;
 font-weight:700;
 letter-spacing:-4px;
 line-height:1.1;
-margin:50px 0 0 0;
+margin-top:50px;
+margin-left: 0;
+margin-right: 0;
+margin-right: 15%;
 padding:0;
 text-transform:none;
 }
 
 .masthead .lead {
 font-family:"nimbus-sans", helvetica, arial, sans-serif;
-font-size:36px;
+font-size:38px;
 line-height: 1.1;
 margin-bottom:0;
 letter-spacing: 0;
-margin-right: 20%;
+margin-right: 15%;
 }
 
 /*-- Sidebar --*/
@@ -98,7 +101,7 @@ right:0;
 transition:all .4s ease 0;
 width:250px;
 z-index:1000;
-opacity: 0.6;
+opacity: 0.9;
 }
 
 #sidebar-wrapper.active {
