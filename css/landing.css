@@ -48,6 +48,7 @@ margin:2px 0;
 
 .docs-home .masthead-links {
 margin-left: 0;
+margin-top: 250px;
 }
 
 footer {
@@ -63,11 +64,11 @@ margin-top:40px;
 
 .masthead h1 {
 font-family:"news-gothic-std", helvetica, arial, sans-serif;
-font-size:94px;
+font-size:90px;
 font-weight:700;
 letter-spacing:-2px;
 line-height:1;
-margin-top:50px;
+margin-top:100px;
 margin-left: 0;
 margin-right: 0;
 margin-right: 15%;
@@ -166,7 +167,7 @@ color:#fff;
 background-color:#fff;
 background-image:none;
 border:1px solid #fff;
-border-radius:50px;
+border-radius:4px;
 box-shadow:none;
 color:#222;
 font-size:15px;
@@ -184,7 +185,7 @@ font-family: "proxima-nova", helvetica, arial, sans-serif;
 background-color:#fff;
 background-image:none;
 border:1px solid #fff;
-border-radius:50px;
+border-radius:4px;
 box-shadow:none;
 color:#222;
 font-size:15px;
@@ -217,7 +218,7 @@ a#get-started.btn.btn-info.btn-lg {
 background-color:#fff;
 background-image:none;
 border:1px solid #fff;
-border-radius:50px;
+border-radius:4px;
 box-shadow:none;
 color:#222;
 font-size:15px;
@@ -274,5 +275,4 @@ font-size:68px;
 
 img.navbar-brand {
 margin-right:50px;
-margin-top:-57px;
 }

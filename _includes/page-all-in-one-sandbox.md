@@ -27,7 +27,7 @@ Follow the instructions below to install Virtual Box and Vagrant.
 	<li>Install VirtualBox using the downloaded package. For example, on Ubuntu and Debian Linux, run the following command:</li>
 			<pre><code>$ dpkg -i virtualbox-4.2_4.2.18-88780~Ubuntu~precise_amd64.deb</code></pre>
 	<li>On Windows, proceed through installation using the setup wizard:</li>
-			<img class="img-thumbnail" src="{{ page.baseurl }}img/sandbox/004.png">
+			<img class="img-thumbnail" src="{{ page.baseurl }}img/sandbox/002.png">
 </ol>
 
 ### Install Vagrant

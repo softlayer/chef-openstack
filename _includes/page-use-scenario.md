@@ -38,7 +38,6 @@ To create an SSH key, you'll follow these simple steps in the Horizon dashboard.
 <img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/016.png">
 <li>Select your Current Project (admin in this case).</li>
 <li>Click "Access &amp; Security".</li>
-<img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/001.png">
 <li>Click the "Keypairs" tab.</li>
 <li>Click "Create Keypair".</li>
 <li>Name the new keypair "SoftCube-Admin" and click the blue "Create Keypair" button.</li>
@@ -50,30 +49,34 @@ To create an SSH key, you'll follow these simple steps in the Horizon dashboard.
 Now that SoftCube's keypair is available, the compute instances can be created.
 
 <ol>
-<li>Click on the "Project" tab.</li>
-<li>Select your Current Project (admin in this case).</li>
-<li>Click "Instances".</li>
-<img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/010.png">
-<li>Click the "Launch Instances" button.</li>
-<li>A new dialog window will appear with all the details needed for launching a new compute instance. In the launch instance window, they
-  will need the following information handy to create and launch their instances: (1) Image type, (2) Name, (3) Flavor, (4) Keypair, and
-  (5) Network information. Additional volume and post-creation options may be needed in SoftCube's future, but are not necessary to
-  specify right now.</li>
-<li>On the "Details" tab, provide these options.</li>
-<ul>
-<li>Instance Source: Image</li>
-<li>Image: Ubuntu 12.04 Server (Cloud) amd64</li>
-<li>Instance Name: web1.softcube.com</li>
-<li>Flavor: m1.medium</li>
-</ul>
-<img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/004.png">
-<li>Click on the "Access &amp; Security" tab.</li>
-<ul>
-<li>"SoftCube-Admin" should be already selected as the SSH key, but if not, select it from the list.</li>
-<li>Uncheck the "default" security group.</li>
-<li>Check the "basic-ssh-icmp" security group.</li>
-</ul>
-<img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/012.png">
+  <li>Click on the "Project" tab.</li>
+  <li>Select your Current Project (admin in this case).</li>
+  <li>Click "Instances".</li>
+    <img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/010.png">
+  <li>Click the "Launch Instances" button.</li>
+  <li>A new dialog window will appear with all the details needed for launching a new compute instance. In the launch instance window, they
+  will need the following information handy to create and launch their instances:</li>
+    <ul>
+      <li>Image type</li>
+      <li>Name</li>
+      <li>Flavor</li>
+      <li>Keypair</li>
+      <li>Network information</li>
+    </ul>
+    <blockquote>Additional volume and post-creation options may be needed in SoftCube's future, but are not necessary to specify right now.</blockquote>
+  <li>On the "Details" tab, provide these options.</li>
+    <ul>
+      <li>Instance Source: Image</li>
+      <li>Image: Ubuntu 12.04 Server (Cloud) amd64</li>
+      <li>Instance Name: web1.softcube.com</li>
+      <li>Flavor: m1.medium</li>
+    </ul>
+  <li>Click on the "Access &amp; Security" tab.</li>
+    <ul>
+      <li>"SoftCube-Admin" should be already selected as the SSH key, but if not, select it from the list.</li>
+      <li>Uncheck the "default" security group.</li>
+      <li>Check the "basic-ssh-icmp" security group.</li>
+    </ul>
 </ol>
 
 ### Configure Network Access

@@ -1,8 +1,12 @@
-<a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><img src="{{ page.baseurl }}img/favicon42x42.png"></a>
-  <div id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        <li {% if page.slug == "getting-havana" %} class="active" {% endif %}><a href="{{ page.baseurl }}getting-havana">Getting Started</a></li>
-        <li {% if page.slug == "release-notes" %} class="active" {% endif %}><a href="{{ page.baseurl }}release-notes">Release Notes</a></li>
-        <li {% if page.slug == "about" %} class="active" {% endif %}><a href="{{ page.baseurl }}about">About</a></li>
-    </ul>
-  </div>
+<a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="icon-reorder"></i></a>
+<div class="container">
+	<a type="image/png" href="{{ page.baseurl }}"><img src="{{ page.baseurl }}img/logo-all-white.png" class="navbar-brand"></a>
+</div>
+<div id="sidebar-wrapper">
+	<ul class="sidebar-nav">
+	  <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="icon-remove"></i></a>
+		<li {% if page.slug == "getting-havana" %} class="active" {% endif %}><a href="{{ page.baseurl }}getting-havana">Getting Started</a></li>
+		<li {% if page.slug == "release-notes" %} class="active" {% endif %}><a href="{{ page.baseurl }}release-notes">Release Notes</a></li>
+		<li {% if page.slug == "about" %} class="active" {% endif %}><a href="{{ page.baseurl }}about">About</a></li>
+  </ul>
+</div>
