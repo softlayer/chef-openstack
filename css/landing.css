@@ -30,9 +30,9 @@ width:100%;
 -o-background-size:cover;
 -webkit-background-size:cover;
 background-color:#222;
-background: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://s7.postimg.org/yiefy0nkr/image.jpg');
-background:    -moz-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://s7.postimg.org/yiefy0nkr/image.jpg');
-background:         linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('http://s7.postimg.org/yiefy0nkr/image.jpg');
+background: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
+background:    -moz-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
+background:         linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
 background-size: cover;
 background-repeat:no-repeat;
 }
@@ -64,7 +64,7 @@ margin-top:40px;
 }
 
 .masthead h1 {
-font-family:"news-gothic-std", helvetica, arial, sans-serif;
+font-family:helvetica, arial, sans-serif;
 font-size:90px;
 font-weight:700;
 letter-spacing:-2px;
@@ -171,13 +171,13 @@ border:1px solid #fff;
 border-radius:4px;
 box-shadow:none;
 color:#222;
-font-size:15px;
+font-size:14px;
 margin-bottom:20px;
 margin-right:20px;
 text-shadow:none;
 text-transform: uppercase;
 width:160px;
-font-family: "proxima-nova", helvetica, arial, sans-serif;
+font-family: helvetica, arial, sans-serif;
 }
 
 .btn-info:hover,
@@ -189,13 +189,13 @@ border:1px solid #fff;
 border-radius:4px;
 box-shadow:none;
 color:#222;
-font-size:15px;
+font-size:14px;
 margin-bottom:20px;
 margin-right:20px;
 text-shadow:none;
 text-transform: uppercase;
 width:160px;
-font-family: "proxima-nova", helvetica, arial, sans-serif;
+font-family: helvetica, arial, sans-serif;
 }
 
 .btn-primary {
@@ -222,13 +222,13 @@ border:1px solid #fff;
 border-radius:4px;
 box-shadow:none;
 color:#222;
-font-size:15px;
+font-size:14px;
 margin-bottom:20px;
 margin-right:20px;
 text-shadow:none;
 text-transform: uppercase;
 width:160px;
-font-family: "proxima-nova", helvetica, arial, sans-serif;
+font-family: helvetica, arial, sans-serif;
 }
 
 /*-- Toggle --*/
