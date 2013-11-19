@@ -30,9 +30,9 @@ width:100%;
 -o-background-size:cover;
 -webkit-background-size:cover;
 background-color:#222;
-background: -webkit-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
-background:    -moz-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
-background:         linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
+background: -webkit-linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
+background:    -moz-linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
+background:         linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.6)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
 background-size: cover;
 background-repeat:no-repeat;
 }
@@ -49,7 +49,7 @@ margin:2px 0;
 
 .docs-home .masthead-links {
 margin-left: 0;
-margin-top: 250px;
+margin-top: 150px;
 }
 
 footer {
@@ -65,11 +65,11 @@ margin-top:40px;
 
 .masthead h1 {
 font-family:helvetica, arial, sans-serif;
-font-size:90px;
+font-size:96px;
 font-weight:700;
-letter-spacing:-2px;
+letter-spacing:-4px;
 line-height:1;
-margin-top:100px;
+margin-top:0;
 margin-left: 0;
 margin-right: 0;
 margin-right: 15%;
@@ -216,12 +216,12 @@ color:transparent;
 }
 
 a#get-started.btn.btn-info.btn-lg {
-background-color:#fff;
+background-color:#1abc9c;
 background-image:none;
-border:1px solid #fff;
+border:1px solid #1abc9c;
 border-radius:4px;
 box-shadow:none;
-color:#222;
+color:#fff;
 font-size:14px;
 margin-bottom:20px;
 margin-right:20px;
@@ -230,6 +230,25 @@ text-transform: uppercase;
 width:160px;
 font-family: helvetica, arial, sans-serif;
 }
+
+.btn.btn-info:hover,
+.btn.btn-info:focus,
+{
+background-color:#16a085;
+background-image:none;
+border:1px solid #1abc9c;
+border-radius:4px;
+box-shadow:none;
+color:#fff;
+font-size:14px;
+margin-bottom:20px;
+margin-right:20px;
+text-shadow:none;
+text-transform: uppercase;
+width:160px;
+font-family: helvetica, arial, sans-serif;
+}
+
 
 /*-- Toggle --*/
 
@@ -270,10 +289,4 @@ width:140px;
 
 i.service-icon:hover {
 font-size:68px;
-}
-
-/*-- Image --*/
-
-img.navbar-brand {
-margin-right:50px;
 }
