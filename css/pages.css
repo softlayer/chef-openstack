@@ -1,5 +1,4 @@
 /*-- Basic --*/
-/*-- Updated 11/17/2013 --*/
 
 body {
 font-size:14.25px;
@@ -39,7 +38,6 @@ background:transparent;
 }
 
 /*-- Nav --*/ 
-/*-- Updated 11/17/2013 --*/
 
 .docs-nav {
 -moz-box-shadow:0 0 6px rgba(52,73,94,0.1);
@@ -133,7 +131,6 @@ margin-top:-100px;
 }
 
 /*-- Headings --*/
-/*-- Updated 11/17/2013 --*/
 
 h1[id] {
 margin-top:-45px;

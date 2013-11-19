@@ -1,10 +1,3 @@
----
-layout: pages
-title: Code Guide
-slug: code-html-css
-baseurl: "../"
----
-
 # Code Guide
 
 Standards for developing flexible, durable, and sustainable HTML and CSS.
