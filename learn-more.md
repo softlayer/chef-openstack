@@ -1,7 +1,7 @@
 ---
 layout: pages
-title: About
-slug: about
+title: Learn More
+slug: learn-more
 baseurl: "../"
 ---
 

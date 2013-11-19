@@ -1,0 +1,119 @@
+@media (min-width: 768px) {
+  .footer {
+    text-align: left;
+  }
+  .footer p {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .masthead {
+    text-align: left;
+    padding-top:    140px;
+    padding-bottom: 140px;
+  }
+  .masthead h1 {
+    font-size: 100px;
+  }
+  .masthead .lead {
+    margin-right: 25%;
+    font-size: 30px;
+  }
+  .masthead .btn-outline-inverse {
+    width: auto;
+    margin: 20px 5px 20px 0;
+    padding: 18px 24px;
+    font-size: 21px;
+  }
+  .masthead-links {
+    padding: 0;
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    font-size: 21px;
+    text-align: left;
+  }
+  .header h1 {
+    font-size: 60px;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .header h1,
+  .header p {
+    margin-right: 380px;
+  }
+}
+
+@media (min-width: 480px) {
+  .docs-home .carbonad {
+    width: 330px !important;
+    margin: 0 auto 40px !important;
+    border-radius: 4px;
+  }
+}
+
+@media (min-width: 768px) {
+  .docs-home .carbonad {
+    float: left;
+    width: 330px !important;
+    margin: 0 0 30px !important;
+  }
+  .docs-home .social,
+  .docs-home .masthead-links {
+    margin-left: 350px;
+  }
+  .docs-home .social {
+    margin-bottom: 10px;
+  }
+  .docs-home .masthead-links {
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .docs-home .carbonad {
+    position: static;
+  }
+}
+
+@media (min-width: 1170px) {
+  .docs-home .carbonad {
+    margin-top: -25px !important;
+  }
+}
+@media (min-width: 992px) {
+  .sidebar .nav > .active > ul {
+    display: block;
+  }
+  /* Widen the fixed sidebar */
+  .sidebar.affix,
+  .sidebar.affix-bottom {
+    width: 213px;
+  }
+  .sidebar.affix {
+    position: fixed; /* Undo the static from mobile first approach */
+    top: 80px;
+  }
+  .sidebar.affix-bottom {
+    position: absolute; /* Undo the static from mobile first approach */
+  }
+  .sidebar.affix-bottom .sidenav,
+  .sidebar.affix .sidenav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Widen the fixed sidebar again */
+  .sidebar.affix-bottom,
+  .sidebar.affix {
+    width: 263px;
+  }
+}

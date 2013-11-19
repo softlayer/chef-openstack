@@ -1,0 +1,1 @@
+.grid-1,.grid-2,.grid-3,.grid-4{display:inline;float:left;position:relative;margin-left:10px;margin-right:10px}.alpha{margin-left:0}.omega{margin-right:0}.grid .grid-1{width:220px}.grid .grid-2{width:460px}.grid .grid-3{width:700px;display:none}.grid .grid-4{width:940px}.clearfix{*zoom:1}.clearfix:after,.clearfix:before{content:"";display:table}.clearfix:after{clear:both}

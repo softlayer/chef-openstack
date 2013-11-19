@@ -1,3 +1,4 @@
+
 <div class="docs-section">
   {% if page.tag == "Grizzly" %}
     <h1 id="getting-started">Getting Started (Grizzly)</h1>
@@ -7,6 +8,14 @@
 
   <p>Our guide provides an overview for installing, configuring, deploying, and supporting OpenStack and Chef. Simply click any topic and
   get started.</p>
+
+<div class="dropdown">
+  <button class="btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown">Pick another version</button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="version-selector">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}getting-havana">Havana</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}getting-grizzly">Grizzly</a></li>
+  </ul>
+</div>
 
   <div class="row">
     <div class="col-12 col-lg-6">
