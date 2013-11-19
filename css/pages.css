@@ -171,7 +171,7 @@ h3,
   padding-top: 10px;
   font-size: 24px;
   font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: 0;
 }
 
 h4,
@@ -381,7 +381,7 @@ pre.nowrap {
 
 .sidebar.affix-bottom {
   position: absolute;
-  width: 260px;
+  width: 263px;
 }
 
 .sidebar.affix-bottom .sidenav {
