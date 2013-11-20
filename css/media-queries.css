@@ -45,7 +45,7 @@
      -moz-background-size: cover;
        -o-background-size: cover;
           background-size: cover;
-}
+  }
 }
 
 /* Styles for mobile phones 320x480 (portrait), Ratio: 2:3  */
@@ -65,14 +65,9 @@
     float: left;
     margin: 10px 0;
   }
-
-  .nav > li {
-    padding: 6px;
-}
-
-.navbar > .container .navbar-brand {
+  .navbar > .container .navbar-brand {
     margin-left: 0;
-}
+  }
   .masthead {
     text-align: left;
     padding-top:    80px;
@@ -102,7 +97,7 @@
     width: 124px;
     font-size: 12px;
     margin-right: 10px;
-}
+  }
   .btn-info {
     width: 124px;
     font-size: 12px;
@@ -116,9 +111,7 @@
     font-size: 12px;
     margin-right: 10px;
   }
-
 }
-
 
 /* Styles for Retina-type displays */
 /*
