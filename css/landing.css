@@ -176,7 +176,7 @@ h1,
   text-transform: uppercase;
   background-color: #fff;
   background-image: none;
-  border: 1px solid #fff;
+  border: 1px solid #bdc3c7;
   border-radius: 4px;
   box-shadow: none;
   padding: 14px;
@@ -195,7 +195,7 @@ h1,
   text-transform: uppercase;
   background-color: #fff;
   background-image: none;
-  border: 1px solid #fff;
+  border: 1px solid #bdc3c7;
   border-radius: 4px;
   box-shadow: none;
   padding: 14px;
@@ -227,9 +227,9 @@ a#get-started.btn.btn-info.btn-lg {
   color: #fff;
   text-shadow: none;
   text-transform: uppercase;
-  background-color: #1abc9c;
+  background-color: #27ae60;
   background-image: none;
-  border: 1px solid #1abc9c;
+  border: 1px solid #2ecc71;
   border-radius: 4px;
   box-shadow: none;
   padding: 14px;
