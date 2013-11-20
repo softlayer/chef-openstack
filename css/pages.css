@@ -5,11 +5,10 @@
  * Scaffolding
  * Navigation
  * Footer
- * Social buttons
+ * Social
+ * Background
  * Homepage
  * Page headers
- * Old docs callout
- * Ads
  * Side navigation
  * Docs sections
  * Callouts
@@ -147,10 +146,320 @@ body {
   }
 }
 
+/*-- Social --*/
+
+.social {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.social-buttons {
+  display: inline-block;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.social-buttons li {
+  display: inline-block;
+  line-height: 1;
+  padding: 5px 8px;
+}
+.social-buttons .twitter-follow-button {
+  width: 225px !important;
+}
+.social-buttons .twitter-share-button {
+  width: 98px !important;
+}
+
+.github-btn {
+  border: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .social {
+    text-align: left;
+  }
+  .social-buttons li:first-child {
+    padding-left: 0;
+  }
+}
+
+/*-- Background --*/
+
+.docs-home {
+  background: transparent;
+  color: #fff;
+  background-color: #563d7c;
+}
+
+@media (min-width: 768px) {
+  .docs-home {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
+    background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
+    background-color: #222;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+  }
+}
+
+@media (min-width: 320px) {
+  .docs-home {
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@320.jpg");
+  background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@320.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@320.jpg");
+  background-color: #222;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  }
+}
+
+/*-- Homepage --*/
+
+.masthead {
+  position: relative;
+  padding-top: 140px;
+  padding-right: 0;
+  padding-bottom: 0;
+  text-align: left;
+  background: transparent;
+}
+
+.masthead h1 {
+  font-size: 100px;
+  line-height: 1;
+  color: #fff;
+}
+
+.masthead .lead {
+  margin-right: 0;
+  font-size: 30px;
+  color: #fff;
+}
+
+.masthead .btn-outline-inverse {
+  width: auto;
+  padding: 18px 24px;
+  margin: 20px 5px 20px 0;
+  font-size: 21px;
+}
+
+/*
+.docs-home .masthead-links {
+  margin-top: 10px;
+  margin-left: 350px;
+}
+*/
+
+.masthead-links {
+  padding: 0 65px 0 0;
+  margin: -25px 0 0;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 300;
+  letter-spacing: 0;
+  text-align: left;
+  text-transform: none;
+  list-style: none;
+  cursor: pointer;
+}
+
+.masthead-links li {
+  display: inline;
+}
+
+.masthead-links li + li {
+  margin-left: 20px;
+}
+
+@media (min-width: 1280px) {
+  .masthead-links {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+   .masthead-links {
+    text-align: center;
+    font-size: 13px;
+  }
+  .masthead {
+    text-align: left;
+    padding-top:    140px;
+    padding-bottom: 140px;
+  }
+  .masthead h1 {
+    font-size: 80px;
+  }
+  .masthead .lead {
+    margin-right: 0%;
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 320px) {
+    .masthead-links {
+    text-align: center;
+    font-size: 13px;
+  }
+  .masthead {
+    text-align: left;
+    padding-top:    80px;
+    padding-bottom: 40px;
+  }
+  .masthead h1 {
+    font-size: 40px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+  }
+  .masthead .lead {
+    margin-right: 0%;
+    font-size: 21px;
+  }
+}
+
+/* Page headers */
+
+.header {
+  padding: 0 0 35px;
+}
+
+/* Find what this code translates to
+.header h1 {
+  color: #fff;
+}
+.header p {
+  font-weight: 300;
+  line-height: 1.5;
+}
+.header .container {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .header {
+    font-size: 21px;
+    text-align: left;
+  }
+  .header h1 {
+    font-size: 60px;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .header h1,
+  .header p {
+    margin-right: 380px;
+  }
+}
+
+*/
+
+/*-- Side navigation --*/
+
+.sidebar.affix {
+  position: static;
+}
+
+.sidenav {
+  min-width: 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 14px;
+  background: #f4f4f4;
+  border-radius: 5px;
+}
+
+.sidebar .nav > li > a {
+  display: block;
+  padding: 4px 20px;
+  font-size: 14px;
+  letter-spacing: 0;
+  color: #999;
+}
+
+.sidebar .nav > li > a:hover,
+.sidebar .nav > li > a:focus {
+  text-decoration: none;
+  background: #e5e5e5;
+  border-right: none;
+}
+
+.sidebar .nav > .active > a,
+.sidebar .nav > .active:hover > a,
+.sidebar .nav > .active:focus > a {
+  font-weight: 400;
+  color: #222;
+  background-color: transparent;
+  border-right: none;
+}
+
+.sidebar .nav .nav {
+  display: none;
+  margin-bottom: 8px;
+}
+
+.sidebar .nav .nav > li > a {
+  padding-top: 2px;
+  padding-bottom: 0;
+  padding-left: 30px;
+  font-size: 97%;
+}
+
+@media (min-width: 992px) {
+  .sidebar .nav > .active > ul {
+    display: block;
+  }
+  .sidebar.affix,
+  .sidebar.affix-bottom {
+    width: 213px;
+  }
+  .sidebar.affix {
+    position: fixed; 
+    top: 80px;
+  }
+  .sidebar.affix-bottom {
+    position: absolute;
+  }
+  .sidebar.affix-bottom .sidenav,
+  .sidebar.affix .sidenav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sidebar.affix-bottom,
+  .sidebar.affix {
+    width: 263px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Refactor code below */
-/* Stopped at Social buttons */
+/* Stopped at Docs sections*/
 
 a {
   color: #2980b9;
@@ -188,23 +497,15 @@ summary {
   background-color: #222;
 }
 
-.docs-home,
-.masthead,
 main {
   background: transparent;
 }
 
 /*-- Nav --*/
 
-.docs-home {
-  color: #fff;
-  background-color: #563d7c;
-}
 
-.docs-home .masthead-links {
-  margin-top: 10px;
-  margin-left: 350px;
-}
+
+
 
 .docs-section + .docs-section {
   padding-top: 40px;
@@ -228,6 +529,7 @@ main {
   background-image: none;
   border-radius: 15px;
   box-shadow: none;
+  opacity: 0.4;
 }
 
 .navbar-inverse .navbar-toggle:hover,
@@ -305,62 +607,21 @@ h4,
   text-decoration: none;
 }
 
-/*-- Masthead --*/
 
-.masthead-links {
-  padding: 0 65px 0 0;
-  margin: -25px 0 0;
-  font-family: helvetica, arial, sans-serif;
-  font-size: 13.5px;
-  font-weight: 300;
-  letter-spacing: 0;
-  text-align: left;
-  text-transform: none;
-  list-style: none;
-  cursor: pointer;
-}
 
-.masthead .lead {
-  margin-right: 0;
-  font-size: 30px;
-  color: #fff;
-}
 
-.masthead-links li {
-  display: inline;
-}
 
-.masthead-links li + li {
-  margin-left: 20px;
-}
 
-.masthead {
-  position: relative;
-  padding-top: 140px;
-  padding-right: 0;
-  padding-bottom: 0;
-  text-align: left;
-}
 
-.masthead h1 {
-  font-size: 100px;
-  line-height: 1;
-  color: #fff;
-}
 
-.masthead .btn-outline-inverse {
-  width: auto;
-  padding: 18px 24px;
-  margin: 20px 5px 20px 0;
-  font-size: 21px;
-}
+
+
+
+
+
 
 /*-- Code --*/
 
-table code {
-  font-size: 12px;
-  font-weight: 400px;
-}
 
 code {
   font-size: 94%;
@@ -393,17 +654,7 @@ pre.nowrap {
 
 /*-- Sidenav --*/
 
-.sidenav {
-  min-width: 250px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-family: helvetica, arial, sans-serif;
-  font-size: 14px;
-  background: #f4f4f4;
-  border-radius: 5px;
-}
+
 
 .sidenav ul {
   list-style: none;
@@ -451,19 +702,12 @@ pre.nowrap {
 
 /*-- Sidebar --*/
 
-.sidebar .nav .nav {
-  display: none;
-  margin-bottom: 8px;
-}
 
 .sidebar .nav > .active > ul {
   display: block;
 }
 
-.sidebar.affix {
-  position: fixed;
-  top: 94px;
-}
+
 
 .sidebar.affix-bottom {
   position: absolute;
@@ -475,36 +719,13 @@ pre.nowrap {
   margin-bottom: 30px;
 }
 
-.sidebar .nav > li > a {
-  display: block;
-  padding: 4px 20px;
-  font-size: 14px;
-  letter-spacing: 0;
-  color: #999;
-}
 
-.sidebar .nav > li > a:hover,
-.sidebar .nav > li > a:focus {
-  text-decoration: none;
-  background: #e5e5e5;
-  border-right: none;
-}
 
-.sidebar .nav > .active > a,
-.sidebar .nav > .active:hover > a,
-.sidebar .nav > .active:focus > a {
-  font-weight: 400;
-  color: #222;
-  background-color: transparent;
-  border-right: none;
-}
 
-.sidebar .nav .nav > li > a {
-  padding-top: 2px;
-  padding-bottom: 0;
-  padding-left: 30px;
-  font-size: 97%;
-}
+
+
+
+
 
 /*-- Grid --*/
 
@@ -642,9 +863,7 @@ div#component-table.table-responsive {
   width: 65%;
 }
 
-.header {
-  padding: 0 0 35px;
-}
+
 
 button#version-selector.btn.dropdown-toggle {
   width: 170px;

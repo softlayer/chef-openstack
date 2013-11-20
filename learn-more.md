@@ -16,8 +16,8 @@ All our work is happening publically on GitHub, and we invite everyone to join i
 Read our contributing guidelines below. They include how to:
 
 * Handle feature requests and issues
-* Directions for pull requests
-* Our coding standards
+* Submit pull requests
+* Comply with our coding standards
 
 ## Feature Requests
 
