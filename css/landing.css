@@ -67,12 +67,11 @@ h1,
 
 .masthead h1 {
   padding: 0;
-  margin-top: 50px;
   margin-right: 0;
   margin-right: 15%;
   margin-left: 0;
   font-family: helvetica, arial, sans-serif;
-  font-size: 96px;
+  font-size: 94px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -4px;
@@ -167,7 +166,7 @@ h1,
 /*-- Buttons --*/
 
 .btn-info {
-  width: 160px;
+  width: 170px;
   margin-right: 20px;
   margin-bottom: 20px;
   font-family: helvetica, arial, sans-serif;
@@ -180,12 +179,13 @@ h1,
   border: 1px solid #fff;
   border-radius: 4px;
   box-shadow: none;
+  padding: 14px;
 }
 
 .btn-info:hover,
 .btn-info:focus,
 .btn-info:active {
-  width: 160px;
+  width: 170px;
   margin-right: 20px;
   margin-bottom: 20px;
   font-family: helvetica, arial, sans-serif;
@@ -198,6 +198,7 @@ h1,
   border: 1px solid #fff;
   border-radius: 4px;
   box-shadow: none;
+  padding: 14px;
 }
 
 .btn-primary {
@@ -218,7 +219,7 @@ h1,
 }
 
 a#get-started.btn.btn-info.btn-lg {
-  width: 160px;
+  width: 170px;
   margin-right: 20px;
   margin-bottom: 20px;
   font-family: helvetica, arial, sans-serif;
@@ -231,6 +232,7 @@ a#get-started.btn.btn-info.btn-lg {
   border: 1px solid #1abc9c;
   border-radius: 4px;
   box-shadow: none;
+  padding: 14px;
 }
 
 /*-- Toggle --*/

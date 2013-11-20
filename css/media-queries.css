@@ -1,6 +1,6 @@
-/* Ideal for widescreen laptops and PC monitors */
+/* Styles for widescreen 1280x800 (landscape), Ratio: 8:5 */
 
-@media (min-width: 1280px) {  
+@media only screen and (min-width: 1280px) {
   .sidebar.affix-bottom,
   .sidebar.affix {
     width: 263px;
@@ -10,9 +10,9 @@
   }
 }
 
-/* Ideal for iPads and tablets */
-@media (min-width: 768px) {
+/* Styles for tablets 768x1024 (portrait), Ratio: 3:4 */
 
+@media only screen and (min-width: 768px) {
   .footer {
     padding: 2.6em 0;
   }
@@ -20,8 +20,8 @@
     text-align: center;
     font-size: 13px;
   }
-  .sidenav {
-    display: none;
+  .sidenav.affix {
+    position: static;
   }
   .masthead {
     text-align: left;
@@ -29,40 +29,106 @@
     padding-bottom: 140px;
   }
   .masthead h1 {
-    font-size: 76px;
+    font-size: 80px;
   }
   .masthead .lead {
     margin-right: 0%;
-    font-size: 30px;
+    font-size: 36px;
   }
+  .docs-home {
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
+  background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
+  background-color: #222;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+}
+
+/* Styles for mobile phones 320x480 (portrait), Ratio: 2:3  */
+
+@media only screen and (min-width: 320px) {
+  .footer {
+    padding: 2.6em 0;
+  }
+  .masthead-links {
+    text-align: center;
+    font-size: 13px;
+  }
+  .sidenav.affix {
+    display: none;
+  }
+  .navbar-nav {
+    float: left;
+    margin: 10px 0;
+  }
+
+  .nav > li {
+    padding: 6px;
+}
+
+.navbar > .container .navbar-brand {
+    margin-left: 0;
+}
+  .masthead {
+    text-align: left;
+    padding-top:    80px;
+    padding-bottom: 40px;
+  }
+  .masthead h1 {
+    font-size: 40px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+  }
+  .masthead .lead {
+    margin-right: 0%;
+    font-size: 21px;
+  }
+  .docs-home {
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@320.jpg");
+  background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@320.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@320.jpg");
+  background-color: #222;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  }
+  a#get-started.btn.btn-info.btn-lg {
+    width: 124px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+  .btn-info {
+    width: 124px;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  .btn-info:hover,
+  .btn-info:focus,
+  .btn-info:active {
+    width: 124px;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
 }
 
 
-@media (min-width: 992px) {
-  .header h1,
-  .header p {
-    margin-right: 380px;
-  }
-
-  .sidebar .nav > .active > ul {
-    display: block;
-  }
-  /* Widen the fixed sidebar */
-  .sidebar.affix,
-  .sidebar.affix-bottom {
-    width: 213px;
-  }
-  .sidebar.affix {
-    position: fixed; /* Undo the static from mobile first approach */
-    top: 80px;
-  }
-  .sidebar.affix-bottom {
-    position: absolute; /* Undo the static from mobile first approach */
-  }
-  .sidebar.affix-bottom .sidenav,
-  .sidebar.affix .sidenav {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+/* Styles for Retina-type displays */
+/*
+@media 
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) { 
 }
-
+*/
