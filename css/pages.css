@@ -1,10 +1,156 @@
-/*-- Basic --*/
+/*
+ *
+ * Table of Contents
+ *
+ * Scaffolding
+ * Navigation
+ * Footer
+ * Social buttons
+ * Homepage
+ * Page headers
+ * Old docs callout
+ * Ads
+ * Side navigation
+ * Docs sections
+ * Callouts
+ * Grid styles
+ * Examples
+ * Code snippets (highlight)
+ * Responsive tests
+ * Glyphicons
+ * Customizer
+ * Miscellaneous
+ */
+
+/*-- Scaffolding --*/
 
 body {
   position: relative;
   padding-top: 50px;
   font-size: 14.25px;
 }
+
+.table code {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.btn-outline {
+  color: #563d7c;
+  background-color: #fff;
+  border-color: #e5e5e5;
+}
+
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active {
+  color: #fff;
+  background-color: #563d7c;
+  border-color: #563d7c;
+}
+
+.btn-outline-inverse {
+  color: #fff;
+  background-color: transparent;
+  border-color: #cdbfe3;
+}
+
+.btn-outline-inverse:hover,
+.btn-outline-inverse:focus,
+.btn-outline-inverse:active {
+  color: #563d7c;
+  text-shadow: none;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+/*-- Navigation --*/
+
+.docs-nav {
+  background-color: #fff;
+  border-color: #e5e5e5;
+  -webkit-box-shadow: 0 0 6px rgba(52, 73, 94, 0.1);
+     -moz-box-shadow: 0 0 6px rgba(52, 73, 94, 0.1);
+          box-shadow: 0 0 6px rgba(52, 73, 94, 0.1);
+}
+
+.docs-nav .navbar-collapse {
+  border-color: #aaa;
+}
+
+.docs-nav .navbar-brand {
+  color: #fff;
+}
+
+.docs-nav .navbar-nav > li > a {
+  margin-top: 0;
+  line-height: 0;
+  color: #666;
+  text-shadow: none;
+}
+
+.docs-nav .navbar-nav > li > a:hover {
+  color: #222;
+}
+
+.docs-nav .navbar-nav > .active > a,
+.docs-nav .navbar-nav > .active > a:hover {
+  color: #222;
+  background-color: transparent;
+}
+
+.docs-nav .navbar-toggle {
+  background-color: #666;
+  border-color: #666;
+}
+
+.docs-nav .navbar-toggle:hover {
+  background: #999;
+  border-color: #999;
+}
+
+/*-- Footer --*/
+
+.footer {
+  padding: 3em 0;
+  margin-top: 100px;
+  font-weight: 300;
+  color: #666;
+  text-align: center;
+  background: #222;
+  border-top: 1px solid #999;
+}
+
+.footer-links {
+  padding-left: 0;
+  margin: 10px 0;
+}
+
+.footer-links li {
+  display: inline;
+  padding: 0 2px;
+}
+
+.footer-links li:first-child {
+  padding-left: 0;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 2.6em 0;
+  }
+}
+
+@media (min-width: 320px) {
+  .footer {
+    padding: 2.6em 0;
+  }
+}
+
+
+
+/* Refactor code below */
+/* Stopped at Social buttons */
 
 a {
   color: #2980b9;
@@ -50,14 +196,6 @@ main {
 
 /*-- Nav --*/
 
-.docs-nav {
-  background-color: #fff;
-  border-color: #e5e5e5;
-  -webkit-box-shadow: 0 0 6px rgba(52, 73, 94, 0.1);
-     -moz-box-shadow: 0 0 6px rgba(52, 73, 94, 0.1);
-          box-shadow: 0 0 6px rgba(52, 73, 94, 0.1);
-}
-
 .docs-home {
   color: #fff;
   background-color: #563d7c;
@@ -70,37 +208,6 @@ main {
 
 .docs-section + .docs-section {
   padding-top: 40px;
-}
-
-.docs-nav .navbar-brand {
-  color: #fff;
-}
-
-.docs-nav .navbar-nav > li > a {
-  margin-top: 0;
-  line-height: 0;
-  color: #666;
-  text-shadow: none;
-}
-
-.docs-nav .navbar-nav > li > a:focus,
-.docs-nav .navbar-nav > li > a:hover {
-  color: #222;
-}
-
-.docs-nav .navbar-nav > .active > a,
-.docs-nav .navbar-nav > .active > a:hover {
-  color: #222;
-  background-color: transparent;
-}
-
-.docs-nav .navbar-toggle {
-  background-color: #666;
-  border-color: #666;
-}
-
-.docs-nav .navbar-collapse {
-  border-color: #aaa;
 }
 
 .navbar-nav {
@@ -163,7 +270,7 @@ h2,
   margin-top: 40px;
   margin-bottom: 22px;
   font-size: 30px;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 h3,
@@ -184,29 +291,8 @@ h4,
 
 /*-- Footer --*/
 
-.footer-links {
-  padding-left: 0;
-  margin: 10px 0;
-}
 
-.footer-links li {
-  display: inline;
-  padding: 0 2px;
-}
 
-.footer-links li:first-child {
-  padding-left: 0;
-}
-
-.footer {
-  padding: 3em 0;
-  margin-top: 100px;
-  font-weight: 300;
-  color: #666;
-  text-align: center;
-  background: #222;
-  border-top: 1px solid #999;
-}
 
 .footer p {
   margin-bottom: 0;
@@ -459,34 +545,9 @@ pre.nowrap {
 
 /*-- Buttons --*/
 
-.btn-outline {
-  color: #563d7c;
-  background-color: #fff;
-  border-color: #e5e5e5;
-}
 
-.btn-outline:hover,
-.btn-outline:focus,
-.btn-outline:active {
-  color: #fff;
-  background-color: #563d7c;
-  border-color: #563d7c;
-}
 
-.btn-outline-inverse {
-  color: #fff;
-  background-color: transparent;
-  border-color: #cdbfe3;
-}
 
-.btn-outline-inverse:hover,
-.btn-outline-inverse:focus,
-.btn-outline-inverse:active {
-  color: #563d7c;
-  text-shadow: none;
-  background-color: #fff;
-  border-color: #fff;
-}
 
 .btn-default {
   font-size: 18px;
@@ -590,11 +651,7 @@ button#version-selector.btn.dropdown-toggle {
   padding: 5px 20px;
   font-size: 13.5px;
   color: #fff;
-  background-color: #222;
-}
-
-.caret {
-  border-color: #fff;
+  background-color: #c75a48;
 }
 
 a#github-icon {

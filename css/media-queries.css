@@ -1,6 +1,6 @@
 /* Styles for widescreen 1280x800 (landscape), Ratio: 8:5 */
 
-@media only screen and (min-width: 1280px) {
+@media (min-width: 1280px) {
   .sidebar.affix-bottom,
   .sidebar.affix {
     width: 263px;
@@ -12,16 +12,15 @@
 
 /* Styles for tablets 768x1024 (portrait), Ratio: 3:4 */
 
-@media only screen and (min-width: 768px) {
-  .footer {
-    padding: 2.6em 0;
-  }
+@media (min-width: 768px) {
+
   .masthead-links {
     text-align: center;
     font-size: 13px;
   }
   .sidenav.affix {
     position: static;
+    display: inline;
   }
   .masthead {
     text-align: left;
@@ -50,16 +49,13 @@
 
 /* Styles for mobile phones 320x480 (portrait), Ratio: 2:3  */
 
-@media only screen and (min-width: 320px) {
-  .footer {
-    padding: 2.6em 0;
-  }
+@media (min-width: 320px) {
   .masthead-links {
     text-align: center;
     font-size: 13px;
   }
   .sidenav.affix {
-    display: none;
+    position: static;
   }
   .navbar-nav {
     float: left;
