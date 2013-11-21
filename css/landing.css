@@ -1,4 +1,18 @@
-/*-- Basic --*/
+/*
+ *
+ * Table of Contents
+ *
+ * Scaffolding
+ * Navigation
+ * Background
+ * Headings
+ * Sidebar
+ * Toggle
+ * Services
+ *
+ */
+
+/*-- Scaffolding --*/
 
 html,
 body {
@@ -12,7 +26,107 @@ a:focus {
   color: #fff;
 }
 
-/*-- Nav --*/
+.btn-info {
+  width: 124px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #222;
+  text-shadow: none;
+  text-transform: uppercase;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 14px;
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active {
+  width: 124px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #222;
+  text-shadow: none;
+  text-transform: uppercase;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 14px;
+}
+
+.btn-primary {
+  color: #222;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.btn-lg {
+  font-size: 14px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #222;
+  background-color: #fff;
+  border: 1px solid #aaa;
+}
+
+a#get-started.btn.btn-info.btn-lg {
+  width: 124px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #fff;
+  text-shadow: none;
+  text-transform: uppercase;
+  background-color: #c75a48;
+  background-image: none;
+  border: 1px solid #a0483a;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 14px;
+}
+
+@media (min-width: 320px) {
+  a#get-started.btn.btn-info.btn-lg {
+    width: 170px;
+    font-size: 14px;
+    margin-right: 20px;
+  }
+  .btn-info {
+    width: 170px;
+    font-size: 14px;
+    margin-right: 20px;
+  }
+  .btn-info:hover,
+  .btn-info:focus,
+  .btn-info:active {
+    width: 170px;
+    font-size: 14px;
+    margin-right: 20px;
+  }
+}
+
+/*-- Navigation --*/
+
+.docs-nav {
+  height: 74px;
+  border: none medium;
+  box-shadow: none;
+}
+
+.navbar-brand {
+  margin-top: -45px;
+}
 
 .container {
   margin-top: 0;
@@ -26,6 +140,9 @@ a:focus {
   height: 85%;
 }
 
+
+/*-- Background --*/
+
 .docs-home {
   background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
   background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
@@ -38,54 +155,43 @@ a:focus {
           background-size: cover;
 }
 
-.docs-nav {
-  height: 74px;
-  border: none medium;
-  box-shadow: none;
-}
-
-.masthead-links {
-  margin: 2px 0;
-}
-
-.docs-home .masthead-links {
-  margin-top: 250px;
-  margin-left: 0;
-}
-
-footer {
-  padding: 50px 0 0;
-}
-
 /*-- Headings --*/
-
-h1,
-.h1 {
-  margin-top: 40px;
-  border-bottom: none;
-}
 
 .masthead h1 {
   padding: 0;
-  margin-right: 0;
-  margin-right: 15%;
   margin-left: 0;
-  font-family: helvetica, arial, sans-serif;
-  font-size: 94px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -4px;
+  letter-spacing: -1px;
   text-transform: none;
 }
 
 .masthead .lead {
-  margin-right: 25%;
-  margin-bottom: 0;
+  margin-right: 0%;
   margin-bottom: 60px;
-  font-family: helvetica, arial, sans-serif;
-  font-size: 38px;
+  font-size: 22px;
   line-height: 1.1;
-  letter-spacing: -0.5px;
+  letter-spacing: 0;
+}
+
+@media (min-width: 320px) {
+  .masthead h1 {
+    padding: 0;
+    margin-left: 0;
+    font-size: 94px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -4px;
+    text-transform: none;
+  }
+  .masthead .lead {
+    margin-right: 25%;
+    margin-bottom: 60px;
+    font-size: 38px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
 }
 
 /*-- Sidebar --*/
@@ -117,6 +223,48 @@ h1,
           transition: all .4s ease 0;
 }
 
+/*-- Toggle --*/
+
+#menu-toggle {
+  position: fixed;
+  top: 10px;
+  right: 4px;
+  z-index: 1;
+}
+
+.toggle {
+  margin: 5px 5px 0 0;
+}
+
+/*-- Services --*/
+
+.services {
+  padding: 50px 0;
+  color: #fff;
+  background: #7fbbda;
+}
+
+.service-item {
+  margin-bottom: 15px;
+}
+
+i.service-icon {
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  font-size: 56px;
+  line-height: 136px;
+  text-align: center;
+  vertical-align: middle;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+
+i.service-icon:hover {
+  font-size: 68px;
+}
+
+/*
 .sidebar-nav {
   position: absolute;
   top: 0;
@@ -162,120 +310,4 @@ h1,
 .sidebar-nav > .sidebar-brand a:hover {
   color: #fff;
 }
-
-/*-- Buttons --*/
-
-.btn-info {
-  width: 170px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  font-family: helvetica, arial, sans-serif;
-  font-size: 14px;
-  color: #222;
-  text-shadow: none;
-  text-transform: uppercase;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #bdc3c7;
-  border-radius: 4px;
-  box-shadow: none;
-  padding: 14px;
-}
-
-.btn-info:hover,
-.btn-info:focus,
-.btn-info:active {
-  width: 170px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  font-family: helvetica, arial, sans-serif;
-  font-size: 14px;
-  color: #222;
-  text-shadow: none;
-  text-transform: uppercase;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #bdc3c7;
-  border-radius: 4px;
-  box-shadow: none;
-  padding: 14px;
-}
-
-.btn-primary {
-  padding: 3px 3px;
-  color: transparent;
-  background-color: transparent;
-  border-color: transparent;
-}
-
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open .dropdown-toggle.btn-primary {
-  color: #222;
-  background-color: #fff;
-  border: 1px solid #aaa;
-}
-
-a#get-started.btn.btn-info.btn-lg {
-  width: 170px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  font-family: helvetica, arial, sans-serif;
-  font-size: 14px;
-  color: #fff;
-  text-shadow: none;
-  text-transform: uppercase;
-  background-color: #c75a48;
-  background-image: none;
-  border: 1px solid #a0483a;
-  border-radius: 4px;
-  box-shadow: none;
-  padding: 14px;
-}
-
-/*-- Toggle --*/
-
-.navbar-brand {
-  margin-top: -45px;
-}
-
-#menu-toggle {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1;
-}
-
-.toggle {
-  margin: 5px 5px 0 0;
-}
-
-/*-- Services --*/
-
-.services {
-  padding: 50px 0;
-  color: #fff;
-  background: #7fbbda;
-}
-
-.service-item {
-  margin-bottom: 15px;
-}
-
-i.service-icon {
-  display: inline-block;
-  width: 140px;
-  height: 140px;
-  font-size: 56px;
-  line-height: 136px;
-  text-align: center;
-  vertical-align: middle;
-  border: 3px solid #fff;
-  border-radius: 50%;
-}
-
-i.service-icon:hover {
-  font-size: 68px;
-}
+*/
