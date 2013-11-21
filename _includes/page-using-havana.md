@@ -145,7 +145,7 @@ The output should look similar to this:
 
 ### Accessing the Horizon Dashboard
 
-> Note: Log in with the admin user name and the password you created during the OpenStack Chef deployment.
+<div class="alert alert-info">Log in with the admin user name and the password you created during the OpenStack Chef deployment.</div>
 
 In addition to the command line, you can use your web browser to access the controller host. You can use the hostname or the IP address that you provided during installation, followed by &#8220;/horizon&#8221;. For instance, if your controller is &#8220;control1.example.com”, navigate to http://control1.example.com/horizon/. You should see the OpenStack dashboard login page. If not, the installation may not be complete.
 
@@ -163,7 +163,7 @@ pip install python-cinderclient
 pip install python-glanceclient
 </pre>
 
-> Note: Individual utilities are maintained by differing communities. Refer to their help documentation for more information, or by using the &#8212;help flag for a given utility.
+<div class="alert alert-info">Individual utilities are maintained by differing communities. Refer to their help documentation for more information, or by using the &#8212;help flag for a given utility.</div>
 
 ## Our DevOps Tools
 

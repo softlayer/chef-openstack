@@ -11,8 +11,7 @@ supported architecture. These are optimal for users seeking a private cloud offe
 *   Network Node
 *   Compute Node
 
-> Note: OpenStack can scale to hundreds or thousands of nodes. Running OpenStack on systems that do not meet the minimum requirements
->   may negatively affect system or overall cluster performance.
+<div class="alert alert-info">OpenStack can scale to hundreds or thousands of nodes. Running OpenStack on systems that do not meet the minimum requirements may negatively affect system or overall cluster performance.</div>
 
 <div class="table-responsive">
   <table class="table table-bordered table-hover">
@@ -247,9 +246,9 @@ When creating new Data Networks to connect your instances, we recommend limiting
 *   172.16.0.0/12 (or 172.16.0.0 - 172.31.255.255)
 *   192.168.0.0/16 (or 192.168.0.0 - 192.168.255.255)
 
-Please note that any instance that is simultaneously connected to the SoftLayer Private Network <strong>and</strong> Data Network subnet
+<div class="alert alert-info">Any instance that is simultaneously connected to the SoftLayer Private Network <strong>and</strong> Data Network subnet
 within 10.0.0.0/8 is very likely to conflict and cause unforeseen problems, since the SoftLayer Private Network uses subnets within
-10.0.0.0/8 as well.
+10.0.0.0/8 as well.</div>
 
 If you absolutely need to create and use Data Network subnets within 10.0.0.0/8, ensure each instance assigned to them do not connect to
 the SoftLayer Private Network.

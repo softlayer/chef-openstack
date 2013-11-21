@@ -115,7 +115,6 @@ p {
   background-image: none;
   border-radius: 15px;
   box-shadow: none;
-  opacity: 0.8;
 }
 
 .navbar-inverse .navbar-toggle:hover,
@@ -255,49 +254,12 @@ a#twitter-icon {
   margin-top: -4px;
 }
 
-@media (min-width: 768px) {
-  .social {
-    text-align: left;
-  }
-  .social-buttons li:first-child {
-    padding-left: 0;
-  }
-}
-
 /*-- Background --*/
 
 .docs-home {
   background: transparent;
   color: #fff;
   background-color: #563d7c;
-}
-
-@media (min-width: 768px) {
-  .docs-home {
-    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
-    background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
-    background-color: #222;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-       -moz-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
-  }
-}
-
-@media (min-width: 320px) {
-  .docs-home {
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@320.jpg");
-  background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@320.jpg");
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@320.jpg");
-  background-color: #222;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-          background-size: cover;
-  }
 }
 
 /*-- Homepage --*/

@@ -144,6 +144,19 @@ a#get-started.btn.btn-info.btn-lg {
 /*-- Background --*/
 
 .docs-home {
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
+  background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
+  background-color: #222;
+  background-repeat: no-repeat;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .docs-home {
   background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
   background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
@@ -153,6 +166,7 @@ a#get-started.btn.btn-info.btn-lg {
      -moz-background-size: cover;
        -o-background-size: cover;
           background-size: cover;
+  }
 }
 
 /*-- Headings --*/
@@ -175,7 +189,7 @@ a#get-started.btn.btn-info.btn-lg {
   letter-spacing: 0;
 }
 
-@media (min-width: 320px) {
+@media (min-width: 768px) {
   .masthead h1 {
     padding: 0;
     margin-left: 0;
@@ -264,7 +278,7 @@ i.service-icon:hover {
   font-size: 68px;
 }
 
-/*
+
 .sidebar-nav {
   position: absolute;
   top: 0;
@@ -310,4 +324,3 @@ i.service-icon:hover {
 .sidebar-nav > .sidebar-brand a:hover {
   color: #fff;
 }
-*/
