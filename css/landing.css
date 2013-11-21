@@ -7,7 +7,6 @@
  * Background
  * Headings
  * Sidebar
- * Toggle
  * Services
  *
  */
@@ -67,7 +66,7 @@ a:focus {
 }
 
 .btn-lg {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .btn-primary:hover,
@@ -96,7 +95,7 @@ a#get-started.btn.btn-info.btn-lg {
   padding: 14px;
 }
 
-@media (min-width: 320px) {
+@media (min-width: 768px) {
   a#get-started.btn.btn-info.btn-lg {
     width: 170px;
     font-size: 14px;
@@ -129,6 +128,7 @@ a#get-started.btn.btn-info.btn-lg {
 
 .navbar-brand {
   margin-top: -45px;
+  padding: 15px 0;
 }
 
 .container {
@@ -147,9 +147,9 @@ a#get-started.btn.btn-info.btn-lg {
 /*-- Background --*/
 
 .docs-home {
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
-  background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../img/bg@768.jpg");
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../img/bg@768.jpg");
+  background: -moz-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../img/bg@768.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../img/bg@768.jpg");
   background-color: #222;
   background-repeat: no-repeat;
     -webkit-background-size: cover;
@@ -160,9 +160,9 @@ a#get-started.btn.btn-info.btn-lg {
 
 @media (min-width: 768px) {
   .docs-home {
-  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
-  background: -moz-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
+  background: -moz-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url("http://s12.postimg.org/61a0hibb1/image.jpg");
   background-color: #222;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -182,18 +182,26 @@ a#get-started.btn.btn-info.btn-lg {
   line-height: 1;
   letter-spacing: -1px;
   text-transform: none;
-  margin-top: 0;
+  margin-top: 10px;
 }
 
 .masthead .lead {
   margin-right: 0%;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   font-size: 22px;
   line-height: 1.1;
   letter-spacing: 0;
 }
 
+.masthead {
+  padding-bottom: 0px;
+}
+
 @media (min-width: 768px) {
+  .masthead {
+    padding-bottom: 40px;
+  }
+
   .masthead h1 {
     padding: 0;
     margin-left: 0;
@@ -242,48 +250,6 @@ a#get-started.btn.btn-info.btn-lg {
           transition: all .4s ease 0;
 }
 
-/*-- Toggle --*/
-
-#menu-toggle {
-  position: fixed;
-  top: 10px;
-  right: 4px;
-  z-index: 1;
-}
-
-.toggle {
-  margin: 5px 5px 0 0;
-}
-
-/*-- Services --*/
-
-.services {
-  padding: 50px 0;
-  color: #fff;
-  background: #7fbbda;
-}
-
-.service-item {
-  margin-bottom: 15px;
-}
-
-i.service-icon {
-  display: inline-block;
-  width: 140px;
-  height: 140px;
-  font-size: 56px;
-  line-height: 136px;
-  text-align: center;
-  vertical-align: middle;
-  border: 3px solid #fff;
-  border-radius: 50%;
-}
-
-i.service-icon:hover {
-  font-size: 68px;
-}
-
-
 .sidebar-nav {
   position: absolute;
   top: 0;
@@ -329,3 +295,44 @@ i.service-icon:hover {
 .sidebar-nav > .sidebar-brand a:hover {
   color: #fff;
 }
+
+#menu-toggle {
+  position: fixed;
+  top: 10px;
+  right: 4px;
+  z-index: 1;
+}
+
+.toggle {
+  margin: 5px 5px 0 0;
+}
+
+/*-- Services --*/
+
+.services {
+  padding: 50px 0;
+  color: #fff;
+  background: #7fbbda;
+}
+
+.service-item {
+  margin-bottom: 15px;
+}
+
+i.service-icon {
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  font-size: 56px;
+  line-height: 136px;
+  text-align: center;
+  vertical-align: middle;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+
+i.service-icon:hover {
+  font-size: 68px;
+}
+
+

@@ -99,8 +99,8 @@ p {
 }
 
 .navbar-nav {
-  float: right;
-  margin-top: 18px;
+  float: left;
+  margin: 10px 0;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0;
@@ -126,7 +126,7 @@ p {
 .navbar > .container .navbar-brand {
   margin-top: 4px;
   margin-right: 20px;
-  margin-left: -12px;
+  margin-left: 0px;
 }
 
 .navbar-nav > .active > a {
@@ -154,7 +154,15 @@ p {
 
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand {
-    margin-left: 0;
+    margin-left: -12px;
+  }
+  .navbar-nav {
+    float: right;
+    margin-top: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    cursor: pointer;
   }
 }
 
@@ -325,7 +333,7 @@ a#twitter-icon {
 }
 
 @media (min-width: 320px) {
-    .masthead-links {
+  .masthead-links {
     text-align: center;
     font-size: 14px;
   }
@@ -350,38 +358,6 @@ a#twitter-icon {
 .header {
   padding: 0 0 35px;
 }
-
-/* Find what this code translates to
-.header h1 {
-  color: #fff;
-}
-.header p {
-  font-weight: 300;
-  line-height: 1.5;
-}
-.header .container {
-  position: relative;
-}
-
-@media (min-width: 768px) {
-  .header {
-    font-size: 21px;
-    text-align: left;
-  }
-  .header h1 {
-    font-size: 60px;
-    line-height: 1;
-  }
-}
-
-@media (min-width: 992px) {
-  .header h1,
-  .header p {
-    margin-right: 380px;
-  }
-}
-
-*/
 
 /*-- Side navigation --*/
 
@@ -759,87 +735,3 @@ button#version-selector.btn.dropdown-toggle {
 .row .col-lg-6 p a {
   font-size: 16px;
 }
-
-/* Validate by refactoring */
-/*
-
-article,
-aside,
-details,
-figcaption,
-figure,
-hgroup,
-section,
-summary {
-  background-color: #222;
-}
-
-main {
-  background: transparent;
-}
-
-.navbar-form {
-  margin-top: -100px;
-}
-
-.sidenav ul {
-  list-style: none;
-}
-
-.sidenav li {
-  margin: 0 0 1px;
-}
-
-.sidenav li a {
-  position: relative;
-  display: block;
-  padding: 15px 20px;
-  color: #fafafa;
-  background-color: transparent;
-}
-
-.sidenav li.selected a,
-.sidenav li a:hover {
-  background-color: #00adf5;
-}
-
-.sidenav li.selected a:before,
-.sidenav li a:hover:before {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  display: block;
-  width: 14px;
-  height: 23px;
-  margin-top: -11px;
-  background-position: -230px 0;
-}
-
-.sidebar .nav > .active > ul {
-  display: block;
-}
-
-.sidebar.affix-bottom {
-  position: absolute;
-  width: 263px;
-}
-
-.sidebar.affix-bottom .sidenav {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.btn-default {
-  font-size: 18px;
-  text-shadow: none;
-  background-image: none;
-  background-repeat: no-repeat;
-  border-radius: 4px;
-}
-
-.sidenav-buttons {
-  width: 254px;
-  margin-right: auto;
-  margin-left: auto;
-}
-*/
