@@ -13,6 +13,7 @@ fork: http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&a
 star: http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&amp;type=watch&amp;count=true
 open_issues: http://github.com/softlayer/chef-openstack/issues?milestone=1;state=open
 closed_issues: http://github.com/softlayer/chef-openstack/issues?milestone=1;state=closed
+wiki: http://github.com/softlayer/chef-openstack/wiki
 
 # Company
 www: http://www.softlayer.com
@@ -27,4 +28,4 @@ twitter: http://twitter.com/softlayerdevs
 
 # Server
 permalink: pretty
-exclude: [".gitignore", "LICENSE", "README.md", "humans.txt"]
+exclude: [".gitignore", "LICENSE", "README.md"]

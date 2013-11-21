@@ -126,7 +126,7 @@ p {
 .navbar > .container .navbar-brand {
   margin-top: 4px;
   margin-right: 20px;
-  margin-left: 0;
+  margin-left: -12px;
 }
 
 .navbar-nav > .active > a {
@@ -152,9 +152,9 @@ p {
   color: #222;
 }
 
-@media (min-width: 320px) {
+@media (min-width: 768px) {
   .navbar > .container .navbar-brand {
-    margin-left: -12px;
+    margin-left: 0;
   }
 }
 
@@ -196,13 +196,6 @@ p {
 }
 
 @media (min-width: 768px) {
-  .footer {
-    padding: 2.6em 0;
-    text-align: left;
-  }
-}
-
-@media (min-width: 320px) {
   .footer {
     padding: 2.6em 0;
     text-align: left;
@@ -292,13 +285,6 @@ a#twitter-icon {
   font-size: 21px;
 }
 
-/*
-.docs-home .masthead-links {
-  margin-top: 10px;
-  margin-left: 350px;
-}
-*/
-
 .masthead-links {
   padding: 0 65px 0 0;
   margin: -25px 0 0;
@@ -317,12 +303,6 @@ a#twitter-icon {
 
 .masthead-links li + li {
   margin-left: 20px;
-}
-
-@media (min-width: 1280px) {
-  .masthead-links {
-    text-align: center;
-  }
 }
 
 @media (min-width: 768px) {
@@ -761,15 +741,15 @@ button#version-selector.btn.dropdown-toggle {
 }
 
 .docs-nav .navbar-toggle {
-  background-color: #666;
-  border-color: #666;
+  background-color: #222;
+  border-color: #222;
   top: 10px;
   right: 4px;
 }
 
 .docs-nav .navbar-toggle:hover {
-  background: #999;
-  border-color: #999;
+  background: #666;
+  border-color: #666;
 }
 
 /*-- Index --*/

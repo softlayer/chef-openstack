@@ -101,11 +101,13 @@ a#get-started.btn.btn-info.btn-lg {
     width: 170px;
     font-size: 14px;
     margin-right: 20px;
+    letter-spacing: 1px;
   }
   .btn-info {
     width: 170px;
     font-size: 14px;
     margin-right: 20px;
+    letter-spacing: 1px;
   }
   .btn-info:hover,
   .btn-info:focus,
@@ -113,6 +115,7 @@ a#get-started.btn.btn-info.btn-lg {
     width: 170px;
     font-size: 14px;
     margin-right: 20px;
+    letter-spacing: 1px;
   }
 }
 
@@ -179,6 +182,7 @@ a#get-started.btn.btn-info.btn-lg {
   line-height: 1;
   letter-spacing: -1px;
   text-transform: none;
+  margin-top: 0;
 }
 
 .masthead .lead {
@@ -193,11 +197,12 @@ a#get-started.btn.btn-info.btn-lg {
   .masthead h1 {
     padding: 0;
     margin-left: 0;
-    font-size: 94px;
+    font-size: 100px;
     font-weight: 700;
     line-height: 1;
     letter-spacing: -4px;
     text-transform: none;
+    margin-top: 100px;
   }
   .masthead .lead {
     margin-right: 25%;
