@@ -9,40 +9,7 @@ baseurl: "../"
 
 The release for Chef-OpenStack is now available on [GitHub]({{ site.repo }}). Browse the sections below to read more about what’s available.
 
-## Summary
-
-The details regarding the project are below.
-
-<div class="table-responsive" id="component-table">
-  <table class="table table-hover" id="no-borders">
-    <thead>
-      <tr>
-        <th>Reference</th>
-        <th>Details</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Release Phase</td>
-        <td>Phase 1</td>
-      </tr>
-      <tr>
-        <td>Release Version (Havana)</td>
-        <td>v0.3.3</td>
-      </tr>
-      <tr>
-        <td>Release Version (Grizzly)</td>
-        <td>v0.2.0</td>
-      </tr>
-      <tr>
-        <td>Product Line</td>
-        <td>OpenStack Compatibility API</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-## Milestones
+# Milestones
 
 The key milestones for this project are outlined below.
 
