@@ -11,12 +11,11 @@ open_issues: http://github.com/softlayer/chef-openstack/issues?milestone=1;state
 closed_issues: http://github.com/softlayer/chef-openstack/issues?milestone=1;state=closed
 milestones: http://github.com/softlayer/chef-openstack/issues/milestones?state=open
 commits: http://github.com/softlayer/chef-openstack/commits
-pulls: http://github.com/softlayer/chef-openstack/pulls?direction=desc&amp;page=1&amp;sort=created&amp;state=open
 contributors: https://github.com/softlayer/chef-openstack/graphs/contributors
 
 # Company
 www: http://www.softlayer.com
-license: http://github.com/softlayer/chef-openstack/blob/master/LICENSE
+license: https://github.com/softlayer/chef-openstack/blob/Havana/LICENSE
 sldn: http://sldn.softlayer.com
 kb: http://knowledgelayer.softlayer.com
 blog: http://blog.softlayer.com
