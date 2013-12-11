@@ -31,7 +31,7 @@ To install Chef Server, perform the following:
   PostgreSQL, and the cookbooks that are needed by <code>chef-solo</code> to maintain Chef Server.</li>
 <pre><code>$ sudo chef-server-ctl reconfigure</code></pre>
 
-<img class="img-thumbnail" src="{{ page.baseurl }}img/installation/001.png">
+<img class="img-thumbnail" src="{{ page.baseurl }}images/installation/001.png">
 
   <li>Verify the hostname for the server by running the <code>hostname</code> command. The hostname for the server must be a fully
   qualified domain name (<span class="caps">FQDN</span>). We recommend as well that the proper <code>A</code> records for each of your

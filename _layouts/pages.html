@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      
-      {% include header.html %}
+  <head> 
+    
+    {% include header.html %}
   
   </head>
   <body>
-    <a class="sr-only" href="#content">Skip to main content</a>
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
       
-      {% include main-pages.html %}
-
-    <div class="header" id="content">
-      <div class="container">
-      </div>
-    </div>
-
+      {% include main.html %}
+    
+    </header>
+    <div class="header" id="content"></div>
     <div class="container docs-container">
       <div class="row">
         <div class="col-md-3">
           <div class="sidebar hidden-print" role="complementary">
-            <ul class="nav sidenav">
+            <ul class="nav sidenav">    
               
-              {% if page.slug == "release-notes" %}
-                {% include nav-release-notes.html %}
+              {% if page.slug == "get-started" %}
+                {% include nav-get-started.html %}
               {% elsif page.slug == "learn-more" %}
                 {% include nav-learn-more.html %}
-              {% elsif page.slug == "getting-havana" %}
-                {% include nav-getting-started.html %}
-              {% elsif page.slug == "getting-grizzly" %}
-                {% include nav-getting-started.html %}
+              {% elsif page.slug == "developing-havana" %}
+                {% include nav-developer-guide.html %}
+              {% elsif page.slug == "developing-grizzly" %}
+                {% include nav-developer-guide.html %}
               {% endif %}
             
             </ul>
@@ -36,23 +33,24 @@
         </div>
         <div class="col-md-9" role="main">
           
-              {{ content }}
-          
+          {{ content }}
+        
         </div>
       </div>
     </div>
     <footer class="footer" role="contentinfo">
       <div class="container">
-        
         <div class="masthead-links">
+          
           <a href="{{ site.www }}">© 2013 SoftLayer, an IBM Company</a> &middot; 
           <a href="{{ site.license }}">License</a> &middot; 
-          <a href="{{ site.sldn }}">Development Network</a>
-          <li><a href="{{ site.repo }}" id="github-icon"><i class="fa fa-github fa-2x"></i></a></li>
-          <li><a href="{{ site.twitter }}" id="twitter-icon"><i class="fa fa-twitter fa-2x"></i></a></li>
+          <a href="{{ site.forum }}">SLDN</a> &middot; 
+          <a href="{{ site.blog }}">Blog</a> &middot; 
+          <a href="{{ site.support }}">Knowledgebase</a>    
+        
         </div>
       </div>
-
+        
         {% include footer.html %}
     
     </footer>

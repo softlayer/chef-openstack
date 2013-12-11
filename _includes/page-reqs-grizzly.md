@@ -111,7 +111,7 @@ Have the following cookbooks handy before beginning the install process. You can
 
 Within the SoftLayer environment and the Chef cookbooks provided, the reference architecture consists of three separate networks (two physical interfaces and one virtual interface). Refer to the following diagram to determine how various components and are connected, and the networks they're connected to.
 
-<img class="img-thumbnail" id="custom-height" src="{{ page.baseurl }}img/requirements/001.png">
+<img class="img-thumbnail" id="custom-height" src="{{ page.baseurl }}images/requirements/001.png">
 
 For OpenStack private cloud deployments, we recommend following best practices to secure your public network, exposing only the systems and services that you wish to make available over the Internet.
 

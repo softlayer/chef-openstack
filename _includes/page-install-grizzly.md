@@ -21,7 +21,7 @@ To install Chef Server, perform the following:
   <li>Configure Chef Server by running the command below. This command will set up all required components, including Erchef, RabbitMQ, PostgreSQL, and the cookbooks that are needed by <code>chef-solo</code> to maintain Chef Server.
 
 <pre><code>$ sudo chef-server-ctl reconfigure</code></pre>
-<img class="img-thumbnail" src="{{ page.baseurl }}img/installation/001.png">
+<img class="img-thumbnail" src="{{ page.baseurl }}images/installation/001.png">
 <br>
   </li>
   <li>Verify the hostname for the server by running the <code>hostname</code> command. The hostname for the server must be a fully qualified domain name (FQDN). We recommend as well that the proper <code>A</code> records for each of your nodes' FQDNs exist in DNS for easier accessibility.</li>

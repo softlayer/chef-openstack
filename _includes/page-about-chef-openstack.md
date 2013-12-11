@@ -1,9 +1,9 @@
 
 <div class="docs-section">
   {% if page.tag == "Grizzly" %}
-    <h1 id="getting-started">Getting Started (Grizzly)</h1>
+    <h1 id="getting-started">Developer Guide (Grizzly)</h1>
   {% elsif page.tag == "Havana" %}
-    <h1 id="getting-started">Getting Started (Havana)</h1>
+    <h1 id="getting-started">Developer Guide (Havana)</h1>
   {% endif %}
 
   <p>Our guide provides an overview for installing, configuring, deploying, and supporting OpenStack and Chef. Simply click any topic and
@@ -12,8 +12,8 @@
 <div class="dropdown">
   <button class="btn dropdown-toggle" type="button" id="version-selector" data-toggle="dropdown">Pick another version</button>
   <ul class="dropdown-menu" role="menu" aria-labelledby="version-selector">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}getting-havana">Havana</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}getting-grizzly">Grizzly</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}developing-havana">Havana</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ page.baseurl }}developing-grizzly">Grizzly</a></li>
   </ul>
 </div>
 
@@ -89,7 +89,7 @@ Chef is a systems integration framework built to bring the benefits of configura
 
 Each organization is composed of one (or more) workstations, a single server, and every node configured and maintained by a Chef client. Install Chef client on every node and it will perform all necessary configuration tasks. Then come cookbooks and recipes. The Chef client relies on these to tell it how to configure each node in your organization. You can even manage multiple environments—-or groups of nodes and settings—-with the same Chef server. Visit [https://learnchef.opscode.com](https://learnchef.opscode.com) for more information.
 
-<img class="img-thumbnail" id="no-height" src="{{ page.baseurl }}img/chef-openstack/001.jpg">
+<img class="img-thumbnail" id="no-height" src="{{ page.baseurl }}images/chef-openstack/001.jpg">
 
 ## About OpenStack
 

@@ -5,13 +5,13 @@ slug: learn-more
 baseurl: "../"
 ---
 
-# About
+# About Us
 
 Our combustion began at the grassroots level with free and open source software. Not only do we use it regularly, we also believe in the openness of development and collaboration as a means to producing viable and sustainable products. That’s why we’re thrilled to be contributors toward the development of OpenStack and Chef. 
 
 All our work is happening publically on GitHub, and we invite everyone to join in. If you're looking to be a contributor, here's how you can help.
 
-# Guidelines
+# Contributor Guidelines
 
 Read our contributing guidelines below. They include how to:
 

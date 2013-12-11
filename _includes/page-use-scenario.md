@@ -16,7 +16,7 @@ SoftCube is a new startup. They expect a large boom in new customers and need th
 requirements. Using a private cloud will provide them with the flexibility and adaptability that they need. To make this happen, SoftCube
 needs to move three of their existing hardware servers to the cloud. Currently, they have two web servers and one database server.
 
-<img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/017.png">
+<img class="img-thumbnail" src="{{ page.baseurl }}images/use-scenario/017.png">
 
 These servers reside on-site and neither of them have redundant power or networking. Let's get them moved to the SoftLayer Private
 Cloud that SoftCube just decided to purchase.
@@ -33,9 +33,9 @@ To create an SSH key, you'll follow these simple steps in the Horizon dashboard.
 
 <ol>
 <li>Log in to the Horizon dashboard running on SoftCube's new SoftLayer Private Cloud.</li>
-<img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/006.png">
+<img class="img-thumbnail" src="{{ page.baseurl }}images/use-scenario/006.png">
 <li>Click on the "Project" tab.</li>
-<img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/016.png">
+<img class="img-thumbnail" src="{{ page.baseurl }}images/use-scenario/016.png">
 <li>Select your Current Project (admin in this case).</li>
 <li>Click "Access &amp; Security".</li>
 <li>Click the "Keypairs" tab.</li>
@@ -52,7 +52,7 @@ Now that SoftCube's keypair is available, the compute instances can be created.
   <li>Click on the "Project" tab.</li>
   <li>Select your Current Project (admin in this case).</li>
   <li>Click "Instances".</li>
-    <img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/010.png">
+    <img class="img-thumbnail" src="{{ page.baseurl }}images/use-scenario/010.png">
   <li>Click the "Launch Instances" button.</li>
   <li>A new dialog window will appear with all the details needed for launching a new compute instance. In the launch instance window, they
   will need the following information handy to create and launch their instances:</li>
@@ -88,7 +88,7 @@ below.
 
 <ol>
   <li>Click on the "Networking" tab.</li>
-<img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/005.png">
+<img class="img-thumbnail" src="{{ page.baseurl }}images/use-scenario/005.png">
 <li>In the "Available Networks" list, click the "+" button next to "stack-network" and
   "softlayer-private".</li>
 <li>Click the "Launch" button. The first web server will be launched. Since SoftCube needs two web servers, follow the same
@@ -128,12 +128,12 @@ assigning Floating IPs, which is our next step.
 
   <li>Click "Associate Floating IP".</li>
 
-<img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/003.png">
+<img class="img-thumbnail" src="{{ page.baseurl }}images/use-scenario/003.png">
 
   <li>Currently SoftCube has no allocated Floating IPs. One will need to be allocated before it will before it can be assigned to a compute
   instance. Click the "+" button to associate a floating IP with the current project.</li>
 
-<img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/013.png">
+<img class="img-thumbnail" src="{{ page.baseurl }}images/use-scenario/013.png">
 
   <li>We need floating IPs provided to us from the "softlayer-public" network, so ensure it is selected as the Pool, and click
   the "Allocate IP" button.</li>
@@ -141,13 +141,13 @@ assigning Floating IPs, which is our next step.
   <li>The Manage Floating IP Associations dialog box will appear with a public IP address pre-populated. Ensure the web1.softcube.com
   server is selected as well, and click "Associate".</li>
 
-<img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/014.png">
+<img class="img-thumbnail" src="{{ page.baseurl }}images/use-scenario/014.png">
 
   <li>Horizon will attach the new public IP address to the web1.softcube.com instance, and display it in the "IP Address"
   column in the instances list. Sometimes this may take a moment to update, but by this time the IP address has already been routed to the
   instance.</li>
 
-<img class="img-thumbnail" src="{{ page.baseurl }}img/use-scenario/015.png">
+<img class="img-thumbnail" src="{{ page.baseurl }}images/use-scenario/015.png">
 
   <li>Follow the same steps above to allocate another floating IP address to web2.softcube.com.</li>
 </ol>

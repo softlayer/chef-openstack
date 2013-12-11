@@ -1,8 +1,8 @@
 ---
 layout: pages
-title: Getting Started
+title: Developer Guide
 tag: Havana
-slug: getting-havana
+slug: developing-havana
 baseurl: "../"
 ---
 

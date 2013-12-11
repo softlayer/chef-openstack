@@ -22,12 +22,12 @@ Follow the instructions below to install Virtual Box and Vagrant.
 
 <ol>
 	<li>Go to the <a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box download page</a></li>
-			<img class="img-thumbnail" height="550px" src="{{ page.baseurl }}img/sandbox/006.png">
+			<img class="img-thumbnail" height="550px" src="{{ page.baseurl }}images/sandbox/006.png">
 	<li>Download the AMD64 version for your operating system.</li>
 	<li>Install VirtualBox using the downloaded package. For example, on Ubuntu and Debian Linux, run the following command:</li>
 			<pre><code>$ dpkg -i virtualbox-4.2_4.2.18-88780~Ubuntu~precise_amd64.deb</code></pre>
 	<li>On Windows, proceed through installation using the setup wizard:</li>
-			<img class="img-thumbnail" src="{{ page.baseurl }}img/sandbox/002.png">
+			<img class="img-thumbnail" src="{{ page.baseurl }}images/sandbox/002.png">
 </ol>
 
 ### Install Vagrant
@@ -35,10 +35,10 @@ Follow the instructions below to install Virtual Box and Vagrant.
 <ol>
 	<li>Go to the <a href="http://downloads.vagrantup.com">Vagrant download page</a>.</li>
 	<li>Click the latest version. (At the time this guide was written, the most recent version was 1.3.3.)</li>
-			<img class="img-thumbnail" src="{{ page.baseurl }}img/sandbox/003.png">
+			<img class="img-thumbnail" src="{{ page.baseurl }}images/sandbox/003.png">
 	<li>Download the package for your operating system.</li>
 	<li>Install Vagrant from the package.</li>
-			<img class="img-thumbnail" src="{{ page.baseurl }}img/sandbox/004.png">
+			<img class="img-thumbnail" src="{{ page.baseurl }}images/sandbox/004.png">
 </ol>
 
 #### Download the Vagrant File Scripts
@@ -54,7 +54,7 @@ $ mkdir ~/softlayer
 	<li>Run vagrant up.</li>
 	<li>The install will take approximately 15 minutes, and will provision two VirtualBox VMs, install Chef Server, and bootstrap the OpenStack installation.</li>
 	<li>After completion, the Vagrant script will tell you how to access the new Chef Server, as well as Horizon (the OpenStack dashboard).</li>
-			<img class="img-thumbnail" src="{{ page.baseurl }}img/sandbox/007.png">
+			<img class="img-thumbnail" src="{{ page.baseurl }}images/sandbox/007.png">
 </ol>
 
 ### Navigation
@@ -69,7 +69,7 @@ Vagrant uses VirtualBox to deploy Chef Server and OpenStack. Running OpenStack c
 	* username: admin
 	* password: p@ssw0rd1
 
-<img class="img-thumbnail" src="{{ page.baseurl }}img/sandbox/009.png">
+<img class="img-thumbnail" src="{{ page.baseurl }}images/sandbox/009.png">
 
 ### OpenStack
 
@@ -78,4 +78,4 @@ Vagrant uses VirtualBox to deploy Chef Server and OpenStack. Running OpenStack c
 	* username: admin
 	* password: passwordsf
 
-<img class="img-thumbnail" src="{{ page.baseurl }}img/sandbox/010.png">
+<img class="img-thumbnail" src="{{ page.baseurl }}images/sandbox/010.png">

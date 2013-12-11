@@ -1,8 +1,8 @@
 ---
 layout: pages
-title: Getting Started
+title: Developer Guide
 tag: Grizzly
-slug: getting-grizzly
+slug: developing-grizzly
 baseurl: "../"
 ---
 

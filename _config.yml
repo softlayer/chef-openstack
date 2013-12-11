@@ -3,23 +3,23 @@ project: Chef-OpenStack
 lead: "Get the efficiency, scalability, and control that every private cloud needs."
 public_url: http://softlayer.github.io/chef-openstack
 
-# Versions
-version_havana: 0.3.3
-version_grizzly: 0.2.0
-
 # GitHub
 repo: http://github.com/softlayer/chef-openstack
-fork: http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&amp;type=fork&amp;count=true
-star: http://ghbtns.com/github-btn.html?user=softlayer&amp;repo=chef-openstack&amp;type=watch&amp;count=true
+fork: http://github.com/softlayer/chef-openstack/fork
+star: http://github.com/softlayer/chef-openstack/stargazers
 open_issues: http://github.com/softlayer/chef-openstack/issues?milestone=1;state=open
 closed_issues: http://github.com/softlayer/chef-openstack/issues?milestone=1;state=closed
+milestones: http://github.com/softlayer/chef-openstack/issues/milestones?state=open
+commits: http://github.com/softlayer/chef-openstack/commits
+pulls: http://github.com/softlayer/chef-openstack/pulls?direction=desc&amp;page=1&amp;sort=created&amp;state=open
+contributors: https://github.com/softlayer/chef-openstack/graphs/contributors
 
 # Company
 www: http://www.softlayer.com
-license: http://github.com/softlayer/chef-openstack/blob/Havana/LICENSE
+license: http://github.com/softlayer/chef-openstack/blob/master/LICENSE
 sldn: http://sldn.softlayer.com
 kb: http://knowledgelayer.softlayer.com
-portal: http://manage.softlayer.com
+blog: http://blog.softlayer.com
 
 # Social
 github: http://github.com/softlayer
@@ -27,4 +27,10 @@ twitter: http://twitter.com/softlayerdevs
 
 # Server
 permalink: pretty
-exclude: [".gitignore", "LICENSE", "README.md"]
+exclude: [".gitignore", "README.md", "LICENSE"]
+pygments: true
+safe: false
+
+# Google Analytics
+ga_tracking_id: UA-40037365-1
+ga_tracking_domain: softlayer.github.io
