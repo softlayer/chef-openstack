@@ -33,5 +33,5 @@ The first public version is generally available as an open source project. It in
 
 All known open issues are listed on [our GitHub public repo]({{ site.open_issues }}).
 
-{% include community.md %}
-{% include copyright.md %}
+{% include snippet-community.md %}
+{% include snippet-copyright.md %}

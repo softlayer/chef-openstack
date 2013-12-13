@@ -2,13 +2,13 @@
 <html lang="en">
   <head> 
     
-    {% include header.html %}
+  {% include header.html %}
   
   </head>
   <body>
     <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
       
-      {% include main.html %}
+    {% include nav.html %}
     
     </header>
     <div class="header" id="content"></div>
@@ -19,13 +19,13 @@
             <ul class="nav sidenav">    
               
               {% if page.slug == "get-started" %}
-                {% include nav-get-started.html %}
+                {% include affix-get-started.html %}
               {% elsif page.slug == "learn-more" %}
-                {% include nav-learn-more.html %}
+                {% include affix-learn-more.html %}
               {% elsif page.slug == "developing-havana" %}
-                {% include nav-developer-guide.html %}
+                {% include affix-developer-guide.html %}
               {% elsif page.slug == "developing-grizzly" %}
-                {% include nav-developer-guide.html %}
+                {% include affix-developer-guide.html %}
               {% endif %}
             
             </ul>
@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-9" role="main">
           
-          {{ content }}
+        {{ content }}
         
         </div>
       </div>
@@ -51,7 +51,7 @@
         </div>
       </div>
         
-        {% include footer.html %}
+      {% include footer.html %}
     
     </footer>
   </body>

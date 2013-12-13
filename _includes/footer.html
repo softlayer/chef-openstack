@@ -1,22 +1,22 @@
-<!-- Javascript Plugins -->
-<script type="text/javascript" src="{{ page.baseurl }}javascript/plugins/bootstrap.js"></script>
-<script type="text/javascript" src="{{ page.baseurl }}javascript/plugins/bootstrap-application.js"></script>
-<script type="text/javascript" src="{{ page.baseurl }}javascript/plugins/bootstrap-holder.js"></script>
-<script type="text/javascript" src="{{ page.baseurl }}javascript/plugins/bootstrap-affix.js"></script>
-<script type="text/javascript" src="{{ page.baseurl }}javascript/plugins/bootstrap-collapse.js"></script>
-<script type="text/javascript" src="{{ page.baseurl }}javascript/plugins/bootstrap-scrollspy.js"></script>
+		<!-- Plugins -->
+		<script type="text/javascript" src="{{ page.baseurl }}javascript/plugins/bootstrap.js"></script>
+		{% if page.slug != "landing" %}
+		<script type="text/javascript" src="{{ page.baseurl }}javascript/plugins/application.js"></script>
+		<script type="text/javascript" src="{{ page.baseurl }}javascript/plugins/affix.js"></script>
+		{% endif %}
 
-<!-- Javascript Library -->
-<script type="text/javascript" src="{{ page.baseurl }}javascript/lib/modernizr.js"></script>
-<script type="text/javascript" src="{{ page.baseurl }}javascript/lib/sidemenu.js"></script>
+		<!-- Library -->
+		<script type="text/javascript" src="{{ page.baseurl }}javascript/lib/modernizr.js"></script>
+		<script type="text/javascript" src="{{ page.baseurl }}javascript/lib/sidemenu.js"></script>
 
-<script>
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', '{{ site.ga_tracking_id }}']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
+		<script>
+  		var _gaq = _gaq || [];
+  			_gaq.push(['_setAccount', '{{ site.ga_tracking_id }}']);
+  			_gaq.push(['_trackPageview']);
+  		
+  		(function() {
+    		var ga = document.createElement('script'); ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  		})();
+		</script>

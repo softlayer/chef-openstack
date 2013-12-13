@@ -55,9 +55,8 @@ Below is our workflow for pull requests.
 6.  [Rebase](https://help.github.com/articles/interactive-rebase) your branch against the `master` to ensure everything is up to date.
 7.  Commit your changes and send a pull request.
 
-{% include code-ruby.html %}
-
-{% include docs.md %}
+{% include snippet-code-ruby.md %}
+{% include snippet-docs.md %}
 
 ## Contribute to Our Docs
 
@@ -67,6 +66,5 @@ We treat our docs like we treat our code. And like our code, we invite everyone 
 * Our web resources for [Chef-OpenStack](http://softlayer.guthub.io/chef-openstack) are managed under the `gh-pages` [branch](https://github.com/softlayer/chef-openstack/tree/gh-pages).
 * The [wiki on GitHub](https://github.com/softlayer/chef-openstack/wiki/_pages) is a clone of our online content. We use it for sharing while we’re working remote. 
 
-{% include community.md %}
-
-{% include copyright.md %}
+{% include snippet-community.md %}
+{% include snippet-copyright.md %}
