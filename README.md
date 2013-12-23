@@ -113,8 +113,8 @@ It is not recommended to change the physical network configuration unless you ha
 * `node['neutron']['network']['public_nameserver_2']` - Publicly accessible name server 2
 * `node['neutron']['network']['private_nameserver_1']` - Private network name server 1
 * `node['neutron']['network']['private_nameserver_2']` - Private network name server 2
-* `node['neutron']['network']['softlayer_private_portable']` - CIDR mask of portable private IP block ordered from SoftLayer
-* `node['neutron']['network']['softlayer_public_portable']` - CIDR mask of portable public IP block ordered from SoftLayer
+* `node['neutron']['softlayer_private_portable']` - CIDR mask of portable private IP block ordered from SoftLayer
+* `node['neutron']['softlayer_public_portable']` - CIDR mask of portable public IP block ordered from SoftLayer
 
 
 ### Cinder ###

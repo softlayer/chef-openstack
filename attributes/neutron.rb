@@ -58,7 +58,7 @@ default['neutron']['network']['public_nameserver_1'] = '8.8.8.8'
 default['neutron']['network']['public_nameserver_2'] = '8.8.4.4'
 default['neutron']['network']['private_nameserver_1'] = '10.0.80.11'
 default['neutron']['network']['private_nameserver_2'] = '10.0.80.12'
-default['neutron']['network']['softlayer_private_portable'] = nil
-default['neutron']['network']['softlayer_public_portable'] = nil
-
 default['neutron']['network']['security_group_name'] = 'basic-ssh-icmp'
+
+default['neutron']['softlayer_private_portable'] = nil
+default['neutron']['softlayer_public_portable'] = nil

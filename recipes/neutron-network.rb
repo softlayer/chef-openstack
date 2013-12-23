@@ -89,19 +89,19 @@ end
 keystone_auth_url = "http://#{node[:keystone][:private_ip]}:" \
                     "#{node['keystone']['config']['public_port']}/v2.0"
 
-if (node['neutron']['network']['softlayer_private_portable'] \
-    && node['neutron']['network']['softlayer_public_portable'])
+if (node['neutron']['softlayer_private_portable'] \
+    && node['neutron']['softlayer_public_portable'])
 
   # Calculate the SoftLayer local subnet information
   require 'ipaddr'
 
-  sl_private = IPAddr.new(node['neutron']['network']['softlayer_private_portable'])
+  sl_private = IPAddr.new(node['neutron']['softlayer_private_portable'])
   range = sl_private.to_range.to_a
   sl_private_router = range[1]  # Gateway for SoftLayer bridged network
   sl_private_host_start = range[2]  # Starting and ending OpenStack allocatable IPs
   sl_private_host_end = range[-2]
 
-  sl_public = IPAddr.new(node['neutron']['network']['softlayer_public_portable'])
+  sl_public = IPAddr.new(node['neutron']['softlayer_public_portable'])
   range = sl_public.to_range.to_a
   sl_public_router = range[1]  #Gateway for L3 router.
 
@@ -149,7 +149,7 @@ if (node['neutron']['network']['softlayer_private_portable'] \
         --dns-nameserver #{node_network['public_nameserver_1']} \
         --dns-nameserver #{node_network['public_nameserver_2']} \
         #{node_network['public_network_name']} \
-        #{node_network['softlayer_public_portable']}
+        #{node['neutron']['softlayer_public_portable']}
 
       # Private network based on bridge (no router)
       neutron net-create #{node_network['private_network_name']} \
@@ -164,7 +164,7 @@ if (node['neutron']['network']['softlayer_private_portable'] \
         --dns-nameserver #{node_network['private_nameserver_1']} \
         --dns-nameserver #{node_network['private_nameserver_2']} \
         #{node_network['private_network_name']} \
-        #{node_network['softlayer_private_portable']}
+        #{node['neutron']['softlayer_private_portable']}
 
       neutron router-create \
         #{node_network['public_l3_router_name']}
