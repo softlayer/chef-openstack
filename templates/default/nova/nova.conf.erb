@@ -15,9 +15,6 @@ connection=mysql://<%= node['nova']['db']['username'] %>:<%= node['nova']['db'][
 ##### RABBITMQ #####
 <%= render "nova/partials/rabbit.erb" %>
 
-##### COMPUTE #####
-<%= render "nova/partials/compute.erb" %>
-
 ##### NEUTRON #####
 <%= render "nova/partials/neutron.erb" %>
 
@@ -29,3 +26,6 @@ connection=mysql://<%= node['nova']['db']['username'] %>:<%= node['nova']['db'][
 
 ##### NOVNC #####
 <%= render "nova/partials/vncproxy.erb" %>
+
+##### COMPUTE #####
+<%= render "nova/partials/compute.erb" %>

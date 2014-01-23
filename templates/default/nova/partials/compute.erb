@@ -7,6 +7,7 @@ rabbit_password=guest
 
 # Scheduling #
 scheduler_driver=nova.scheduler.filter_scheduler.FilterScheduler
+scheduler_default_filters=CoreFilter
 
 # WSGI #
 api_paste_config=/etc/nova/api-paste.ini
@@ -39,12 +40,6 @@ ec2_workers=<%= node['nova']['config']['ec2_workers'] %>
 # S3 #
 s3_host=<%= node[:controller][:public_ip] %>
 
-# Hyper-V #
-libvirt_use_virtio_for_bridges=True
-libvirt_inject_password=True
-libvirt_inject_partition=1
-connection_type=libvirt
-
 # Nova Compute #
 running_deleted_instance_action=<%= node['nova']['config']['running_deleted_instance_action'] %>
 force_config_drive=<%= node['nova']['config']['force_config_drive'] %>
@@ -52,5 +47,13 @@ cpu_allocation_ratio=<%= node['nova']['config']['cpu_allocation_ratio'] %>
 ram_allocation_ratio=<%= node['nova']['config']['ram_allocation_ratio'] %>
 disk_allocation_ratio=<%= node['nova']['config']['disk_allocation_ratio'] %>
 
+# Libvirt #
+[libvirt]
+libvirt_use_virtio_for_bridges=True
+libvirt_inject_password=True
+libvirt_inject_partition=1
+connection_type=libvirt
+
 # Nova Conductor #
+[conductor]
 workers=<%= node['nova']['config']['conductor_workers'] %>

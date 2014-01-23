@@ -1,4 +1,3 @@
 # Nova Scheduler #
 rabbit_host=<%= node[:rabbitmq][:private_ip] %>
 rabbit_password=<%= node['nova']['config']['rabbit_password'] %>
-scheduler_driver=nova.scheduler.filter_scheduler.FilterScheduler
