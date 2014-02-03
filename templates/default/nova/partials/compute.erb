@@ -7,7 +7,7 @@ rabbit_password=guest
 
 # Scheduling #
 scheduler_driver=nova.scheduler.filter_scheduler.FilterScheduler
-scheduler_default_filters=CoreFilter
+scheduler_default_filters=CoreFilter,RamFilter,DiskFilter,AvailabilityZoneFilter
 
 # WSGI #
 api_paste_config=/etc/nova/api-paste.ini

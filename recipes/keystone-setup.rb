@@ -52,7 +52,7 @@ chef_openstack_keystone 'Create endpoint for Nova' do
   env Stack.keystone_service_env(node)
   region node.chef_environment
   internal_url "http://#{node[:controller][:private_ip]}:8774/v2/$(tenant_id)s"
-  public_url "http://#{node[:controller][:private_ip]}:8774/v2/$(tenant_id)s"
+  public_url "http://#{node[:controller][:public_ip]}:8774/v2/$(tenant_id)s"
   admin_url "http://#{node[:controller][:private_ip]}:8774/v2/$(tenant_id)s"
   service_type 'nova'
 end
@@ -62,7 +62,7 @@ chef_openstack_keystone 'Create endpoint for Cinder' do
   env Stack.keystone_service_env(node)
   region node.chef_environment
   internal_url "http://#{node[:cinder][:private_ip]}:8776/v1/$(tenant_id)s"
-  public_url "http://#{node[:cinder][:private_ip]}:8776/v1/$(tenant_id)s"
+  public_url "http://#{node[:cinder][:public_ip]}:8776/v1/$(tenant_id)s"
   admin_url "http://#{node[:cinder][:private_ip]}:8776/v1/$(tenant_id)s"
   service_type 'cinder'
 end
@@ -72,7 +72,7 @@ chef_openstack_keystone 'Create endpoint for Glance' do
   env Stack.keystone_service_env(node)
   region node.chef_environment
   internal_url "http://#{node[:glance][:private_ip]}:9292/v2"
-  public_url "http://#{node[:glance][:private_ip]}:9292/v2"
+  public_url "http://#{node[:glance][:public_ip]}:9292/v2"
   admin_url "http://#{node[:glance][:private_ip]}:9292/v2"
   service_type 'glance'
 end
@@ -83,7 +83,7 @@ chef_openstack_keystone 'Create endpoint for Keystone' do
   env Stack.keystone_service_env(node)
   region node.chef_environment
   internal_url "http://#{node[:keystone][:private_ip]}:5000/v2.0"
-  public_url "http://#{node[:keystone][:private_ip]}:5000/v2.0"
+  public_url "http://#{node[:keystone][:public_ip]}:5000/v2.0"
   admin_url "http://#{node[:keystone][:private_ip]}:35357/v2.0"
   service_type 'keystone'
 end
@@ -93,7 +93,7 @@ chef_openstack_keystone 'Create endpoint for EC2' do
   env Stack.keystone_service_env(node)
   region node.chef_environment
   internal_url "http://#{node[:controller][:private_ip]}:8773/services/Cloud"
-  public_url "http://#{node[:controller][:private_ip]}:8773/services/Cloud"
+  public_url "http://#{node[:controller][:public_ip]}:8773/services/Cloud"
   admin_url "http://#{node[:controller][:private_ip]}:8773/services/Admin"
   service_type 'ec2'
 end
@@ -103,7 +103,7 @@ chef_openstack_keystone 'Create endpoint for Neutron' do
   env Stack.keystone_service_env(node)
   region node.chef_environment
   internal_url "http://#{node[:controller][:private_ip]}:9696/"
-  public_url "http://#{node[:controller][:private_ip]}:9696/"
+  public_url "http://#{node[:controller][:public_ip]}:9696/"
   admin_url "http://#{node[:controller][:private_ip]}:9696/"
   service_type 'neutron'
 end
