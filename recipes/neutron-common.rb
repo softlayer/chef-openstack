@@ -1,3 +1,5 @@
+include_recipe 'chef-openstack::common'
+
 prereq_packages = %w[openvswitch-datapath-dkms]
 common_packages = %w[openvswitch-switch
                      neutron-plugin-openvswitch-agent

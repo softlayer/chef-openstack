@@ -1,3 +1,5 @@
+include_recipe 'chef-openstack::common'
+
 packages = %w[openstack-dashboard
               apache2
               libapache2-mod-wsgi

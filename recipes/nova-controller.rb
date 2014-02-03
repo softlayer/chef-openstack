@@ -1,3 +1,5 @@
+include_recipe 'chef-openstack::common'
+
 packages = %w[nova-api
               nova-cert
               nova-common

@@ -1,5 +1,4 @@
-include_recipe 'chef-openstack::apparmor'
-include_recipe 'mysql::server'
+include_recipe 'chef-openstack::mysql-common'
 
 bash 'create database for nova' do
   not_if("mysql -uroot -p#{node['mysql']['server_root_password']} -e 'SHOW DATABASES' | grep #{node['nova']['db']['name']}")

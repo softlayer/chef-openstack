@@ -11,33 +11,19 @@ if node.chef_environment.index("default")
   raise "Not in a working environment"
 end
 
-# If the mysql-all recipe is used, we need to set the mysql hash values
-# to "openstack-mysql-all"
-use_mysql_all = search(:node, "role:openstack-mysql-all AND " +
-                              "chef_environment:#{node.chef_environment}")
+node['admin']['cloud_network']['recipes'].each_pair do |var, recipe|
 
-unless use_mysql_all.empty?
-  node['admin']['cloud_network']['roles'].each_pair do |var, role|
-    if /mysql/.match(var)
-      node.default['admin']['cloud_network']['roles'][var] = \
-        "openstack-mysql-all"
-    end
-  end
-end
-
-node['admin']['cloud_network']['roles'].each_pair do |var, role|
-
-  nodes = partial_search(:node, "role:#{role} AND chef_environment:#{node.chef_environment}", 
+  nodes = partial_search(:node, "recipes:chef-openstack::#{recipe} AND chef_environment:#{node.chef_environment}", 
                          :keys => { 'network_info' => ['network'] })
 
 
   current_node = nil
   current_node = nodes[rand(nodes.length)]
   if current_node == nil
-    raise "Cannot find role: #{role} " +
+    raise "Cannot find recipe: #{recipe} " +
           "in environment #{node.chef_environment}\n\n" +
           "You may need to wait up to 60 seconds after bootstrapping" +
-          "or check that all roles have been assigned."
+          "or check that all recipes have been assigned."
   end
   is_bonded = "False"
   current_node['br-ex_ip'] = nil

@@ -1,0 +1,5 @@
+include_recipe 'chef-openstack::set_attributes'
+include_recipe 'chef-openstack::set_cloudnetwork'
+include_recipe 'chef-openstack::ip_forwarding'
+include_recipe 'ntp'
+include_recipe 'chef-openstack::repositories'

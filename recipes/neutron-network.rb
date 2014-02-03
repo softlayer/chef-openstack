@@ -1,3 +1,5 @@
+include_recipe 'chef-openstack::common'
+
 packages = %w[neutron-l3-agent
               neutron-dhcp-agent
               neutron-metadata-agent]

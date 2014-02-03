@@ -28,22 +28,18 @@ override['ntp']['servers'] = ['time.softlayer.com',
                               'time.service.networklayer.com']
 
 
-# Cloud network setup
-# '<variable name>' => '<Chef role name>'
-
-# By default, the MySQL recipes are seperated. If the openstack-mysql-all role
-# is used, set_cloudnetwork will set the correct recipe.
-
-default['admin']['cloud_network']['roles'] = {
-  'controller' => 'openstack-controller',
-  'network' => 'openstack-network',
-  'rabbitmq' => 'openstack-rabbitmq',
-  'keystone' => 'openstack-keystone',
-  'glance' => 'openstack-glance',
-  'cinder' => 'openstack-cinder',
-  'mysqlglance' => 'openstack-mysql-glance',
-  'mysqlcinder' => 'openstack-mysql-cinder',
-  'mysqlkeystone' => 'openstack-mysql-keystone',
-  'mysqlnova' => 'openstack-mysql-nova',
-  'mysqlneutron' => 'openstack-mysql-neutron'
+# Cluster setup
+# '<variable name>' => '<chef recipe name>'
+default['admin']['cloud_network']['recipes'] = {
+  'controller' => 'controller',
+  'network' => 'neutron-network',
+  'rabbitmq' => 'rabbitmq-server',
+  'keystone' => 'keystone',
+  'glance' => 'glance',
+  'cinder' => 'cinder',
+  'mysqlglance' => 'mysql-glance',
+  'mysqlcinder' => 'mysql-cinder',
+  'mysqlkeystone' => 'mysql-keystone',
+  'mysqlnova' => 'mysql-nova',
+  'mysqlneutron' => 'mysql-neutron'
 }
