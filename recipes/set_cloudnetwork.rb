@@ -1,8 +1,7 @@
 include_recipe "partial_search"
 
-
-# This code iterates through node['admin']['cloud_network']['roles'] to find
-# network information about each role. Then, populates the public and private
+# This code iterates through node['admin']['cloud_network']['recipes'] to find
+# network information about the location of each recipe. Then, populates the public and private
 # IP info for further use throughout the cookbook. Chef environments are used
 # to isolate different installations from each other.
 # =========================================================================
