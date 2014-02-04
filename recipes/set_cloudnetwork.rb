@@ -12,9 +12,8 @@ end
 
 node['admin']['cloud_network']['recipes'].each_pair do |var, recipe|
 
-  nodes = partial_search(:node, "run_list:recipe\\[chef-opestack\\:\\:#{recipe}\\] AND chef_environment:#{node.chef_environment}", 
+  nodes = partial_search(:node, "run_list:recipe\\[chef-openstack\\:\\:#{recipe}\\] AND chef_environment:#{node.chef_environment}", 
                          :keys => { 'network_info' => ['network'] })
-
 
   current_node = nil
   current_node = nodes[rand(nodes.length)]
