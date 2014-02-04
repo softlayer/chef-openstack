@@ -12,7 +12,7 @@ end
 
 node['admin']['cloud_network']['recipes'].each_pair do |var, recipe|
 
-  nodes = partial_search(:node, "recipes:chef-openstack\:\:#{recipe} AND chef_environment:#{node.chef_environment}", 
+  nodes = partial_search(:node, 'recipes:chef-openstack::' + "#{recipe} AND chef_environment:#{node.chef_environment}", 
                          :keys => { 'network_info' => ['network'] })
 
 
