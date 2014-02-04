@@ -4,6 +4,7 @@ kernel_version = node['kernel']['release'][0,2]
 
 if kernel_version < 3.8
   raise 'Your kernel version must be at least 3.8'
+end
 
 bash "Add docker repository keys" do
   user "root"

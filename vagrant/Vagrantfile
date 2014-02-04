@@ -60,7 +60,7 @@ git clone -b Havana https://github.com/perfectsine/chef-openstack /home/vagrant/
 
 /opt/chef-server/embedded/bin/knife cookbook upload --all
 /opt/chef-server/embedded/bin/knife environment create OpenStack -d "OpenStack Test Suite"
-/opt/chef-server/embedded/bin/knife role from file /home/vagrant/chef-repo/cookbooks/chef-openstack/roles/*
+#/opt/chef-server/embedded/bin/knife role from file /home/vagrant/chef-repo/cookbooks/chef-openstack/roles/*
 
 cat >~/openstack.json <<EOF
 {
@@ -92,18 +92,18 @@ EOF
 # Not for production: Use SSH keys
 /opt/chef-server/embedded/bin/knife bootstrap 192.168.50.4 -x vagrant --sudo -P vagrant -E OpenStack
 
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[mysql-glance]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[mysql-cinder]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[mysql-keystone]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[mysql-nova]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[mysql-neutron]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[rabbitmq-server]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[keystone]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[controller]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[cinder]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[glance]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[neutron-network]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[nova-compute]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::mysql-glance]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::mysql-cinder]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::mysql-keystone]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::mysql-nova]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::mysql-neutron]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::rabbitmq-server]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::keystone]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::controller]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::cinder]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::glance]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::neutron-network]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::nova-compute]'
 
 echo 'Waiting on Chef-Server configuration'
 echo -ne '#####                     (25%)\r'
