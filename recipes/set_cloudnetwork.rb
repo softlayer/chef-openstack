@@ -36,7 +36,6 @@ node['admin']['cloud_network']['recipes'].each_pair do |var, recipe|
    
   end
 
-
   if current_node['br-priv_ip'].nil?
     node.default[var][:private_ip] = current_node["#{node['network']['private_interface']}_ip"]
   else
