@@ -56,7 +56,7 @@ git clone https://github.com/opscode-cookbooks/partial_search /home/vagrant/chef
 git clone https://github.com/opscode-cookbooks/ntp /home/vagrant/chef-repo/cookbooks/ntp
 git clone https://github.com/opscode-cookbooks/build-essential /home/vagrant/chef-repo/cookbooks/build-essential
 git clone https://github.com/opscode-cookbooks/openssl /home/vagrant/chef-repo/cookbooks/openssl
-git clone -b Havana https://github.com/perfectsine/chef-openstack /home/vagrant/chef-repo/cookbooks/chef-openstack
+git clone -b Havana https://github.com/softlayer/chef-openstack /home/vagrant/chef-repo/cookbooks/chef-openstack
 
 /opt/chef-server/embedded/bin/knife cookbook upload --all
 /opt/chef-server/embedded/bin/knife environment create OpenStack -d "OpenStack Test Suite"
@@ -103,7 +103,7 @@ EOF
 /opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::cinder]'
 /opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::glance]'
 /opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::neutron-network]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::nova-compute]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::nova-kvm]'
 
 echo 'Waiting on Chef-Server configuration'
 echo -ne '#####                     (25%)\r'
@@ -119,13 +119,19 @@ sleep 2
 
 # Not for production: Use SSH keys
 sshpass -p 'vagrant' ssh openstack -l vagrant -o StrictHostKeyChecking=no 'sudo chef-client'
+if [ $? == 0 ]; then
+    echo 'Chef Server located at: https://127.0.0.1/  login: admin password: p@ssw0rd1'
+    echo 'OpenStack dashboard located at: http://127.0.0.1:7081 login: admin password: passwordsf'
+else
+    echo 'chef-client exited abnormally, try reloading or go to github.com/softlayer for questions'
+fi
 
-echo 'Chef Server located at: https://127.0.0.1/  login: admin password: p@ssw0rd1'
-echo 'OpenStack dashboard located at: http://127.0.0.1:7081 login: admin password: passwordsf'
+
 SCRIPT
 
 $prepare_openstack = <<SCRIPT
 sudo apt-get update
+sudo apt-mark grub*
 sudo echo '192.168.50.5    chef-server' >> /etc/hosts
 SCRIPT
 
