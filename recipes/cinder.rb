@@ -1,3 +1,5 @@
+include_recipe 'chef-openstack::common'
+
 packages = %w[cinder-api
               cinder-scheduler
               cinder-volume

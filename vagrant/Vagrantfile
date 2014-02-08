@@ -9,7 +9,6 @@ sudo echo "192.168.50.4     openstack" >> /etc/hosts
 
 wget https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
 sudo dpkg -i chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
-# sudo dpkg -i /vagrant/chef-server_11.0.8-1.ubuntu.12.04_amd64.deb
 sudo chef-server-ctl reconfigure
 sudo cat >/etc/chef-server/chef-server.rb <<EOF
 chef_solr['commit_interval'] = 5000  # 5sec flush time for Lucene
@@ -60,7 +59,6 @@ git clone -b Havana https://github.com/softlayer/chef-openstack /home/vagrant/ch
 
 /opt/chef-server/embedded/bin/knife cookbook upload --all
 /opt/chef-server/embedded/bin/knife environment create OpenStack -d "OpenStack Test Suite"
-/opt/chef-server/embedded/bin/knife role from file /home/vagrant/chef-repo/cookbooks/chef-openstack/roles/*
 
 cat >~/openstack.json <<EOF
 {
@@ -86,20 +84,23 @@ cat >~/openstack.json <<EOF
 }
 EOF
 
-
 /opt/chef-server/embedded/bin/knife environment from file ~/openstack.json
 
 # Not for production: Use SSH keys
 /opt/chef-server/embedded/bin/knife bootstrap 192.168.50.4 -x vagrant --sudo -P vagrant -E OpenStack
 
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-mysql-all]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-rabbitmq]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-keystone]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-controller]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-cinder]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-glance]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-network]'
-/opt/chef-server/embedded/bin/knife node run_list add openstack 'role[openstack-compute]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::mysql-glance]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::mysql-cinder]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::mysql-keystone]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::mysql-nova]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::mysql-neutron]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::rabbitmq-server]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::keystone]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::controller]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::cinder]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::glance]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::neutron-network]'
+/opt/chef-server/embedded/bin/knife node run_list add openstack 'recipe[chef-openstack::nova-kvm]'
 
 echo 'Waiting on Chef-Server configuration'
 echo -ne '#####                     (25%)\r'
@@ -115,13 +116,17 @@ sleep 2
 
 # Not for production: Use SSH keys
 sshpass -p 'vagrant' ssh openstack -l vagrant -o StrictHostKeyChecking=no 'sudo chef-client'
-
-echo 'Chef Server located at: https://127.0.0.1/  login: admin password: p@ssw0rd1'
-echo 'OpenStack dashboard located at: http://127.0.0.1:7081 login: admin password: passwordsf'
+if [ $? == 0 ]; then
+    echo 'Chef Server located at: https://127.0.0.1/  login: admin password: p@ssw0rd1'
+    echo 'OpenStack dashboard located at: http://127.0.0.1:7081 login: admin password: passwordsf'
+else
+    echo 'chef-client exited abnormally, try reloading with vagrant destroy -f && vagrant up or go to github.com/softlayer for questions'
+fi
 SCRIPT
 
 $prepare_openstack = <<SCRIPT
 sudo apt-get update
+sudo apt-mark hold grub*
 sudo echo '192.168.50.5    chef-server' >> /etc/hosts
 SCRIPT
 

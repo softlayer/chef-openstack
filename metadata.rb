@@ -5,7 +5,7 @@ license          'All rights reserved'
 description      'Installs and configures an OpenStack Havana cluster'
 supports         'ubuntu', '= 12.04'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.3.3'
+version          '0.3.4'
 depends          'partial_search'
 depends          'mysql'
 depends          'ntp'

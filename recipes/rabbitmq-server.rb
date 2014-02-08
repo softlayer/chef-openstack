@@ -1,3 +1,5 @@
+include_recipe 'chef-openstack::common'
+
 service "rabbitmq-server" do
   supports :status => true, :restart => true, :reload => true
   action :nothing

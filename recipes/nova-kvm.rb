@@ -1,3 +1,6 @@
+include_recipe 'chef-openstack::common'
+include_recipe "chef-openstack::libvirt"
+
 if node[:node_info][:is_vm] == 'True'
   package 'nova-compute-qemu' do
     action :install
@@ -37,3 +40,5 @@ template 'Nova compute configuration' do
   mode '0600'
   notifies :restart, resources(:service => 'nova-compute'), :immediately
 end
+
+include_recipe "chef-openstack::neutron-compute"

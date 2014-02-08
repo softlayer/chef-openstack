@@ -1,5 +1,12 @@
 # CHANGELOG for OpenStack Havana recipes
 
+## 0.3.4
+
+* Removed roles from cookbook, recipes are now used in place
+* Added dependecies in recipes
+* Big updates to the READMEs check them out!
+* Updated Vagrant script to work with new cookbook
+
 ## 0.3.3:
 
 * Updated readme

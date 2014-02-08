@@ -1,3 +1,6 @@
+include_recipe 'chef-openstack::common'
+
+
 packages = %w[glance
               glance-api
               glance-registry
